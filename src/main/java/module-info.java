@@ -7,6 +7,8 @@ module org.tuvarna.olekalekproject {
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
     requires org.kordamp.ikonli.javafx;
+    requires javafx.graphics;
+
 
     opens org.tuvarna.olekalekproject to javafx.fxml;
     exports org.tuvarna.olekalekproject;
