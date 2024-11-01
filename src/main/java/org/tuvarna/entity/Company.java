@@ -3,24 +3,24 @@ import jakarta.persistence.*;
 
 import java.util.List;
 @Entity
-@Table(name = "companies")
+@Table(name = "company")
 public class Company {
     @Id
-    @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column
+    @Column(name = "name")
     private String name;
-    @Column(name = "trips_available")
-    @OneToMany(mappedBy = "id")
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "trips")
     private List<Trip> tripsAvailable;
 
     public Company() {
     }
 
-    public Company(String name, List<Trip> tripsAvailable) {
+    public Company(String name) {
         this.name = name;
-        this.tripsAvailable = tripsAvailable;
+        //this.tripsAvailable = tripsAvailable;
     }
 
     public int getId() {
@@ -45,5 +45,14 @@ public class Company {
 
     public void setTripsAvailable(List<Trip> tripsAvailable) {
         this.tripsAvailable = tripsAvailable;
+    }
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", tripsAvailable=" + tripsAvailable +
+                '}';
     }
 }

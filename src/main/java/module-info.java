@@ -8,8 +8,10 @@ module org.tuvarna.olekalekproject {
     requires com.dlsc.formsfx;
     requires org.kordamp.ikonli.javafx;
     requires javafx.graphics;
+    requires java.naming;
 
 
+    opens org.tuvarna.entity to org.hibernate.orm.core;
     opens org.tuvarna.olekalekproject to javafx.fxml;
     exports org.tuvarna.olekalekproject;
 }

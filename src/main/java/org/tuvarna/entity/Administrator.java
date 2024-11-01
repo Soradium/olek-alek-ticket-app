@@ -6,16 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Administrator {
-    public void createCompany(Session session, String name) {
-        session.beginTransaction();
-        List<Company> companyList = session.createQuery("from Company where Company.name=name").getResultList();
-        if(companyList.isEmpty()) {
-            List<Trip> trips = new ArrayList<Trip>();
-            session.persist(new Company(name, trips));
-        }  else {
-            System.out.println("this company already exists");
-        }
-        session.getTransaction().commit();
+    public void createCompany(Session session, Company company) {
+
+            company.setTripsAvailable(new ArrayList<>());
+            session.persist(company);
+            System.out.println("Company created: " + company.toString());
+            session.getTransaction().commit();
     }
 
     public void createDistributor(Session session, String name) {

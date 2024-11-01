@@ -5,16 +5,16 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table
+@Table(name = "trip")
 public class Trip {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "departures")
+    @Column(name = "departure")
     private String departure;
     @Column(name = "destination")
     private String destination;
-    @Column(name = "time_of_departure")
+    @Column(name = "timeofdeparture")
     private Date timeOfDeparture;
     @Column(name = "type")
     private String type;
