@@ -14,7 +14,46 @@ public class Ticket {
     @JoinColumn(name = "seat")
     private Seat seat;
 
-    @ManyToOne()
-    @JoinColumn(name = "tripsAvailable")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "company")
     private Company company;
+
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "trip")
+    private Trip trip;
+
+    public Ticket() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Seat getSeat() {
+        return seat;
+    }
+
+    public void setSeat(Seat seat) {
+        this.seat = seat;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
+    public Trip getTrip() {
+        return trip;
+    }
+
+    public void setTrip(Trip trip) {
+        this.trip = trip;
+    }
 }
