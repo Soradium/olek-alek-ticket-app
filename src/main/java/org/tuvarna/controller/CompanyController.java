@@ -7,6 +7,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import org.hibernate.Session;
 import org.tuvarna.entity.Trip;
+import org.tuvarna.service.TripService;
 
 import java.util.List;
 
@@ -23,13 +24,8 @@ public class CompanyController {
     @FXML
     private TextField tripType;
 
+    private TripService tripService = new TripService();
     private ObservableList<Trip> trips = FXCollections.observableArrayList();
-    private Session session;
-
-    public void setSession(Session session) {
-        this.session = session;
-        loadTrips();
-    }
 
     @FXML
     public void addTrip(){
@@ -37,21 +33,7 @@ public class CompanyController {
         String destinationText = destination.getText();
         String timeOfDepartureText = timeOfDeparture.getText();
         String tripTypeText = tripType.getText();
-        if(session == null){
-            System.out.println("session is null");
-        }
-        session.beginTransaction();
-        try{
-            Trip trip = new Trip(departureText, destinationText, timeOfDepartureText, tripTypeText);
-            session.persist(trip);
-            trips.add(trip);
-            session.getTransaction().commit();
-        }catch (Exception e) {
-            e.printStackTrace();
-        }finally {
-            session.close();
-        }
-
+        trips.add(tripService.addTrip(new Trip(destinationText, departureText, timeOfDepartureText, tripTypeText)));
         departure.clear();
         destination.clear();
         timeOfDeparture.clear();
@@ -61,18 +43,10 @@ public class CompanyController {
     public void addBus(){
 
     }
-
-    private void loadTrips() {
-        session.beginTransaction();
-        try {
-            List<Trip> allTrips = session.createQuery("from Trip", Trip.class).getResultList();
-            trips.addAll(allTrips);
-            tripListView.setItems(trips);
-            session.getTransaction().commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            session.close();
-        }
+    @FXML
+    private void showInfo() {
+        tripListView.getItems().clear();
+        trips.addAll(tripService.getAllTrips());
+        tripListView.setItems(trips);
     }
 }
