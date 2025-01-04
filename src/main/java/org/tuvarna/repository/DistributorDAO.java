@@ -8,6 +8,5 @@ public interface DistributorDAO {
     Distributor getDistributorByName(String name);
     List<Distributor> getDistributors();
     void addDistributor(Distributor distributor);
-    void updateDistributor(Distributor distributor);
-    void deleteDistributor(Distributor distributor);
+
 }
