@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.hibernate.Session;
 import org.hibernate.cfg.Configuration;
+import org.tuvarna.controller.CompanyController;
 import org.tuvarna.entity.Trip;
 
 import java.io.IOException;

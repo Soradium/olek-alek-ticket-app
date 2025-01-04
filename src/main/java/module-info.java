@@ -1,5 +1,4 @@
 module org.tuvarna.olekalekproject {
-    requires java.naming;
     requires javafx.controls;
     requires javafx.fxml;
     requires jakarta.persistence;
