@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tuvarna.olekalekproject.CompanyController">
+    <VBox alignment="CENTER" spacing="20" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0">
+
+        <HBox spacing="10" alignment="CENTER">
+            <TextField fx:id="departure" promptText="Enter Departure Location"/>
+            <TextField fx:id="destination" promptText="Enter Destination"/>
+            <TextField fx:id="timeOfDeparture" promptText="Enter Time of Departure (YYYY-MM-DD)"/>
+            <TextField fx:id="tripType" promptText="Enter Trip Type"/>
+            <Button text="Add Trip" onAction="#addTrip"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Available Trips"/>
+        </HBox>
+        <ListView fx:id="tripListView" prefHeight="200" prefWidth="300"/>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Company Rating: "/>
+            <Label fx:id="ratingLabel"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER">
+            <TextField fx:id="busNumber" promptText="Enter Bus Number"/>
+            <Button text="Add Bus" onAction="#addBus"/>
+        </HBox>
+    </VBox>
+</AnchorPane>
