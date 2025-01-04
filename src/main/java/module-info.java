@@ -1,4 +1,5 @@
 module org.tuvarna.olekalekproject {
+    requires java.naming;
     requires javafx.controls;
     requires javafx.fxml;
     requires jakarta.persistence;
@@ -11,6 +12,7 @@ module org.tuvarna.olekalekproject {
     requires java.naming;
 
     opens org.tuvarna.olekalekproject to javafx.fxml;
+    opens org.tuvarna.entity to org.hibernate.orm.core;
     exports org.tuvarna.olekalekproject;
     exports org.tuvarna.controller;
     opens org.tuvarna.controller to javafx.fxml;

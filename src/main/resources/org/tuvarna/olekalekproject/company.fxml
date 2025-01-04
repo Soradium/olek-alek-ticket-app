@@ -34,6 +34,7 @@
         <HBox spacing="10" alignment="CENTER">
             <TextField fx:id="busNumber" promptText="Enter Bus Number"/>
             <Button text="Add Bus" onAction="#addBus"/>
+
         </HBox>
     </VBox>
 </AnchorPane>

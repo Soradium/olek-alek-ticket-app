@@ -2,41 +2,30 @@ package org.tuvarna.entity;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
-
 @Entity
-@Table
+@Table(name = "trip")
 public class Trip {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "departures")
+
     private String departure;
-    @Column(name = "destination")
+
     private String destination;
-    @Column(name = "time_of_departure")
-    private Date timeOfDeparture;
-    @Column(name = "type")
-    private String type;
 
+    private String date;
 
-    public Trip() {
-    }
+    @Column(name = "triptype")
+    private String tripType;
 
-    public Date getTimeOfDeparture() {
-        return timeOfDeparture;
-    }
+    public Trip() {}
 
-    public void setTimeOfDeparture(Date timeOfDeparture) {
-        this.timeOfDeparture = timeOfDeparture;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
+    public Trip(String departure, String destination, String date, String tripType) {
+        this.departure = departure;
+        this.destination = destination;
+        this.date = date;
+        this.tripType = tripType;
     }
 
     public int getId() {
@@ -61,5 +50,27 @@ public class Trip {
 
     public void setDestination(String destination) {
         this.destination = destination;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getTripType() {
+        return tripType;
+    }
+
+    public void setTripType(String tripType) {
+        this.tripType = tripType;
+    }
+
+    @Override
+    public String toString() {
+        return "Departure: " + departure + ", Destination: " + destination +
+                ", Time: " + date + ", Type: " + tripType;
     }
 }
