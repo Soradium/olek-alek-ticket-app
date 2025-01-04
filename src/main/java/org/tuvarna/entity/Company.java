@@ -1,6 +1,7 @@
 package org.tuvarna.entity;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 @Entity
 @Table(name = "companies")
@@ -13,7 +14,7 @@ public class Company {
     private String name;
     @Column(name = "trips_available")
     @OneToMany(mappedBy = "id")
-    private List<Trip> tripsAvailable;
+    private List<Trip> tripsAvailable = new ArrayList<>();
 
     public Company() {
     }

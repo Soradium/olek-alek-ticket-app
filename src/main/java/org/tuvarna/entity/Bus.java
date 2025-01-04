@@ -8,10 +8,28 @@ import java.util.List;
 @Table
 public class Bus {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "bus_id")
     private int id;
-    @OneToMany()
+    @OneToMany(mappedBy = "bus")
     @JoinColumn(name = "bus_id")
     private List<Seat> seats;
+
+    public Bus() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public List<Seat> getSeats() {
+        return seats;
+    }
+
+    public void setSeats(List<Seat> seats) {
+        this.seats = seats;
+    }
 }

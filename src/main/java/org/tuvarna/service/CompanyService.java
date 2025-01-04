@@ -1,11 +1,16 @@
-package org.tuvarna.entity;
+package org.tuvarna.service;
 
 import org.hibernate.Session;
+import org.tuvarna.entity.Cashier;
+import org.tuvarna.entity.Company;
+import org.tuvarna.entity.Distributor;
+import org.tuvarna.entity.Trip;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Administrator {
+public class CompanyService {
+    // RE-MAKE IT ALL !!!!! ///
     public void createCompany(Session session, String name) {
         session.beginTransaction();
         List<Company> companyList = session.createQuery("from Company where Company.name=name").getResultList();

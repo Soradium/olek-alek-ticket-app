@@ -8,6 +8,4 @@ public interface CompanyDAO {
     Company getCompanyByName(String name);
     List<Company> getCompanies();
     void addCompany(Company company);
-    void updateCompany(Company company);
-    void deleteCompany(Company company);
 }

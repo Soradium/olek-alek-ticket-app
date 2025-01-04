@@ -1,0 +1,2 @@
+Fix the distributor relations - finish it
+Write cashier

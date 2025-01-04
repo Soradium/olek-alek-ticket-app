@@ -10,6 +10,25 @@ public class Seat {
     @Column(name = "seat_id")
     private int id;
 
-    @ManyToOne()
-    private Bus bus;
+    @Column(name = "seat_availability")
+    private boolean availability;
+
+    public Seat() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public boolean isAvailability() {
+        return availability;
+    }
+
+    public void setAvailability(boolean availability) {
+        this.availability = availability;
+    }
 }
