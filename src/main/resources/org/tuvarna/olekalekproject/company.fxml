@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="org.tuvarna.olekalekproject.CompanyController">
+    <VBox alignment="CENTER" spacing="20" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+
+        <HBox alignment="CENTER" spacing="10">
+            <TextField fx:id="departure" promptText="Enter Departure Location" />
+            <TextField fx:id="destination" promptText="Enter Destination" />
+            <TextField fx:id="timeOfDeparture" promptText="Enter Time of Departure (YYYY-MM-DD)" />
+            <TextField fx:id="tripType" promptText="Enter Trip Type" />
+            <Button onAction="#addTrip" text="Add Trip" />
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="10">
+            <Label text="Available Trips" />
+        </HBox>
+        <ListView fx:id="tripListView" accessibleText="rerer" prefHeight="200" prefWidth="300" />
+
+        <HBox alignment="CENTER" spacing="10">
+            <Label text="Company Rating: " />
+            <Label fx:id="ratingLabel" />
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="10">
+            <TextField fx:id="busNumber" promptText="Enter Bus Number" />
+            <Button onAction="#addBus" text="Add Bus" />
+        </HBox>
+    </VBox>
+</AnchorPane>
