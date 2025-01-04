@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tuvarna.olekalekproject.AdministratorController">
+
+    <VBox alignment="CENTER" spacing="20" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0">
+
+        <HBox spacing="10" alignment="CENTER">
+            <TextField fx:id="companyName" promptText="Enter Company Name"/>
+            <Button text="Insert Company" onAction="#insertCompany"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER">
+            <TextField fx:id="distributorName" promptText="Enter Distributor Name"/>
+            <Button text="Insert Distributor" onAction="#insertDistributor"/>
+        </HBox>
+
+    </VBox>
+</AnchorPane>

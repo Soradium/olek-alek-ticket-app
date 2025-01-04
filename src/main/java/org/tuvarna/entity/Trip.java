@@ -1,17 +1,40 @@
-package org.tuvarna.user;
+package org.tuvarna.entity;
 
-public class Company {
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "trip")
+public class Trip {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     private String departure;
+
     private String destination;
+
     private String date;
+
+    @Column(name = "triptype")
     private String tripType;
 
-    public Company(String departure, String destination, String date, String tripType) {
+    public Trip() {}
+
+    public Trip(String departure, String destination, String date, String tripType) {
         this.departure = departure;
         this.destination = destination;
         this.date = date;
         this.tripType = tripType;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getDeparture() {
@@ -44,5 +67,11 @@ public class Company {
 
     public void setTripType(String tripType) {
         this.tripType = tripType;
+    }
+
+    @Override
+    public String toString() {
+        return "Departure: " + departure + ", Destination: " + destination +
+                ", Time: " + date + ", Type: " + tripType;
     }
 }
