@@ -9,9 +9,11 @@ module org.tuvarna.olekalekproject {
     requires com.dlsc.formsfx;
     requires org.kordamp.ikonli.javafx;
     requires javafx.graphics;
-
+    requires java.naming;
 
     opens org.tuvarna.olekalekproject to javafx.fxml;
     opens org.tuvarna.entity to org.hibernate.orm.core;
     exports org.tuvarna.olekalekproject;
+    exports org.tuvarna.controller;
+    opens org.tuvarna.controller to javafx.fxml;
 }

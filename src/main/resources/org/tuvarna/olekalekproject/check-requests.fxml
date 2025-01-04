@@ -17,10 +17,14 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tuvarna.olekalekproject.RequestPanelController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tuvarna.controller.RequestPanelController">
     <VBox alignment="CENTER" spacing="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="10" AnchorPane.bottomAnchor="10">
-        <Label text="Pending Requests" style="-fx-font-size: 18px;"/>
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Pending Requests" style="-fx-font-size: 18px;"/>
+            <Button text="Reload" onAction="#reloadRequests"/>
+        </HBox>
 
+        <!-- Request List -->
         <ListView fx:id="requestListView" prefHeight="400" prefWidth="600" />
     </VBox>
 </AnchorPane>

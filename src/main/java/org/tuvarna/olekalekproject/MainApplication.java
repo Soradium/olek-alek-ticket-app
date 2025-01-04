@@ -12,6 +12,7 @@ import java.io.IOException;
 public class MainApplication extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
+
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("company.fxml"));
 
         Session session = new Configuration()
@@ -27,6 +28,7 @@ public class MainApplication extends javafx.application.Application {
 
         CompanyController companyController = fxmlLoader.getController();
         companyController.setSession(session);
+
     }
 
     public static void main(String[] args) {

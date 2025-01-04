@@ -1,6 +1,5 @@
 package org.tuvarna.entity;
 
-
 import jakarta.persistence.*;
 
 @Entity
