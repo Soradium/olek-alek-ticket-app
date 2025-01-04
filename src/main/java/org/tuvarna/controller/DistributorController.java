@@ -1,4 +1,4 @@
-package org.tuvarna.olekalekproject;
+package org.tuvarna.controller;
 
 public class DistributorController {
 }

@@ -1,11 +1,13 @@
-package org.tuvarna.olekalekproject;
+package org.tuvarna.controller;
+import javafx.fxml.FXML;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MenuStrip {
+public class MenuStripController {
+    @FXML
     private final MenuBar menuBar;
 
     public static class MenuStripControllerBuilder {
@@ -72,18 +74,18 @@ public class MenuStrip {
             return menuBar;
         }
 
-        public MenuStrip build() {
+        public MenuStripController build() {
             companyMenu.getItems().addAll(companies);
             distributorMenu.getItems().addAll(distributors);
             cashierMenu.getItems().addAll(cashiers);
             userMenu.getItems().addAll(users);
             menuBar.getMenus().addAll(companyMenu, distributorMenu, cashierMenu, userMenu, adminMenu);
 
-            return new MenuStrip(this);
+            return new MenuStripController(this);
         }
     }
 
-    private MenuStrip(MenuStripControllerBuilder builder) {
+    private MenuStripController(MenuStripControllerBuilder builder) {
         this.menuBar = builder.getMenuBar();
     }
 
