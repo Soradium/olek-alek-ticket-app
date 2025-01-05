@@ -9,6 +9,7 @@ module org.tuvarna.olekalekproject {
     requires org.kordamp.ikonli.javafx;
     requires javafx.graphics;
     requires java.naming;
+    requires jakarta.transaction;
 
     opens org.tuvarna.olekalekproject to javafx.fxml;
     opens org.tuvarna.entity to org.hibernate.orm.core;

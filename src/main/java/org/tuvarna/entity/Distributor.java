@@ -2,6 +2,7 @@ package org.tuvarna.entity;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -11,12 +12,16 @@ public class Distributor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
-    @Column()
+    @Column
     private String name;
 
-    @OneToMany()
-    @Column()
-    private List<Cashier> cashiers;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "id", cascade = CascadeType.ALL)
+    @Column
+    private List<Cashier> cashiers = new ArrayList<Cashier>();
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "id", cascade = CascadeType.ALL)
+    @Column
+    private List<Ticket> tickets = new ArrayList<>();
 
     public Distributor() {
     }
@@ -40,5 +45,25 @@ public class Distributor {
 
     public void setCashiers(List<Cashier> cashiers) {
         this.cashiers = cashiers;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public List<Ticket> getTickets() {
+        return tickets;
+    }
+
+    public void setTickets(List<Ticket> tickets) {
+        this.tickets = tickets;
+    }
+
+    public void addTicket(Ticket ticket) {
+        this.tickets.add(ticket);
     }
 }

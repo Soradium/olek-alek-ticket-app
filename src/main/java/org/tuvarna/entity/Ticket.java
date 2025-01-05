@@ -22,6 +22,9 @@ public class Ticket {
     @JoinColumn(name = "trip")
     private Trip trip;
 
+    @Column(name = "is_sold")
+    private boolean isSold = false;
+
     public Ticket() {
     }
 
@@ -55,5 +58,13 @@ public class Ticket {
 
     public void setTrip(Trip trip) {
         this.trip = trip;
+    }
+
+    public boolean isSold() {
+        return isSold;
+    }
+
+    public void setSold(boolean sold) {
+        isSold = sold;
     }
 }

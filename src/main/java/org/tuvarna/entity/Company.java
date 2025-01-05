@@ -10,11 +10,19 @@ public class Company {
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @Column
     private String name;
-    @Column(name = "trips_available")
-    @OneToMany(mappedBy = "id")
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "trips_available")
     private List<Trip> tripsAvailable = new ArrayList<>();
+
+    @Column
+    private float rating;
+
+    @Column(name = "total_ratings")
+    private int totalRatings;
 
     public Company() {
     }
@@ -46,5 +54,21 @@ public class Company {
 
     public void setTripsAvailable(List<Trip> tripsAvailable) {
         this.tripsAvailable = tripsAvailable;
+    }
+
+    public float getRating() {
+        return rating;
+    }
+
+    public void setRating(float rating) {
+        this.rating = rating;
+    }
+
+    public int getTotalRatings() {
+        return totalRatings;
+    }
+
+    public void setTotalRatings(int totalRatings) {
+        this.totalRatings = totalRatings;
     }
 }
