@@ -7,7 +7,7 @@ import org.tuvarna.entity.Bus;
 import java.util.List;
 
 public class BusDAOImpl implements BusDAO {
-    private SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
 
     public BusDAOImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
@@ -17,27 +17,50 @@ public class BusDAOImpl implements BusDAO {
     public Bus getBusById(int id) {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
-        Bus bus = session.get(Bus.class, id);
-        session.getTransaction().commit();
-        return bus;
+        try {
+            Bus bus = session.get(Bus.class, id);
+            session.getTransaction().commit();
+            return bus;
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
     }
 
     @Override
     public List<Bus> getBuses() {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
-        List<Bus> buses = session.createQuery("from Bus").getResultList();
-        session.getTransaction().commit();
-        session.close();
-        return buses;
+        try {
+            List<Bus> buses = session.createQuery("from Bus", Bus.class).getResultList();
+            session.getTransaction().commit();
+            return buses;
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
     }
 
     @Override
-    public void addBus(Bus bus) {
+    public Bus addBus(Bus bus) {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
-        session.persist(bus);
-        session.getTransaction().commit();
-        session.close();
+        try {
+            session.persist(bus);
+            session.getTransaction().commit();
+            return bus;
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
     }
 }

@@ -66,4 +66,5 @@ public class Company {
     public void setCurrent_rating(float rating) {
         this.current_rating = rating;
     }
+
 }

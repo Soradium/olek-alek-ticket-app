@@ -14,28 +14,53 @@ public class CompanyDAOImpl implements CompanyDAO {
     }
 
     @Override
-    public Company getCompanyByName(String name) {
+    public Company getCompanyById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
         session.beginTransaction();
-        Company company = session.get(Company.class, name);
-        session.getTransaction().commit();
-        session.close();
-        return company;
-
+        try {
+            Company company = session.get(Company.class, id);
+            session.getTransaction().commit();
+            return company;
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
     }
 
     @Override
     public List<Company> getCompanies() {
         Session session = this.sessionFactory.getCurrentSession();
         session.beginTransaction();
-        List<Company> companyList = session.createQuery("from Company").getResultList();
-        session.getTransaction().commit();
-        session.close();
-        return companyList;
+        try {
+            List<Company> companyList = session.createQuery("from Company", Company.class).getResultList();
+            session.getTransaction().commit();
+            return companyList;
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
     }
 
     @Override
-    public void addCompany(Company company) {
-        sessionFactory.getCurrentSession().persist(company);
+    public Company addCompany(Company company) {
+        Session session = this.sessionFactory.getCurrentSession();
+        session.beginTransaction();
+        try {
+            session.persist(company);
+            session.getTransaction().commit();
+            return company;
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
     }
 }

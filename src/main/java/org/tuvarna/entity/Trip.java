@@ -7,18 +7,24 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "trip")
 public class Trip {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "trip_id")
     private int id;
+
     @Column
     private String departure;
+
     @Column
     private String destination;
+
     @Column(name = "trip_date")
     private LocalDate date;
+
     @Column(name = "type")
     private String tripType;
+
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "company_id")
     private Company company;
