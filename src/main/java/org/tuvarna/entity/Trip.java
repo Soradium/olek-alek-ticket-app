@@ -8,15 +8,16 @@ public class Trip {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "trip_id")
     private int id;
 
     private String departure;
 
     private String destination;
-
+    @Column(name = "trip_date")
     private String date;
 
-    @Column(name = "triptype")
+    @Column(name = "type")
     private String tripType;
 
     public Trip() {}

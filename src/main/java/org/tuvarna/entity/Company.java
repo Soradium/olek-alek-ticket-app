@@ -4,32 +4,45 @@ import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 @Entity
-@Table(name = "companies")
+@Table(name = "company")
 public class Company {
     @Id
-    @Column
+    @Column(name = "company_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column
+    @Column(name = "name")
     private String name;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "trips_available")
-    private List<Trip> tripsAvailable = new ArrayList<>();
+    @Column(name ="current_rating")
+    private float current_rating;
 
-    @Column
-    private float rating;
+    @Column(name = "total_ratings_count")
+    private int totalRatingsCount;
 
-    @Column(name = "total_ratings")
-    private int totalRatings;
+    @Column(name = "total_rating_sum")
+    private int totalRatingsSum;
+
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            mappedBy = "company",
+            fetch = FetchType.EAGER
+    )
+    private List<Bus> bus = new ArrayList<>();
 
     public Company() {
     }
 
     public Company(String name, List<Trip> tripsAvailable) {
         this.name = name;
-        this.tripsAvailable = tripsAvailable;
+    }
+
+    public List<Bus> getBus() {
+        return bus;
+    }
+
+    public void setBus(List<Bus> bus) {
+        this.bus = bus;
     }
 
     public int getId() {
@@ -48,27 +61,29 @@ public class Company {
         this.name = name;
     }
 
-    public List<Trip> getTripsAvailable() {
-        return tripsAvailable;
+    public float getCurrent_rating() {
+        return current_rating;
     }
 
-    public void setTripsAvailable(List<Trip> tripsAvailable) {
-        this.tripsAvailable = tripsAvailable;
+    public void setCurrent_rating(float rating) {
+        this.current_rating = rating;
     }
 
-    public float getRating() {
-        return rating;
+    public int getTotalRatingsCount() {
+        return totalRatingsCount;
     }
 
-    public void setRating(float rating) {
-        this.rating = rating;
+    public void setTotalRatingsCount(int totalRatings) {
+        this.totalRatingsCount = totalRatings;
     }
 
-    public int getTotalRatings() {
-        return totalRatings;
+    public int getTotalRatingsSum() {
+        return totalRatingsSum;
     }
 
-    public void setTotalRatings(int totalRatings) {
-        this.totalRatings = totalRatings;
+    public void setTotalRatingsSum(int totalRatingsSum) {
+        this.totalRatingsSum = totalRatingsSum;
     }
+
+
 }

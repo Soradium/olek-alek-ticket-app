@@ -3,7 +3,7 @@ package org.tuvarna.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "seat")
+@Table(name = "seats")
 public class Seat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

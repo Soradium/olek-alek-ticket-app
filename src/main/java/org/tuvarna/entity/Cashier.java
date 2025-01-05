@@ -10,10 +10,15 @@ import java.util.List;
 public class Cashier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cashier_id")
     private int id;
 
-    @Column
+    @Column(name = "name")
     private String name;
+
+    @ManyToOne
+    @JoinColumn(name ="distributor_id")
+    private Distributor distributor;
 
     public int getId() {
         return id;
@@ -29,5 +34,13 @@ public class Cashier {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Distributor getDistributor() {
+        return distributor;
+    }
+
+    public void setDistributor(Distributor distributor) {
+        this.distributor = distributor;
     }
 }

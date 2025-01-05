@@ -9,12 +9,14 @@ import java.util.List;
 @Table
 public class Bus {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "bus_id")
     private int id;
-    @OneToMany(
-            cascade = CascadeType.ALL,
-            mappedBy = "bus",
-            fetch = FetchType.EAGER)
-    private List<Seat> seats;
+
+
+    @ManyToOne
+    @JoinColumn(name = "company_id")
+    private Company company;
 
     public Bus() {
     }
@@ -27,11 +29,11 @@ public class Bus {
         this.id = id;
     }
 
-    public List<Seat> getSeats() {
-        return seats;
+    public Company getCompany() {
+        return company;
     }
 
-    public void setSeats(List<Seat> seats) {
-        this.seats = seats;
+    public void setCompany(Company company) {
+        this.company = company;
     }
 }
