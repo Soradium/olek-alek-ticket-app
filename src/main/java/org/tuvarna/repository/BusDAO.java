@@ -8,5 +8,5 @@ import java.util.List;
 public interface BusDAO {
     Bus getBusById(int id);
     List<Bus> getBuses();
-    void addBus(Bus bus);
+    Bus addBus(Bus bus);
 }

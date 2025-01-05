@@ -44,4 +44,16 @@ public class Distributor {
     public void setId(int id) {
         this.id = id;
     }
+
+    public List<Cashier> getCashiers() {
+        return cashiers;
+    }
+
+    public void setCashiers(List<Cashier> cashiers) {
+        this.cashiers = cashiers;
+    }
+
+    public void addCashier(Cashier cashier) {
+        this.cashiers.add(cashier);
+    }
 }

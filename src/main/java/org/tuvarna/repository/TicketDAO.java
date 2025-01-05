@@ -8,5 +8,5 @@ import java.util.List;
 public interface TicketDAO {
     Ticket getTicketById(int id);
     List<Ticket> getTickets();
-    void addTicket(Ticket Ticket);
+    Ticket addTicket(Ticket Ticket);
 }

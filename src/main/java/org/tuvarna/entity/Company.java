@@ -35,11 +35,11 @@ public class Company {
         this.name = name;
     }
 
-    public List<Bus> getBus() {
+    public List<Bus> getBuses() {
         return bus;
     }
 
-    public void setBus(List<Bus> bus) {
+    public void setBuses(List<Bus> bus) {
         this.bus = bus;
     }
 
@@ -65,5 +65,17 @@ public class Company {
 
     public void setCurrent_rating(float rating) {
         this.current_rating = rating;
+    }
+
+    public List<Trip> getTrips() {
+        return trips;
+    }
+
+    public void setTrips(List<Trip> trips) {
+        this.trips = trips;
+    }
+
+    public void addTrip(Trip trip) {
+        this.trips.add(trip);
     }
 }

@@ -8,14 +8,14 @@ import java.util.List;
 
 public class TripService {
 
-    private TripDAO tripDAO;
+    private final TripDAO tripDAO;
 
     public TripService(TripDAO tripDAO) {
         this.tripDAO = tripDAO;
     }
 
     public List<Trip> getAllTrips() {
-        return tripDAO.allTrips();
+        return tripDAO.getAllTrips();
     }
 
     public Trip addTrip(Trip trip) {
