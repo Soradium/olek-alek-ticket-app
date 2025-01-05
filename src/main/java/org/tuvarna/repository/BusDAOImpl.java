@@ -9,6 +9,10 @@ import java.util.List;
 public class BusDAOImpl implements BusDAO {
     private SessionFactory sessionFactory;
 
+    public BusDAOImpl(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
     @Override
     public Bus getBusById(int id) {
         Session session = sessionFactory.getCurrentSession();

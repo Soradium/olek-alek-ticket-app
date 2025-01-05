@@ -2,6 +2,8 @@ package org.tuvarna.entity;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 @Entity
 @Table(name = "trip")
 public class Trip {
@@ -13,9 +15,9 @@ public class Trip {
     private String departure;
     @Column
     private String destination;
-    @Column
-    private String date;
-    @Column
+    @Column(name = "trip_date")
+    private LocalDate date;
+    @Column(name = "type")
     private String tripType;
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "company_id")
@@ -24,7 +26,7 @@ public class Trip {
     public Trip() {
     }
 
-    public Trip(String departure, String destination, String date, String tripType) {
+    public Trip(String departure, String destination, LocalDate date, String tripType) {
         this.departure = departure;
         this.destination = destination;
         this.date = date;
@@ -55,11 +57,11 @@ public class Trip {
         this.destination = destination;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
@@ -77,5 +79,16 @@ public class Trip {
 
     public void setCompany(Company company) {
         this.company = company;
+    }
+
+    @Override
+    public String toString() {
+        return "Trip{" +
+                "departure='" + departure + '\'' +
+                ", destination='" + destination + '\'' +
+                ", date=" + date +
+                ", tripType='" + tripType + '\'' +
+                ", company=" + company.getName() +
+                '}';
     }
 }

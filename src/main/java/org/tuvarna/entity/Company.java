@@ -1,5 +1,6 @@
 package org.tuvarna.entity;
 import jakarta.persistence.*;
+import org.controlsfx.control.Rating;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,18 +18,15 @@ public class Company {
     @Column(name ="current_rating")
     private float current_rating;
 
-    @Column(name = "total_ratings_count")
-    private int totalRatingsCount;
-
-    @Column(name = "total_rating_sum")
-    private int totalRatingsSum;
-
     @OneToMany(
             cascade = CascadeType.ALL,
             mappedBy = "company",
             fetch = FetchType.EAGER
     )
     private List<Bus> bus = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "company", fetch = FetchType.EAGER)
+    private List<Trip> trips = new ArrayList<>();
 
     public Company() {
     }
@@ -68,22 +66,4 @@ public class Company {
     public void setCurrent_rating(float rating) {
         this.current_rating = rating;
     }
-
-    public int getTotalRatingsCount() {
-        return totalRatingsCount;
-    }
-
-    public void setTotalRatingsCount(int totalRatings) {
-        this.totalRatingsCount = totalRatings;
-    }
-
-    public int getTotalRatingsSum() {
-        return totalRatingsSum;
-    }
-
-    public void setTotalRatingsSum(int totalRatingsSum) {
-        this.totalRatingsSum = totalRatingsSum;
-    }
-
-
 }

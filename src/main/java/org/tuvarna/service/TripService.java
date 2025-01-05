@@ -10,6 +10,10 @@ public class TripService {
 
     private TripDAO tripDAO;
 
+    public TripService(TripDAO tripDAO) {
+        this.tripDAO = tripDAO;
+    }
+
     public List<Trip> getAllTrips() {
         return tripDAO.allTrips();
     }
