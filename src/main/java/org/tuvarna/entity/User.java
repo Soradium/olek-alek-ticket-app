@@ -15,7 +15,7 @@ public class User {
     private int id;
     @Column
     private String name;
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Ticket> tickets = new ArrayList<>();
 
     public User() {

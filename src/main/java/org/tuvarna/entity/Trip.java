@@ -18,6 +18,7 @@ public class Trip {
     @Column
     private String tripType;
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "company_id")
     private Company company;
 
     public Trip() {

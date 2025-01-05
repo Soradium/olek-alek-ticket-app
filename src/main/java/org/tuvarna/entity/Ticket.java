@@ -13,7 +13,7 @@ public class Ticket {
     @JoinColumn(name = "user_id")
     private User user;
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "seat_id")
+    @JoinColumn(name = "distributor_id")
     private Distributor distributor;
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "seat_id")
