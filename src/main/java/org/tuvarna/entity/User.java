@@ -15,7 +15,7 @@ public class User {
     private int id;
     @Column
     private String name;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Ticket> tickets = new ArrayList<>();
 
     public User() {
