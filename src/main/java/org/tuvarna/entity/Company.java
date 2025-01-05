@@ -17,12 +17,6 @@ public class Company {
     @Column(name ="current_rating")
     private float current_rating;
 
-    @Column(name = "total_ratings_count")
-    private int totalRatingsCount;
-
-    @Column(name = "total_rating_sum")
-    private int totalRatingsSum;
-
     @OneToMany(
             cascade = CascadeType.ALL,
             mappedBy = "company",
@@ -68,22 +62,5 @@ public class Company {
     public void setCurrent_rating(float rating) {
         this.current_rating = rating;
     }
-
-    public int getTotalRatingsCount() {
-        return totalRatingsCount;
-    }
-
-    public void setTotalRatingsCount(int totalRatings) {
-        this.totalRatingsCount = totalRatings;
-    }
-
-    public int getTotalRatingsSum() {
-        return totalRatingsSum;
-    }
-
-    public void setTotalRatingsSum(int totalRatingsSum) {
-        this.totalRatingsSum = totalRatingsSum;
-    }
-
 
 }

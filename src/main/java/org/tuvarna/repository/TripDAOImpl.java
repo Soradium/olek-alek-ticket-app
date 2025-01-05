@@ -18,16 +18,36 @@ public class TripDAOImpl implements TripDAO {
     }
 
     @Override
-    public List<Trip> allTrips() {
+    public Trip getTripById(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        session.beginTransaction();
+        try {
+            Trip trip = session.get(Trip.class, id);
+            session.getTransaction().commit();
+            return trip;
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+        return null;
+    }
+
+    @Override
+    public List<Trip> getAllTrips() {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         try {
             List<Trip> allTrips = session.createQuery("from Trip", Trip.class).getResultList();
+            session.getTransaction().commit();
             return allTrips;
         } catch (Exception e) {
+            session.getTransaction().rollback();
             e.printStackTrace();
         }finally {
-            session.getTransaction().commit();
+            session.close();
         }
         return null;
     }
@@ -41,7 +61,10 @@ public class TripDAOImpl implements TripDAO {
             session.getTransaction().commit();
             return trip;
         }catch (Exception e) {
+            session.getTransaction().rollback();
             e.printStackTrace();
+        }finally {
+            session.close();
         }
         return null;
     }

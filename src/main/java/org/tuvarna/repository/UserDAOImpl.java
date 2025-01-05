@@ -14,28 +14,53 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public User getUserByName(String name) {
-        Session session = this.sessionFactory.getCurrentSession();
+    public User getUserById(int id) {
+        Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
-        User user = session.get(User.class, name);
-        session.getTransaction().commit();
-        session.close();
-        return user;
-
+        try {
+            User user = session.get(User.class, id);
+            session.getTransaction().commit();
+            return user;
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
     }
 
     @Override
     public List<User> getUsers() {
         Session session = this.sessionFactory.getCurrentSession();
         session.beginTransaction();
-        List<User> userList = session.createQuery("from User").getResultList();
-        session.getTransaction().commit();
-        session.close();
-        return userList;
+        try {
+            List<User> userList = session.createQuery("from User", User.class).getResultList();
+            session.getTransaction().commit();
+            return userList;
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
     }
 
     @Override
-    public void addUser(User user) {
-        sessionFactory.getCurrentSession().persist(user);
+    public User addUser(User user) {
+        Session session = this.sessionFactory.getCurrentSession();
+        session.beginTransaction();
+        try {
+            session.persist(user);
+            session.getTransaction().commit();
+            return user;
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
     }
 }

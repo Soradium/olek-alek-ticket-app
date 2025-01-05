@@ -5,7 +5,7 @@ import org.tuvarna.entity.Company;
 import java.util.List;
 
 public interface CompanyDAO {
-    Company getCompanyByName(String name);
+    Company getCompanyById(int id);
     List<Company> getCompanies();
-    void addCompany(Company company);
+    Company addCompany(Company company);
 }
