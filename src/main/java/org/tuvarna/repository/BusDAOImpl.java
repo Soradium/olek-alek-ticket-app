@@ -13,10 +13,6 @@ public class BusDAOImpl implements BusDAO {
         this.sessionFactory = sessionFactory;
     }
 
-    public BusDAOImpl(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
-
     @Override
     public Bus getBusById(int id) {
         Session session = sessionFactory.getCurrentSession();

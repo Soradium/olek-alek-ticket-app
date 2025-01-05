@@ -15,7 +15,7 @@ public class TripService {
     }
 
     public List<Trip> getAllTrips() {
-        return tripDAO.allTrips();
+        return tripDAO.getAllTrips();
     }
 
     public Trip addTrip(Trip trip) {
