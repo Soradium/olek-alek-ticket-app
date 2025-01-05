@@ -5,11 +5,30 @@ import org.tuvarna.entity.Cashier;
 import org.tuvarna.entity.Company;
 import org.tuvarna.entity.Distributor;
 import org.tuvarna.entity.Trip;
+import org.tuvarna.repository.CompanyDAO;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CompanyService {
+    private CompanyDAO companyDAO;
+
+    public CompanyService(CompanyDAO companyDAO) {
+        this.companyDAO = companyDAO;
+    }
+
+    public List<Company> getAllCompanies() {
+        return companyDAO.getCompanies();
+    }
+
+    public Company getCompanyByName(String name) {
+        return companyDAO.getCompanyByName(name);
+    }
+
+    public void addCompany(Company company) {
+        companyDAO.addCompany(company);
+    }
+
     // RE-MAKE IT ALL !!!!! ///
     public void createCompany(Session session, String name) {
         session.beginTransaction();

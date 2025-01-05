@@ -8,7 +8,7 @@ import java.util.List;
 
 public class TripService {
 
-    private TripDAO tripDAO = new TripDAOImpl();
+    private TripDAO tripDAO;
 
     public List<Trip> getAllTrips() {
         return tripDAO.allTrips();

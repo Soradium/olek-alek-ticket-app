@@ -1,7 +1,6 @@
 package org.tuvarna.entity;
 
 import jakarta.persistence.*;
-import jakarta.transaction.Transactional;
 
 import java.util.List;
 

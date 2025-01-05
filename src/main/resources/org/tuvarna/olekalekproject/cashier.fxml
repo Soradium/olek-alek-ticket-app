@@ -8,7 +8,7 @@
 
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="org.tuvarna.controller.CashierController">
-
+    <Label text="Cashier Name" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
     <fx:include source="check-requests.fxml"/>
 </VBox>
 
