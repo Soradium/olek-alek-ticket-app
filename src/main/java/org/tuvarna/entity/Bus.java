@@ -1,6 +1,7 @@
 package org.tuvarna.entity;
 
 import jakarta.persistence.*;
+import jakarta.transaction.Transactional;
 
 import java.util.List;
 
@@ -8,10 +9,11 @@ import java.util.List;
 @Table
 public class Bus {
     @Id
-    @Column(name = "bus_id")
     private int id;
-    @OneToMany(mappedBy = "bus")
-    @JoinColumn(name = "bus_id")
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            mappedBy = "bus",
+            fetch = FetchType.EAGER)
     private List<Seat> seats;
 
     public Bus() {

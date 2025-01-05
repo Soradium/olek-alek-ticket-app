@@ -7,11 +7,15 @@ import jakarta.persistence.*;
 public class Seat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "seat_id")
+    @Column
     private int id;
 
-    @Column(name = "seat_availability")
+    @Column
     private boolean availability;
+
+    @ManyToOne
+    @JoinColumn(name = "bus_id")
+    private Bus bus;
 
     public Seat() {
     }

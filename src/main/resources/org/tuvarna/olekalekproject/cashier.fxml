@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.tuvarna.controller.HelloController">
+      fx:controller="org.tuvarna.controller.CashierController">
 
     <fx:include source="check-requests.fxml"/>
 </VBox>

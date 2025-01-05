@@ -23,6 +23,7 @@ public class CompanyController {
     private TextField timeOfDeparture;
     @FXML
     private TextField tripType;
+    private String currentCompanyChosen;
 
     private TripService tripService = new TripService();
     private ObservableList<Trip> trips = FXCollections.observableArrayList();
@@ -48,5 +49,9 @@ public class CompanyController {
         tripListView.getItems().clear();
         trips.addAll(tripService.getAllTrips());
         tripListView.setItems(trips);
+    }
+
+    public void setCurrentCompanyChosen(String currentCompanyChosen) {
+        this.currentCompanyChosen = currentCompanyChosen;
     }
 }
