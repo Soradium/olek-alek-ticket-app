@@ -7,7 +7,8 @@ import org.tuvarna.repository.UserDAO;
 import java.util.List;
 
 public class UserService {
-    private UserDAO userDAO;
+
+    private final UserDAO userDAO;
 
     public UserService(UserDAO userDAO) {
         this.userDAO = userDAO;
@@ -26,5 +27,4 @@ public class UserService {
     public List<Ticket> getTicketsByUsername(String name) {
         return getUserByName(name).getTickets();
     }
-
 }

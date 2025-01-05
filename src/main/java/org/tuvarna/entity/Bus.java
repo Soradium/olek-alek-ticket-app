@@ -12,7 +12,6 @@ public class Bus {
     @Column(name = "bus_id")
     private int id;
 
-
     @ManyToOne
     @JoinColumn(name = "company_id")
     private Company company;
