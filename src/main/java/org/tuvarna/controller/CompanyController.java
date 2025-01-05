@@ -34,7 +34,8 @@ public class CompanyController {
         String destinationText = destination.getText();
         String timeOfDepartureText = timeOfDeparture.getText();
         String tripTypeText = tripType.getText();
-        trips.add(tripService.addTrip(new Trip(destinationText, departureText, timeOfDepartureText, tripTypeText)));
+        //TODO: Fix trip adding parameters down below
+        trips.add(tripService.addTrip(new Trip()));
         departure.clear();
         destination.clear();
         timeOfDeparture.clear();
