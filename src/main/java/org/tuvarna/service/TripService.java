@@ -8,7 +8,7 @@ import java.util.List;
 
 public class TripService {
 
-    private TripDAO tripDAO;
+    private final TripDAO tripDAO;
 
     public TripService(TripDAO tripDAO) {
         this.tripDAO = tripDAO;
