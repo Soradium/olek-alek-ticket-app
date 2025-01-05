@@ -6,12 +6,15 @@ import javafx.stage.Stage;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.tuvarna.controller.AdministratorController;
 import org.tuvarna.controller.CompanyController;
 import org.tuvarna.controller.UserController;
 import org.tuvarna.entity.*;
 import org.tuvarna.repository.BusDAOImpl;
+import org.tuvarna.repository.CompanyDAOImpl;
 import org.tuvarna.repository.TripDAOImpl;
 import org.tuvarna.service.BusService;
+import org.tuvarna.service.CompanyService;
 import org.tuvarna.service.TripService;
 
 import java.io.IOException;
@@ -39,13 +42,17 @@ public class MainApplication extends javafx.application.Application {
         stage.setScene(scene);
         stage.show();
 
-        TripDAOImpl tripDAO = new TripDAOImpl();
-        BusDAOImpl busDAO = new BusDAOImpl(sessionFactory);
-        tripDAO.setSessionFactory(sessionFactory);
+        TripDAOImpl tripDAO = new TripDAOImpl(sessionFactory);
+        CompanyDAOImpl companyDAO = new CompanyDAOImpl(sessionFactory);
+
         TripService tripService = new TripService(tripDAO);
-        BusService busService = new BusService(busDAO);
-        CompanyController companyController = fxmlLoader.getController();
-        companyController.setTripService(tripService, busService);
+        CompanyService companyService = new CompanyService(companyDAO);
+
+        CompanyController companyController = new CompanyController();
+        companyController.setTripService(tripService);
+
+        AdministratorController administratorController = new AdministratorController();
+        administratorController.setCompanyService(companyService);
     }
 
     public static void main(String[] args) {

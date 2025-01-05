@@ -13,7 +13,7 @@ public class TripDAOImpl implements TripDAO {
 
     private static SessionFactory sessionFactory;
 
-    public void setSessionFactory(SessionFactory sessionFactory) {
+    public TripDAOImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
