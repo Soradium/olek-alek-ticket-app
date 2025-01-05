@@ -2,19 +2,27 @@ package org.tuvarna.entity;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
-@Table(name = "user")
+@Table(name = "app_user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private int id;
-
-    @ManyToOne
-    @JoinColumn(name = "tickets_ticket_id")
-    private Ticket[]tickets = new Ticket[5];
+    @Column
+    private String name;
+    //Tickets size <= 5
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Ticket> tickets = new ArrayList<>();
 
     public User() {
+    }
+
+    public User(String name) {
+        this.name = name;
     }
 
     public int getId() {
@@ -25,16 +33,23 @@ public class User {
         this.id = id;
     }
 
-    public Ticket[] getTickets() {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Ticket> getTickets() {
         return tickets;
     }
 
-    public void setTickets(Ticket[] tickets) {
+    public void setTickets(List<Ticket> tickets) {
         this.tickets = tickets;
     }
 
     public void addTicket(Ticket ticket) {
-        this.tickets[this.tickets.length - 1] = ticket;
+        this.tickets.add(ticket);
     }
-
 }
