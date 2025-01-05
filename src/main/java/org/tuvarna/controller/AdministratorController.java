@@ -1,16 +1,20 @@
 package org.tuvarna.controller;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
 import org.hibernate.Session;
 import org.tuvarna.entity.Cashier;
 import org.tuvarna.entity.Company;
 import org.tuvarna.entity.Distributor;
 import org.tuvarna.entity.Trip;
+import org.tuvarna.service.CompanyService;
+import org.tuvarna.service.TripService;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AdministratorController {
-
 
     public void createCompany(Session session, String name) {
         session.beginTransaction();
@@ -46,5 +50,14 @@ public class AdministratorController {
         session.beginTransaction();
         session.createQuery("delete from Distributor where Distributor.name=name").executeUpdate();
         session.getTransaction().commit();
+    }
+
+
+    public void insertCompany(ActionEvent actionEvent) {
+
+    }
+
+    public void insertDistributor(ActionEvent actionEvent) {
+
     }
 }
