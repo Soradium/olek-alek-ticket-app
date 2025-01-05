@@ -5,7 +5,7 @@ import org.tuvarna.entity.User;
 import java.util.List;
 
 public interface UserDAO {
-    User getUserByName(String name);
+    User getUserById(int id);
     List<User> getUsers();
-    void addUser(User User);
+    User addUser(User User);
 }

@@ -8,12 +8,15 @@ import java.util.List;
 @Entity
 @Table(name = "app_user")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private int id;
+
     @Column
     private String name;
+
     //Tickets size <= 5
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Ticket> tickets = new ArrayList<>();

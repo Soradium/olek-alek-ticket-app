@@ -14,28 +14,53 @@ public class DistributorDAOImpl implements DistributorDAO {
     }
 
     @Override
-    public Distributor getDistributorByName(String name) {
+    public Distributor getDistributorById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
         session.beginTransaction();
-        Distributor distributor = session.get(Distributor.class, name);
-        session.getTransaction().commit();
-        session.close();
-        return distributor;
-
+        try {
+            Distributor distributor = session.get(Distributor.class, id);
+            session.getTransaction().commit();
+            return distributor;
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
     }
 
     @Override
     public List<Distributor> getDistributors() {
         Session session = this.sessionFactory.getCurrentSession();
         session.beginTransaction();
-        List<Distributor> distributorList = session.createQuery("from Distributor").getResultList();
-        session.getTransaction().commit();
-        session.close();
-        return distributorList;
+        try {
+            List<Distributor> distributorList = session.createQuery("from Distributor", Distributor.class).getResultList();
+            session.getTransaction().commit();
+            return distributorList;
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
     }
 
     @Override
-    public void addDistributor(Distributor distributor) {
-        sessionFactory.getCurrentSession().persist(distributor);
+    public Distributor addDistributor(Distributor distributor) {
+        Session session = this.sessionFactory.getCurrentSession();
+        session.beginTransaction();
+        try {
+            session.persist(distributor);
+            session.getTransaction().commit();
+            return distributor;
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
     }
 }

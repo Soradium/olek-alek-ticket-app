@@ -22,7 +22,13 @@ public class CompanyService {
     }
 
     public Company getCompanyByName(String name) {
-        return companyDAO.getCompanyByName(name);
+        return companyDAO.getCompanies().stream()
+                .filter(c -> c.getName().equals(name))
+                .findFirst().orElse(null);
+    }
+
+    public Company getCompanyById(int id) {
+        return companyDAO.getCompanyById(id);
     }
 
     public void addCompany(Company company) {

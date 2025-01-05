@@ -1,8 +1,5 @@
 package org.tuvarna.repository;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.Query;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.tuvarna.entity.Cashier;
@@ -17,29 +14,53 @@ public class CashierDAOImpl implements CashierDAO {
     }
 
     @Override
-    public Cashier getCashierByName(String name) {
-        Session session = this.sessionFactory.getCurrentSession();
+    public Cashier getCashierById(int id) {
+        Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
-        Cashier cashier = session.get(Cashier.class, name);
-        session.getTransaction().commit();
-        session.close();
-        return cashier;
-
+        try {
+            Cashier cashier = session.get(Cashier.class, id);
+            session.getTransaction().commit();
+            return cashier;
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
     }
 
     @Override
-    public List<Cashier> getCompanies() {
-        Session session = this.sessionFactory.getCurrentSession();
+    public List<Cashier> getCashiers() {
+        Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
-        List<Cashier> cashierList = session.createQuery("from Cashier").getResultList();
-        session.getTransaction().commit();
-        session.close();
-        return cashierList;
+        try {
+            List<Cashier> cashierList = session.createQuery("from Cashier", Cashier.class).getResultList();
+            session.getTransaction().commit();
+            return cashierList;
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
     }
 
     @Override
-    public void addCashier(Cashier Cashier) {
-        sessionFactory.getCurrentSession().persist(Cashier);
+    public Cashier addCashier(Cashier cashier) {
+        Session session = sessionFactory.getCurrentSession();
+        session.beginTransaction();
+        try {
+            session.persist(cashier);
+            session.getTransaction().commit();
+            return cashier;
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
     }
-
 }
