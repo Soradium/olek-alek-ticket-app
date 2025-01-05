@@ -5,21 +5,23 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "trip")
 public class Trip {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "trip_id")
     private int id;
-
+    @Column
     private String departure;
-
+    @Column
     private String destination;
-
+    @Column
     private String date;
-
-    @Column(name = "triptype")
+    @Column
     private String tripType;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Company company;
 
-    public Trip() {}
+    public Trip() {
+    }
 
     public Trip(String departure, String destination, String date, String tripType) {
         this.departure = departure;
@@ -68,9 +70,11 @@ public class Trip {
         this.tripType = tripType;
     }
 
-    @Override
-    public String toString() {
-        return "Departure: " + departure + ", Destination: " + destination +
-                ", Time: " + date + ", Type: " + tripType;
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 }
