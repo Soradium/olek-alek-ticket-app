@@ -31,7 +31,7 @@ public class Company {
     public Company() {
     }
 
-    public Company(String name, List<Trip> tripsAvailable) {
+    public Company(String name) {
         this.name = name;
     }
 

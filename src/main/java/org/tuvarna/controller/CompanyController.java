@@ -33,9 +33,8 @@ public class CompanyController {
     private TripService tripService;
     private BusService busService;
 
-    public void setTripService(TripService tripService, BusService busService) {
+    public void setTripService(TripService tripService) {
         this.tripService = tripService;
-        this.busService = busService;
     }
 
     private ObservableList<Trip> trips = FXCollections.observableArrayList();
