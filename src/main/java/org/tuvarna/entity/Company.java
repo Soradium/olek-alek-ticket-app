@@ -1,6 +1,5 @@
 package org.tuvarna.entity;
 import jakarta.persistence.*;
-import org.controlsfx.control.Rating;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +15,7 @@ public class Company {
     private String name;
 
     @Column(name ="current_rating")
-    private float current_rating;
+    private float currentRating;
 
     @OneToMany(
             cascade = CascadeType.ALL,
@@ -59,12 +58,12 @@ public class Company {
         this.name = name;
     }
 
-    public float getCurrent_rating() {
-        return current_rating;
+    public float getCurrentRating() {
+        return currentRating;
     }
 
-    public void setCurrent_rating(float rating) {
-        this.current_rating = rating;
+    public void setCurrentRating(float rating) {
+        this.currentRating = rating;
     }
 
     public List<Trip> getTrips() {
