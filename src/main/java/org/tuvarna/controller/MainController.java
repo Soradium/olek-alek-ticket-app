@@ -116,6 +116,7 @@ public class MainController implements Subject, Observer {
             company = companyLoader.load();
             companyController = companyLoader.getController();
             companyController.setTripService(tripService);
+            companyController.setBusService(busService);
             companyController.setCompanyService(companyService);
 
             FXMLLoader cashierLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/cashier.fxml"));

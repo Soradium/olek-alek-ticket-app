@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-@Table
+@Table(name = "bus")
 public class Bus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,6 +17,10 @@ public class Bus {
     private Company company;
 
     public Bus() {
+    }
+
+    public Bus(Company company) {
+        this.company = company;
     }
 
     public int getId() {
