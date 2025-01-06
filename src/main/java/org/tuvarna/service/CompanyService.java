@@ -1,35 +1,34 @@
 package org.tuvarna.service;
 
-import org.hibernate.Session;
 import org.tuvarna.entity.*;
-import org.tuvarna.repository.CompanyDAO;
+import org.tuvarna.factories.FactoryDAO;
+import org.tuvarna.repository.TableDAO;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class CompanyService {
 
-    private final CompanyDAO companyDAO;
+    private final TableDAO<Company> companyDAO;
 
-    public CompanyService(CompanyDAO companyDAO) {
-        this.companyDAO = companyDAO;
+    public CompanyService() {
+        this.companyDAO = FactoryDAO.getInstance().getDao(Company.class);
     }
 
     public List<Company> getAllCompanies() {
-        return companyDAO.getCompanies();
+        return companyDAO.findAll();
     }
 
     public Company getCompanyByName(String name) {
-        return companyDAO.getCompanies().stream()
+        return companyDAO.findAll().stream()
                 .filter(c -> c.getName().equals(name))
                 .findFirst().orElse(null);
     }
 
     public Company getCompanyById(int id) {
-        return companyDAO.getCompanyById(id);
+        return companyDAO.findById(id);
     }
 
     public Company addCompany(Company company) {
-        return companyDAO.addCompany(company);
+        return companyDAO.save(company);
     }
 }

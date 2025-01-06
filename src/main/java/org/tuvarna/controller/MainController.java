@@ -1,11 +1,8 @@
 package org.tuvarna.controller;
 
-import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
 import javafx.scene.layout.BorderPane;
 import org.hibernate.SessionFactory;
 import org.tuvarna.entity.Cashier;
@@ -16,7 +13,7 @@ import org.tuvarna.observer.Observer;
 import org.tuvarna.observer.Subject;
 import org.tuvarna.repository.*;
 import org.tuvarna.service.*;
-import org.tuvarna.singleton.DatabaseSingleton;
+import org.tuvarna.database.DatabaseSingleton;
 
 import java.util.List;
 
@@ -57,14 +54,6 @@ public class MainController implements Subject, Observer {
 
     private String selectedMenuItem;
 
-    private TripDAO tripDAO;
-    private CompanyDAO companyDAO;
-    private BusDAO busDAO;
-    private DistributorDAO distributorDAO;
-    private TicketDAO ticketDAO;
-    private CashierDAO cashierDAO;
-    private UserDAO userDAO;
-
     private TripService tripService;
     private CompanyService companyService;
     private BusService busService;
@@ -77,26 +66,18 @@ public class MainController implements Subject, Observer {
 
         SessionFactory sessionFactory = DatabaseSingleton.getInstance().getSessionFactory();
 
-        tripDAO = new TripDAOImpl(sessionFactory);
-        companyDAO = new CompanyDAOImpl(sessionFactory);
-        busDAO = new BusDAOImpl(sessionFactory);
-        distributorDAO = new DistributorDAOImpl(sessionFactory);
-        ticketDAO = new TicketDAOImpl(sessionFactory);
-        cashierDAO = new CashierDAOImpl(sessionFactory);
-        userDAO = new UserDAOImpl(sessionFactory);
+        tripService = new TripService();
+        companyService = new CompanyService();
+        busService = new BusService();
+        distributorService = new DistributorService();
+        ticketService = new TicketService();
+        cashierService = new CashierService();
+        userService = new UserService();
 
-        tripService = new TripService(tripDAO);
-        companyService = new CompanyService(companyDAO);
-        busService = new BusService(busDAO);
-        distributorService = new DistributorService(distributorDAO);
-        ticketService = new TicketService(ticketDAO);
-        cashierService = new CashierService(cashierDAO);
-        userService = new UserService(userDAO);
-
-        List<Cashier> cashiers = cashierDAO.getCashiers();
-        List<User> users = userDAO.getUsers();
-        List<Company> companies = companyDAO.getCompanies();
-        List<Distributor> distributors = distributorDAO.getDistributors();
+        List<Cashier> cashiers = cashierService.getAllCashiers();
+        List<User> users = userService.getAllUsers();
+        List<Company> companies = companyService.getAllCompanies();
+        List<Distributor> distributors = distributorService.getAllDistributors();
 
         menuStrip = new MenuStripSelector
                 .MenuStripSelectorBuilder()
@@ -120,6 +101,7 @@ public class MainController implements Subject, Observer {
             FXMLLoader cashierLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/cashier.fxml"));
             cashier = cashierLoader.load();
             cashierController = cashierLoader.getController();
+            cashierController.setCashierService(cashierService);
 
             FXMLLoader requestPanelLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/check-requests.fxml"));
             checkRequests = requestPanelLoader.load();

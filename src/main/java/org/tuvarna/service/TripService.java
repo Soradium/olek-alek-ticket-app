@@ -1,24 +1,24 @@
 package org.tuvarna.service;
 
 import org.tuvarna.entity.Trip;
-import org.tuvarna.repository.TripDAO;
-import org.tuvarna.repository.TripDAOImpl;
+import org.tuvarna.factories.FactoryDAO;
+import org.tuvarna.repository.TableDAO;
 
 import java.util.List;
 
 public class TripService {
 
-    private final TripDAO tripDAO;
+    private final TableDAO<Trip> tripDAO;
 
-    public TripService(TripDAO tripDAO) {
-        this.tripDAO = tripDAO;
+    public TripService() {
+        this.tripDAO = FactoryDAO.getInstance().getDao(Trip.class);
     }
 
     public List<Trip> getAllTrips() {
-        return tripDAO.getAllTrips();
+        return tripDAO.findAll();
     }
 
     public Trip addTrip(Trip trip) {
-        return tripDAO.addTrip(trip);
+        return tripDAO.save(trip);
     }
 }

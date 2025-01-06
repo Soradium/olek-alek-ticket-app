@@ -6,7 +6,7 @@ import org.tuvarna.entity.Bus;
 
 import java.util.List;
 
-public class BusDAOImpl implements BusDAO {
+public class BusDAOImpl implements TableDAO<Bus> {
     private final SessionFactory sessionFactory;
 
     public BusDAOImpl(SessionFactory sessionFactory) {
@@ -14,7 +14,7 @@ public class BusDAOImpl implements BusDAO {
     }
 
     @Override
-    public Bus getBusById(int id) {
+    public Bus findById(int id) {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         try {
@@ -31,7 +31,7 @@ public class BusDAOImpl implements BusDAO {
     }
 
     @Override
-    public List<Bus> getBuses() {
+    public List<Bus> findAll() {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         try {
@@ -48,7 +48,7 @@ public class BusDAOImpl implements BusDAO {
     }
 
     @Override
-    public Bus addBus(Bus bus) {
+    public Bus save(Bus bus) {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         try {

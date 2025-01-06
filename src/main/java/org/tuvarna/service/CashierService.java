@@ -1,35 +1,35 @@
 package org.tuvarna.service;
 
 import org.tuvarna.entity.Cashier;
-import org.tuvarna.entity.Distributor;
-import org.tuvarna.repository.CashierDAO;
+import org.tuvarna.factories.FactoryDAO;
+import org.tuvarna.repository.TableDAO;
 
 import java.util.List;
 
 public class CashierService {
 
-    private final CashierDAO cashierDAO;
+    private final TableDAO<Cashier> cashierDAO;
 
-    public CashierService(CashierDAO cashierDAO) {
-        this.cashierDAO = cashierDAO;
+    public CashierService() {
+        this.cashierDAO = FactoryDAO.getInstance().getDao(Cashier.class);
     }
 
     public List<Cashier> getAllCashiers() {
-        return cashierDAO.getCashiers();
+        return cashierDAO.findAll();
     }
 
     public Cashier getCashierById(int id) {
-        return cashierDAO.getCashierById(id);
+        return cashierDAO.findById(id);
     }
 
     public Cashier getCashierByName(String name) {
-        return cashierDAO.getCashiers().stream()
+        return cashierDAO.findAll().stream()
                 .filter(c -> c.getName().equals(name))
                 .findFirst().orElse(null);
     }
 
     public Cashier addCashier(Cashier cashier) {
-        return cashierDAO.addCashier(cashier);
+        return cashierDAO.save(cashier);
     }
 }
 

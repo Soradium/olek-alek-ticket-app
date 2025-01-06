@@ -2,24 +2,25 @@ package org.tuvarna.service;
 
 import org.tuvarna.entity.Ticket;
 import org.tuvarna.entity.User;
-import org.tuvarna.repository.UserDAO;
+import org.tuvarna.factories.FactoryDAO;
+import org.tuvarna.repository.TableDAO;
 
 import java.util.List;
 
 public class UserService {
 
-    private final UserDAO userDAO;
+    private final TableDAO<User> userDAO;
 
-    public UserService(UserDAO userDAO) {
-        this.userDAO = userDAO;
+    public UserService() {
+        this.userDAO = FactoryDAO.getInstance().getDao(User.class);
     }
 
     public List<User> getAllUsers() {
-        return userDAO.getUsers();
+        return userDAO.findAll();
     }
 
     public User getUserByName(String name) {
-        return userDAO.getUsers().stream()
+        return userDAO.findAll().stream()
                 .filter(user -> user.getName()
                 .equals(name)).findFirst().orElse(null);
     }

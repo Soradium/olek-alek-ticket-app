@@ -6,7 +6,7 @@ import org.tuvarna.entity.User;
 
 import java.util.List;
 
-public class UserDAOImpl implements UserDAO {
+public class UserDAOImpl implements TableDAO<User> {
     private final SessionFactory sessionFactory;
 
     public UserDAOImpl(SessionFactory sessionFactory) {
@@ -14,7 +14,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public User getUserById(int id) {
+    public User findById(int id) {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         try {
@@ -31,7 +31,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public List<User> getUsers() {
+    public List<User> findAll() {
         Session session = this.sessionFactory.getCurrentSession();
         session.beginTransaction();
         try {
@@ -48,7 +48,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public User addUser(User user) {
+    public User save(User user) {
         Session session = this.sessionFactory.getCurrentSession();
         session.beginTransaction();
         try {
