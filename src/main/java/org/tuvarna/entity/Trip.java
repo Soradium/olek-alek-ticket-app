@@ -32,11 +32,12 @@ public class Trip {
     public Trip() {
     }
 
-    public Trip(String departure, String destination, LocalDate date, String tripType) {
+    public Trip(String departure, String destination, LocalDate date, String tripType, Company company) {
         this.departure = departure;
         this.destination = destination;
         this.date = date;
         this.tripType = tripType;
+        this.company = company;
     }
 
     public int getId() {

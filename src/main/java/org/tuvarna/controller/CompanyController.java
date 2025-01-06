@@ -9,6 +9,7 @@ import org.hibernate.Session;
 import org.tuvarna.entity.Trip;
 
 import org.tuvarna.service.BusService;
+import org.tuvarna.service.CompanyService;
 import org.tuvarna.service.TripService;
 
 import java.time.LocalDate;
@@ -33,6 +34,12 @@ public class CompanyController  {
 
     private BusService busService;
 
+    private CompanyService companyService;
+
+    public void setCompanyService(CompanyService companyService) {
+        this.companyService = companyService;
+    }
+
     public void setTripService(TripService tripService) {
         this.tripService = tripService;
     }
@@ -47,7 +54,7 @@ public class CompanyController  {
         String tripTypeText = tripType.getText();
         System.out.println("Local date: " + timeOfDepartureText);
         //TODO: Fix trip adding parameters down below
-        trips.add(tripService.addTrip(new Trip(departureText, destinationText, timeOfDepartureText, tripTypeText)));
+        trips.add(tripService.addTrip(new Trip(departureText, destinationText, timeOfDepartureText, tripTypeText, companyService.getCompanyByName(tripService.getCurrentCompanyName()))));
         departure.clear();
         destination.clear();
         timeOfDeparture.clear();
@@ -61,7 +68,7 @@ public class CompanyController  {
     @FXML
     private void showInfo() {
         tripListView.getItems().clear();
-        trips.addAll(tripService.getAllTrips());
+        trips.addAll(tripService.getAllTripsByCompany());
         tripListView.setItems(trips);
     }
 

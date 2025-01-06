@@ -5,6 +5,7 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.tuvarna.entity.Company;
 import org.tuvarna.entity.Trip;
 
 import java.util.List;
@@ -57,7 +58,7 @@ public class TripDAOImpl implements TripDAO {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         try{
-            session.persist(trip);
+            session.merge(trip);
             session.getTransaction().commit();
             return trip;
         }catch (Exception e) {

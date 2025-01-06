@@ -2,6 +2,7 @@ package org.tuvarna.repository;
 
 import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
+import org.tuvarna.entity.Company;
 import org.tuvarna.entity.Trip;
 
 import java.util.List;

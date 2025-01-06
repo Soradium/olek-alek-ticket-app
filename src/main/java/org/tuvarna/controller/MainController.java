@@ -116,6 +116,7 @@ public class MainController implements Subject, Observer {
             company = companyLoader.load();
             companyController = companyLoader.getController();
             companyController.setTripService(tripService);
+            companyController.setCompanyService(companyService);
 
             FXMLLoader cashierLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/cashier.fxml"));
             cashier = cashierLoader.load();
@@ -158,6 +159,7 @@ public class MainController implements Subject, Observer {
             }
             case "Companies": {
                 root.setCenter(company);
+                tripService.setCurrentCompany(selectedMenuItem);
                 break;
             }
             case "Users": {
