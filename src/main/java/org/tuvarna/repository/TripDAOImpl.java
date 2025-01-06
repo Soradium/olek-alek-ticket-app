@@ -10,7 +10,7 @@ import org.tuvarna.entity.Trip;
 
 import java.util.List;
 
-public class TripDAOImpl implements TripDAO {
+public class TripDAOImpl implements TableDAO<Trip> {
 
     private final SessionFactory sessionFactory;
 
@@ -19,7 +19,7 @@ public class TripDAOImpl implements TripDAO {
     }
 
     @Override
-    public Trip getTripById(int id) {
+    public Trip findById(int id) {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         try {
@@ -37,7 +37,7 @@ public class TripDAOImpl implements TripDAO {
     }
 
     @Override
-    public List<Trip> getAllTrips() {
+    public List<Trip> findAll() {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         try {
@@ -54,7 +54,7 @@ public class TripDAOImpl implements TripDAO {
     }
 
     @Override
-    public Trip addTrip(Trip trip) {
+    public Trip save(Trip trip) {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         try{

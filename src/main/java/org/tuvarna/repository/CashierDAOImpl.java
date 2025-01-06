@@ -6,7 +6,7 @@ import org.tuvarna.entity.Cashier;
 
 import java.util.List;
 
-public class CashierDAOImpl implements CashierDAO {
+public class CashierDAOImpl implements TableDAO<Cashier> {
     private final SessionFactory sessionFactory;
 
     public CashierDAOImpl(SessionFactory sessionFactory) {
@@ -14,7 +14,7 @@ public class CashierDAOImpl implements CashierDAO {
     }
 
     @Override
-    public Cashier getCashierById(int id) {
+    public Cashier findById(int id) {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         try {
@@ -31,7 +31,7 @@ public class CashierDAOImpl implements CashierDAO {
     }
 
     @Override
-    public List<Cashier> getCashiers() {
+    public List<Cashier> findAll() {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         try {
@@ -48,7 +48,7 @@ public class CashierDAOImpl implements CashierDAO {
     }
 
     @Override
-    public Cashier addCashier(Cashier cashier) {
+    public Cashier save(Cashier cashier) {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         try {

@@ -6,7 +6,7 @@ import org.tuvarna.entity.Company;
 
 import java.util.List;
 
-public class CompanyDAOImpl implements CompanyDAO {
+public class CompanyDAOImpl implements TableDAO<Company> {
     private final SessionFactory sessionFactory;
 
     public CompanyDAOImpl(SessionFactory sessionFactory) {
@@ -14,7 +14,7 @@ public class CompanyDAOImpl implements CompanyDAO {
     }
 
     @Override
-    public Company getCompanyById(int id) {
+    public Company findById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
         session.beginTransaction();
         try {
@@ -31,7 +31,7 @@ public class CompanyDAOImpl implements CompanyDAO {
     }
 
     @Override
-    public List<Company> getCompanies() {
+    public List<Company> findAll() {
         Session session = this.sessionFactory.getCurrentSession();
         session.beginTransaction();
         try {
@@ -48,7 +48,7 @@ public class CompanyDAOImpl implements CompanyDAO {
     }
 
     @Override
-    public Company addCompany(Company company) {
+    public Company save(Company company) {
         Session session = this.sessionFactory.getCurrentSession();
         session.beginTransaction();
         try {

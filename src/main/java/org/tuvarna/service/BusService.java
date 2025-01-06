@@ -1,22 +1,22 @@
 package org.tuvarna.service;
 
 import org.tuvarna.entity.Bus;
-import org.tuvarna.entity.Company;
-import org.tuvarna.repository.BusDAO;
+import org.tuvarna.factories.FactoryDAO;
+import org.tuvarna.repository.TableDAO;
 
 public class BusService {
 
-    private final BusDAO busService;
+    private final TableDAO<Bus> busDao;
 
-    public BusService(BusDAO busService) {
-        this.busService = busService;
+    public BusService() {
+        this.busDao = FactoryDAO.getInstance().getDao(Bus.class);
     }
 
     public Bus getBusById(int id) {
-        return busService.getBusById(id);
+        return busDao.findById(id);
     }
 
     public Bus addBus(Bus bus) {
-        return busService.addBus(bus);
+        return busDao.save(bus);
     }
 }
