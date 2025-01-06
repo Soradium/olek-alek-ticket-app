@@ -6,23 +6,34 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
+<BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
+            fx:id="root"
             fx:controller="org.tuvarna.controller.MainController"
             prefHeight="400.0" prefWidth="600.0">
-    <BorderPane>
-        <top>
-            <fx:include source="menu-strip.fxml" fx:id="menuBar"/>
-        </top>
-        <center>
+    <top>
+        <MenuBar fx:id="menuBar"/>
+    </top>
+    <center>
+        <fx:define>
             <fx:include source="administrator.fxml" fx:id="administrator"/>
+        </fx:define>
+        <fx:define>
             <fx:include source="distributor.fxml" fx:id="distributor"/>
-            <fx:include source="check-requests.fxml" fx:id="checkRequests"/>
+        </fx:define>
+        <fx:define>
             <fx:include source="company.fxml" fx:id="company"/>
+        </fx:define>
+        <fx:define>
             <fx:include source="user.fxml" fx:id="user"/>
+        </fx:define>
+        <fx:define>
             <fx:include source="cashier.fxml" fx:id="cashier"/>
-        </center>
-    </BorderPane>
-
-
-</AnchorPane>
+        </fx:define>
+    </center>
+    <right>
+        <fx:define>
+            <fx:include source="check-requests.fxml" fx:id="checkRequests"/>
+        </fx:define>
+    </right>
+</BorderPane>

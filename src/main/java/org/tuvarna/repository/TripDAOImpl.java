@@ -11,7 +11,7 @@ import java.util.List;
 
 public class TripDAOImpl implements TripDAO {
 
-    private static SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
 
     public TripDAOImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;

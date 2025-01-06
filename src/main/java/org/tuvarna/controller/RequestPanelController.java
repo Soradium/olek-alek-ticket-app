@@ -55,7 +55,7 @@ public class RequestPanelController {
 
     private void removeRequest(String requestText) {
         requestListView.getItems().removeIf(hbox -> {
-            Label label = (Label) hbox.getChildren().get(0); // First child is the label
+            Label label = (Label) hbox.getChildren().get(0);
             return label.getText().equals(requestText);
         });
     }
