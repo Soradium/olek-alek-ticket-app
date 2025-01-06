@@ -103,7 +103,6 @@ public class MenuStripSelector implements Subject, Observer {
                     @Override
                     public void handle(ActionEvent event) {
                         currentMenuChosen = menu.getText();
-                        System.out.println(currentMenuChosen);
                     }
                 });
                 menu.getItems().forEach(menuItem -> {
@@ -111,20 +110,7 @@ public class MenuStripSelector implements Subject, Observer {
                             @Override
                             public void handle(ActionEvent actionEvent) {
                                 currentItemChosen = menuItem.getText();
-                                System.out.println(currentItemChosen);
-//                                menuItem.getParentMenu().getItems()
-//                                        .add(new MenuItem(currentItemChosen));
-//                                Menu tempMenu = menuItem.getParentMenu();
-//                                menuItem.getParentMenu().getItems().clear();
-//                                menuItem.getParentMenu().getItems().addAll(tempMenu);
-//                                ObservableList<Menu> menus = menuBar.getMenus();
-//                                Menu companyMenu = menus.get(0);
-//                                Menu distributorMenu = menus.get(1);
-//                                Menu cashierMenu = menus.get(2);
-//                                Menu userMenu = menus.get(3);
-//                                Menu adminMenu = menus.get(4);
-//                                menus.clear(); // Clear existing menus
-//                                menus.addAll(companyMenu, distributorMenu, cashierMenu, userMenu, adminMenu);
+                                notifyObservers();
                             }
                         });
                 });
@@ -157,6 +143,30 @@ public class MenuStripSelector implements Subject, Observer {
     @Override
     public void update(Object context) {
         String a = (String) context;
+    }
+
+    public String getCurrentItemChosen() {
+        return currentItemChosen;
+    }
+
+    public void setCurrentItemChosen(String currentItemChosen) {
+        this.currentItemChosen = currentItemChosen;
+    }
+
+    public String getCurrentMenuChosen() {
+        return currentMenuChosen;
+    }
+
+    public void setCurrentMenuChosen(String currentMenuChosen) {
+        this.currentMenuChosen = currentMenuChosen;
+    }
+
+    public Observer getObserver() {
+        return observer;
+    }
+
+    public void setObserver(Observer observer) {
+        this.observer = observer;
     }
 
     public MenuBar getMenuBar() {

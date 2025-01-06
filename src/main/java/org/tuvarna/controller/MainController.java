@@ -1,9 +1,11 @@
 package org.tuvarna.controller;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
 import javafx.scene.layout.BorderPane;
 import org.hibernate.SessionFactory;
 import org.tuvarna.entity.Cashier;
@@ -49,7 +51,11 @@ public class MainController implements Subject, Observer {
     @FXML
     private RequestPanelController requestPanelController;
 
-    MenuStripSelector menuStrip;
+    private MenuStripSelector menuStrip;
+
+    private String selectedMenu;
+
+    private String selectedMenuItem;
 
     private TripDAO tripDAO;
     private CompanyDAO companyDAO;
@@ -67,12 +73,9 @@ public class MainController implements Subject, Observer {
     private CashierService cashierService;
     private UserService userService;
 
-
-    DatabaseSingleton databaseSingleton = DatabaseSingleton.getInstance();
-
     public void initialize() {
 
-        SessionFactory sessionFactory = this.databaseSingleton.getInstance().getSessionFactory();
+        SessionFactory sessionFactory = DatabaseSingleton.getInstance().getSessionFactory();
 
         tripDAO = new TripDAOImpl(sessionFactory);
         companyDAO = new CompanyDAOImpl(sessionFactory);
@@ -95,7 +98,7 @@ public class MainController implements Subject, Observer {
         List<Company> companies = companyDAO.getCompanies();
         List<Distributor> distributors = distributorDAO.getDistributors();
 
-        MenuStripSelector menuStrip = new MenuStripSelector
+        menuStrip = new MenuStripSelector
                 .MenuStripSelectorBuilder()
                 .withCashiers(cashiers)
                 .withDistributors(distributors)
@@ -126,7 +129,6 @@ public class MainController implements Subject, Observer {
             distributor = distributorLoader.load();
             distributorController = distributorLoader.getController();
 
-
             FXMLLoader userLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/user.fxml"));
             user = userLoader.load();
             userController = userLoader.getController();
@@ -134,6 +136,7 @@ public class MainController implements Subject, Observer {
             root.setTop(menuStrip.getMenuBar());
             root.setCenter(administrator);
 
+            menuStrip.registerObserver(this);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -141,6 +144,34 @@ public class MainController implements Subject, Observer {
 
     @Override
     public void update(Object context) {
+        // send menuitem and menu, then process them
+        MenuStripSelector menuStrip = (MenuStripSelector) context;
+        selectedMenu = menuStrip.getCurrentMenuChosen();
+        selectedMenuItem = menuStrip.getCurrentItemChosen();
+
+        System.out.println(selectedMenu);
+        System.out.println(selectedMenuItem);
+        switch(selectedMenu) {
+            case "Distributors": {
+                root.setCenter(distributor);
+                break;
+            }
+            case "Companies": {
+                root.setCenter(company);
+                break;
+            }
+            case "Users": {
+                root.setCenter(user);
+                break;
+            }
+            case "Cashiers": {
+                root.setCenter(cashier);
+                break;
+            } default: {
+                root.setCenter(administrator);
+                break;
+            }
+        }
 
     }
 
