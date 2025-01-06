@@ -20,13 +20,14 @@ public class Distributor {
             mappedBy = "distributor",
             fetch = FetchType.EAGER
     )
-    private List<Cashier> cashiers;
+    private List<Cashier> cashiers = new ArrayList<>();
 
     public Distributor() {
     }
 
     public Distributor(String name, List<Cashier> cashiers) {
         this.name = name;
+        this.cashiers = cashiers;
     }
 
     public String getName() {

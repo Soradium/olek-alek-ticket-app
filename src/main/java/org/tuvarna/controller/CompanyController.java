@@ -7,6 +7,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import org.hibernate.Session;
 import org.tuvarna.entity.Trip;
+
 import org.tuvarna.service.BusService;
 import org.tuvarna.service.TripService;
 
@@ -14,7 +15,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 
-public class CompanyController {
+public class CompanyController  {
     @FXML
     public TextField busNumber;
     @FXML
@@ -28,9 +29,8 @@ public class CompanyController {
     @FXML
     private TextField tripType;
 
-    private String currentCompanyChosen;
-
     private TripService tripService;
+
     private BusService busService;
 
     public void setTripService(TripService tripService) {
@@ -65,7 +65,4 @@ public class CompanyController {
         tripListView.setItems(trips);
     }
 
-    public void setCurrentCompanyChosen(String currentCompanyChosen) {
-        this.currentCompanyChosen = currentCompanyChosen;
-    }
 }

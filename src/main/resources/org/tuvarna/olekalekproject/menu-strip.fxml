@@ -4,29 +4,33 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 
-<MenuBar xmlns:fx="http://javafx.com/fxml">
-    <!-- Admin Menu -->
+<?import javafx.scene.layout.HBox?>
+
+<MenuBar xmlns:fx="http://javafx.com/fxml" >
+
     <Menu text="Admin" fx:id="adminMenu">
-        <!-- Placeholder for dynamically added items -->
+
     </Menu>
 
-    <!-- Company Menu -->
+
     <Menu text="Company" fx:id="companyMenu">
-        <!-- Placeholder for dynamically added items -->
+
     </Menu>
 
-    <!-- Distributor Menu -->
+
     <Menu text="Distributor" fx:id="distributorMenu">
-        <!-- Placeholder for dynamically added items -->
+
     </Menu>
 
-    <!-- Cashier Menu -->
-    <Menu text="Cashier" fx:id="cashierMenu">
-        <!-- Placeholder for dynamically added items -->
+
+    <Menu text="Cashiser" fx:id="cashierMenu">
+
     </Menu>
 
-    <!-- User Menu -->
+
     <Menu text="User" fx:id="userMenu">
-        <!-- Placeholder for dynamically added items -->
+
     </Menu>
+
 </MenuBar>
+

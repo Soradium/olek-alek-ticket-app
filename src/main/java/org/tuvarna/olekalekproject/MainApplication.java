@@ -22,37 +22,11 @@ import java.io.IOException;
 public class MainApplication extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
-
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("company.fxml"));
-
-        SessionFactory sessionFactory = new Configuration()
-                .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Trip.class)
-                .addAnnotatedClass(Company.class)
-                .addAnnotatedClass(User.class)
-                .addAnnotatedClass(Ticket.class)
-                .addAnnotatedClass(Bus.class)
-                .addAnnotatedClass(Distributor.class)
-                .addAnnotatedClass(Seat.class)
-                .addAnnotatedClass(Cashier.class)
-                .buildSessionFactory();
-
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("main-pane.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 800);
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
-
-        TripDAOImpl tripDAO = new TripDAOImpl(sessionFactory);
-        CompanyDAOImpl companyDAO = new CompanyDAOImpl(sessionFactory);
-
-        TripService tripService = new TripService(tripDAO);
-        CompanyService companyService = new CompanyService(companyDAO);
-
-        CompanyController companyController = new CompanyController();
-        companyController.setTripService(tripService);
-
-        AdministratorController administratorController = new AdministratorController();
-        administratorController.setCompanyService(companyService);
     }
 
     public static void main(String[] args) {
