@@ -1,34 +1,35 @@
 package org.tuvarna.service;
 
 import org.tuvarna.entity.Distributor;
-import org.tuvarna.repository.DistributorDAO;
+import org.tuvarna.factories.FactoryDAO;
+import org.tuvarna.repository.TableDAO;
 
 import java.util.List;
 
 public class DistributorService {
 
-    private final DistributorDAO distributorDAO;
+    private final TableDAO<Distributor> distributorDAO;
 
-    public DistributorService(DistributorDAO distributorDAO) {
-        this.distributorDAO = distributorDAO;
+    public DistributorService() {
+        this.distributorDAO = FactoryDAO.getInstance().getDao(Distributor.class);
     }
 
     public List<Distributor> getAllDistributors() {
-        return distributorDAO.getDistributors();
+        return distributorDAO.findAll();
     }
 
     public Distributor getDistributorByName(String name) {
-        return distributorDAO.getDistributors().stream()
+        return distributorDAO.findAll().stream()
                 .filter(d -> d.getName().equals(name))
                 .findFirst().orElse(null);
     }
 
     public Distributor getDistributorById(int id) {
-        return distributorDAO.getDistributorById(id);
+        return distributorDAO.findById(id);
     }
 
     public Distributor addDistributor(Distributor distributor) {
-        return distributorDAO.addDistributor(distributor);
+        return distributorDAO.save(distributor);
     }
 }
 

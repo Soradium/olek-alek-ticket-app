@@ -1,27 +1,28 @@
 package org.tuvarna.service;
 
 import org.tuvarna.entity.Ticket;
-import org.tuvarna.repository.TicketDAO;
+import org.tuvarna.factories.FactoryDAO;
+import org.tuvarna.repository.TableDAO;
 
 import java.util.List;
 
 public class TicketService {
 
-    private final TicketDAO ticketDAO;
+    private final TableDAO<Ticket> ticketDAO;
 
-    public TicketService(TicketDAO ticketDAO) {
-        this.ticketDAO = ticketDAO;
+    public TicketService() {
+        this.ticketDAO = FactoryDAO.getInstance().getDao(Ticket.class);
     }
 
     public List<Ticket> getAllTickets() {
-        return ticketDAO.getTickets();
+        return ticketDAO.findAll();
     }
 
     public Ticket getTicketById(int id) {
-        return ticketDAO.getTicketById(id);
+        return ticketDAO.findById(id);
     }
 
     public Ticket addTicket(Ticket ticket) {
-        return ticketDAO.addTicket(ticket);
+        return ticketDAO.save(ticket);
     }
 }

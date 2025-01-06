@@ -1,4 +1,4 @@
-package org.tuvarna.singleton;
+package org.tuvarna.database;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

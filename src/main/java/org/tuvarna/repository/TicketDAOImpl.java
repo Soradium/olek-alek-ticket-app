@@ -6,7 +6,7 @@ import org.tuvarna.entity.Ticket;
 
 import java.util.List;
 
-public class TicketDAOImpl implements TicketDAO {
+public class TicketDAOImpl implements TableDAO<Ticket> {
     private final SessionFactory sessionFactory;
 
     public TicketDAOImpl(SessionFactory sessionFactory) {
@@ -14,7 +14,7 @@ public class TicketDAOImpl implements TicketDAO {
     }
 
     @Override
-    public Ticket getTicketById(int id) {
+    public Ticket findById(int id) {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         try {
@@ -31,7 +31,7 @@ public class TicketDAOImpl implements TicketDAO {
     }
 
     @Override
-    public List<Ticket> getTickets() {
+    public List<Ticket> findAll() {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         try {
@@ -48,7 +48,7 @@ public class TicketDAOImpl implements TicketDAO {
     }
 
     @Override
-    public Ticket addTicket(Ticket ticket) {
+    public Ticket save(Ticket ticket) {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         try {

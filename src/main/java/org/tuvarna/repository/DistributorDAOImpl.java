@@ -6,7 +6,7 @@ import org.tuvarna.entity.Distributor;
 
 import java.util.List;
 
-public class DistributorDAOImpl implements DistributorDAO {
+public class DistributorDAOImpl implements TableDAO<Distributor> {
     private final SessionFactory sessionFactory;
 
     public DistributorDAOImpl(SessionFactory sessionFactory) {
@@ -14,7 +14,7 @@ public class DistributorDAOImpl implements DistributorDAO {
     }
 
     @Override
-    public Distributor getDistributorById(int id) {
+    public Distributor findById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
         session.beginTransaction();
         try {
@@ -31,7 +31,7 @@ public class DistributorDAOImpl implements DistributorDAO {
     }
 
     @Override
-    public List<Distributor> getDistributors() {
+    public List<Distributor> findAll() {
         Session session = this.sessionFactory.getCurrentSession();
         session.beginTransaction();
         try {
@@ -48,7 +48,7 @@ public class DistributorDAOImpl implements DistributorDAO {
     }
 
     @Override
-    public Distributor addDistributor(Distributor distributor) {
+    public Distributor save(Distributor distributor) {
         Session session = this.sessionFactory.getCurrentSession();
         session.beginTransaction();
         try {
