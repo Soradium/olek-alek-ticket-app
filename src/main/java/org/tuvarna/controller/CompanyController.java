@@ -25,7 +25,7 @@ import java.util.List;
 
 public class CompanyController implements Subject {
     @FXML
-    private Parent checkRequests;
+    private Parent checkRequests; //requestPanel
     @FXML
     private TextField busNumber;
     @FXML
@@ -76,17 +76,16 @@ public class CompanyController implements Subject {
             FXMLLoader requestPanelLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/check-requests.fxml"));
             checkRequests = requestPanelLoader.load();
             requestPanelController = requestPanelLoader.getController();
-            requestPanelController.reloadRequests();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-//    @FXML
-//    public boolean respondToRequest(Command command) {
-//        //here it should add it to panel
-//         boolean requestPanelController.addRequest(command);
-//    }
+    @FXML
+    public void respondToRequest(Command command) {
+        requestPanelController.addCommand(command);
+    }
 
     @FXML
     public void addTrip(){
@@ -109,6 +108,14 @@ public class CompanyController implements Subject {
     @FXML
     public void addBus(){
         busService.addBus(new Bus(getCurrentCompany()));
+    }
+
+    public Parent getCheckRequests() {
+        return checkRequests;
+    }
+
+    public void setCheckRequests(Parent checkRequests) {
+        this.checkRequests = checkRequests;
     }
 
     @FXML

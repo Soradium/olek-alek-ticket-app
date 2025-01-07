@@ -153,6 +153,7 @@ public class MainController implements Observer {
             case "Distributors": {
                 distributorController.setCurrentDistributor(selectedMenuItem.getText());
                 root.setCenter(distributor);
+                root.setRight(companyController.getCheckRequests());
                 break;
             }
             case "Companies": {
