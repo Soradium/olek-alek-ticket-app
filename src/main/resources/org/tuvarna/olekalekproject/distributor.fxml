@@ -4,9 +4,6 @@
 <?import javafx.scene.layout.*?>
 
 <BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tuvarna.controller.DistributorController">
-    <right>
-        <fx:include source="check-requests.fxml" fx:id="checkRequests" />
-    </right>
     <center>
         <VBox alignment="CENTER" spacing="20">
             <VBox spacing="10" alignment="CENTER">

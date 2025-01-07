@@ -9,6 +9,9 @@ import javafx.scene.layout.HBox;
 import org.tuvarna.command.Command;
 import org.tuvarna.command.RequestToCompanyCommandImpl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class RequestPanelController {
 
     @FXML
@@ -19,22 +22,13 @@ public class RequestPanelController {
         reloadRequests();
     }
 
+    private List<Command> commands = new ArrayList<>();
+
     @FXML
     public void reloadRequests() {
         requestListView.getItems().clear();
         // prob will be done with init passed from upper class that will store commands
-    }
-
-    public ListView<HBox> getRequestListView() {
-        return requestListView;
-    }
-
-    public void setRequestListView(ListView<HBox> requestListView) {
-        this.requestListView = requestListView;
-    }
-
-    public void addRequest(Command command) {
-        try {
+        for(Command command : commands) {
             Label requestLabel = new Label(command.getMessage());
             requestLabel.setStyle("-fx-font-size: 14px;");
 
@@ -49,6 +43,20 @@ public class RequestPanelController {
             requestItem.setPadding(new Insets(5));
 
             requestListView.getItems().add(requestItem);
+        }
+    }
+
+    public ListView<HBox> getRequestListView() {
+        return requestListView;
+    }
+
+    public void setRequestListView(ListView<HBox> requestListView) {
+        this.requestListView = requestListView;
+    }
+
+    public void addCommand(Command command) {
+        try {
+            commands.add(command);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
