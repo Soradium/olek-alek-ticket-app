@@ -11,6 +11,11 @@ public class RequestToCompanyCommandImpl extends CommandAbstract {
         super(message, passedObjects, receiver, sender);
     }
 
+    //command = new RequestToCompanyCommandImpl(
+    //                    message,
+    //                    selectedTripList,
+    //                    false,
+    //                    companyController);
     @Override
     public void execute() {
         CompanyController companyController = (CompanyController) this.getReceiver();
