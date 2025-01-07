@@ -63,4 +63,21 @@ public class TicketDAOImpl implements TableDAO<Ticket> {
         }
         return null;
     }
+
+    @Override
+    public Ticket update(Ticket ticket) {
+        Session session = sessionFactory.getCurrentSession();
+        session.beginTransaction();
+        try {
+            session.merge(ticket);
+            session.getTransaction().commit();
+            return ticket;
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
+    }
 }

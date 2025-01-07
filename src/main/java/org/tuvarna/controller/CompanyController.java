@@ -17,6 +17,7 @@ import org.tuvarna.observer.Observer;
 import org.tuvarna.observer.Subject;
 import org.tuvarna.service.BusService;
 import org.tuvarna.service.CompanyService;
+import org.tuvarna.service.DistributorService;
 import org.tuvarna.service.TripService;
 
 import java.time.LocalDate;
@@ -49,6 +50,8 @@ public class CompanyController implements Subject {
 
     private BusService busService;
 
+    private DistributorService distributorService;
+
     public void setBusService(BusService busService) {
         this.busService = busService;
     }
@@ -61,9 +64,9 @@ public class CompanyController implements Subject {
         this.tripService = tripService;
     }
 
-    private ObservableList<Trip> trips = FXCollections.observableArrayList();
+    private final ObservableList<Trip> trips = FXCollections.observableArrayList();
 
-    private ObservableList<Command> commands = FXCollections.observableArrayList();
+    private final ObservableList<Command> commands = FXCollections.observableArrayList();
 
     private Observer observer;
 
@@ -73,10 +76,9 @@ public class CompanyController implements Subject {
 
     public void initialize() {
         try {
-            FXMLLoader requestPanelLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/check-requests.fxml"));
+            FXMLLoader requestPanelLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/check-requests-company.fxml"));
             checkRequests = requestPanelLoader.load();
-            requestPanelController = requestPanelLoader.getController();
-
+            requestPanelController = requestPanelLoader.<CompToDistrPanelControllerImpl>getController();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -152,5 +154,21 @@ public class CompanyController implements Subject {
     @Override
     public void notifyObservers() {
         this.observer.update(getCurrentCompany().getName());
+    }
+
+    public RequestPanelController getRequestPanelController() {
+        return requestPanelController;
+    }
+
+    public void setRequestPanelController(RequestPanelController requestPanelController) {
+        this.requestPanelController = requestPanelController;
+    }
+
+    public DistributorService getDistributorService() {
+        return distributorService;
+    }
+
+    public void setDistributorService(DistributorService distributorService) {
+        this.distributorService = distributorService;
     }
 }

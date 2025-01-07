@@ -63,4 +63,21 @@ public class BusDAOImpl implements TableDAO<Bus> {
         }
         return null;
     }
+
+    @Override
+    public Bus update(Bus bus) {
+        Session session = sessionFactory.getCurrentSession();
+        session.beginTransaction();
+        try {
+            session.merge(bus);
+            session.getTransaction().commit();
+            return bus;
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
+    }
 }

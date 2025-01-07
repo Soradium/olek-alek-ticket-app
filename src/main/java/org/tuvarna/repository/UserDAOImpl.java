@@ -63,4 +63,21 @@ public class UserDAOImpl implements TableDAO<User> {
         }
         return null;
     }
+
+    @Override
+    public User update(User user) {
+        Session session = sessionFactory.getCurrentSession();
+        session.beginTransaction();
+        try {
+            session.merge(user);
+            session.getTransaction().commit();
+            return user;
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
+    }
 }

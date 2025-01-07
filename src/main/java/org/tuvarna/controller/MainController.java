@@ -153,12 +153,13 @@ public class MainController implements Observer {
             case "Distributors": {
                 distributorController.setCurrentDistributor(selectedMenuItem.getText());
                 root.setCenter(distributor);
-                root.setRight(companyController.getCheckRequests());
+                root.setRight(distributorController.getCheckRequests());
                 break;
             }
             case "Companies": {
-                root.setCenter(company);
                 tripService.setCurrentCompany(selectedMenuItem.getText());
+                root.setCenter(company);
+                root.setRight(companyController.getCheckRequests());
                 break;
             }
             case "Users": {
@@ -175,6 +176,7 @@ public class MainController implements Observer {
                 break;
             } default: {
                 root.setCenter(administrator);
+                root.setRight(null);
                 break;
             }
         }

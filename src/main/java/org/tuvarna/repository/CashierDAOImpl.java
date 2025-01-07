@@ -2,6 +2,7 @@ package org.tuvarna.repository;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.tuvarna.entity.Bus;
 import org.tuvarna.entity.Cashier;
 
 import java.util.List;
@@ -53,6 +54,23 @@ public class CashierDAOImpl implements TableDAO<Cashier> {
         session.beginTransaction();
         try {
             session.persist(cashier);
+            session.getTransaction().commit();
+            return cashier;
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
+    }
+
+    @Override
+    public Cashier update(Cashier cashier) {
+        Session session = sessionFactory.getCurrentSession();
+        session.beginTransaction();
+        try {
+            session.merge(cashier);
             session.getTransaction().commit();
             return cashier;
         } catch (Exception e) {

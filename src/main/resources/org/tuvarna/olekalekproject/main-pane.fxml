@@ -31,9 +31,4 @@
             <fx:include source="cashier.fxml" fx:id="cashier"/>
         </fx:define>
     </center>
-    <right>
-        <fx:define>
-            <fx:include source="check-requests.fxml" fx:id="checkRequests"/>
-        </fx:define>
-    </right>
 </BorderPane>
