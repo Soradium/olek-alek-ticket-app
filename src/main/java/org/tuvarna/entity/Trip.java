@@ -29,6 +29,10 @@ public class Trip {
     @JoinColumn(name = "company_id")
     private Company company;
 
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name="distributor_id")
+    private Distributor distributor;
+
     public Trip() {
     }
 
@@ -97,5 +101,17 @@ public class Trip {
                 ", tripType='" + tripType + '\'' +
                 ", company=" + company.getName() +
                 '}';
+    }
+
+    public Distributor getDistributor() {
+        if(distributor != null) {
+            return distributor;
+        } else {
+            throw new RuntimeException("Distributor not assigned to trip");
+        }
+    }
+
+    public void setDistributor(Distributor distributor) {
+        this.distributor = distributor;
     }
 }
