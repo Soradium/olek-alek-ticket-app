@@ -78,7 +78,9 @@ public class DistributorController implements Subject {
                     message,
                     selectedTripList,
                     false,
-                    companyController);
+                    companyController,
+                    distributorService.getDistributorByName(currentDistributor)
+            );
             command.execute();
         }
     }
@@ -95,12 +97,11 @@ public class DistributorController implements Subject {
 
     @FXML
     public void initialize() {
-
         try {
             FXMLLoader requestPanelLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/check-requests.fxml"));
             checkRequests = requestPanelLoader.load();
             requestPanelController = requestPanelLoader.getController();
-            requestPanelController.reloadRequests();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
