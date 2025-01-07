@@ -1,6 +1,7 @@
 package org.tuvarna.service;
 
 import org.tuvarna.entity.Distributor;
+import org.tuvarna.entity.Trip;
 import org.tuvarna.factories.FactoryDAO;
 import org.tuvarna.repository.TableDAO;
 
@@ -30,6 +31,19 @@ public class DistributorService {
 
     public Distributor addDistributor(Distributor distributor) {
         return distributorDAO.save(distributor);
+    }
+
+    public Distributor updateDistributor(Distributor distributor) {
+        return distributorDAO.update(distributor);
+    }
+
+    public List<Trip> tripPerDistributor(Distributor distributor) {
+        return distributor.getTrips();
+    }
+
+    public void assignTripToDistributor(Trip trip, Distributor distributor) {
+        distributor.getTrips().add(trip);
+        distributorDAO.update(distributor);
     }
 }
 

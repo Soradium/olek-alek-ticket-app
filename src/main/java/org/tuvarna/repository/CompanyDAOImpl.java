@@ -63,4 +63,21 @@ public class CompanyDAOImpl implements TableDAO<Company> {
         }
         return null;
     }
+
+    @Override
+    public Company update(Company company) {
+        Session session = sessionFactory.getCurrentSession();
+        session.beginTransaction();
+        try {
+            session.merge(company);
+            session.getTransaction().commit();
+            return company;
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
+    }
 }

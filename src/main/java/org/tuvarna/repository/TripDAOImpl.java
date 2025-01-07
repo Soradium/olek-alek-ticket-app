@@ -69,4 +69,21 @@ public class TripDAOImpl implements TableDAO<Trip> {
         }
         return null;
     }
+
+    @Override
+    public Trip update(Trip trip) {
+        Session session = sessionFactory.getCurrentSession();
+        session.beginTransaction();
+        try {
+            session.merge(trip);
+            session.getTransaction().commit();
+            return trip;
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
+    }
 }

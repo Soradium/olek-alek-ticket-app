@@ -36,6 +36,14 @@ public class Trip {
     public Trip() {
     }
 
+    public Trip(String departure, String destination, LocalDate date, String tripType, Company company, Distributor distributor) {
+        this.departure = departure;
+        this.destination = destination;
+        this.date = date;
+        this.tripType = tripType;
+        this.company = company;
+        this.distributor = distributor;
+    }
     public Trip(String departure, String destination, LocalDate date, String tripType, Company company) {
         this.departure = departure;
         this.destination = destination;

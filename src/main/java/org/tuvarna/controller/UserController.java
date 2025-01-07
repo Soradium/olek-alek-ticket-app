@@ -35,9 +35,9 @@ public class UserController {
     @FXML
     public Label errorLabel;
 
-    private SessionFactory sessionFactory = DatabaseSingleton.getInstance().getSessionFactory();
+    private final SessionFactory sessionFactory = DatabaseSingleton.getInstance().getSessionFactory();
 
-    private SimpleStringProperty currentUser = new SimpleStringProperty();
+    private final SimpleStringProperty currentUser = new SimpleStringProperty();
 
     private TripService tripService;
 

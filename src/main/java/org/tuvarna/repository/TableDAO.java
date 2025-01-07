@@ -6,4 +6,5 @@ public interface TableDAO <T>{
     T findById(int id);
     List<T> findAll();
     T save(T t);
+    T update(T t);
 }

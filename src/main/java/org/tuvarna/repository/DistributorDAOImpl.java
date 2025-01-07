@@ -63,4 +63,21 @@ public class DistributorDAOImpl implements TableDAO<Distributor> {
         }
         return null;
     }
+
+    @Override
+    public Distributor update(Distributor distributor) {
+        Session session = sessionFactory.getCurrentSession();
+        session.beginTransaction();
+        try {
+            session.merge(distributor);
+            session.getTransaction().commit();
+            return distributor;
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
+    }
 }

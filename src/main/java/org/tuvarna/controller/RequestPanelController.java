@@ -7,9 +7,11 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import org.tuvarna.command.Command;
-import org.tuvarna.command.RequestToCompanyCommandImpl;
 
-public class RequestPanelController {
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class RequestPanelController {
 
     @FXML
     private ListView<HBox> requestListView;
@@ -19,10 +21,28 @@ public class RequestPanelController {
         reloadRequests();
     }
 
+    private List<Command> commands = new ArrayList<>();
+
     @FXML
     public void reloadRequests() {
         requestListView.getItems().clear();
-        // prob will be done with init passed from upper class that will store commands
+
+        for(Command command : commands) {
+            Label requestLabel = new Label(command.getMessage());
+            requestLabel.setStyle("-fx-font-size: 14px;");
+
+            Button acceptButton = new Button("Accept");
+            acceptButton.setOnAction(event -> handleAccept(command));
+
+            Button declineButton = new Button("Decline");
+            declineButton.setOnAction(event -> handleDecline(command));
+
+            HBox requestItem = new HBox(10, requestLabel, acceptButton, declineButton);
+            requestItem.setAlignment(Pos.CENTER);
+            requestItem.setPadding(new Insets(5));
+
+            requestListView.getItems().add(requestItem);
+        }
     }
 
     public ListView<HBox> getRequestListView() {
@@ -33,43 +53,36 @@ public class RequestPanelController {
         this.requestListView = requestListView;
     }
 
-    public void addRequest(Command command) {
+    public void addCommand(Command command) {
         try {
-            Label requestLabel = new Label(command.getMessage());
-            requestLabel.setStyle("-fx-font-size: 14px;");
-
-            Button acceptButton = new Button("Accept");
-            acceptButton.setOnAction(event -> handleAccept(command.getMessage()));
-
-            Button declineButton = new Button("Decline");
-            declineButton.setOnAction(event -> handleDecline(command.getMessage()));
-
-            HBox requestItem = new HBox(10, requestLabel, acceptButton, declineButton);
-            requestItem.setAlignment(Pos.CENTER);
-            requestItem.setPadding(new Insets(5));
-
-            requestListView.getItems().add(requestItem);
+            commands.add(command);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
-    private void handleAccept(String requestText) {
-        System.out.println("Accepted: " + requestText);
-        //here something will be sent to parent controller
-        removeRequest(requestText);
-    }
+    abstract void handleAccept(Command requestCommand);
+    //System.out.println("Accepted: " + requestText);
+    //        //here something will be sent to parent controller
+    //
 
-    private void handleDecline(String requestText) {
-        System.out.println("Declined: " + requestText);
-        //here something will be sent to parent controller
-        removeRequest(requestText);
-    }
+    abstract void handleDecline(Command requestCommand);
+    //System.out.println("Declined: " + requestText);
+    //        //here something will be sent to parent controller
+    //        removeRequest(requestText);
 
-    private void removeRequest(String requestText) {
+    protected void removeRequest(String requestText) {
         requestListView.getItems().removeIf(hbox -> {
             Label label = (Label) hbox.getChildren().get(0);
             return label.getText().equals(requestText);
         });
+    }
+
+    public List<Command> getCommands() {
+        return commands;
+    }
+
+    public void setCommands(List<Command> commands) {
+        this.commands = commands;
     }
 }

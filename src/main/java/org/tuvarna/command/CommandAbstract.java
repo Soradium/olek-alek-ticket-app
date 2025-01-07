@@ -3,19 +3,19 @@ package org.tuvarna.command;
 import java.util.List;
 
 public abstract class CommandAbstract implements Command {
-    private String message;
+    private final String message;
 
     private List<Object> passedObjects;
 
-    private boolean approvalState;
-
     private Object receiver;
 
-    public CommandAbstract(String message, List<Object> passedObjects, boolean approvalState, Object receiver) {
+    private final Object sender;
+
+    public CommandAbstract(String message, List<Object> passedObjects, Object receiver, Object sender) {
         this.message = message;
         this.passedObjects = passedObjects;
-        this.approvalState = approvalState;
         this.receiver = receiver;
+        this.sender = sender;
     }
     @Override
     public List<Object> getPassedObjects() {
@@ -29,28 +29,18 @@ public abstract class CommandAbstract implements Command {
         return message;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
-    @Override
-    public boolean getApprovalState() {
-        return approvalState;
-    }
-
-    public void setApprovalState(boolean approvalState) {
-        this.approvalState = approvalState;
-    }
     @Override
     public Object getReceiver() {
         return receiver;
     }
 
+    @Override
     public void setReceiver(Object receiver) {
         this.receiver = receiver;
     }
 
     @Override
-    public void execute() {
-
+    public Object getSender() {
+        return sender;
     }
 }

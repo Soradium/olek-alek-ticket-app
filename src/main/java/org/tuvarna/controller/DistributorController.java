@@ -61,9 +61,17 @@ public class DistributorController implements Subject {
     @FXML
     public void showInfo() {
         companyTripsListView.getItems().clear();
+        availableTripsListView.getItems().clear();
         companies.clear();
         companies.addAll(companyService.getAllCompanies());
+        availableTrips.addAll(distributorService
+                .tripPerDistributor(distributorService
+                        .getDistributorByName(currentDistributor)));
         companiesListView.setItems(companies);
+
+        availableTripsListView.getItems().addAll(availableTrips);
+
+
     }
 
     @FXML
@@ -71,18 +79,22 @@ public class DistributorController implements Subject {
         Trip selectedTrip = companyTripsListView.getSelectionModel().getSelectedItem();
         if (selectedTrip != null) {
             String message = "Would you like to accept a trip request to "
-                    +currentDistributor+": "+selectedTrip.toString()+" ?";
+                    +currentDistributor+": "+ selectedTrip +" ?";
             List<Object> selectedTripList = new ArrayList<>();
             selectedTripList.add(selectedTrip);
             command = new RequestToCompanyCommandImpl(
                     message,
                     selectedTripList,
-                    false,
                     companyController,
                     distributorService.getDistributorByName(currentDistributor)
             );
             command.execute();
         }
+    }
+
+    private ObservableList<Trip> getTripsForCompany(Company company) {
+        List<Trip> tripList = company.getTrips();
+        return FXCollections.observableArrayList(tripList);
     }
 
     @FXML
@@ -98,7 +110,7 @@ public class DistributorController implements Subject {
     @FXML
     public void initialize() {
         try {
-            FXMLLoader requestPanelLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/check-requests.fxml"));
+            FXMLLoader requestPanelLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/check-requests-distributor.fxml"));
             checkRequests = requestPanelLoader.load();
             requestPanelController = requestPanelLoader.getController();
 
@@ -107,10 +119,6 @@ public class DistributorController implements Subject {
         }
     }
 
-    private ObservableList<Trip> getTripsForCompany(Company company) {
-        List<Trip> tripList = company.getTrips();
-        return FXCollections.observableArrayList(tripList);
-    }
 
     @FXML
     public void createCashier() {
