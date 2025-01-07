@@ -12,15 +12,17 @@ import org.tuvarna.entity.User;
 import org.tuvarna.observer.Observer;
 import org.tuvarna.observer.Subject;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 public class MenuStripSelector implements Subject, Observer {
     @FXML
     private final MenuBar menuBar;
-    private String currentItemChosen;
-    private String currentMenuChosen;
-    Observer observer;
+    private MenuItem currentItem;
+    private Menu currentMenu;
+    private Observer observer;
 
     public static class MenuStripSelectorBuilder {
         private final MenuBar menuBar = new MenuBar();
@@ -94,22 +96,23 @@ public class MenuStripSelector implements Subject, Observer {
     }
 
     private MenuStripSelector(MenuBar menuBarPassed) {
-        this.currentMenuChosen = null;
-        this.currentItemChosen = null;
+        this.currentMenu = null;
+        this.currentItem = null;
+
         this.menuBar = menuBarPassed;
 
         this.getMenuBar().getMenus().forEach(menu -> {
                 menu.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
-                        currentMenuChosen = menu.getText();
+                        currentMenu = menu;
                     }
                 });
                 menu.getItems().forEach(menuItem -> {
                         menuItem.setOnAction(new EventHandler<>() {
                             @Override
                             public void handle(ActionEvent actionEvent) {
-                                currentItemChosen = menuItem.getText();
+                                currentItem = menuItem;
                                 notifyObservers();
                             }
                         });
@@ -119,11 +122,6 @@ public class MenuStripSelector implements Subject, Observer {
     }
     //when an update is coming from main (new dist or company) update this
     //when an update is coming from this, update main(change panes)
-
-    private void refreshMenuBar() {
-        // Clear and re-add menus to the MenuBar
-         // Re-add menus with updated items
-    }
 
     @Override
     public void registerObserver(Observer observer) {
@@ -142,23 +140,37 @@ public class MenuStripSelector implements Subject, Observer {
 
     @Override
     public void update(Object context) {
-        String a = (String) context;
+        // first/last - Name/Type(in case of Admin)
+        List<String> sentValues = (List<String>) context;
+        menuBar.getMenus().stream().forEach(menu -> {
+            if(Objects.equals(menu.getText(), sentValues.getLast())) {
+                MenuItem menuItem = new MenuItem(sentValues.getFirst());
+                menuItem.setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent actionEvent) {
+                        currentItem = menuItem;
+                        notifyObservers();
+                    }
+                });
+                menu.getItems().add(menuItem);
+            }
+        });
     }
 
-    public String getCurrentItemChosen() {
-        return currentItemChosen;
+    public MenuItem getCurrentItem() {
+        return currentItem;
     }
 
-    public void setCurrentItemChosen(String currentItemChosen) {
-        this.currentItemChosen = currentItemChosen;
+    public void setCurrentItem(MenuItem currentItem) {
+        this.currentItem = currentItem;
     }
 
-    public String getCurrentMenuChosen() {
-        return currentMenuChosen;
+    public Menu getCurrentMenu() {
+        return currentMenu;
     }
 
-    public void setCurrentMenuChosen(String currentMenuChosen) {
-        this.currentMenuChosen = currentMenuChosen;
+    public void setCurrentMenu(Menu currentMenu) {
+        this.currentMenu = currentMenu;
     }
 
     public Observer getObserver() {

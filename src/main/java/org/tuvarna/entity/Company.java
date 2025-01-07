@@ -24,7 +24,10 @@ public class Company {
     )
     private List<Bus> bus = new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "company", fetch = FetchType.EAGER)
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            mappedBy = "company",
+            fetch = FetchType.EAGER)
     private List<Trip> trips = new ArrayList<>();
 
     public Company() {
@@ -76,5 +79,13 @@ public class Company {
 
     public void addTrip(Trip trip) {
         this.trips.add(trip);
+    }
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", currentRating=" + currentRating;
     }
 }

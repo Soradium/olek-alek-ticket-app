@@ -35,4 +35,12 @@ public class CashierController {
     public void setCashierService(CashierService service) {
         this.service = service;
     }
+
+    public Cashier getCurrentCashier() {
+        return currentCashier;
+    }
+
+    public void setCurrentCashier(Cashier currentCashier) {
+        this.currentCashier = currentCashier;
+    }
 }

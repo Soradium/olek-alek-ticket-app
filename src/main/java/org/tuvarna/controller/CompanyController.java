@@ -3,21 +3,29 @@ package org.tuvarna.controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import org.tuvarna.command.Command;
 import org.tuvarna.entity.Bus;
 import org.tuvarna.entity.Company;
 import org.tuvarna.entity.Trip;
 
+import org.tuvarna.observer.Observer;
+import org.tuvarna.observer.Subject;
 import org.tuvarna.service.BusService;
 import org.tuvarna.service.CompanyService;
 import org.tuvarna.service.TripService;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
-
-public class CompanyController  {
+public class CompanyController implements Subject {
+    @FXML
+    private Parent checkRequests;
     @FXML
     private TextField busNumber;
     @FXML
@@ -32,6 +40,8 @@ public class CompanyController  {
     private TextField timeOfDeparture;
     @FXML
     private TextField tripType;
+    @FXML
+    private RequestPanelController requestPanelController;
 
     private TripService tripService;
 
@@ -53,9 +63,30 @@ public class CompanyController  {
 
     private ObservableList<Trip> trips = FXCollections.observableArrayList();
 
+    private ObservableList<Command> commands = FXCollections.observableArrayList();
+
+    private Observer observer;
+
     private Company getCurrentCompany() {
         return companyService.getCompanyByName(tripService.getCurrentCompanyName());
     }
+
+    public void initialize() {
+        try {
+            FXMLLoader requestPanelLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/check-requests.fxml"));
+            checkRequests = requestPanelLoader.load();
+            requestPanelController = requestPanelLoader.getController();
+            requestPanelController.reloadRequests();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+//    @FXML
+//    public boolean respondToRequest(Command command) {
+//        //here it should add it to panel
+//         boolean requestPanelController.addRequest(command);
+//    }
 
     @FXML
     public void addTrip(){
@@ -80,7 +111,6 @@ public class CompanyController  {
         busService.addBus(new Bus(getCurrentCompany()));
     }
 
-
     @FXML
     private void showInfo() {
         tripListView.getItems().clear();
@@ -89,4 +119,31 @@ public class CompanyController  {
         tripListView.setItems(trips);
     }
 
+    /*
+
+     * TODO: Company -> Distributor
+     *  Select company -> Select trip -> Request trip
+
+     * TODO: Distributor -> Cashier
+     *  Select trip -> request N tickets
+
+     * TODO: Cashier -> User
+     *  Select Ticket -> request Ticket from Cashier X that owns it
+
+     * */
+
+    @Override
+    public void registerObserver(Observer observer) {
+        this.observer = observer; //main controller
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+        this.observer = null;
+    }
+
+    @Override
+    public void notifyObservers() {
+        this.observer.update(getCurrentCompany().getName());
+    }
 }
