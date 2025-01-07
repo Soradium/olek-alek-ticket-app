@@ -29,6 +29,13 @@ public class Distributor {
     )
     private List<Ticket> tickets = new ArrayList<>();
 
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            mappedBy = "distributor",
+            fetch = FetchType.EAGER
+    )
+    private List<Trip> trips = new ArrayList<>();
+
     public Distributor() {
     }
 
@@ -75,5 +82,17 @@ public class Distributor {
 
     public void addTicket(Ticket ticket) {
         this.tickets.add(ticket);
+    }
+
+    public List<Trip> getTrips() {
+        return trips;
+    }
+
+    public void setTrips(List<Trip> trips) {
+        this.trips = trips;
+    }
+
+    public void addTrip(Trip trip) {
+        this.trips.add(trip);
     }
 }
