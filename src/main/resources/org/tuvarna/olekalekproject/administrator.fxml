@@ -21,7 +21,7 @@
         </HBox>
 
         <HBox spacing="10" alignment="CENTER">
-            <TextField fx:id="userName" promptText="Enter Distributor Name"/>
+            <TextField fx:id="userName" promptText="Enter User Name"/>
             <Button text="Insert User" onAction="#insertUser"/>
         </HBox>
 
