@@ -1,5 +1,7 @@
 package org.tuvarna.controller;
 
+import javafx.application.Platform;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -88,12 +90,14 @@ public class MainController implements Observer {
                 .withCompanies(companies)
                 .withUsers(users)
                 .build();
+
         try {
             FXMLLoader administratorLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/administrator.fxml"));
             administrator = administratorLoader.load();
             administratorController = administratorLoader.getController();
             administratorController.setCompanyService(companyService);
             administratorController.setDistributorService(distributorService);
+            administratorController.setUserService(userService);
             administratorController.registerObserver(menuStrip);
 
             FXMLLoader companyLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/company.fxml"));
@@ -122,6 +126,11 @@ public class MainController implements Observer {
             FXMLLoader userLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/user.fxml"));
             user = userLoader.load();
             userController = userLoader.getController();
+            userController.setTripService(tripService);
+            userController.setTicketService(ticketService);
+            userController.initializeData();
+
+
 
             root.setTop(menuStrip.getMenuBar());
             root.setCenter(administrator);

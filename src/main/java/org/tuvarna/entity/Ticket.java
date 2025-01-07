@@ -30,13 +30,35 @@ public class Ticket {
     @Column(name = "is_sold")
     private boolean isSold = false;
 
+    @Column(name = "is_rate")
+    private boolean isRate = false;
+
     public Ticket() {}
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "user=" + user +
+                ", distributor=" + distributor +
+                ", seat=" + seat +
+                ", isSold=" + isSold +
+                '}';
+    }
 
     public Ticket(User user, Seat seat, Trip trip) {
         this.user = user;
         this.seat = seat;
         this.trip = trip;
         this.isSold = false;
+        this.isRate = false;
+    }
+
+    public boolean isRate() {
+        return isRate;
+    }
+
+    public void setRate(boolean rate) {
+        isRate = rate;
     }
 
     public int getId() {
@@ -86,4 +108,6 @@ public class Ticket {
     public void setSold(boolean sold) {
         isSold = sold;
     }
+
+
 }

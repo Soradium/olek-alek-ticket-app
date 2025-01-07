@@ -30,6 +30,7 @@ public class Company {
             fetch = FetchType.EAGER)
     private List<Trip> trips = new ArrayList<>();
 
+
     public Company() {
     }
 

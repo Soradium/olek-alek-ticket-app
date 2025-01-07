@@ -25,6 +25,10 @@ public class UserService {
                 .equals(name)).findFirst().orElse(null);
     }
 
+    public void addUser(User user) {
+        userDAO.save(user);
+    }
+
     public List<Ticket> getTicketsByUsername(String name) {
         return getUserByName(name).getTickets();
     }

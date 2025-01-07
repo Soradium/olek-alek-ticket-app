@@ -19,6 +19,7 @@ public class DatabaseSingleton {
                 .addAnnotatedClass(Distributor.class)
                 .addAnnotatedClass(Seat.class)
                 .addAnnotatedClass(Cashier.class)
+                .addAnnotatedClass(CompanyRatings.class)
                 .buildSessionFactory();
     }
 

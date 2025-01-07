@@ -4,15 +4,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import org.hibernate.Session;
-import org.tuvarna.entity.Cashier;
-import org.tuvarna.entity.Company;
-import org.tuvarna.entity.Distributor;
-import org.tuvarna.entity.Trip;
+import org.tuvarna.entity.*;
 import org.tuvarna.observer.Observer;
 import org.tuvarna.observer.Subject;
 import org.tuvarna.service.CompanyService;
 import org.tuvarna.service.DistributorService;
 import org.tuvarna.service.TripService;
+import org.tuvarna.service.UserService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,9 +20,12 @@ public class AdministratorController implements Subject {
     public TextField companyName;
     @FXML
     public TextField distributorName;
+    @FXML
+    public TextField userName;
 
     private CompanyService companyService;
     private DistributorService distributorService;
+    private UserService userService;
 
     private Observer observer;
 
@@ -57,6 +58,10 @@ public class AdministratorController implements Subject {
         this.distributorService = distributorService;
     }
 
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
+
     @Override
     public void registerObserver(Observer observer) {
         this.observer = observer; //main controller
@@ -73,5 +78,13 @@ public class AdministratorController implements Subject {
         valueAndType.add(lastAdded);
         valueAndType.add(lastAddedType);
         this.observer.update(valueAndType);
+    }
+
+    public void insertUser() {
+        String userNameText = this.userName.getText();
+        userService.addUser(new User(userNameText));
+        lastAdded = userNameText;
+        lastAddedType = "Users";
+        notifyObservers();
     }
 }

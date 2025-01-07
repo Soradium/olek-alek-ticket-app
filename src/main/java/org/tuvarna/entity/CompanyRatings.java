@@ -11,23 +11,19 @@ public class CompanyRatings {
     @Column(name = "rating_id")
     private int id;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "company_id")
     private Company companyId;
 
     @Column(name = "rating_value")
     private int ratingValue;
 
-    @Column(name = "review")
-    private String review;
-
     public CompanyRatings() {
     }
 
-    public CompanyRatings(Company companyId, int ratingValue, String review) {
+    public CompanyRatings(Company companyId, int ratingValue) {
         this.companyId = companyId;
         this.ratingValue = ratingValue;
-        this.review = review;
     }
 
     public int getId() {
@@ -52,13 +48,5 @@ public class CompanyRatings {
 
     public void setRatingValue(int ratingValue) {
         this.ratingValue = ratingValue;
-    }
-
-    public String getReview() {
-        return review;
-    }
-
-    public void setReview(String review) {
-        this.review = review;
     }
 }
