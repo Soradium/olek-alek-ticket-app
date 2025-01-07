@@ -22,6 +22,13 @@ public class Distributor {
     )
     private List<Cashier> cashiers = new ArrayList<>();
 
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            mappedBy = "distributor",
+            fetch = FetchType.EAGER
+    )
+    private List<Ticket> tickets = new ArrayList<>();
+
     public Distributor() {
     }
 
@@ -56,5 +63,17 @@ public class Distributor {
 
     public void addCashier(Cashier cashier) {
         this.cashiers.add(cashier);
+    }
+
+    public List<Ticket> getTickets() {
+        return tickets;
+    }
+
+    public void setTickets(List<Ticket> tickets) {
+        this.tickets = tickets;
+    }
+
+    public void addTicket(Ticket ticket) {
+        this.tickets.add(ticket);
     }
 }

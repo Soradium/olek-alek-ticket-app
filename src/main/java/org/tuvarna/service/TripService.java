@@ -38,6 +38,10 @@ public class TripService {
         return companyTrips;
     }
 
+    public Trip getTripById(int id) {
+        return tripDAO.findById(id);
+    }
+
     public Trip addTrip(Trip trip) {
         return tripDAO.save(trip);
     }

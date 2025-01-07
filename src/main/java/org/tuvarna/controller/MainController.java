@@ -3,6 +3,8 @@ package org.tuvarna.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
 import org.hibernate.SessionFactory;
 import org.tuvarna.entity.Cashier;
@@ -10,14 +12,12 @@ import org.tuvarna.entity.Company;
 import org.tuvarna.entity.Distributor;
 import org.tuvarna.entity.User;
 import org.tuvarna.observer.Observer;
-import org.tuvarna.observer.Subject;
-import org.tuvarna.repository.*;
 import org.tuvarna.service.*;
 import org.tuvarna.database.DatabaseSingleton;
 
 import java.util.List;
 
-public class MainController implements Subject, Observer {
+public class MainController implements Observer {
 
     @FXML
     private BorderPane root;
@@ -32,8 +32,6 @@ public class MainController implements Subject, Observer {
     private Parent user;
     @FXML
     private Parent cashier;
-    @FXML
-    private Parent checkRequests;
 
     @FXML
     private AdministratorController administratorController;
@@ -45,14 +43,12 @@ public class MainController implements Subject, Observer {
     private UserController userController;
     @FXML
     private CashierController cashierController;
-    @FXML
-    private RequestPanelController requestPanelController;
 
     private MenuStripSelector menuStrip;
 
-    private String selectedMenu;
+    private Menu selectedMenu;
 
-    private String selectedMenuItem;
+    private MenuItem selectedMenuItem;
 
     private TripService tripService;
     private CompanyService companyService;
@@ -61,6 +57,12 @@ public class MainController implements Subject, Observer {
     private TicketService ticketService;
     private CashierService cashierService;
     private UserService userService;
+    /*
+    TODO: RequestPanelController
+    TODO: Cashier
+    TODO: inject RequestPanelController into Cashier, Company, Distributor
+
+    *  */
 
     public void initialize() {
 
@@ -92,6 +94,7 @@ public class MainController implements Subject, Observer {
             administratorController = administratorLoader.getController();
             administratorController.setCompanyService(companyService);
             administratorController.setDistributorService(distributorService);
+            administratorController.registerObserver(menuStrip);
 
             FXMLLoader companyLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/company.fxml"));
             company = companyLoader.load();
@@ -99,19 +102,22 @@ public class MainController implements Subject, Observer {
             companyController.setTripService(tripService);
             companyController.setBusService(busService);
             companyController.setCompanyService(companyService);
+            companyController.registerObserver(menuStrip);
 
             FXMLLoader cashierLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/cashier.fxml"));
             cashier = cashierLoader.load();
             cashierController = cashierLoader.getController();
             cashierController.setCashierService(cashierService);
 
-            FXMLLoader requestPanelLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/check-requests.fxml"));
-            checkRequests = requestPanelLoader.load();
-            requestPanelController = requestPanelLoader.getController();
-
             FXMLLoader distributorLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/distributor.fxml"));
             distributor = distributorLoader.load();
             distributorController = distributorLoader.getController();
+            distributorController.setTripService(tripService);
+            distributorController.setCompanyService(companyService);
+            distributorController.setCashierService(cashierService);
+            distributorController.setDistributorService(distributorService);
+            distributorController.registerObserver(menuStrip);
+            distributorController.setCompanyController(companyController);
 
             FXMLLoader userLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/user.fxml"));
             user = userLoader.load();
@@ -128,59 +134,40 @@ public class MainController implements Subject, Observer {
 
     @Override
     public void update(Object context) {
-        // send menuitem and menu, then process them
         MenuStripSelector menuStrip = (MenuStripSelector) context;
-        selectedMenu = menuStrip.getCurrentMenuChosen();
-        selectedMenuItem = menuStrip.getCurrentItemChosen();
+        selectedMenu = menuStrip.getCurrentMenu();
+        selectedMenuItem = menuStrip.getCurrentItem();
 
         System.out.println(selectedMenu);
         System.out.println(selectedMenuItem);
-        switch(selectedMenu) {
+        switch(selectedMenu.getText()) {
             case "Distributors": {
+                distributorController.setCurrentDistributor(selectedMenuItem.getText());
                 root.setCenter(distributor);
                 break;
             }
             case "Companies": {
                 root.setCenter(company);
-                tripService.setCurrentCompany(selectedMenuItem);
+                tripService.setCurrentCompany(selectedMenuItem.getText());
                 break;
             }
             case "Users": {
                 root.setCenter(user);
+                userController.setCurrentUser(selectedMenuItem.getText());
                 break;
             }
             case "Cashiers": {
                 root.setCenter(cashier);
+                cashierController.setCurrentCashier(
+                        cashierService.getCashierByName(
+                                selectedMenuItem.getText()
+                        ));
                 break;
             } default: {
                 root.setCenter(administrator);
                 break;
             }
         }
-
     }
-
-    @Override
-    public void registerObserver(Observer observer) {
-
-    }
-
-    @Override
-    public void removeObserver(Observer observer) {
-
-    }
-
-    @Override
-    public void notifyObservers() {
-
-    }
-
-//    @Override
-//    public void update(Object menuItem) {
-//        Session session = databaseSingleton.getSessionFactory().getCurrentSession();
-//        session.beginTransaction();
-//
-//    }
-
 
 }

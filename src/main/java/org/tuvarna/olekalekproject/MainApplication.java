@@ -23,7 +23,7 @@ public class MainApplication extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("main-pane.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 800);
+        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
