@@ -51,8 +51,4 @@ public class User {
     public void setTickets(List<Ticket> tickets) {
         this.tickets = tickets;
     }
-
-    public void addTicket(Ticket ticket) {
-        this.tickets.add(ticket);
-    }
 }

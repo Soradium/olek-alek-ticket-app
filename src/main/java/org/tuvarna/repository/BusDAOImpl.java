@@ -52,7 +52,7 @@ public class BusDAOImpl implements TableDAO<Bus> {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         try {
-            session.persist(bus);
+            session.merge(bus);
             session.getTransaction().commit();
             return bus;
         } catch (Exception e) {

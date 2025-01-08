@@ -5,15 +5,18 @@ import org.tuvarna.command.Command;
 import org.tuvarna.entity.Distributor;
 import org.tuvarna.entity.Trip;
 import org.tuvarna.service.DistributorService;
+import org.tuvarna.service.TicketService;
 import org.tuvarna.service.TripService;
 
 public class CompToDistrPanelControllerImpl extends RequestPanelController {
     private final TripService tripService;
     private DistributorService distributorService;
+    private TicketService ticketService;
 
     public CompToDistrPanelControllerImpl() {
         this.distributorService = new DistributorService();
         this.tripService = new TripService();
+        this.ticketService = new TicketService();
     }
 
     @Override

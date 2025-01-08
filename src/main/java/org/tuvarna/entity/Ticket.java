@@ -45,8 +45,7 @@ public class Ticket {
                 '}';
     }
 
-    public Ticket(User user, Seat seat, Trip trip) {
-        this.user = user;
+    public Ticket(Seat seat, Trip trip) {
         this.seat = seat;
         this.trip = trip;
         this.isSold = false;

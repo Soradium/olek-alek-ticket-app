@@ -25,7 +25,7 @@ public class Company {
     private List<Bus> bus = new ArrayList<>();
 
     @OneToMany(
-            cascade = CascadeType.ALL,
+            cascade = {CascadeType.PERSIST, CascadeType.DETACH,CascadeType.REFRESH, CascadeType.REMOVE},
             mappedBy = "company",
             fetch = FetchType.EAGER)
     private List<Trip> trips = new ArrayList<>();
@@ -76,10 +76,6 @@ public class Company {
 
     public void setTrips(List<Trip> trips) {
         this.trips = trips;
-    }
-
-    public void addTrip(Trip trip) {
-        this.trips.add(trip);
     }
 
     @Override

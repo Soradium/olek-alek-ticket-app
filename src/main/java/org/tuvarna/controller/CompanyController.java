@@ -8,23 +8,23 @@ import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.tuvarna.command.Command;
-import org.tuvarna.entity.Bus;
-import org.tuvarna.entity.Company;
-import org.tuvarna.entity.Trip;
+import org.tuvarna.database.DatabaseSingleton;
+import org.tuvarna.entity.*;
 
 import org.tuvarna.observer.Observer;
 import org.tuvarna.observer.Subject;
-import org.tuvarna.service.BusService;
-import org.tuvarna.service.CompanyService;
-import org.tuvarna.service.DistributorService;
-import org.tuvarna.service.TripService;
+import org.tuvarna.service.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CompanyController implements Subject {
+    @FXML
+    public ListView<Bus> busListView;
     @FXML
     private Parent checkRequests; //requestPanel
     @FXML
@@ -52,6 +52,14 @@ public class CompanyController implements Subject {
 
     private DistributorService distributorService;
 
+    private TicketService ticketService;
+
+    private final SessionFactory sessionFactory = DatabaseSingleton.getInstance().getSessionFactory();
+
+    public void setTicketService(TicketService ticketService) {
+        this.ticketService = ticketService;
+    }
+
     public void setBusService(BusService busService) {
         this.busService = busService;
     }
@@ -65,6 +73,8 @@ public class CompanyController implements Subject {
     }
 
     private final ObservableList<Trip> trips = FXCollections.observableArrayList();
+
+    private final ObservableList<Bus> buses = FXCollections.observableArrayList();
 
     private final ObservableList<Command> commands = FXCollections.observableArrayList();
 
@@ -96,16 +106,44 @@ public class CompanyController implements Subject {
         LocalDate timeOfDepartureText = LocalDate.parse(timeOfDeparture.getText());
         String tripTypeText = tripType.getText();
         System.out.println("Local date: " + timeOfDepartureText);
-        trips.add(tripService.addTrip(new Trip(departureText,
+        Bus currentBus = busListView.getSelectionModel().getSelectedItem();
+        System.out.println(currentBus.getId());
+        Trip currentTrip = tripService.addTrip(new Trip(departureText,
                 destinationText,
                 timeOfDepartureText,
                 tripTypeText,
-                getCurrentCompany()))
-        );
+                getCurrentCompany()));
+        System.out.println(currentTrip.getId());
+        trips.add(currentTrip);
+        List<Seat> tempList = new ArrayList<>();
+        for(int i = 0; i < 20; i++) {
+            tempList.add(seatCreation(busListView.getSelectionModel().getSelectedItem()));
+            ticketService.addTicket(new Ticket(tempList.get(i), currentTrip));
+        }
+        changeAvailabiltyOfBus(busListView.getSelectionModel().getSelectedItem());
         departure.clear();
         destination.clear();
         timeOfDeparture.clear();
         tripType.clear();
+    }
+
+    private Seat seatCreation(Bus bus){
+        Session session = sessionFactory.getCurrentSession();
+        session.beginTransaction();
+        Seat seat = session.merge(new Seat(busListView.getSelectionModel().getSelectedItem()));
+        session.createQuery("update Bus set available = false where id =:id").setParameter("id", bus.getId()).executeUpdate();
+        System.out.println("SEAT " + seat);
+        session.getTransaction().commit();
+        return seat;
+    }
+
+    private void changeAvailabiltyOfBus(Bus bus){
+        Session session = sessionFactory.getCurrentSession();
+        session.beginTransaction();
+        session.createQuery("update Bus set available = false where id =:id").
+                setParameter("id", bus.getId()).
+                executeUpdate();
+        session.getTransaction().commit();
     }
     @FXML
     public void addBus(){
@@ -126,6 +164,9 @@ public class CompanyController implements Subject {
         trips.addAll(tripService.getAllTripsByCompany());
         ratingLabel.setText(String.valueOf(getCurrentCompany().getCurrentRating()));
         tripListView.setItems(trips);
+        busListView.getItems().clear();
+        buses.addAll(busService.getAllAvailableBusesByCompany());
+        busListView.setItems(buses);
     }
 
     /*

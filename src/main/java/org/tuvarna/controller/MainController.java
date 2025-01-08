@@ -104,6 +104,7 @@ public class MainController implements Observer {
             companyController.setTripService(tripService);
             companyController.setBusService(busService);
             companyController.setCompanyService(companyService);
+            companyController.setTicketService(ticketService);
             companyController.registerObserver(menuStrip);
 
             FXMLLoader cashierLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/cashier.fxml"));
@@ -155,6 +156,7 @@ public class MainController implements Observer {
                 break;
             }
             case "Companies": {
+                busService.setCurrentCompany(selectedMenuItem.getText());
                 tripService.setCurrentCompany(selectedMenuItem.getText());
                 root.setCenter(company);
                 root.setRight(companyController.getCheckRequests());
