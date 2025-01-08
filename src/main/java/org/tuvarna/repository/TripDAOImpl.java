@@ -53,9 +53,9 @@ public class TripDAOImpl implements TableDAO<Trip> {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         try {
-            session.persist(trip);
+            Trip currentTrip = session.merge(trip);
             session.getTransaction().commit();
-            return trip;
+            return currentTrip;
         } catch (Exception e) {
             session.getTransaction().rollback();
             e.printStackTrace();

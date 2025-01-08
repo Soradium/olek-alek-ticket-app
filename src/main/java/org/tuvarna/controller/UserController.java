@@ -119,7 +119,7 @@ public class UserController {
 
     private void showTickets() {
         Trip currentTrip = tripComboBox.getSelectionModel().getSelectedItem();
-        List<Ticket> tickets = ticketService.getAllTickets().stream().filter(c -> c.getTrip().getId() == currentTrip.getId() && !c.isSold()).toList();
+        List<Ticket> tickets = ticketService.getAllTickets().stream().filter(c -> c.getTrip().getId() == currentTrip.getId() && !c.isSold() && c.getDistributor() != null).toList();
         ObservableList<Ticket> obsTickets = FXCollections.observableArrayList(tickets);
         System.out.println(obsTickets);
         seatComboBox.setItems(obsTickets);

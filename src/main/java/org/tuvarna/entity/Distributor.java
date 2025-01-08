@@ -92,7 +92,4 @@ public class Distributor {
         this.trips = trips;
     }
 
-    public void addTrip(Trip trip) {
-        this.trips.add(trip);
-    }
 }

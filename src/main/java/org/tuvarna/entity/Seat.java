@@ -24,10 +24,9 @@ public class Seat {
 
     public Seat() {}
 
-    public Seat(Bus bus, Ticket ticket, boolean availability) {
+    public Seat(Bus bus) {
         this.bus = bus;
-        this.ticket = ticket;
-        this.availability = availability;
+        this.availability = true;
     }
 
     public int getId() {

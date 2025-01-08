@@ -52,7 +52,7 @@ public class TicketDAOImpl implements TableDAO<Ticket> {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         try {
-            session.persist(ticket);
+            session.merge(ticket);
             session.getTransaction().commit();
             return ticket;
         } catch (Exception e) {

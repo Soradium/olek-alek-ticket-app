@@ -1,6 +1,7 @@
 package org.tuvarna.entity;
 
 import jakarta.persistence.*;
+import org.hibernate.sql.Update;
 
 import java.time.LocalDate;
 
@@ -25,7 +26,7 @@ public class Trip {
     @Column(name = "type")
     private String tripType;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.REFRESH, CascadeType.REMOVE, CascadeType.DETACH})
     @JoinColumn(name = "company_id")
     private Company company;
 

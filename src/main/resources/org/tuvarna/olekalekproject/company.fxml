@@ -3,29 +3,33 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tuvarna.controller.CompanyController">
+<BorderPane prefHeight="454.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tuvarna.controller.CompanyController">
     <center>
-        <VBox alignment="CENTER" spacing="20">
-            <HBox alignment="CENTER" spacing="10">
-                <TextField fx:id="departure" promptText="Enter Departure Location" />
-                <TextField fx:id="destination" promptText="Enter Destination" />
-                <TextField fx:id="timeOfDeparture" promptText="Enter Time of Departure (YYYY-MM-DD)" />
-                <TextField fx:id="tripType" promptText="Enter Trip Type" />
-                <Button onAction="#addTrip" text="Add Trip" />
-            </HBox>
+        <VBox alignment="CENTER" prefWidth="698.0" spacing="20">
             <HBox alignment="CENTER" spacing="10">
                 <Label text="Available Trips" />
             </HBox>
-            <ListView fx:id="tripListView" prefHeight="200" prefWidth="300" />
+            <ListView fx:id="tripListView" prefHeight="130" prefWidth="300" />
             <HBox alignment="CENTER" spacing="10">
-                <Button onAction="#showInfo" text="Show all info" />
+                <Button onAction="#showInfo" text="Update all info" />
             </HBox>
             <HBox alignment="CENTER" spacing="10">
                 <Label text="Company Rating: " />
                 <Label fx:id="ratingLabel" />
             </HBox>
             <HBox alignment="CENTER" spacing="10">
-                <Button onAction="#addBus" text="Add Bus" />
+                <Label text="Available Buses" />
+            </HBox>
+            <ListView fx:id="busListView" prefHeight="130" prefWidth="300" />
+            <HBox alignment="CENTER" spacing="10">
+                <Button onAction="#addBus" text="Add new Bus" />
+            </HBox>
+            <HBox alignment="CENTER" spacing="10">
+                <TextField fx:id="departure" promptText="Enter Departure Location" />
+                <TextField fx:id="destination" promptText="Enter Destination" />
+                <TextField fx:id="timeOfDeparture" promptText="Enter Time of Departure (YYYY-MM-DD)" />
+                <TextField fx:id="tripType" promptText="Enter Trip Type" />
+                <Button onAction="#addTrip" text="Add Trip" />
             </HBox>
         </VBox>
     </center>
