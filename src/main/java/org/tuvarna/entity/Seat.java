@@ -16,13 +16,14 @@ public class Seat {
     private Bus bus;
 
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name="ticket_id")
+    @JoinColumn(name = "ticket_id")
     private Ticket ticket;
 
     @Column
     private boolean availability;
 
-    public Seat() {}
+    public Seat() {
+    }
 
     public Seat(Bus bus, Ticket ticket, boolean availability) {
         this.bus = bus;

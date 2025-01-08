@@ -2,7 +2,6 @@ package org.tuvarna.repository;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.tuvarna.entity.Bus;
 import org.tuvarna.entity.Cashier;
 
 import java.util.List;

@@ -33,7 +33,16 @@ public class Ticket {
     @Column(name = "is_rate")
     private boolean isRate = false;
 
-    public Ticket() {}
+    public Ticket() {
+    }
+
+    public Ticket(User user, Seat seat, Trip trip) {
+        this.user = user;
+        this.seat = seat;
+        this.trip = trip;
+        this.isSold = false;
+        this.isRate = false;
+    }
 
     @Override
     public String toString() {
@@ -43,14 +52,6 @@ public class Ticket {
                 ", seat=" + seat +
                 ", isSold=" + isSold +
                 '}';
-    }
-
-    public Ticket(User user, Seat seat, Trip trip) {
-        this.user = user;
-        this.seat = seat;
-        this.trip = trip;
-        this.isSold = false;
-        this.isRate = false;
     }
 
     public boolean isRate() {

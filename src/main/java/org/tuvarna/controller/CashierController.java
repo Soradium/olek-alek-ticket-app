@@ -2,12 +2,8 @@ package org.tuvarna.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import org.tuvarna.service.CashierService;
-
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import org.tuvarna.service.CashierService;
 import org.tuvarna.entity.Cashier;
+import org.tuvarna.service.CashierService;
 
 public class CashierController {
 

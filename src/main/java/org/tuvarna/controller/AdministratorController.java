@@ -3,13 +3,13 @@ package org.tuvarna.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
-import org.hibernate.Session;
-import org.tuvarna.entity.*;
+import org.tuvarna.entity.Company;
+import org.tuvarna.entity.Distributor;
+import org.tuvarna.entity.User;
 import org.tuvarna.observer.Observer;
 import org.tuvarna.observer.Subject;
 import org.tuvarna.service.CompanyService;
 import org.tuvarna.service.DistributorService;
-import org.tuvarna.service.TripService;
 import org.tuvarna.service.UserService;
 
 import java.util.ArrayList;

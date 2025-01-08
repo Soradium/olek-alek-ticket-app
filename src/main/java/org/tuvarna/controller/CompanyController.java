@@ -12,7 +12,6 @@ import org.tuvarna.command.Command;
 import org.tuvarna.entity.Bus;
 import org.tuvarna.entity.Company;
 import org.tuvarna.entity.Trip;
-
 import org.tuvarna.observer.Observer;
 import org.tuvarna.observer.Subject;
 import org.tuvarna.service.BusService;
@@ -21,10 +20,10 @@ import org.tuvarna.service.DistributorService;
 import org.tuvarna.service.TripService;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 public class CompanyController implements Subject {
+    private final ObservableList<Trip> trips = FXCollections.observableArrayList();
+    private final ObservableList<Command> commands = FXCollections.observableArrayList();
     @FXML
     private Parent checkRequests; //requestPanel
     @FXML
@@ -43,14 +42,11 @@ public class CompanyController implements Subject {
     private TextField tripType;
     @FXML
     private RequestPanelController requestPanelController;
-
     private TripService tripService;
-
     private CompanyService companyService;
-
     private BusService busService;
-
     private DistributorService distributorService;
+    private Observer observer;
 
     public void setBusService(BusService busService) {
         this.busService = busService;
@@ -63,12 +59,6 @@ public class CompanyController implements Subject {
     public void setTripService(TripService tripService) {
         this.tripService = tripService;
     }
-
-    private final ObservableList<Trip> trips = FXCollections.observableArrayList();
-
-    private final ObservableList<Command> commands = FXCollections.observableArrayList();
-
-    private Observer observer;
 
     private Company getCurrentCompany() {
         return companyService.getCompanyByName(tripService.getCurrentCompanyName());
@@ -90,7 +80,7 @@ public class CompanyController implements Subject {
     }
 
     @FXML
-    public void addTrip(){
+    public void addTrip() {
         String departureText = departure.getText();
         String destinationText = destination.getText();
         LocalDate timeOfDepartureText = LocalDate.parse(timeOfDeparture.getText());
@@ -107,8 +97,9 @@ public class CompanyController implements Subject {
         timeOfDeparture.clear();
         tripType.clear();
     }
+
     @FXML
-    public void addBus(){
+    public void addBus() {
         busService.addBus(new Bus(getCurrentCompany()));
     }
 

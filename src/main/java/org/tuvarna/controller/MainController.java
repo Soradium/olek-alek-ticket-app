@@ -1,7 +1,5 @@
 package org.tuvarna.controller;
 
-import javafx.application.Platform;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,13 +7,13 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
 import org.hibernate.SessionFactory;
+import org.tuvarna.database.DatabaseSingleton;
 import org.tuvarna.entity.Cashier;
 import org.tuvarna.entity.Company;
 import org.tuvarna.entity.Distributor;
 import org.tuvarna.entity.User;
 import org.tuvarna.observer.Observer;
 import org.tuvarna.service.*;
-import org.tuvarna.database.DatabaseSingleton;
 
 import java.util.List;
 
@@ -131,7 +129,6 @@ public class MainController implements Observer {
             userController.initializeData();
 
 
-
             root.setTop(menuStrip.getMenuBar());
             root.setCenter(administrator);
 
@@ -149,7 +146,7 @@ public class MainController implements Observer {
 
         System.out.println(selectedMenu);
         System.out.println(selectedMenuItem);
-        switch(selectedMenu.getText()) {
+        switch (selectedMenu.getText()) {
             case "Distributors": {
                 distributorController.setCurrentDistributor(selectedMenuItem.getText());
                 root.setCenter(distributor);
@@ -174,7 +171,8 @@ public class MainController implements Observer {
                                 selectedMenuItem.getText()
                         ));
                 break;
-            } default: {
+            }
+            default: {
                 root.setCenter(administrator);
                 root.setRight(null);
                 break;

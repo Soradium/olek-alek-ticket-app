@@ -1,8 +1,8 @@
 package org.tuvarna.factories;
 
+import org.tuvarna.database.DatabaseSingleton;
 import org.tuvarna.entity.*;
 import org.tuvarna.repository.*;
-import org.tuvarna.database.DatabaseSingleton;
 
 import java.util.Objects;
 
@@ -17,15 +17,15 @@ public class FactoryDAO {
     TableDAO<Trip> tripDao;
     TableDAO<User> userDao;
 
+    private FactoryDAO() {
+        database = DatabaseSingleton.getInstance();
+    }
+
     public static FactoryDAO getInstance() {
         if (instance == null) {
             instance = new FactoryDAO();
         }
         return instance;
-    }
-
-    private FactoryDAO() {
-        database = DatabaseSingleton.getInstance();
     }
 
     @SuppressWarnings("unchecked")

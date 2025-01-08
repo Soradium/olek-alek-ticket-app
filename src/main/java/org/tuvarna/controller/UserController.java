@@ -9,7 +9,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
-import org.controlsfx.control.Rating;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.tuvarna.database.DatabaseSingleton;
@@ -22,6 +21,8 @@ import org.tuvarna.service.TripService;
 import java.util.List;
 
 public class UserController {
+    private final SessionFactory sessionFactory = DatabaseSingleton.getInstance().getSessionFactory();
+    private final SimpleStringProperty currentUser = new SimpleStringProperty();
     @FXML
     public ComboBox<Trip> tripComboBox;
     @FXML
@@ -34,11 +35,6 @@ public class UserController {
     public ToggleGroup ratingGroup;
     @FXML
     public Label errorLabel;
-
-    private final SessionFactory sessionFactory = DatabaseSingleton.getInstance().getSessionFactory();
-
-    private final SimpleStringProperty currentUser = new SimpleStringProperty();
-
     private TripService tripService;
 
     private TicketService ticketService;
@@ -60,24 +56,25 @@ public class UserController {
         rating4.setToggleGroup(ratingGroup);
         rating5.setToggleGroup(ratingGroup);
     }
-    public void initializeData(){
+
+    public void initializeData() {
         List<Trip> trips = tripService.getAllTrips();
         ObservableList<Trip> obsTrips = FXCollections.observableArrayList(trips);
         tripComboBox.setItems(obsTrips);
         tripComboBox.setValue(obsTrips.get(0));
         showTickets();
         tripComboBox.valueProperty().addListener((observable, oldValue, newValue) -> {
-            if(newValue != null){
+            if (newValue != null) {
                 showTickets();
-            }else{
+            } else {
                 seatComboBox.getItems().clear();
             }
         });
         System.out.println("Current user=" + currentUser);
         currentUser.addListener((observable, oldValue, newValue) -> {
-            if(newValue != null){
+            if (newValue != null) {
                 showTicketsForCurrentUser();
-            }else{
+            } else {
                 purchasedTripsComboBox.getItems().clear();
             }
         });
@@ -91,20 +88,20 @@ public class UserController {
         RadioButton selectedRadioButton = (RadioButton) ratingGroup.getSelectedToggle();
         String rating = selectedRadioButton.getText();
         session.beginTransaction();
-        if(currentTicket.isRate()){
+        if (currentTicket.isRate()) {
             errorLabel.setVisible(true);
             return;
         }
-        try{
+        try {
             session.merge(new CompanyRatings(currentTrip.getCompany(), Integer.parseInt(rating)));
             session.createQuery("update Ticket set isRate = true where id = :id").
                     setParameter("id", currentTicket.getId()).
                     executeUpdate();
             session.getTransaction().commit();
             errorLabel.setVisible(false);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             session.close();
         }
     }
@@ -127,7 +124,7 @@ public class UserController {
     }
 
     private void showTicketsForCurrentUser() {
-        List<Ticket> tickets = ticketService.getAllTickets().stream().filter(c -> c.getUser() != null &&  c.getUser().getName().equals(currentUser.get())).toList();
+        List<Ticket> tickets = ticketService.getAllTickets().stream().filter(c -> c.getUser() != null && c.getUser().getName().equals(currentUser.get())).toList();
         ObservableList<Ticket> obsTickets = FXCollections.observableArrayList(tickets);
         System.out.println(obsTickets);
         purchasedTripsComboBox.setItems(obsTickets);

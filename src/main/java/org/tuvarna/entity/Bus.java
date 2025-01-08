@@ -2,8 +2,6 @@ package org.tuvarna.entity;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
 @Table(name = "bus")
 public class Bus {

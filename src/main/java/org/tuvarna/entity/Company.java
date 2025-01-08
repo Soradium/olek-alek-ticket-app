@@ -1,8 +1,10 @@
 package org.tuvarna.entity;
+
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Entity
 @Table(name = "company")
 public class Company {
@@ -14,7 +16,7 @@ public class Company {
     @Column(name = "name")
     private String name;
 
-    @Column(name ="current_rating")
+    @Column(name = "current_rating")
     private float currentRating;
 
     @OneToMany(

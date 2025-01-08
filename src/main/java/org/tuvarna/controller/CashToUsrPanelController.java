@@ -2,13 +2,13 @@ package org.tuvarna.controller;
 
 import org.tuvarna.command.Command;
 
-public class CashToUsrPanelController extends RequestPanelController{
+public class CashToUsrPanelController extends RequestPanelController {
+    public CashToUsrPanelController() {
+    }
+
     @Override
     public void initialize() {
         super.initialize();
-    }
-
-    public CashToUsrPanelController() {
     }
 
     @Override

@@ -2,13 +2,14 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
-<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tuvarna.controller.DistributorController">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12"
+            fx:controller="org.tuvarna.controller.DistributorController">
     <center>
         <VBox alignment="CENTER" spacing="20">
             <VBox spacing="10" alignment="CENTER">
                 <Label text="Companies"/>
-                <ListView fx:id="companiesListView" prefHeight="150" prefWidth="300" onMouseClicked="#loadCompanyTrips"/>
+                <ListView fx:id="companiesListView" prefHeight="150" prefWidth="300"
+                          onMouseClicked="#loadCompanyTrips"/>
             </VBox>
             <VBox spacing="10" alignment="CENTER">
                 <Label text="Trips Provided by Selected Company"/>

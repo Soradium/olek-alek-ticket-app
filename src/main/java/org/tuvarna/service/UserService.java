@@ -22,7 +22,7 @@ public class UserService {
     public User getUserByName(String name) {
         return userDAO.findAll().stream()
                 .filter(user -> user.getName()
-                .equals(name)).findFirst().orElse(null);
+                        .equals(name)).findFirst().orElse(null);
     }
 
     public void addUser(User user) {

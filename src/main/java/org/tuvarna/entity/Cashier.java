@@ -2,9 +2,6 @@ package org.tuvarna.entity;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
 @Table
 public class Cashier {
@@ -17,7 +14,7 @@ public class Cashier {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name ="distributor_id")
+    @JoinColumn(name = "distributor_id")
     private Distributor distributor;
 
     public int getId() {

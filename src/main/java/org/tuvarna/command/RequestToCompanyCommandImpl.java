@@ -1,8 +1,6 @@
 package org.tuvarna.command;
 
 import org.tuvarna.controller.CompanyController;
-import org.tuvarna.entity.Company;
-import org.tuvarna.entity.Distributor;
 
 import java.util.List;
 
@@ -11,11 +9,6 @@ public class RequestToCompanyCommandImpl extends CommandAbstract {
         super(message, passedObjects, receiver, sender);
     }
 
-    //command = new RequestToCompanyCommandImpl(
-    //                    message,
-    //                    selectedTripList,
-    //                    false,
-    //                    companyController);
     @Override
     public void execute() {
         CompanyController companyController = (CompanyController) this.getReceiver();

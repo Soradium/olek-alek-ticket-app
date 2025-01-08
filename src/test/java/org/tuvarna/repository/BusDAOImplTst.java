@@ -4,15 +4,15 @@ package org.tuvarna.repository;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.tuvarna.entity.*;
+import org.tuvarna.entity.Bus;
+import org.tuvarna.entity.Company;
 
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 public class BusDAOImplTst {
     @Mock
@@ -28,7 +28,7 @@ public class BusDAOImplTst {
     private Transaction transaction;
 
     @BeforeEach
-    void setUp(){
+    void setUp() {
         MockitoAnnotations.initMocks(this);
 
         when(sessionFactory.getCurrentSession()).thenReturn(session);
@@ -39,7 +39,7 @@ public class BusDAOImplTst {
     }
 
     @Test
-    void testSaveBus(){
+    void testSaveBus() {
         Company company = new Company("New company");
         Bus bus = new Bus(company);
 

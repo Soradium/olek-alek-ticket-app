@@ -1,6 +1,6 @@
 package org.tuvarna.service;
 
-import org.tuvarna.entity.*;
+import org.tuvarna.entity.Company;
 import org.tuvarna.factories.FactoryDAO;
 import org.tuvarna.repository.TableDAO;
 
