@@ -2,18 +2,16 @@ package org.tuvarna.controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import org.tuvarna.command.Command;
 import org.tuvarna.command.RequestToCompanyCommandImpl;
 import org.tuvarna.entity.Cashier;
 import org.tuvarna.entity.Company;
-import org.tuvarna.entity.Distributor;
 import org.tuvarna.entity.Trip;
 import org.tuvarna.observer.Observer;
 import org.tuvarna.observer.Subject;
@@ -24,31 +22,23 @@ import java.util.List;
 
 public class DistributorController implements Subject {
 
-    @FXML
-    private Parent checkRequests;
-
-    @FXML
-    private RequestPanelController requestPanelController;
-
-    @FXML
-    private ListView<Company> companiesListView;
-
-    @FXML
-    private ListView<Trip> companyTripsListView;
-
-    @FXML
-    private ListView<Trip> availableTripsListView;
-
-    @FXML
-    private TextField cashierName;
-
-    private String currentDistributor;
-    private CompanyController companyController;
-
     private final ObservableList<Company> companies = FXCollections.observableArrayList();
     private final ObservableList<Company> tripsPerCompany = FXCollections.observableArrayList();
     private final ObservableList<Trip> availableTrips = FXCollections.observableArrayList();
-
+    @FXML
+    private Parent checkRequests;
+    @FXML
+    private RequestPanelController requestPanelController;
+    @FXML
+    private ListView<Company> companiesListView;
+    @FXML
+    private ListView<Trip> companyTripsListView;
+    @FXML
+    private ListView<Trip> availableTripsListView;
+    @FXML
+    private TextField cashierName;
+    private String currentDistributor;
+    private CompanyController companyController;
     private CompanyService companyService;
     private TripService tripService;
     private CashierService cashierService;
@@ -60,16 +50,34 @@ public class DistributorController implements Subject {
 
     @FXML
     public void showInfo() {
+        companiesListView.getItems().clear();
         companyTripsListView.getItems().clear();
         availableTripsListView.getItems().clear();
-        companies.clear();
-        companies.addAll(companyService.getAllCompanies());
-        availableTrips.addAll(distributorService
+
+        companiesListView.getItems().addAll(companyService.getAllCompanies());
+//        companyTripsListView.getItems().addAll(tripService.getAllTrips());
+        availableTripsListView.getItems().addAll(distributorService
                 .tripPerDistributor(distributorService
                         .getDistributorByName(currentDistributor)));
-        companiesListView.setItems(companies);
 
-        availableTripsListView.getItems().addAll(availableTrips);
+//        companies.clear();
+//
+//
+//        companiesListView.setItems(companies);
+//
+//        availableTripsListView.getItems().addAll(availableTrips);
+//////
+
+//        companyTripsListView.getItems().clear(); //
+//        availableTripsListView.getItems().clear(); //
+//        companies.clear(); //
+//        companies.addAll(companyService.getAllCompanies());
+//        availableTrips.addAll(distributorService
+//                .tripPerDistributor(distributorService
+//                        .getDistributorByName(currentDistributor)));
+//        companiesListView.setItems(companies);
+//
+//        availableTripsListView.getItems().addAll(availableTrips);
 
 
     }
@@ -78,8 +86,17 @@ public class DistributorController implements Subject {
     public void requestTrip() {
         Trip selectedTrip = companyTripsListView.getSelectionModel().getSelectedItem();
         if (selectedTrip != null) {
+            if (selectedTrip.getDistributor() != null) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Alert!");
+                alert.setHeaderText("Trip is managed!");
+                alert.setContentText("This trip is already managed by another" +
+                        " distributor.");
+                alert.showAndWait();
+                return;
+            }
             String message = "Would you like to accept a trip request to "
-                    +currentDistributor+": "+ selectedTrip +" ?";
+                    + currentDistributor + ": " + selectedTrip + " ?";
             List<Object> selectedTripList = new ArrayList<>();
             selectedTripList.add(selectedTrip);
             command = new RequestToCompanyCommandImpl(
@@ -89,6 +106,17 @@ public class DistributorController implements Subject {
                     distributorService.getDistributorByName(currentDistributor)
             );
             command.execute();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Success!");
+            alert.setHeaderText("Trip was requested.");
+            alert.setContentText("Request was sent to corresponding company.");
+            alert.showAndWait();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Alert!");
+            alert.setHeaderText("Trip was not chosen!");
+            alert.setContentText("Request was not sent.");
+            alert.showAndWait();
         }
     }
 
@@ -101,9 +129,9 @@ public class DistributorController implements Subject {
     public void loadCompanyTrips() {
         Company selectedCompany = companiesListView.getSelectionModel().getSelectedItem();
         if (selectedCompany != null) {
-            ObservableList<Trip> trips = getTripsForCompany(selectedCompany);
+//            ObservableList<Trip> trips = getTripsForCompany(selectedCompany);
             companyTripsListView.getItems().clear();
-            companyTripsListView.setItems(trips);
+            companyTripsListView.setItems(getTripsForCompany(selectedCompany));
         }
     }
 

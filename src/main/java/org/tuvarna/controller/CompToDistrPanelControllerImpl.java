@@ -1,18 +1,15 @@
 package org.tuvarna.controller;
 
+import javafx.scene.control.Alert;
 import org.tuvarna.command.Command;
 import org.tuvarna.entity.Distributor;
 import org.tuvarna.entity.Trip;
-import org.tuvarna.factories.FactoryDAO;
 import org.tuvarna.service.DistributorService;
 import org.tuvarna.service.TripService;
 
-import java.util.List;
-
-public class CompToDistrPanelControllerImpl extends RequestPanelController{
+public class CompToDistrPanelControllerImpl extends RequestPanelController {
+    private final TripService tripService;
     private DistributorService distributorService;
-
-    private TripService tripService;
 
     public CompToDistrPanelControllerImpl() {
         this.distributorService = new DistributorService();
@@ -34,16 +31,27 @@ public class CompToDistrPanelControllerImpl extends RequestPanelController{
             tripSentWithCommand.setDistributor(distributor);
             tripService.addTrip(tripSentWithCommand);
             this.distributorService.updateDistributor(distributor);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Alert!");
+            alert.setHeaderText("This distributor now manages the trip.");
+            alert.setContentText(distributor.getName() + " is the new manager " +
+                    "of trip " + tripSentWithCommand);
+            alert.showAndWait();
         } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Alert!");
+            alert.setHeaderText("Could not assign trip to distributor.");
+            alert.setContentText(e.getMessage());
             throw new RuntimeException(e);
-        }
-        finally {
+        } finally {
+            super.getCommands().remove(requestCommand);
             super.removeRequest(requestCommand.getMessage());
         }
     }
 
     @Override
     void handleDecline(Command requestCommand) {
+        super.getCommands().remove(requestCommand);
         super.removeRequest(requestCommand.getMessage());
     }
 

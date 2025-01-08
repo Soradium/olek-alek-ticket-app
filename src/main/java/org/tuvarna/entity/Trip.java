@@ -30,7 +30,7 @@ public class Trip {
     private Company company;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name="distributor_id")
+    @JoinColumn(name = "distributor_id")
     private Distributor distributor;
 
     public Trip() {
@@ -44,6 +44,7 @@ public class Trip {
         this.company = company;
         this.distributor = distributor;
     }
+
     public Trip(String departure, String destination, LocalDate date, String tripType, Company company) {
         this.departure = departure;
         this.destination = destination;
@@ -112,11 +113,7 @@ public class Trip {
     }
 
     public Distributor getDistributor() {
-        if(distributor != null) {
-            return distributor;
-        } else {
-            throw new RuntimeException("Distributor not assigned to trip");
-        }
+        return distributor;
     }
 
     public void setDistributor(Distributor distributor) {

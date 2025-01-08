@@ -1,10 +1,11 @@
 package org.tuvarna.controller;
+
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
 import org.tuvarna.command.Command;
 
@@ -15,19 +16,18 @@ public abstract class RequestPanelController {
 
     @FXML
     private ListView<HBox> requestListView;
+    private List<Command> commands = new ArrayList<>();
 
     @FXML
     public void initialize() {
         reloadRequests();
     }
 
-    private List<Command> commands = new ArrayList<>();
-
     @FXML
     public void reloadRequests() {
         requestListView.getItems().clear();
 
-        for(Command command : commands) {
+        for (Command command : commands) {
             Label requestLabel = new Label(command.getMessage());
             requestLabel.setStyle("-fx-font-size: 14px;");
 
@@ -62,14 +62,8 @@ public abstract class RequestPanelController {
     }
 
     abstract void handleAccept(Command requestCommand);
-    //System.out.println("Accepted: " + requestText);
-    //        //here something will be sent to parent controller
-    //
 
     abstract void handleDecline(Command requestCommand);
-    //System.out.println("Declined: " + requestText);
-    //        //here something will be sent to parent controller
-    //        removeRequest(requestText);
 
     protected void removeRequest(String requestText) {
         requestListView.getItems().removeIf(hbox -> {
@@ -85,4 +79,5 @@ public abstract class RequestPanelController {
     public void setCommands(List<Command> commands) {
         this.commands = commands;
     }
+
 }
