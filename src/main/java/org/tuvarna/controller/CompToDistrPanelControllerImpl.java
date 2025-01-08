@@ -5,14 +5,18 @@ import org.tuvarna.entity.Distributor;
 import org.tuvarna.entity.Trip;
 import org.tuvarna.factories.FactoryDAO;
 import org.tuvarna.service.DistributorService;
+import org.tuvarna.service.TripService;
 
 import java.util.List;
 
 public class CompToDistrPanelControllerImpl extends RequestPanelController{
     private DistributorService distributorService;
 
+    private TripService tripService;
+
     public CompToDistrPanelControllerImpl() {
         this.distributorService = new DistributorService();
+        this.tripService = new TripService();
     }
 
     @Override
@@ -28,12 +32,14 @@ public class CompToDistrPanelControllerImpl extends RequestPanelController{
             Trip tripSentWithCommand = (Trip) requestCommand
                     .getPassedObjects().getFirst();
             tripSentWithCommand.setDistributor(distributor);
-            distributorService.assignTripToDistributor(tripSentWithCommand, distributor);
+            tripService.addTrip(tripSentWithCommand);
             this.distributorService.updateDistributor(distributor);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        super.removeRequest(requestCommand.getMessage());
+        finally {
+            super.removeRequest(requestCommand.getMessage());
+        }
     }
 
     @Override
