@@ -1,11 +1,7 @@
 package org.tuvarna.repository;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.tuvarna.entity.Company;
 import org.tuvarna.entity.Trip;
 
 import java.util.List;
@@ -29,8 +25,7 @@ public class TripDAOImpl implements TableDAO<Trip> {
         } catch (Exception e) {
             session.getTransaction().rollback();
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             session.close();
         }
         return null;
@@ -47,7 +42,7 @@ public class TripDAOImpl implements TableDAO<Trip> {
         } catch (Exception e) {
             session.getTransaction().rollback();
             e.printStackTrace();
-        }finally {
+        } finally {
             session.close();
         }
         return null;
@@ -57,14 +52,14 @@ public class TripDAOImpl implements TableDAO<Trip> {
     public Trip save(Trip trip) {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
-        try{
-            session.merge(trip);
+        try {
+            session.persist(trip);
             session.getTransaction().commit();
             return trip;
-        }catch (Exception e) {
+        } catch (Exception e) {
             session.getTransaction().rollback();
             e.printStackTrace();
-        }finally {
+        } finally {
             session.close();
         }
         return null;
