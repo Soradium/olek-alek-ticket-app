@@ -20,6 +20,13 @@ public class Cashier {
     @JoinColumn(name ="distributor_id")
     private Distributor distributor;
 
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            mappedBy = "cashier",
+            fetch = FetchType.EAGER
+    )
+    private List<Ticket> tickets = new ArrayList<>();
+
     public int getId() {
         return id;
     }

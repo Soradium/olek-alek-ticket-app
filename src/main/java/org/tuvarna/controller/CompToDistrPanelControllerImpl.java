@@ -3,6 +3,7 @@ package org.tuvarna.controller;
 import javafx.scene.control.Alert;
 import org.tuvarna.command.Command;
 import org.tuvarna.entity.Distributor;
+import org.tuvarna.entity.Ticket;
 import org.tuvarna.entity.Trip;
 import org.tuvarna.service.DistributorService;
 import org.tuvarna.service.TicketService;

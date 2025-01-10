@@ -81,7 +81,10 @@ public class DistributorController implements Subject {
 
 
     }
-
+    @FXML
+    public void respondToRequest(Command command) {
+        requestPanelController.addCommand(command);
+    }
     @FXML
     public void requestTrip() {
         Trip selectedTrip = companyTripsListView.getSelectionModel().getSelectedItem();
@@ -140,7 +143,7 @@ public class DistributorController implements Subject {
         try {
             FXMLLoader requestPanelLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/check-requests-distributor.fxml"));
             checkRequests = requestPanelLoader.load();
-            requestPanelController = requestPanelLoader.getController();
+            requestPanelController = requestPanelLoader.<DistrToCashPanelControllerImpl>getController();
 
         } catch (Exception e) {
             e.printStackTrace();
