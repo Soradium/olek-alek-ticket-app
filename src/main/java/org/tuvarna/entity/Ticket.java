@@ -17,7 +17,7 @@ public class Ticket {
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "distributor_id")
-    private Distributor distributor;
+    private Cashier cashier;
 
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "seat_id")
@@ -39,7 +39,7 @@ public class Ticket {
     public String toString() {
         return "Ticket{" +
                 "user=" + user +
-                ", distributor=" + distributor +
+                ", distributor=" + cashier.getDistributor().getName() +
                 ", seat=" + seat +
                 ", isSold=" + isSold +
                 '}';
@@ -76,12 +76,12 @@ public class Ticket {
         this.user = user;
     }
 
-    public Distributor getDistributor() {
-        return distributor;
+    public Cashier getDistributor() {
+        return cashier;
     }
 
-    public void setDistributor(Distributor distributor) {
-        this.distributor = distributor;
+    public void setDistributor(Cashier cashier) {
+        this.cashier = cashier;
     }
 
     public Seat getSeat() {

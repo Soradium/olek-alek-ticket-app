@@ -110,7 +110,10 @@ public class MainController implements Observer {
             FXMLLoader cashierLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/cashier.fxml"));
             cashier = cashierLoader.load();
             cashierController = cashierLoader.getController();
-            cashierController.setCashierService(cashierService);
+            cashierController.setTripService(tripService);
+            cashierController.setDistributorController(distributorController);
+            cashierController.registerObserver(menuStrip);
+            cashierController.setService(cashierService);
 
             FXMLLoader distributorLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/distributor.fxml"));
             distributor = distributorLoader.load();

@@ -31,5 +31,9 @@ public class CashierService {
     public Cashier addCashier(Cashier cashier) {
         return cashierDAO.save(cashier);
     }
+
+    public Cashier updateCashier(Cashier cashier) {
+        return cashierDAO.update(cashier);
+    }
 }
 

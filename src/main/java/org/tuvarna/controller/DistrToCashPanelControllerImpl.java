@@ -1,19 +1,55 @@
 package org.tuvarna.controller;
 
+import javafx.scene.control.Alert;
 import org.tuvarna.command.Command;
+import org.tuvarna.entity.Cashier;
+import org.tuvarna.entity.Distributor;
+import org.tuvarna.entity.Ticket;
+import org.tuvarna.entity.Trip;
+import org.tuvarna.service.CashierService;
+import org.tuvarna.service.DistributorService;
+import org.tuvarna.service.TicketService;
+import org.tuvarna.service.TripService;
 
 public class DistrToCashPanelControllerImpl extends RequestPanelController {
-
+    private CashierService cashierService;
+    private TicketService ticketService;
     @Override
     public void initialize() {
         super.initialize();
     }
 
     public DistrToCashPanelControllerImpl() {
+        this.cashierService = new CashierService();
+        this.ticketService = new TicketService();
     }
 
     @Override
     void handleAccept(Command requestCommand) {
+        try {
+            requestCommand.getSender();
+            Cashier cashier = (Cashier) requestCommand.getSender();
+            Ticket ticketSentWithCommand = (Ticket) requestCommand
+                    .getPassedObjects().getFirst();
+            ticketSentWithCommand.setDistributor(cashier);
+            ticketService.addTicket(ticketSentWithCommand);
+            this.cashierService.updateCashier(cashier);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Alert!");
+            alert.setHeaderText("This cashier now manages the trip.");
+            alert.setContentText(cashier.getName() + " is the new manager " +
+                    "of trip " + ticketSentWithCommand);
+            alert.showAndWait();
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Alert!");
+            alert.setHeaderText("Could not assign trip to distributor.");
+            alert.setContentText(e.getMessage());
+            throw new RuntimeException(e);
+        } finally {
+            super.getCommands().remove(requestCommand);
+            super.removeRequest(requestCommand.getMessage());
+        }
 
     }
 
