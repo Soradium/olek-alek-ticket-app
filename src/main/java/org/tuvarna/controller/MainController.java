@@ -107,14 +107,6 @@ public class MainController implements Observer {
             companyController.setTicketService(ticketService);
             companyController.registerObserver(menuStrip);
 
-            FXMLLoader cashierLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/cashier.fxml"));
-            cashier = cashierLoader.load();
-            cashierController = cashierLoader.getController();
-            cashierController.setTripService(tripService);
-            cashierController.setDistributorController(distributorController);
-            cashierController.registerObserver(menuStrip);
-            cashierController.setService(cashierService);
-
             FXMLLoader distributorLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/distributor.fxml"));
             distributor = distributorLoader.load();
             distributorController = distributorLoader.getController();
@@ -124,6 +116,14 @@ public class MainController implements Observer {
             distributorController.setDistributorService(distributorService);
             distributorController.registerObserver(menuStrip);
             distributorController.setCompanyController(companyController);
+
+            FXMLLoader cashierLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/cashier.fxml"));
+            cashier = cashierLoader.load();
+            cashierController = cashierLoader.getController();
+            cashierController.setTripService(tripService);
+            cashierController.setDistributorController(distributorController);
+            cashierController.registerObserver(menuStrip);
+            cashierController.setService(cashierService);
 
             FXMLLoader userLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/user.fxml"));
             user = userLoader.load();
@@ -172,11 +172,19 @@ public class MainController implements Observer {
                 break;
             }
             case "Cashiers": {
+                String cashierName = selectedMenuItem.getText();
+                String distName = distributorService.getAllDistributors().stream()
+                        .flatMap(distributor -> distributor.getCashiers().stream())
+                        .filter(cashier -> cashier.getName().equals(cashierName))
+                        .map(cashier -> cashier.getDistributor().getName())
+                        .findFirst()
+                        .orElse("Unknown Distributor");
                 root.setCenter(cashier);
                 cashierController.setCurrentCashier(
                         cashierService.getCashierByName(
                                 selectedMenuItem.getText()
                         ));
+                cashierController.setDistributorName(distName);
                 root.setRight(null);
                 break;
             }

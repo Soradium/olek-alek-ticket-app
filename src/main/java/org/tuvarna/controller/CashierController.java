@@ -2,7 +2,6 @@ package org.tuvarna.controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,18 +9,12 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import org.tuvarna.command.Command;
-import org.tuvarna.command.RequestToCompanyCommandImpl;
 import org.tuvarna.command.RequestToDistributorCommandImpl;
-import org.tuvarna.entity.Distributor;
+import org.tuvarna.entity.Cashier;
 import org.tuvarna.entity.Trip;
 import org.tuvarna.observer.Observer;
 import org.tuvarna.observer.Subject;
 import org.tuvarna.service.CashierService;
-
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import org.tuvarna.service.CashierService;
-import org.tuvarna.entity.Cashier;
 import org.tuvarna.service.TripService;
 
 import java.util.ArrayList;
@@ -29,9 +22,11 @@ import java.util.List;
 
 public class CashierController implements Subject {
     @FXML
-    public ListView<Trip> companyTripsListView;
+    public ListView<Trip> tripsByDistributorListView;
     @FXML
     private Label cashierName;
+    @FXML
+    private Label distributorName;
     @FXML
     private RequestPanelController requestPanelController;
     @FXML
@@ -67,7 +62,7 @@ public class CashierController implements Subject {
 
     @FXML
     public void requestTrip() {
-        Trip selectedTrip = companyTripsListView.getSelectionModel().getSelectedItem();
+        Trip selectedTrip = tripsByDistributorListView.getSelectionModel().getSelectedItem();
         if (selectedTrip != null) {
 //            if (selectedTrip.getDistributor().getCashiers() != null) {
 //                Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -102,6 +97,7 @@ public class CashierController implements Subject {
             alert.showAndWait();
         }
     }
+
     private void loadCashierDetails(String name) {
 
         currentCashier = service.getCashierByName(name);
@@ -125,14 +121,14 @@ public class CashierController implements Subject {
     }
 
     public void showInfo() {
-        companyTripsListView.getItems().clear();
+        tripsByDistributorListView.getItems().clear();
         List<Trip> allTrips = tripService.getAllTrips();
         ObservableList<Trip> distributorsTrips = FXCollections.
                 observableArrayList(
                         allTrips.stream().filter(c -> c.getDistributor() != null && c.getDistributor().getId() == currentCashier.getDistributor().getId())
                                 .toList());
 
-        companyTripsListView.setItems(distributorsTrips);
+        tripsByDistributorListView.setItems(distributorsTrips);
 
     }
 
@@ -178,4 +174,11 @@ public class CashierController implements Subject {
         this.observer.update(values);
     }
 
+    public Label getDistributorName() {
+        return distributorName;
+    }
+
+    public void setDistributorName(String distributorName) {
+        this.distributorName.setText(distributorName);
+    }
 }

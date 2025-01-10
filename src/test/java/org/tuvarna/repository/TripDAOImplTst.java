@@ -44,7 +44,7 @@ public class TripDAOImplTst {
     void testTripSave() {
         Trip trip = new Trip();
         tripDAO.save(trip);
-        verify(session).persist(trip);
+        verify(session).merge(trip);
     }
 
     @Test
