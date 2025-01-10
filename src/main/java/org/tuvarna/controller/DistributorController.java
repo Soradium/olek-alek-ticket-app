@@ -55,36 +55,16 @@ public class DistributorController implements Subject {
         availableTripsListView.getItems().clear();
 
         companiesListView.getItems().addAll(companyService.getAllCompanies());
-//        companyTripsListView.getItems().addAll(tripService.getAllTrips());
         availableTripsListView.getItems().addAll(distributorService
                 .tripPerDistributor(distributorService
                         .getDistributorByName(currentDistributor)));
-
-//        companies.clear();
-//
-//
-//        companiesListView.setItems(companies);
-//
-//        availableTripsListView.getItems().addAll(availableTrips);
-//////
-
-//        companyTripsListView.getItems().clear(); //
-//        availableTripsListView.getItems().clear(); //
-//        companies.clear(); //
-//        companies.addAll(companyService.getAllCompanies());
-//        availableTrips.addAll(distributorService
-//                .tripPerDistributor(distributorService
-//                        .getDistributorByName(currentDistributor)));
-//        companiesListView.setItems(companies);
-//
-//        availableTripsListView.getItems().addAll(availableTrips);
-
-
     }
+
     @FXML
     public void respondToRequest(Command command) {
         requestPanelController.addCommand(command);
     }
+
     @FXML
     public void requestTrip() {
         Trip selectedTrip = companyTripsListView.getSelectionModel().getSelectedItem();
@@ -132,7 +112,6 @@ public class DistributorController implements Subject {
     public void loadCompanyTrips() {
         Company selectedCompany = companiesListView.getSelectionModel().getSelectedItem();
         if (selectedCompany != null) {
-//            ObservableList<Trip> trips = getTripsForCompany(selectedCompany);
             companyTripsListView.getItems().clear();
             companyTripsListView.setItems(getTripsForCompany(selectedCompany));
         }
@@ -144,7 +123,6 @@ public class DistributorController implements Subject {
             FXMLLoader requestPanelLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/check-requests-distributor.fxml"));
             checkRequests = requestPanelLoader.load();
             requestPanelController = requestPanelLoader.<DistrToCashPanelControllerImpl>getController();
-
         } catch (Exception e) {
             e.printStackTrace();
         }

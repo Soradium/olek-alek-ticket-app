@@ -3,25 +3,22 @@ package org.tuvarna.controller;
 import javafx.scene.control.Alert;
 import org.tuvarna.command.Command;
 import org.tuvarna.entity.Cashier;
-import org.tuvarna.entity.Distributor;
 import org.tuvarna.entity.Ticket;
-import org.tuvarna.entity.Trip;
 import org.tuvarna.service.CashierService;
-import org.tuvarna.service.DistributorService;
 import org.tuvarna.service.TicketService;
-import org.tuvarna.service.TripService;
 
 public class DistrToCashPanelControllerImpl extends RequestPanelController {
-    private CashierService cashierService;
-    private TicketService ticketService;
-    @Override
-    public void initialize() {
-        super.initialize();
-    }
+    private final CashierService cashierService;
+    private final TicketService ticketService;
 
     public DistrToCashPanelControllerImpl() {
         this.cashierService = new CashierService();
         this.ticketService = new TicketService();
+    }
+
+    @Override
+    public void initialize() {
+        super.initialize();
     }
 
     @Override

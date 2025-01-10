@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml" alignment="CENTER" spacing="20.0"
       fx:controller="org.tuvarna.controller.CashierController">
     <Label fx:id="cashierName" text="Cashier Name" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
-<!--    <fx:include source="check-requests.fxml"/>-->
-
+    <!--    <fx:include source="check-requests.fxml"/>-->
+    <Label fx:id="distributorName" text="Distributor Name Placeholder"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
     <VBox spacing="10" alignment="CENTER">
         <Label text="Trips Provided by Selected Distributor"/>
-        <ListView fx:id="companyTripsListView" prefHeight="150" prefWidth="300"/>
+        <ListView fx:id="tripsByDistributorListView" prefHeight="150" prefWidth="300"/>
     </VBox>
+
 
     <HBox spacing="20" alignment="CENTER">
         <Button text="Request Trip" onAction="#requestTrip"/>
