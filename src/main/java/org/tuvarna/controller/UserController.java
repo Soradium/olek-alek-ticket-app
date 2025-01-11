@@ -5,20 +5,22 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import org.controlsfx.control.Rating;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.tuvarna.command.Command;
+import org.tuvarna.command.RequestToCashierCommandImpl;
+import org.tuvarna.command.RequestToDistributorCommandImpl;
 import org.tuvarna.database.DatabaseSingleton;
 import org.tuvarna.entity.CompanyRatings;
 import org.tuvarna.entity.Ticket;
 import org.tuvarna.entity.Trip;
 import org.tuvarna.service.TicketService;
 import org.tuvarna.service.TripService;
+import org.tuvarna.service.UserService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserController {
@@ -34,6 +36,12 @@ public class UserController {
     public ToggleGroup ratingGroup;
     @FXML
     public Label errorLabel;
+
+    private Command command;
+
+    private CashierController cashierController;
+
+    private UserService userService;
 
     private final SessionFactory sessionFactory = DatabaseSingleton.getInstance().getSessionFactory();
 
@@ -60,6 +68,7 @@ public class UserController {
         rating4.setToggleGroup(ratingGroup);
         rating5.setToggleGroup(ratingGroup);
     }
+
     public void initializeData(){
         List<Trip> trips = tripService.getAllTrips();
         ObservableList<Trip> obsTrips = FXCollections.observableArrayList(trips);
@@ -85,11 +94,19 @@ public class UserController {
 
 
     public void submitRating(ActionEvent actionEvent) {
-        Session session = sessionFactory.getCurrentSession();
         Trip currentTrip = purchasedTripsComboBox.getSelectionModel().getSelectedItem().getTrip();
         Ticket currentTicket = purchasedTripsComboBox.getSelectionModel().getSelectedItem();
+        if(ticketService.getTicketById(currentTicket.getId()).isRate()){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Alert!");
+            alert.setHeaderText("Rated Trip");
+            alert.setContentText("You already rate this trip.");
+            alert.showAndWait();
+            return;
+        }
         RadioButton selectedRadioButton = (RadioButton) ratingGroup.getSelectedToggle();
         String rating = selectedRadioButton.getText();
+        Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         if(currentTicket.isRate()){
             errorLabel.setVisible(true);
@@ -132,5 +149,65 @@ public class UserController {
         System.out.println(obsTickets);
         purchasedTripsComboBox.setItems(obsTickets);
         System.out.println(currentUser);
+    }
+
+    public void ticketOrder() {
+        Ticket selectedTicket = seatComboBox.getSelectionModel().getSelectedItem();
+        if (selectedTicket != null) {
+            if (selectedTicket.getUser() != null) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Alert!");
+                alert.setHeaderText("Ticket is sold!");
+                alert.setContentText("Ticket already purchased by another user!");
+                alert.showAndWait();
+                return;
+            }
+            String message = "Would you like to accept a ticket request to "
+                    + currentUser.get() + ": " + selectedTicket + " ?";
+            List<Object> selectedTripList = new ArrayList<>();
+            selectedTripList.add(selectedTicket);
+            command = new RequestToCashierCommandImpl(
+                    message,
+                    selectedTripList,
+                    cashierController,
+                    userService.getUserByName(currentUser.get())
+            );
+            command.execute();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Success!");
+            alert.setHeaderText("Ticket was requested.");
+            alert.setContentText("Request was sent to corresponding cashier.");
+            alert.showAndWait();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Alert!");
+            alert.setHeaderText("Ticket was not chosen!");
+            alert.setContentText("Request was not sent.");
+            alert.showAndWait();
+        }
+    }
+
+    public CashierController getCashierController() {
+        return cashierController;
+    }
+
+    public void setCashierController(CashierController cashierController) {
+        this.cashierController = cashierController;
+    }
+
+    public TicketService getTicketService() {
+        return ticketService;
+    }
+
+    public TripService getTripService() {
+        return tripService;
+    }
+
+    public UserService getUserService() {
+        return userService;
+    }
+
+    public void setUserService(UserService userService) {
+        this.userService = userService;
     }
 }

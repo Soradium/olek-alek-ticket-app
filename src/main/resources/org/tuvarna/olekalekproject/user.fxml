@@ -20,7 +20,7 @@
 
         <!-- Order Ticket Button -->
         <HBox alignment="CENTER" spacing="10">
-            <Button text="Order a ticket" />
+            <Button text="Order a ticket" onAction = "#ticketOrder"/>
         </HBox>
 
         <!-- Trip Selection (Dropdown of trips user has purchased) -->

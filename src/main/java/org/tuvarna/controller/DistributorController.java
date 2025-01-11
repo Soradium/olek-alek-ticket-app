@@ -126,7 +126,7 @@ public class DistributorController implements Subject {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
+     }
 
 
     @FXML

@@ -11,6 +11,7 @@ import javafx.scene.control.ListView;
 import org.tuvarna.command.Command;
 import org.tuvarna.command.RequestToDistributorCommandImpl;
 import org.tuvarna.entity.Cashier;
+import org.tuvarna.entity.Ticket;
 import org.tuvarna.entity.Trip;
 import org.tuvarna.observer.Observer;
 import org.tuvarna.observer.Subject;
@@ -23,6 +24,8 @@ import java.util.List;
 public class CashierController implements Subject {
     @FXML
     public ListView<Trip> tripsByDistributorListView;
+    @FXML
+    public ListView<Ticket> ticketsProvidedByCashier;
     @FXML
     private Label cashierName;
     @FXML
@@ -64,15 +67,15 @@ public class CashierController implements Subject {
     public void requestTrip() {
         Trip selectedTrip = tripsByDistributorListView.getSelectionModel().getSelectedItem();
         if (selectedTrip != null) {
-//            if (selectedTrip.getDistributor().getCashiers() != null) {
-//                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//                alert.setTitle("Alert!");
-//                alert.setHeaderText("Trip is managed!");
-//                alert.setContentText("This trip is already managed by another" +
-//                        " cashier.");
-//                alert.showAndWait();
-//                return;
-//            }
+            if (selectedTrip.getCashier() != null) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Alert!");
+                alert.setHeaderText("Trip is managed!");
+                alert.setContentText("This trip is already managed by another" +
+                        " cashier.");
+                alert.showAndWait();
+                return;
+            }
             String message = "Would you like to accept a trip request to "
                     + currentCashier.getName() + ": " + selectedTrip + " ?";
             List<Object> selectedTripList = new ArrayList<>();
@@ -87,7 +90,7 @@ public class CashierController implements Subject {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success!");
             alert.setHeaderText("Trip was requested.");
-            alert.setContentText("Request was sent to corresponding company.");
+            alert.setContentText("Request was sent to corresponding distributor.");
             alert.showAndWait();
         } else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -97,6 +100,8 @@ public class CashierController implements Subject {
             alert.showAndWait();
         }
     }
+
+
 
     private void loadCashierDetails(String name) {
 
@@ -180,5 +185,13 @@ public class CashierController implements Subject {
 
     public void setDistributorName(String distributorName) {
         this.distributorName.setText(distributorName);
+    }
+
+    public Parent getCheckRequests() {
+        return checkRequests;
+    }
+
+    public void setCheckRequests(Parent checkRequests) {
+        this.checkRequests = checkRequests;
     }
 }

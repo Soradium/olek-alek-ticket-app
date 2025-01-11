@@ -30,12 +30,21 @@ public class Trip {
     @JoinColumn(name = "company_id")
     private Company company;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH,CascadeType.REMOVE, CascadeType.DETACH, CascadeType.PERSIST})
     @JoinColumn(name = "distributor_id")
     private Distributor distributor;
 
+    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.REMOVE, CascadeType.DETACH, CascadeType.PERSIST})
+    @JoinColumn(name = "cashier_id")
+    private Cashier cashier;
+
+    @OneToOne
+    @JoinColumn(name = "bus_id")
+    private Bus bus;
+
     public Trip() {
     }
+
 
     public Trip(String departure, String destination, LocalDate date, String tripType, Company company, Distributor distributor) {
         this.departure = departure;
@@ -46,12 +55,13 @@ public class Trip {
         this.distributor = distributor;
     }
 
-    public Trip(String departure, String destination, LocalDate date, String tripType, Company company) {
+    public Trip(String departure, String destination, LocalDate date, String tripType, Company company, Bus bus) {
         this.departure = departure;
         this.destination = destination;
         this.date = date;
         this.tripType = tripType;
         this.company = company;
+        this.bus = bus;
     }
 
     public int getId() {
@@ -100,6 +110,22 @@ public class Trip {
 
     public void setCompany(Company company) {
         this.company = company;
+    }
+
+    public Cashier getCashier() {
+        return cashier;
+    }
+
+    public void setCashier(Cashier cashier) {
+        this.cashier = cashier;
+    }
+
+    public Bus getBus() {
+        return bus;
+    }
+
+    public void setBus(Bus bus) {
+        this.bus = bus;
     }
 
     @Override

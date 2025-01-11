@@ -130,6 +130,8 @@ public class MainController implements Observer {
             userController = userLoader.getController();
             userController.setTripService(tripService);
             userController.setTicketService(ticketService);
+            userController.setUserService(userService);
+            userController.setCashierController(cashierController);
             userController.initializeData();
 
 
@@ -185,7 +187,7 @@ public class MainController implements Observer {
                                 selectedMenuItem.getText()
                         ));
                 cashierController.setDistributorName(distName);
-                root.setRight(null);
+                root.setRight(cashierController.getCheckRequests());
                 break;
             }
             default: {

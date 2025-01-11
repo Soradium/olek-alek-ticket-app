@@ -1,6 +1,9 @@
 package org.tuvarna.service;
 
+import org.tuvarna.entity.Cashier;
+import org.tuvarna.entity.Seat;
 import org.tuvarna.entity.Ticket;
+import org.tuvarna.entity.Trip;
 import org.tuvarna.factories.FactoryDAO;
 import org.tuvarna.repository.TableDAO;
 
@@ -24,5 +27,8 @@ public class TicketService {
 
     public Ticket addTicket(Ticket ticket) {
         return ticketDAO.save(ticket);
+    }
+    public Ticket updateTicket(Ticket ticket) {
+        return ticketDAO.update(ticket);
     }
 }

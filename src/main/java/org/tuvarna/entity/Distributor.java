@@ -23,7 +23,7 @@ public class Distributor {
     private List<Cashier> cashiers = new ArrayList<>();
 
     @OneToMany(
-            cascade = CascadeType.ALL,
+            cascade = {CascadeType.REFRESH, CascadeType.REMOVE, CascadeType.DETACH, CascadeType.PERSIST},
             mappedBy = "distributor",
             fetch = FetchType.EAGER
     )

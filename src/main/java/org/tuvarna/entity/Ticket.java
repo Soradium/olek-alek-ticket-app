@@ -11,19 +11,19 @@ public class Ticket {
     @Column(name = "ticket_id")
     private int id;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH, CascadeType.PERSIST, CascadeType.DETACH, CascadeType.REMOVE})
     @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH, CascadeType.PERSIST, CascadeType.DETACH, CascadeType.REMOVE})
     @JoinColumn(name = "distributor_id")
     private Cashier cashier;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH, CascadeType.PERSIST, CascadeType.DETACH, CascadeType.REMOVE})
     @JoinColumn(name = "seat_id")
     private Seat seat;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH, CascadeType.PERSIST, CascadeType.DETACH, CascadeType.REMOVE})
     @JoinColumn(name = "trip_id")
     private Trip trip;
 
@@ -37,15 +37,25 @@ public class Ticket {
 
     @Override
     public String toString() {
-        return "Ticket{" +
-                "user=" + user +
-                ", distributor=" + cashier.getDistributor().getName() +
-                ", seat=" + seat +
-                ", isSold=" + isSold +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("Ticket User: ").append(user).append("\n");
+        sb.append("Ticket Seat: ").append(seat).append("\n");
+        sb.append("Ticket Trip: ").append(trip).append("\n");
+        if(isRate){
+            sb.append("Ticket Rate: ").append(isRate).append("\n");
+        }
+        return sb.toString();
     }
 
     public Ticket(Seat seat, Trip trip) {
+        this.seat = seat;
+        this.trip = trip;
+        this.isSold = false;
+        this.isRate = false;
+    }
+
+    public Ticket(Cashier cashier, Seat seat, Trip trip) {
+        this.cashier = cashier;
         this.seat = seat;
         this.trip = trip;
         this.isSold = false;

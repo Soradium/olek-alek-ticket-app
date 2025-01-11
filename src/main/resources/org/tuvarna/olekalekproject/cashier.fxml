@@ -19,5 +19,10 @@
         <Button text="Request Trip" onAction="#requestTrip"/>
         <Button text="Show Info" onAction="#showInfo"/>
     </HBox>
+
+    <VBox spacing="10" alignment="CENTER">
+        <Label text="Trips Provided by Selected Distributor"/>
+        <ListView fx:id="ticketsProvidedByCashier" prefHeight="150" prefWidth="300"/>
+    </VBox>
 </VBox>
 

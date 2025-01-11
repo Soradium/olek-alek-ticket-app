@@ -21,11 +21,34 @@ public class Cashier {
     private Distributor distributor;
 
     @OneToMany(
-            cascade = CascadeType.ALL,
+            cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.REMOVE, CascadeType.DETACH},
             mappedBy = "cashier",
             fetch = FetchType.EAGER
     )
     private List<Ticket> tickets = new ArrayList<>();
+
+    public List<Ticket> getTickets() {
+        return tickets;
+    }
+
+    public void setTickets(List<Ticket> tickets) {
+        this.tickets = tickets;
+    }
+
+    public List<Trip> getTrips() {
+        return trips;
+    }
+
+    public void setTrips(List<Trip> trips) {
+        this.trips = trips;
+    }
+
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            mappedBy = "cashier",
+            fetch = FetchType.EAGER
+    )
+    private List<Trip> trips = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -50,4 +73,6 @@ public class Cashier {
     public void setDistributor(Distributor distributor) {
         this.distributor = distributor;
     }
+
+
 }

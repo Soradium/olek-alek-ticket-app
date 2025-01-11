@@ -16,12 +16,14 @@ public class Bus {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "company_id")
     private Company company;
-
+    @OneToOne(mappedBy = "bus", cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.REFRESH, CascadeType.DETACH})
+    private Trip trip;
     public Bus() {
     }
 
     public Bus(Company company) {
         this.company = company;
+        this.available = true;
     }
 
     public Bus(int id, boolean available, Company company) {
@@ -54,11 +56,18 @@ public class Bus {
         this.available = available;
     }
 
+    public Trip getTrip() {
+        return trip;
+    }
+
+    public void setTrip(Trip trip) {
+        this.trip = trip;
+    }
+
     @Override
     public String toString() {
         return "Bus{" +
                 "id=" + id +
-                ", company=" + company +
                 '}';
     }
 }

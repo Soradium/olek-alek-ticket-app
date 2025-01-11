@@ -19,14 +19,26 @@ public class Seat {
     @JoinColumn(name="ticket_id")
     private Ticket ticket;
 
+    @Column(name = "seatNumber")
+    private int seatNumber;
+
     @Column
     private boolean availability;
 
     public Seat() {}
 
-    public Seat(Bus bus) {
+    public Seat(Bus bus, int seatNumber) {
         this.bus = bus;
+        this.seatNumber = seatNumber;
         this.availability = true;
+    }
+
+    @Override
+    public String toString() {
+        return "Seat{" +
+                "bus=" + bus +
+                ", seatNumber=" + seatNumber +
+                '}';
     }
 
     public int getId() {
@@ -60,4 +72,6 @@ public class Seat {
     public void setAvailability(boolean availability) {
         this.availability = availability;
     }
+
+
 }

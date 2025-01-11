@@ -5,9 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.tuvarna.command.Command;
@@ -103,38 +101,64 @@ public class CompanyController implements Subject {
     public void addTrip(){
         String departureText = departure.getText();
         String destinationText = destination.getText();
-        LocalDate timeOfDepartureText = LocalDate.parse(timeOfDeparture.getText());
+        LocalDate timeOfDepartureText = null;
+        if(!timeOfDeparture.getText().isEmpty()){
+            timeOfDepartureText = LocalDate.parse(timeOfDeparture.getText());
+        }
         String tripTypeText = tripType.getText();
         System.out.println("Local date: " + timeOfDepartureText);
         Bus currentBus = busListView.getSelectionModel().getSelectedItem();
+        if(departureText.isEmpty() ||
+                destinationText.isEmpty() ||
+                timeOfDepartureText == null ||
+                tripTypeText.isEmpty() ||
+                currentBus == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error!");
+            alert.setHeaderText("Creating error");
+            StringBuilder sb = new StringBuilder("Enter next fields: ");
+            boolean first = true;
+            if(departureText.isEmpty()) {
+                if(!first) sb.append(", ");
+                sb.append("Departure");
+                first = false;
+            }
+            if(destinationText.isEmpty()) {
+                if(!first) sb.append(", ");
+                sb.append("Destination");
+                first = false;
+            }
+            if(timeOfDepartureText == null) {
+                if(!first) sb.append(", ");
+                sb.append("Time of Departure");
+                first = false;
+            }
+            if(tripTypeText.isEmpty()) {
+                if(!first) sb.append(", ");
+                sb.append("Trip type");
+                first = false;
+            }
+            if(currentBus == null) {
+                if(!first) sb.append(", ");
+                sb.append("Choose bus");
+                first = false;
+            }
+            alert.setContentText(sb.toString());
+            alert.showAndWait();
+            return;
+        }
         System.out.println(currentBus.getId());
-        Trip currentTrip = tripService.addTrip(new Trip(departureText,
+        tripService.addTrip(new Trip(departureText,
                 destinationText,
                 timeOfDepartureText,
                 tripTypeText,
-                getCurrentCompany()));
-        System.out.println(currentTrip.getId());
-        trips.add(currentTrip);
-        List<Seat> tempList = new ArrayList<>();
-        for(int i = 0; i < 20; i++) {
-            tempList.add(seatCreation(busListView.getSelectionModel().getSelectedItem()));
-            ticketService.addTicket(new Ticket(tempList.get(i), currentTrip));
-        }
+                getCurrentCompany(),
+                busListView.getSelectionModel().getSelectedItem()));
         changeAvailabiltyOfBus(busListView.getSelectionModel().getSelectedItem());
         departure.clear();
         destination.clear();
         timeOfDeparture.clear();
         tripType.clear();
-    }
-
-    private Seat seatCreation(Bus bus){
-        Session session = sessionFactory.getCurrentSession();
-        session.beginTransaction();
-        Seat seat = session.merge(new Seat(busListView.getSelectionModel().getSelectedItem()));
-        session.createQuery("update Bus set available = false where id =:id").setParameter("id", bus.getId()).executeUpdate();
-        System.out.println("SEAT " + seat);
-        session.getTransaction().commit();
-        return seat;
     }
 
     private void changeAvailabiltyOfBus(Bus bus){
@@ -164,9 +188,46 @@ public class CompanyController implements Subject {
         trips.addAll(tripService.getAllTripsByCompany());
         ratingLabel.setText(String.valueOf(getCurrentCompany().getCurrentRating()));
         tripListView.setItems(trips);
+        tripListView.setCellFactory(lv -> new ListCell<>() {
+            @Override
+            protected void updateItem(Trip item, boolean empty) {
+                super.updateItem(item, empty);
+
+                if (empty || item == null) {
+                    setText(null);
+                    setStyle("-fx-background-color:  #cfd4d2; -fx-font-weight: bold; -fx-font-size: 14px;"); // Сбрасываем стиль для пустых ячеек
+                } else {
+                    setText(item.toString());
+                    if(isSelected()){
+                        setStyle("-fx-background-color:  #6d6d6e; -fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: black;");
+                    }else{
+                        setStyle("-fx-background-color:  #cfd4d2; -fx-font-weight: bold; -fx-font-size: 14px;");
+
+                    }
+                }
+            }
+        });
         busListView.getItems().clear();
         buses.addAll(busService.getAllAvailableBusesByCompany());
         busListView.setItems(buses);
+        busListView.setCellFactory(lv -> new ListCell<>() {
+            @Override
+            protected void updateItem(Bus item, boolean empty) {
+                super.updateItem(item, empty);
+
+                if (empty || item == null) {
+                    setText(null);
+                    setStyle("-fx-background-color:  #cfd4d2; -fx-font-weight: bold; -fx-font-size: 14px;"); // Сбрасываем стиль для пустых ячеек
+                } else {
+                    setText(item.toString());
+                    if(isSelected()){
+                        setStyle("-fx-background-color: #6d6d6e; -fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: black");
+                    }else{
+                        setStyle("-fx-background-color:  #cfd4d2; -fx-font-weight: bold; -fx-font-size: 14px;");
+                    }
+                }
+            }
+        });
     }
 
     /*
