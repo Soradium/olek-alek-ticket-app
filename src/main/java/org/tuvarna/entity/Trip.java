@@ -130,13 +130,12 @@ public class Trip {
 
     @Override
     public String toString() {
-        return "Trip{" +
-                "departure='" + departure + '\'' +
-                ", destination='" + destination + '\'' +
+        return "Trip: " +
+                "departure=" + departure +
+                ", destination=" + destination +
                 ", date=" + date +
-                ", tripType='" + tripType + '\'' +
-                ", company=" + company.getName() +
-                '}';
+                ", tripType=" + tripType +
+                ", company=" + company.getName();
     }
 
     public Distributor getDistributor() {

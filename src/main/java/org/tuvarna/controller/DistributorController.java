@@ -1,13 +1,12 @@
 package org.tuvarna.controller;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import org.tuvarna.command.Command;
 import org.tuvarna.command.RequestToCompanyCommandImpl;
 import org.tuvarna.entity.Cashier;
@@ -22,9 +21,11 @@ import java.util.List;
 
 public class DistributorController implements Subject {
 
-    private final ObservableList<Company> companies = FXCollections.observableArrayList();
-    private final ObservableList<Company> tripsPerCompany = FXCollections.observableArrayList();
-    private final ObservableList<Trip> availableTrips = FXCollections.observableArrayList();
+    private ObservableList<Company> companies = FXCollections.observableArrayList();
+    private ObservableList<Trip> tripsPerCompany = FXCollections.observableArrayList();
+    private ObservableList<Trip> availableTrips = FXCollections.observableArrayList();
+    @FXML
+    public Label distributorName;
     @FXML
     private Parent checkRequests;
     @FXML
@@ -37,6 +38,7 @@ public class DistributorController implements Subject {
     private ListView<Trip> availableTripsListView;
     @FXML
     private TextField cashierName;
+    private SimpleStringProperty currentDistributorProperty  = new SimpleStringProperty();
     private String currentDistributor;
     private CompanyController companyController;
     private CompanyService companyService;
@@ -54,10 +56,64 @@ public class DistributorController implements Subject {
         companyTripsListView.getItems().clear();
         availableTripsListView.getItems().clear();
 
-        companiesListView.getItems().addAll(companyService.getAllCompanies());
-        availableTripsListView.getItems().addAll(distributorService
+        companies.clear();
+        companies = FXCollections.observableArrayList(companyService.getAllCompanies());
+        companiesListView.setItems(companies);
+        companiesListView.setCellFactory(lv -> new ListCell<>() {
+            @Override
+            protected void updateItem(Company item, boolean empty) {
+                super.updateItem(item, empty);
+
+                if (empty || item == null) {
+                    setText(null);
+                    setGraphic(null);
+                    setStyle("-fx-background-color:  #f4f4f4; -fx-font-size: 14px;");
+                } else {
+                    Label label = new Label(item.toString());
+                    label.setWrapText(true);
+                    label.setStyle("-fx-font-size: 14px;");
+
+                    label.setMaxWidth(companiesListView.getWidth());
+                    if(isSelected()){
+                        label.setStyle("-fx-background-color:  #cbcbcb;-fx-font-size: 14px; -fx-text-fill: black;");
+                    }else{
+                        label.setStyle("-fx-background-color: #f4f4f4; -fx-font-size: 14px;");
+
+                    }
+                    setGraphic(label);
+                }
+            }
+        });
+
+        availableTrips = FXCollections.observableArrayList(distributorService
                 .tripPerDistributor(distributorService
                         .getDistributorByName(currentDistributor)));
+        availableTripsListView.setItems(availableTrips);
+        availableTripsListView.setCellFactory(lv -> new ListCell<>() {
+            @Override
+            protected void updateItem(Trip item, boolean empty) {
+                super.updateItem(item, empty);
+
+                if (empty || item == null) {
+                    setText(null);
+                    setGraphic(null);
+                    setStyle("-fx-background-color:  #f4f4f4; -fx-font-size: 14px;");
+                } else {
+                    Label label = new Label(item.toString());
+                    label.setWrapText(true);
+                    label.setStyle("-fx-font-size: 14px;");
+
+                    label.setMaxWidth(availableTripsListView.getWidth());
+                    if(isSelected()){
+                        label.setStyle("-fx-background-color:  #cbcbcb;-fx-font-size: 14px; -fx-text-fill: black;");
+                    }else{
+                        label.setStyle("-fx-background-color: #f4f4f4; -fx-font-size: 14px;");
+
+                    }
+                    setGraphic(label);
+                }
+            }
+        });
     }
 
     @FXML
@@ -113,7 +169,34 @@ public class DistributorController implements Subject {
         Company selectedCompany = companiesListView.getSelectionModel().getSelectedItem();
         if (selectedCompany != null) {
             companyTripsListView.getItems().clear();
-            companyTripsListView.setItems(getTripsForCompany(selectedCompany));
+            tripsPerCompany.clear();
+            tripsPerCompany.addAll(getTripsForCompany(selectedCompany));
+            companyTripsListView.setItems(tripsPerCompany);
+            companyTripsListView.setCellFactory(lv -> new ListCell<>() {
+                @Override
+                protected void updateItem(Trip item, boolean empty) {
+                    super.updateItem(item, empty);
+
+                    if (empty || item == null) {
+                        setText(null);
+                        setGraphic(null);
+                        setStyle("-fx-background-color:  #f4f4f4; -fx-font-size: 14px;");
+                    } else {
+                        Label label = new Label(item.toString());
+                        label.setStyle("-fx-font-size: 14px;");
+                        label.setWrapText(true);
+
+                        label.setMaxWidth(companyTripsListView.getWidth());
+                        if(isSelected()){
+                            label.setStyle("-fx-background-color:  #cbcbcb;-fx-font-size: 14px; -fx-text-fill: black;");
+                        }else{
+                            label.setStyle("-fx-background-color: #f4f4f4; -fx-font-size: 14px;");
+
+                        }
+                        setGraphic(label);
+                    }
+                }
+            });
         }
     }
 
@@ -128,6 +211,14 @@ public class DistributorController implements Subject {
         }
      }
 
+    public void setCurrentDistributorProperty(String currentDistributorProperty) {
+        this.currentDistributorProperty.set(currentDistributorProperty);
+    }
+
+    public void initializeData(String currentDistributorText){
+        setCurrentDistributorProperty(currentDistributorText);
+        distributorName.setText(currentDistributorText);
+    }
 
     @FXML
     public void createCashier() {
@@ -231,7 +322,7 @@ public class DistributorController implements Subject {
         this.requestPanelController = requestPanelController;
     }
 
-    public ObservableList<Company> getTripsPerCompany() {
+    public ObservableList<Trip> getTripsPerCompany() {
         return tripsPerCompany;
     }
 

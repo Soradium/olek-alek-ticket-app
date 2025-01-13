@@ -1,6 +1,9 @@
 package org.tuvarna.controller;
 
+import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
+import javafx.scene.layout.VBox;
 import org.tuvarna.command.Command;
 import org.tuvarna.entity.Distributor;
 import org.tuvarna.entity.Ticket;
@@ -22,8 +25,7 @@ public class CompToDistrPanelControllerImpl extends RequestPanelController {
 
     @Override
     public void initialize() {
-        super.initialize();
-    }
+        super.initialize();}
 
     @Override
     void handleAccept(Command requestCommand) {

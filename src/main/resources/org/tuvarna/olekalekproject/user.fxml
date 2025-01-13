@@ -2,49 +2,83 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="331.0" prefWidth="447.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tuvarna.controller.UserController">
+<AnchorPane prefHeight="331.0" prefWidth="447.0" style="-fx-background-color: gray; -fx-padding: 10 20 10 20;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tuvarna.controller.UserController">
     <VBox alignment="CENTER" prefWidth="387.0" spacing="20" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="-30.0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="-53.0">
 
         <!-- Trip Selection -->
         <HBox alignment="CENTER" spacing="10">
-            <Label text="Select a Trip" />
+            <Label text="Select a Trip" textFill="WHITE">
+            <font>
+               <Font name="Droid Sans Mono Slashed" size="18.0" />
+            </font></Label>
             <ComboBox fx:id="tripComboBox" prefWidth="200" />
         </HBox>
 
         <!-- Seat Selection -->
         <HBox alignment="CENTER" spacing="10">
-            <Label text="Select a Ticket" />
+            <Label text="Select a Ticket" textFill="WHITE">
+            <font>
+               <Font name="Droid Sans Mono Slashed" size="18.0" />
+            </font></Label>
             <ComboBox fx:id="seatComboBox" prefWidth="200" />
         </HBox>
 
         <!-- Order Ticket Button -->
         <HBox alignment="CENTER" spacing="10">
-            <Button text="Order a ticket" onAction = "#ticketOrder"/>
+            <Button onAction="#ticketOrder" style="-fx-background-color: #00bf63; -fx-min-width: 140; -fx-min-height: 40; -fx-background-radius: 10;" text="Order a ticket" textFill="WHITE">
+            <font>
+               <Font name="Droid Sans Mono Slashed" size="16.0" />
+            </font></Button>
         </HBox>
 
         <!-- Trip Selection (Dropdown of trips user has purchased) -->
         <HBox alignment="CENTER" spacing="10">
-            <Label text="Select a Trip You Purchased" />
+            <Label text="Select a Trip You Purchased" textFill="WHITE">
+            <font>
+               <Font name="Droid Sans Mono Slashed" size="18.0" />
+            </font></Label>
             <ComboBox fx:id="purchasedTripsComboBox" prefWidth="200" />
         </HBox>
 
         <!-- Rating Section (For the company that provided the selected trip) -->
         <HBox alignment="CENTER" spacing="10">
-            <Label text="Rate the Company" />
-            <RadioButton fx:id="rating1" text="1" />
-            <RadioButton fx:id="rating2" text="2" />
-            <RadioButton fx:id="rating3" text="3" />
-            <RadioButton fx:id="rating4" text="4" />
-            <RadioButton fx:id="rating5" text="5" />
+            <Label text="Rate the Company" textFill="WHITE">
+            <font>
+               <Font name="Droid Sans Mono Slashed" size="18.0" />
+            </font></Label>
+            <RadioButton fx:id="rating1" text="1" textFill="WHITE">
+            <font>
+               <Font name="Droid Sans Mono Slashed" size="14.0" />
+            </font></RadioButton>
+            <RadioButton fx:id="rating2" text="2" textFill="WHITE">
+            <font>
+               <Font name="Droid Sans Mono Slashed" size="14.0" />
+            </font></RadioButton>
+            <RadioButton fx:id="rating3" text="3" textFill="WHITE">
+            <font>
+               <Font name="Droid Sans Mono Slashed" size="14.0" />
+            </font></RadioButton>
+            <RadioButton fx:id="rating4" text="4" textFill="WHITE">
+            <font>
+               <Font name="Droid Sans Mono Slashed" size="14.0" />
+            </font></RadioButton>
+            <RadioButton fx:id="rating5" text="5" textFill="WHITE">
+            <font>
+               <Font name="Droid Sans Mono Slashed" size="14.0" />
+            </font></RadioButton>
         </HBox>
 
         <!-- Submit Rating Button -->
         <HBox alignment="CENTER" spacing="10">
-            <Button onAction="#submitRating" text="Submit Rating" />
+            <Button onAction="#submitRating" style="-fx-background-color: #00bf63; -fx-min-height: 40; -fx-min-width: 140; -fx-background-radius: 10;" text="Submit Rating" textFill="WHITE">
+            <font>
+               <Font name="Droid Sans Mono Slashed" size="16.0" />
+            </font></Button>
         </HBox>
         <HBox alignment="CENTER" spacing="10">
-            <Label fx:id ="errorLabel" text="This trip already rated" visible="false" />
+            <Label fx:id="errorLabel" text="This trip already rated" visible="false" />
         </HBox>
     </VBox>
 </AnchorPane>

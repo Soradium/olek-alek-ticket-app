@@ -80,9 +80,8 @@ public class Company {
 
     @Override
     public String toString() {
-        return "Company{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", currentRating=" + currentRating;
+        return "Company: " +
+                " name=" + name +
+                " currentRating=" + currentRating;
     }
 }

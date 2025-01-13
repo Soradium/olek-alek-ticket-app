@@ -2,29 +2,56 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tuvarna.controller.DistributorController">
+<BorderPane style="-fx-background-color: gray; -fx-padding: 10 20 10 20;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tuvarna.controller.DistributorController">
     <center>
         <VBox alignment="CENTER" spacing="20">
-            <VBox spacing="10" alignment="CENTER">
-                <Label text="Companies"/>
-                <ListView fx:id="companiesListView" prefHeight="150" prefWidth="300" onMouseClicked="#loadCompanyTrips"/>
+            <Label fx:id="distributorName" style="-fx-padding: 10 0 0 0;" textFill="WHITE">
+            <font>
+               <Font name="Droid Sans Mono Slashed" size="48.0" />
+            </font></Label>
+            <VBox alignment="CENTER" spacing="10">
+                <Label text="Companies" textFill="WHITE">
+               <font>
+                  <Font name="Droid Sans Mono Slashed" size="18.0" />
+               </font></Label>
+                <ListView fx:id="companiesListView" onMouseClicked="#loadCompanyTrips" prefHeight="150" prefWidth="300" style="-fx-background-color: #f4f4f4;" />
             </VBox>
-            <VBox spacing="10" alignment="CENTER">
-                <Label text="Trips Provided by Selected Company"/>
-                <ListView fx:id="companyTripsListView" prefHeight="150" prefWidth="300"/>
+            <VBox alignment="CENTER" spacing="10">
+                <Label text="Trips Provided by Selected Company" textFill="WHITE">
+               <font>
+                  <Font name="Droid Sans Mono Slashed" size="18.0" />
+               </font></Label>
+                <ListView fx:id="companyTripsListView" prefHeight="150" prefWidth="300" style="-fx-background-color: #f4f4f4;" />
             </VBox>
-            <VBox spacing="10" alignment="CENTER">
-                <Label text="Already Available Trips"/>
-                <ListView fx:id="availableTripsListView" prefHeight="150" prefWidth="300"/>
+            <VBox alignment="CENTER" spacing="10">
+                <Label text="Already Available Trips" textFill="WHITE">
+               <font>
+                  <Font name="Droid Sans Mono Slashed" size="18.0" />
+               </font></Label>
+                <ListView fx:id="availableTripsListView" prefHeight="150" prefWidth="300" style="-fx-background-color: #f4f4f4;" />
             </VBox>
-            <HBox spacing="20" alignment="CENTER">
-                <Button text="Request Trip" onAction="#requestTrip"/>
-                <Button text="Show Info" onAction="#showInfo"/>
+            <HBox alignment="CENTER" spacing="20">
+                <Button onAction="#requestTrip" style="-fx-background-radius: 10; -fx-min-width: 140; -fx-min-height: 40; -fx-background-color: #00bf63;" text="Request Trip" textFill="WHITE">
+               <font>
+                  <Font name="Droid Sans Mono Slashed" size="16.0" />
+               </font></Button>
+                <Button onAction="#showInfo" style="-fx-background-radius: 10; -fx-min-width: 140; -fx-min-height: 40; -fx-background-color: #5e17eb;" text="Show Info" textFill="WHITE">
+               <font>
+                  <Font name="Droid Sans Mono Slashed" size="16.0" />
+               </font></Button>
             </HBox>
-            <HBox spacing="10" alignment="CENTER">
-                <TextField fx:id="cashierName" promptText="Enter Cashier Name"/>
-                <Button text="Create Cashier" onAction="#createCashier"/>
+            <HBox alignment="CENTER" spacing="10">
+                <Label text="Cashier Name" textFill="WHITE">
+               <font>
+                  <Font name="Droid Sans Mono Slashed" size="14.0" />
+               </font></Label>
+                <TextField fx:id="cashierName" style="-fx-background-radius: 10;" />
+                <Button onAction="#createCashier" style="-fx-background-color: #00bf63; -fx-background-radius: 10; -fx-min-width: 140; -fx-min-height: 40;" text="Create Cashier" textFill="WHITE">
+               <font>
+                  <Font name="Droid Sans Mono Slashed" size="16.0" />
+               </font></Button>
             </HBox>
         </VBox>
     </center>

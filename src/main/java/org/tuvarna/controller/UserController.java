@@ -70,7 +70,9 @@ public class UserController {
     }
 
     public void initializeData(){
-        List<Trip> trips = tripService.getAllTrips();
+        List<Trip> trips = tripService.getAllTrips().stream().filter(c->c.getDistributor() != null
+                && c.getCashier() !=null).
+                toList();
         ObservableList<Trip> obsTrips = FXCollections.observableArrayList(trips);
         tripComboBox.setItems(obsTrips);
         tripComboBox.setValue(obsTrips.get(0));

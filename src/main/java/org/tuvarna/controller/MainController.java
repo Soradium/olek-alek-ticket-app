@@ -2,6 +2,8 @@ package org.tuvarna.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
@@ -104,8 +106,8 @@ public class MainController implements Observer {
             companyController.setTripService(tripService);
             companyController.setBusService(busService);
             companyController.setCompanyService(companyService);
-            companyController.setTicketService(ticketService);
             companyController.registerObserver(menuStrip);
+            company.getStylesheets().add(getClass().getResource("/style/company.css").toExternalForm());
 
             FXMLLoader distributorLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/distributor.fxml"));
             distributor = distributorLoader.load();
@@ -156,6 +158,7 @@ public class MainController implements Observer {
         switch (selectedMenu.getText()) {
             case "Distributors": {
                 distributorController.setCurrentDistributor(selectedMenuItem.getText());
+                distributorController.initializeData(selectedMenuItem.getText());
                 root.setCenter(distributor);
                 root.setRight(distributorController.getCheckRequests());
                 break;
@@ -163,6 +166,7 @@ public class MainController implements Observer {
             case "Companies": {
                 busService.setCurrentCompany(selectedMenuItem.getText());
                 tripService.setCurrentCompany(selectedMenuItem.getText());
+                companyController.initializeData(selectedMenuItem.getText());
                 root.setCenter(company);
                 root.setRight(companyController.getCheckRequests());
                 break;
@@ -186,6 +190,7 @@ public class MainController implements Observer {
                         cashierService.getCashierByName(
                                 selectedMenuItem.getText()
                         ));
+                cashierController.setCashierName(cashierName);
                 cashierController.setDistributorName(distName);
                 root.setRight(cashierController.getCheckRequests());
                 break;
