@@ -5,9 +5,11 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
 import org.tuvarna.command.Command;
+import org.tuvarna.entity.Trip;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +32,8 @@ public abstract class RequestPanelController {
         for (Command command : commands) {
             Label requestLabel = new Label(command.getMessage());
             requestLabel.setStyle("-fx-font-size: 14px;");
+            requestLabel.setWrapText(true); // Включаем перенос текста
+            requestLabel.setMaxWidth(400);
 
             Button acceptButton = new Button("Accept");
             acceptButton.setOnAction(event -> handleAccept(command));
@@ -40,6 +44,14 @@ public abstract class RequestPanelController {
             HBox requestItem = new HBox(10, requestLabel, acceptButton, declineButton);
             requestItem.setAlignment(Pos.CENTER);
             requestItem.setPadding(new Insets(5));
+
+            requestItem.setOnMouseClicked(event -> {
+                if (requestItem.getStyle().contains("selected")) {
+                    requestItem.setStyle("-fx-background-color: #cbcbcb; -fx-wrap-text: true; -fx-text-fill: black;");
+                } else {
+                    requestItem.setStyle("-fx-background-color: #f4f4f4; -fx-text-fill: black;");
+                }
+            });
 
             requestListView.getItems().add(requestItem);
         }

@@ -1,0 +1,29 @@
+2025-01-12 23:58:49 [JavaFX Application Thread] INFO  org.tuvarna.controller.CashierController - Clearing of tripsByDistributorListView
+2025-01-12 23:58:49 [JavaFX Application Thread] INFO  org.tuvarna.controller.CashierController - All trips: 4
+2025-01-12 23:58:49 [JavaFX Application Thread] INFO  org.tuvarna.controller.CashierController - Filtering of allTrips by distributor id: 3
+2025-01-12 23:58:49 [JavaFX Application Thread] INFO  org.tuvarna.controller.CashierController - Filtered allTrips list: 1
+2025-01-12 23:58:49 [JavaFX Application Thread] INFO  org.tuvarna.controller.CashierController - Trips in list view 1
+2025-01-12 23:58:49 [JavaFX Application Thread] INFO  org.tuvarna.controller.CashierController - Configured customCellFactory for tripsByDistributorLostView
+2025-01-13 00:02:28 INFO  org.tuvarna.controller.CashierController - Clearing of tripsByDistributorListView
+2025-01-13 00:02:28 INFO  org.tuvarna.controller.CashierController - All trips: 4
+2025-01-13 00:02:28 INFO  org.tuvarna.controller.CashierController - Filtering of allTrips by distributor id: 3
+2025-01-13 00:02:28 INFO  org.tuvarna.controller.CashierController - Filtered allTrips list: 1
+2025-01-13 00:02:28 INFO  org.tuvarna.controller.CashierController - Trips in list view 1
+2025-01-13 00:02:28 INFO  org.tuvarna.controller.CashierController - Configured customCellFactory for tripsByDistributorLostView
+2025-01-13 00:08:54 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-13 00:08:54 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-13 00:08:55 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-13 00:08:55 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-13 00:09:01 INFO  org.tuvarna.controller.CashierController - Clearing of tripsByDistributorListView
+2025-01-13 00:09:01 INFO  org.tuvarna.controller.CashierController - All trips: 4
+2025-01-13 00:09:01 INFO  org.tuvarna.controller.CashierController - Filtering of allTrips by distributor id: 3
+2025-01-13 00:09:01 INFO  org.tuvarna.controller.CashierController - Filtered allTrips list: 1
+2025-01-13 00:09:01 INFO  org.tuvarna.controller.CashierController - Trips in list view 1
+2025-01-13 00:09:01 INFO  org.tuvarna.controller.CashierController - Configured customCellFactory for tripsByDistributorLostView
+2025-01-13 00:09:04 INFO  org.tuvarna.controller.CashierController - Selected trip: Trip: departure=Varna, destination=Greece, date=2024-12-22, tripType=Bus, company=bbb
+2025-01-13 00:09:04 INFO  org.tuvarna.controller.CashierController - Checking the existence of a cashier
+2025-01-13 00:09:04 INFO  org.tuvarna.controller.CashierController - Successfully accepted a trip request, command configuration: org.tuvarna.command.RequestToDistributorCommandImpl@7a956ae
+2025-01-13 00:29:31 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-13 00:29:31 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-13 00:29:32 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-13 00:29:32 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml

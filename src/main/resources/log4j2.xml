@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <!-- Настройка для ваших логов -->
+    <Appenders>
+        <!-- Аппендер для ваших логов -->
+        <File name="MyLogsAppender" fileName="logs/mylogs/mylogs.log">
+            <PatternLayout>
+                <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+            </PatternLayout>
+        </File>
+
+        <!-- Аппендер для всех остальных логов -->
+        <File name="OtherLogsAppender" fileName="logs/otherlogs/otherlogs.log">
+            <PatternLayout>
+                <pattern>%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n</pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <!-- Логгер для ваших классов -->
+        <Logger name="org.tuvarna" level="debug" additivity="false">
+            <AppenderRef ref="MyLogsAppender"/>
+        </Logger>
+
+        <!-- Логгер для всех остальных классов -->
+        <Root level="info">
+            <AppenderRef ref="OtherLogsAppender"/>
+        </Root>
+    </Loggers>
+</Configuration>

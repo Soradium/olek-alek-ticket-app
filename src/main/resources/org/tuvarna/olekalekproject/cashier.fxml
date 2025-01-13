@@ -1,28 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<VBox xmlns:fx="http://javafx.com/fxml" alignment="CENTER" spacing="20.0"
-      fx:controller="org.tuvarna.controller.CashierController">
-    <Label fx:id="cashierName" text="Cashier Name" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: GRAY;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tuvarna.controller.CashierController">
+    <Label fx:id="cashierName" text="Cashier Name" textFill="WHITE">
+      <font>
+         <Font name="Droid Sans Mono Slashed" size="24.0" />
+      </font></Label>
     <!--    <fx:include source="check-requests.fxml"/>-->
-    <Label fx:id="distributorName" text="Distributor Name Placeholder"
-           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
-    <VBox spacing="10" alignment="CENTER">
-        <Label text="Trips Provided by Selected Distributor"/>
-        <ListView fx:id="tripsByDistributorListView" prefHeight="150" prefWidth="300"/>
-    </VBox>
-
-
-    <HBox spacing="20" alignment="CENTER">
-        <Button text="Request Trip" onAction="#requestTrip"/>
-        <Button text="Show Info" onAction="#showInfo"/>
+    <HBox alignment="CENTER">
+        <Label text="Distributor: " textFill="WHITE">
+         <font>
+            <Font name="Droid Sans Mono Slashed" size="18.0" />
+         </font></Label>
+        <Label fx:id="distributorName" text="Distributor Name Placeholder" textFill="WHITE">
+         <font>
+            <Font name="Droid Sans Mono Slashed" size="18.0" />
+         </font></Label>
     </HBox>
 
-    <VBox spacing="10" alignment="CENTER">
-        <Label text="Trips Provided by Selected Distributor"/>
-        <ListView fx:id="ticketsProvidedByCashier" prefHeight="150" prefWidth="300"/>
+    <VBox alignment="CENTER" spacing="10">
+        <Label text="Trips Provided by Selected Distributor" textFill="WHITE">
+         <font>
+            <Font name="Droid Sans Mono Slashed" size="16.0" />
+         </font></Label>
+        <ListView fx:id="tripsByDistributorListView" prefHeight="150" prefWidth="300" style="-fx-background-color: #f4f4f4;" />
+    </VBox>
+
+
+    <HBox alignment="CENTER" spacing="20">
+        <Button onAction="#requestTrip" style="-fx-background-color: #00bf63; -fx-min-height: 40; -fx-min-width: 140; -fx-background-radius: 10;" text="Request Trip" textFill="WHITE">
+         <font>
+            <Font name="Droid Sans Mono Slashed" size="16.0" />
+         </font></Button>
+        <Button onAction="#showInfo" style="-fx-background-color: #5e17eb; -fx-min-width: 140; -fx-min-height: 40; -fx-background-radius: 10;" text="Show Info" textFill="WHITE">
+         <font>
+            <Font name="Droid Sans Mono Slashed" size="16.0" />
+         </font></Button>
+    </HBox>
+
+    <VBox alignment="CENTER" spacing="10">
+        <Label text="Trips Provided by Selected Distributor" textFill="WHITE">
+         <font>
+            <Font name="Droid Sans Mono Slashed" size="16.0" />
+         </font></Label>
+        <ListView fx:id="ticketsProvidedByCashier" prefHeight="150" prefWidth="300" style="-fx-background-color: #f4f4f4;" />
     </VBox>
 </VBox>
-

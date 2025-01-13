@@ -8,8 +8,7 @@ module org.tuvarna {
     requires com.dlsc.formsfx;
     requires org.kordamp.ikonli.javafx;
     requires javafx.graphics;
-    requires java.naming;
-    requires java.desktop;
+    requires org.apache.logging.log4j.core;
 
     opens org.tuvarna.olekalekproject to javafx.fxml;
     opens org.tuvarna.entity to org.hibernate.orm.core;

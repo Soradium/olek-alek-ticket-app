@@ -84,6 +84,7 @@ public class DistrToCashPanelControllerImpl extends RequestPanelController {
     }
     @Override
     void handleDecline(Command requestCommand) {
-
+        super.getCommands().remove(requestCommand);
+        super.removeRequest(requestCommand.getMessage());
     }
 }

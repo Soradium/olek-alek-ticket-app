@@ -3,6 +3,8 @@ package org.tuvarna.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.tuvarna.entity.*;
 import org.tuvarna.observer.Observer;
@@ -24,17 +26,23 @@ public class AdministratorController implements Subject {
     public TextField userName;
 
     private CompanyService companyService;
+
     private DistributorService distributorService;
+
     private UserService userService;
 
     private Observer observer;
 
     private String lastAdded;
+
     private String lastAddedType;
+
+    private static final Logger logger = LogManager.getLogger(AdministratorController.class);
 
     public void insertCompany(ActionEvent actionEvent) {
         String companyName = this.companyName.getText();
         companyService.addCompany(new Company(companyName));
+        logger.info("Company added: {}", companyName);
         lastAdded = companyName;
         lastAddedType = "Companies";
         notifyObservers();
@@ -45,6 +53,7 @@ public class AdministratorController implements Subject {
         Distributor distributor = new Distributor();
         distributor.setName(distributorName);
         distributorService.addDistributor(distributor);
+        logger.info("Distributor added: {}", distributorName);
         lastAdded = distributorName;
         lastAddedType = "Distributors";
         notifyObservers();
@@ -83,6 +92,7 @@ public class AdministratorController implements Subject {
     public void insertUser() {
         String userNameText = this.userName.getText();
         userService.addUser(new User(userNameText));
+        logger.info("User added: {}", userNameText);
         lastAdded = userNameText;
         lastAddedType = "Users";
         notifyObservers();

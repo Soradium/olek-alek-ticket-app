@@ -66,8 +66,7 @@ public class Bus {
 
     @Override
     public String toString() {
-        return "Bus{" +
-                "id=" + id +
-                '}';
+        return "Bus: " +
+                "number=" + id;
     }
 }

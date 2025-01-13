@@ -7,7 +7,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.tuvarna.command.Command;
 import org.tuvarna.command.RequestToDistributorCommandImpl;
 import org.tuvarna.entity.Cashier;
@@ -24,14 +27,19 @@ import java.util.List;
 public class CashierController implements Subject {
     @FXML
     public ListView<Trip> tripsByDistributorListView;
+
     @FXML
     public ListView<Ticket> ticketsProvidedByCashier;
+
     @FXML
     private Label cashierName;
+
     @FXML
     private Label distributorName;
+
     @FXML
     private RequestPanelController requestPanelController;
+
     @FXML
     private Parent checkRequests;
 
@@ -46,27 +54,34 @@ public class CashierController implements Subject {
 
     private Observer observer;
 
+    private static final Logger logger = LogManager.getLogger(CashierController.class);
+
     @FXML
     public void initialize() {
         try {
+            logger.info("Try to add requestPanel for {}", CashierController.class.getSimpleName());
             FXMLLoader requestPanelLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/check-requests-cashier.fxml"));
             checkRequests = requestPanelLoader.load();
             requestPanelController = requestPanelLoader.<CashToUsrPanelController>getController();
+            logger.info("Successfully loaded check-requests-cashier.fxml");
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Error during initialize of check-requests-cashier. Error: {}", e.getMessage());
         }
     }
 
     @FXML
     public void respondToRequest(Command command) {
         requestPanelController.addCommand(command);
+        logger.info("Successfully respond to request");
     }
 
     @FXML
     public void requestTrip() {
         Trip selectedTrip = tripsByDistributorListView.getSelectionModel().getSelectedItem();
+        logger.info("Selected trip: {}", selectedTrip);
         if (selectedTrip != null) {
+            logger.info("Checking the existence of a cashier");
             if (selectedTrip.getCashier() != null) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Alert!");
@@ -74,6 +89,7 @@ public class CashierController implements Subject {
                 alert.setContentText("This trip is already managed by another" +
                         " cashier.");
                 alert.showAndWait();
+                logger.info("Trip is managed by another cashier");
                 return;
             }
             String message = "Would you like to accept a trip request to "
@@ -86,6 +102,7 @@ public class CashierController implements Subject {
                     distributorController,
                     service.getCashierByName(currentCashier.getName())
             );
+            logger.info("Successfully accepted a trip request");
             command.execute();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success!");
@@ -101,40 +118,49 @@ public class CashierController implements Subject {
         }
     }
 
-
-
-    private void loadCashierDetails(String name) {
-
-        currentCashier = service.getCashierByName(name);
-        if (currentCashier != null) {
-            cashierName.setText(currentCashier.getName());
-        } else {
-            cashierName.setText("Cashier not found");
-        }
-    }
-
-    public void setCashierService(CashierService service) {
-        this.service = service;
-    }
-
-    public Cashier getCurrentCashier() {
-        return currentCashier;
-    }
-
     public void setCurrentCashier(Cashier currentCashier) {
         this.currentCashier = currentCashier;
     }
 
     public void showInfo() {
+        logger.info("Clearing of tripsByDistributorListView");
         tripsByDistributorListView.getItems().clear();
         List<Trip> allTrips = tripService.getAllTrips();
+        logger.info("All trips: {}", allTrips.size());
+        logger.info("Filtering of allTrips by distributor id: {}", currentCashier.getDistributor().getId());
         ObservableList<Trip> distributorsTrips = FXCollections.
                 observableArrayList(
                         allTrips.stream().filter(c -> c.getDistributor() != null && c.getDistributor().getId() == currentCashier.getDistributor().getId())
                                 .toList());
-
+        logger.info("Filtered allTrips list: {}", distributorsTrips.size());
         tripsByDistributorListView.setItems(distributorsTrips);
+        logger.info("Trips in list view {}", tripsByDistributorListView.getItems().size());
+        tripsByDistributorListView.setCellFactory(lv -> new ListCell<>() {
+            @Override
+            protected void updateItem(Trip item, boolean empty) {
+                super.updateItem(item, empty);
 
+                if (empty || item == null) {
+                    setText(null);
+                    setGraphic(null);
+                    setStyle("-fx-background-color:  #f4f4f4; -fx-font-size: 14px;");
+                } else {
+                    Label label = new Label(item.toString());
+                    label.setWrapText(true);
+                    label.setStyle("-fx-font-size: 14px;");
+
+                    label.setMaxWidth(tripsByDistributorListView.getWidth());
+                    if(isSelected()){
+                        label.setStyle("-fx-background-color:  #cbcbcb;-fx-font-size: 14px; -fx-text-fill: black;");
+                    }else{
+                        label.setStyle("-fx-background-color: #f4f4f4; -fx-font-size: 14px;");
+
+                    }
+                    setGraphic(label);
+                }
+            }
+        });
+        logger.info("Configured customCellFactory for tripsByDistributorLostView");
     }
 
     public CashierService getService() {
@@ -145,10 +171,6 @@ public class CashierController implements Subject {
         this.service = service;
     }
 
-    public TripService getTripService() {
-        return tripService;
-    }
-
     public void setTripService(TripService tripService) {
         this.tripService = tripService;
     }
@@ -157,13 +179,9 @@ public class CashierController implements Subject {
         this.distributorController = distributorController;
     }
 
-    public void setRequestPanelController(RequestPanelController requestPanelController) {
-        this.requestPanelController = requestPanelController;
-    }
-
     @Override
     public void registerObserver(Observer observer) {
-        this.observer = observer; //main controller
+        this.observer = observer;
     }
 
     @Override
@@ -179,19 +197,15 @@ public class CashierController implements Subject {
         this.observer.update(values);
     }
 
-    public Label getDistributorName() {
-        return distributorName;
-    }
-
     public void setDistributorName(String distributorName) {
         this.distributorName.setText(distributorName);
     }
 
-    public Parent getCheckRequests() {
-        return checkRequests;
+    public void setCashierName(String cashierName) {
+        this.cashierName.setText(cashierName);
     }
 
-    public void setCheckRequests(Parent checkRequests) {
-        this.checkRequests = checkRequests;
+    public Parent getCheckRequests() {
+        return checkRequests;
     }
 }

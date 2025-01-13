@@ -1,11 +1,14 @@
 package org.tuvarna.controller;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.tuvarna.command.Command;
@@ -17,28 +20,35 @@ import org.tuvarna.observer.Subject;
 import org.tuvarna.service.*;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 public class CompanyController implements Subject {
     @FXML
     public ListView<Bus> busListView;
+
     @FXML
-    private Parent checkRequests; //requestPanel
+    public Label companyName;
+
     @FXML
-    private TextField busNumber;
+    private Parent checkRequests;
+
     @FXML
     private Label ratingLabel;
+
     @FXML
     private ListView<Trip> tripListView;
+
     @FXML
     private TextField departure;
+
     @FXML
     private TextField destination;
+
     @FXML
     private TextField timeOfDeparture;
+
     @FXML
     private TextField tripType;
+
     @FXML
     private RequestPanelController requestPanelController;
 
@@ -48,53 +58,41 @@ public class CompanyController implements Subject {
 
     private BusService busService;
 
-    private DistributorService distributorService;
-
-    private TicketService ticketService;
+    private SimpleStringProperty currentCompanyProperty = new SimpleStringProperty();
 
     private final SessionFactory sessionFactory = DatabaseSingleton.getInstance().getSessionFactory();
 
-    public void setTicketService(TicketService ticketService) {
-        this.ticketService = ticketService;
-    }
-
-    public void setBusService(BusService busService) {
-        this.busService = busService;
-    }
-
-    public void setCompanyService(CompanyService companyService) {
-        this.companyService = companyService;
-    }
-
-    public void setTripService(TripService tripService) {
-        this.tripService = tripService;
-    }
+    private static final Logger logger = LogManager.getLogger(CompanyController.class);
 
     private final ObservableList<Trip> trips = FXCollections.observableArrayList();
 
     private final ObservableList<Bus> buses = FXCollections.observableArrayList();
 
-    private final ObservableList<Command> commands = FXCollections.observableArrayList();
-
     private Observer observer;
 
-    private Company getCurrentCompany() {
-        return companyService.getCompanyByName(tripService.getCurrentCompanyName());
-    }
-
+    @FXML
     public void initialize() {
         try {
+            logger.info("Try to add requestPanel for {}", CompanyController.class.getSimpleName());
             FXMLLoader requestPanelLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/check-requests-company.fxml"));
             checkRequests = requestPanelLoader.load();
             requestPanelController = requestPanelLoader.<CompToDistrPanelControllerImpl>getController();
+            logger.info("Successfully loaded check-requests-cashier.fxml");
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Error during initialize of check-requests-company. Error: {}", e.getMessage());
         }
+    }
+
+    public void initializeData(String companyNameText){
+        logger.info("Initializing data. Current company is: {}", getCurrentCompany());
+        setCurrentCompanyProperty(companyNameText);
+        companyName.setText(companyNameText);
     }
 
     @FXML
     public void respondToRequest(Command command) {
         requestPanelController.addCommand(command);
+        logger.info("Successfully respond to request");
     }
 
     @FXML
@@ -106,8 +104,9 @@ public class CompanyController implements Subject {
             timeOfDepartureText = LocalDate.parse(timeOfDeparture.getText());
         }
         String tripTypeText = tripType.getText();
-        System.out.println("Local date: " + timeOfDepartureText);
         Bus currentBus = busListView.getSelectionModel().getSelectedItem();
+        logger.info("Parsing data from text fields");
+        logger.info("Checking of correct information");
         if(departureText.isEmpty() ||
                 destinationText.isEmpty() ||
                 timeOfDepartureText == null ||
@@ -145,6 +144,7 @@ public class CompanyController implements Subject {
             }
             alert.setContentText(sb.toString());
             alert.showAndWait();
+            logger.info("Error message because blank fields");
             return;
         }
         System.out.println(currentBus.getId());
@@ -154,39 +154,44 @@ public class CompanyController implements Subject {
                 tripTypeText,
                 getCurrentCompany(),
                 busListView.getSelectionModel().getSelectedItem()));
+        logger.info("Successfully added trip");
         changeAvailabiltyOfBus(busListView.getSelectionModel().getSelectedItem());
         departure.clear();
         destination.clear();
         timeOfDeparture.clear();
         tripType.clear();
+        logger.info("Fields clean up");
     }
 
     private void changeAvailabiltyOfBus(Bus bus){
+        logger.info("Session receiving");
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
-        session.createQuery("update Bus set available = false where id =:id").
-                setParameter("id", bus.getId()).
-                executeUpdate();
-        session.getTransaction().commit();
+        logger.info("Start of transaction");
+        try{
+            session.createQuery("update Bus set available = false where id =:id").
+                    setParameter("id", bus.getId()).
+                    executeUpdate();
+            session.getTransaction().commit();
+            logger.info("End of transaction. Successfully updated bus");
+        }catch (Exception e){
+            logger.error("Error during transaction in function changeAvailabilityOfBus. Error: {}", e.getMessage());
+        }
     }
     @FXML
     public void addBus(){
         busService.addBus(new Bus(getCurrentCompany()));
-    }
-
-    public Parent getCheckRequests() {
-        return checkRequests;
-    }
-
-    public void setCheckRequests(Parent checkRequests) {
-        this.checkRequests = checkRequests;
+        logger.info("Successfully added bus");
     }
 
     @FXML
     private void showInfo() {
+        logger.info("tripListView cleaning");
         tripListView.getItems().clear();
         trips.addAll(tripService.getAllTripsByCompany());
+        logger.info("All trips by company: {}", trips.size());
         ratingLabel.setText(String.valueOf(getCurrentCompany().getCurrentRating()));
+        logger.info("Successfully current rating receiving");
         tripListView.setItems(trips);
         tripListView.setCellFactory(lv -> new ListCell<>() {
             @Override
@@ -195,20 +200,28 @@ public class CompanyController implements Subject {
 
                 if (empty || item == null) {
                     setText(null);
-                    setStyle("-fx-background-color:  #cfd4d2; -fx-font-weight: bold; -fx-font-size: 14px;"); // Сбрасываем стиль для пустых ячеек
+                    setStyle("-fx-background-color:  #f4f4f4; -fx-font-size: 14px;");
                 } else {
-                    setText(item.toString());
+                    Label label = new Label(item.toString());
+                    label.setWrapText(true);
+                    label.setStyle("-fx-font-size: 14px;");
+
+                    label.setMaxWidth(500);
                     if(isSelected()){
-                        setStyle("-fx-background-color:  #6d6d6e; -fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: black;");
+                        label.setStyle("-fx-background-color:  #cbcbcb;-fx-font-size: 14px; -fx-text-fill: black;");
                     }else{
-                        setStyle("-fx-background-color:  #cfd4d2; -fx-font-weight: bold; -fx-font-size: 14px;");
+                        label.setStyle("-fx-background-color: #f4f4f4; -fx-font-size: 14px;");
 
                     }
+                    setGraphic(label);
                 }
             }
         });
+        logger.info("Configuring cellFactory for tripListView");
+        logger.info("busListView cleaning");
         busListView.getItems().clear();
         buses.addAll(busService.getAllAvailableBusesByCompany());
+        logger.info("All buses by company: {}", buses.size());
         busListView.setItems(buses);
         busListView.setCellFactory(lv -> new ListCell<>() {
             @Override
@@ -217,35 +230,23 @@ public class CompanyController implements Subject {
 
                 if (empty || item == null) {
                     setText(null);
-                    setStyle("-fx-background-color:  #cfd4d2; -fx-font-weight: bold; -fx-font-size: 14px;"); // Сбрасываем стиль для пустых ячеек
+                    setStyle("-fx-background-color:  #f4f4f4; -fx-font-size: 14px;"); // Сбрасываем стиль для пустых ячеек
                 } else {
                     setText(item.toString());
                     if(isSelected()){
-                        setStyle("-fx-background-color: #6d6d6e; -fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: black");
+                        setStyle("-fx-background-color: #cbcbcb; -fx-font-size: 14px; -fx-text-fill: black");
                     }else{
-                        setStyle("-fx-background-color:  #cfd4d2; -fx-font-weight: bold; -fx-font-size: 14px;");
+                        setStyle("-fx-background-color:  #f4f4f4; -fx-font-size: 14px;");
                     }
                 }
             }
         });
+        logger.info("Configuring cellFactory for busListView");
     }
-
-    /*
-
-     * TODO: Company -> Distributor
-     *  Select company -> Select trip -> Request trip
-
-     * TODO: Distributor -> Cashier
-     *  Select trip -> request N tickets
-
-     * TODO: Cashier -> User
-     *  Select Ticket -> request Ticket from Cashier X that owns it
-
-     * */
 
     @Override
     public void registerObserver(Observer observer) {
-        this.observer = observer; //main controller
+        this.observer = observer;
     }
 
     @Override
@@ -258,19 +259,27 @@ public class CompanyController implements Subject {
         this.observer.update(getCurrentCompany().getName());
     }
 
-    public RequestPanelController getRequestPanelController() {
-        return requestPanelController;
+    public void setBusService(BusService busService) {
+        this.busService = busService;
     }
 
-    public void setRequestPanelController(RequestPanelController requestPanelController) {
-        this.requestPanelController = requestPanelController;
+    public void setCompanyService(CompanyService companyService) {
+        this.companyService = companyService;
     }
 
-    public DistributorService getDistributorService() {
-        return distributorService;
+    public void setTripService(TripService tripService) {
+        this.tripService = tripService;
     }
 
-    public void setDistributorService(DistributorService distributorService) {
-        this.distributorService = distributorService;
+    public void setCurrentCompanyProperty(String currentCompanyProperty) {
+        this.currentCompanyProperty.set(currentCompanyProperty);
+    }
+
+    public Parent getCheckRequests() {
+        return checkRequests;
+    }
+
+    private Company getCurrentCompany() {
+        return companyService.getCompanyByName(tripService.getCurrentCompanyName());
     }
 }
