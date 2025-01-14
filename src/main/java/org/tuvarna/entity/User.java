@@ -17,7 +17,6 @@ public class User {
     @Column
     private String name;
 
-    //Tickets size <= 5
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Ticket> tickets = new ArrayList<>();
 

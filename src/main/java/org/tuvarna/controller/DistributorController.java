@@ -7,6 +7,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.tuvarna.command.Command;
 import org.tuvarna.command.RequestToCompanyCommandImpl;
 import org.tuvarna.entity.Cashier;
@@ -20,45 +22,67 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DistributorController implements Subject {
-
-    private ObservableList<Company> companies = FXCollections.observableArrayList();
-    private ObservableList<Trip> tripsPerCompany = FXCollections.observableArrayList();
-    private ObservableList<Trip> availableTrips = FXCollections.observableArrayList();
     @FXML
     public Label distributorName;
+
     @FXML
     private Parent checkRequests;
+
     @FXML
     private RequestPanelController requestPanelController;
+
     @FXML
     private ListView<Company> companiesListView;
+
     @FXML
     private ListView<Trip> companyTripsListView;
+
     @FXML
     private ListView<Trip> availableTripsListView;
+
     @FXML
     private TextField cashierName;
+
     private SimpleStringProperty currentDistributorProperty  = new SimpleStringProperty();
+
     private String currentDistributor;
+
     private CompanyController companyController;
+
     private CompanyService companyService;
+
     private TripService tripService;
+
     private CashierService cashierService;
+
     private DistributorService distributorService;
+
     private TicketService ticketService;
 
+    private ObservableList<Company> companies = FXCollections.observableArrayList();
+
+    private ObservableList<Trip> tripsPerCompany = FXCollections.observableArrayList();
+
+    private ObservableList<Trip> availableTrips = FXCollections.observableArrayList();
+
     private Observer observer;
+
     private Command command;
+
+    private static final Logger logger = LogManager.getLogger(DistributorController.class);
 
     @FXML
     public void showInfo() {
         companiesListView.getItems().clear();
         companyTripsListView.getItems().clear();
         availableTripsListView.getItems().clear();
+        logger.info("Clearing all fields");
 
         companies.clear();
         companies = FXCollections.observableArrayList(companyService.getAllCompanies());
+        logger.info("All companies: {}", companies.size());
         companiesListView.setItems(companies);
+        logger.info("Companies in companiesListView: {}", companiesListView.getSelectionModel().getSelectedItems().size());
         companiesListView.setCellFactory(lv -> new ListCell<>() {
             @Override
             protected void updateItem(Company item, boolean empty) {
@@ -84,11 +108,13 @@ public class DistributorController implements Subject {
                 }
             }
         });
-
+        logger.info("Configuration cellFactory for companies list view");
         availableTrips = FXCollections.observableArrayList(distributorService
                 .tripPerDistributor(distributorService
                         .getDistributorByName(currentDistributor)));
+        logger.info("Available trips: {}", availableTrips.size());
         availableTripsListView.setItems(availableTrips);
+        logger.info("Available trips in availableTripsListView: {}", availableTripsListView.getSelectionModel().getSelectedItems().size());
         availableTripsListView.setCellFactory(lv -> new ListCell<>() {
             @Override
             protected void updateItem(Trip item, boolean empty) {
@@ -114,17 +140,21 @@ public class DistributorController implements Subject {
                 }
             }
         });
+        logger.info("Configuration cellFactory for tripsListView");
     }
 
     @FXML
     public void respondToRequest(Command command) {
         requestPanelController.addCommand(command);
+        logger.info("Successfully respond to request");
     }
 
     @FXML
     public void requestTrip() {
         Trip selectedTrip = companyTripsListView.getSelectionModel().getSelectedItem();
+        logger.info("Selected trip: {}", selectedTrip);
         if (selectedTrip != null) {
+            logger.info("Checking the existence of a cashier");
             if (selectedTrip.getDistributor() != null) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Alert!");
@@ -132,6 +162,7 @@ public class DistributorController implements Subject {
                 alert.setContentText("This trip is already managed by another" +
                         " distributor.");
                 alert.showAndWait();
+                logger.info("Trip is managed by another cashier");
                 return;
             }
             String message = "Would you like to accept a trip request to "
@@ -144,6 +175,7 @@ public class DistributorController implements Subject {
                     companyController,
                     distributorService.getDistributorByName(currentDistributor)
             );
+            logger.info("Successfully accepted a trip request");
             command.execute();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success!");
@@ -161,17 +193,22 @@ public class DistributorController implements Subject {
 
     private ObservableList<Trip> getTripsForCompany(Company company) {
         List<Trip> tripList = company.getTrips();
+        logger.info("All trips for company: {}", tripList.size());
         return FXCollections.observableArrayList(tripList);
     }
 
     @FXML
     public void loadCompanyTrips() {
         Company selectedCompany = companiesListView.getSelectionModel().getSelectedItem();
+        logger.info("Selected company: {}", selectedCompany);
         if (selectedCompany != null) {
             companyTripsListView.getItems().clear();
+            logger.info("Clearing of companyTripsListView items");
             tripsPerCompany.clear();
             tripsPerCompany.addAll(getTripsForCompany(selectedCompany));
+            logger.info("All trips by selected company: {}", tripsPerCompany.size());
             companyTripsListView.setItems(tripsPerCompany);
+            logger.info("Trips in companyTripsListView: {}", tripsPerCompany.size());
             companyTripsListView.setCellFactory(lv -> new ListCell<>() {
                 @Override
                 protected void updateItem(Trip item, boolean empty) {
@@ -197,42 +234,44 @@ public class DistributorController implements Subject {
                     }
                 }
             });
+            logger.info("Configured cellFactory for companyTripsListView");
         }
     }
 
     @FXML
     public void initialize() {
         try {
+            logger.info("Try to add requestPanel for {}", CashierController.class.getSimpleName());
             FXMLLoader requestPanelLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/check-requests-distributor.fxml"));
             checkRequests = requestPanelLoader.load();
             requestPanelController = requestPanelLoader.<DistrToCashPanelControllerImpl>getController();
+            logger.info("Successfully loaded check-requests-distributor.fxml");
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Error during initialize of check-requests-distributor. Error: {}", e.getMessage());
         }
      }
-
-    public void setCurrentDistributorProperty(String currentDistributorProperty) {
-        this.currentDistributorProperty.set(currentDistributorProperty);
-    }
 
     public void initializeData(String currentDistributorText){
         setCurrentDistributorProperty(currentDistributorText);
         distributorName.setText(currentDistributorText);
+        logger.info("Setting current distributor: {}", currentDistributorText);
     }
 
     @FXML
     public void createCashier() {
+        logger.info("Creating new cashier");
         Cashier cashier = new Cashier();
         cashier.setName(cashierName.getText());
         cashier.setDistributor(distributorService
                 .getDistributorByName(currentDistributor));
         cashierService.addCashier(cashier);
+        logger.info("Successfully created cashier");
         notifyObservers();
     }
 
-//    public boolean requestTrip() { //execute command
-//        return this.command.execute();
-//    }
+    public void setCurrentDistributorProperty(String currentDistributorProperty) {
+        this.currentDistributorProperty.set(currentDistributorProperty);
+    }
 
     public Command getCommand() {
         return command;
@@ -242,64 +281,12 @@ public class DistributorController implements Subject {
         this.command = command;
     }
 
-    public ListView<Company> getCompaniesListView() {
-        return companiesListView;
-    }
-
-    public void setCompaniesListView(ListView<Company> companiesListView) {
-        this.companiesListView = companiesListView;
-    }
-
-    public ListView<Trip> getCompanyTripsListView() {
-        return companyTripsListView;
-    }
-
-    public void setCompanyTripsListView(ListView<Trip> companyTripsListView) {
-        this.companyTripsListView = companyTripsListView;
-    }
-
-    public ListView<Trip> getAvailableTripsListView() {
-        return availableTripsListView;
-    }
-
-    public void setAvailableTripsListView(ListView<Trip> availableTripsListView) {
-        this.availableTripsListView = availableTripsListView;
-    }
-
-    public TextField getCashierName() {
-        return cashierName;
-    }
-
-    public void setCashierName(TextField cashierName) {
-        this.cashierName = cashierName;
-    }
-
-    public ObservableList<Company> getCompanies() {
-        return companies;
-    }
-
-    public ObservableList<Trip> getAvailableTrips() {
-        return availableTrips;
-    }
-
-    public CompanyService getCompanyService() {
-        return companyService;
-    }
-
     public void setCompanyService(CompanyService companyService) {
         this.companyService = companyService;
     }
 
-    public TripService getTripService() {
-        return tripService;
-    }
-
     public void setTripService(TripService tripService) {
         this.tripService = tripService;
-    }
-
-    public CashierService getCashierService() {
-        return cashierService;
     }
 
     public void setCashierService(CashierService cashierService) {
@@ -310,44 +297,16 @@ public class DistributorController implements Subject {
         return checkRequests;
     }
 
-    public void setCheckRequests(Parent checkRequests) {
-        this.checkRequests = checkRequests;
-    }
-
-    public RequestPanelController getRequestPanelController() {
-        return requestPanelController;
-    }
-
-    public void setRequestPanelController(RequestPanelController requestPanelController) {
-        this.requestPanelController = requestPanelController;
-    }
-
-    public ObservableList<Trip> getTripsPerCompany() {
-        return tripsPerCompany;
-    }
-
-    public DistributorService getDistributorService() {
-        return distributorService;
-    }
-
     public void setDistributorService(DistributorService distributorService) {
         this.distributorService = distributorService;
     }
 
-    public String getCurrentDistributor() {
-        return currentDistributor;
+    public void setCompanyController(CompanyController companyController) {
+        this.companyController = companyController;
     }
 
     public void setCurrentDistributor(String currentDistributor) {
         this.currentDistributor = currentDistributor;
-    }
-
-    public TicketService getTicketService() {
-        return ticketService;
-    }
-
-    public void setTicketService(TicketService ticketService) {
-        this.ticketService = ticketService;
     }
 
     @Override
@@ -360,15 +319,6 @@ public class DistributorController implements Subject {
         this.observer = null;
     }
 
-    public CompanyController getCompanyController() {
-        return companyController;
-    }
-
-    public void setCompanyController(CompanyController companyController) {
-        this.companyController = companyController;
-    }
-
-    // code example for administrator controller
     @Override
     public void notifyObservers() {
         List<String> values = new ArrayList<>();

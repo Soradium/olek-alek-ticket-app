@@ -28,8 +28,4 @@ public class UserService {
     public void addUser(User user) {
         userDAO.save(user);
     }
-
-    public List<Ticket> getTicketsByUsername(String name) {
-        return getUserByName(name).getTickets();
-    }
 }

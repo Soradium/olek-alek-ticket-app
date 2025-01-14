@@ -1,6 +1,7 @@
 package org.tuvarna.service;
 
-import org.tuvarna.entity.Company;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.tuvarna.entity.Trip;
 import org.tuvarna.factories.FactoryDAO;
 import org.tuvarna.repository.TableDAO;
@@ -15,6 +16,8 @@ public class TripService {
     public TripService() {
         this.tripDAO = FactoryDAO.getInstance().getDao(Trip.class);
     }
+
+    private final static Logger logger = LogManager.getLogger(TripService.class);
 
     private String currentCompanyName;
 
@@ -35,6 +38,7 @@ public class TripService {
                 stream().
                 filter(t -> t.getCompany().getName().equals(currentCompanyName)).
                 collect(Collectors.toList());
+        logger.info("All trips by current company: {}", companyTrips);
         return companyTrips;
     }
 

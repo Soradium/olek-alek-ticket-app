@@ -1,5 +1,7 @@
 package org.tuvarna.factories;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.tuvarna.entity.*;
 import org.tuvarna.repository.*;
 import org.tuvarna.database.DatabaseSingleton;
@@ -7,14 +9,23 @@ import org.tuvarna.database.DatabaseSingleton;
 import java.util.Objects;
 
 public class FactoryDAO {
+
     private static FactoryDAO instance;
+
     DatabaseSingleton database;
+
     TableDAO<Bus> busDao;
+
     TableDAO<Cashier> cashierDao;
+
     TableDAO<Company> companyDao;
+
     TableDAO<Distributor> distributorDao;
+
     TableDAO<Ticket> ticketDao;
+
     TableDAO<Trip> tripDao;
+
     TableDAO<User> userDao;
 
     public static FactoryDAO getInstance() {

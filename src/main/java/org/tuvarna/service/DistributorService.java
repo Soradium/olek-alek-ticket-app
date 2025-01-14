@@ -41,14 +41,5 @@ public class DistributorService {
     public List<Trip> tripPerDistributor(Distributor distributor) {
         return distributor.getTrips();
     }
-
-    public void assignTripToDistributor(Trip trip, Distributor distributor) {
-        distributor.getTrips().add(trip);
-        distributorDAO.update(distributor);
-    }
-
-    public List<Cashier> getAllCashiersPerDistributor(Distributor distributor) {
-        return distributor.getCashiers();
-    }
 }
 

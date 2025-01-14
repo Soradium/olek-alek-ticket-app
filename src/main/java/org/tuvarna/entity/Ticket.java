@@ -35,18 +35,6 @@ public class Ticket {
 
     public Ticket() {}
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Ticket User: ").append(user).append("\n");
-        sb.append("Ticket Seat: ").append(seat).append("\n");
-        sb.append("Ticket Trip: ").append(trip).append("\n");
-        if(isRate){
-            sb.append("Ticket Rate: ").append(isRate).append("\n");
-        }
-        return sb.toString();
-    }
-
     public Ticket(Seat seat, Trip trip) {
         this.seat = seat;
         this.trip = trip;
@@ -118,5 +106,15 @@ public class Ticket {
         isSold = sold;
     }
 
-
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Ticket User: ").append(user).append("\n");
+        sb.append("Ticket Seat: ").append(seat).append("\n");
+        sb.append("Ticket Trip: ").append(trip).append("\n");
+        if(isRate){
+            sb.append("Ticket Rate: ").append(isRate).append("\n");
+        }
+        return sb.toString();
+    }
 }

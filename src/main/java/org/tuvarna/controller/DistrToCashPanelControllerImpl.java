@@ -1,6 +1,8 @@
 package org.tuvarna.controller;
 
 import javafx.scene.control.Alert;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.tuvarna.command.Command;
@@ -14,11 +16,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DistrToCashPanelControllerImpl extends RequestPanelController {
+
     private final CashierService cashierService;
+
     private final TicketService ticketService;
+
     private final TripService tripService;
 
     SessionFactory sessionFactory = DatabaseSingleton.getInstance().getSessionFactory();
+
+    private static final Logger logger = LogManager.getLogger(DistrToCashPanelControllerImpl.class);
 
     public DistrToCashPanelControllerImpl() {
         this.cashierService = new CashierService();
@@ -36,24 +43,24 @@ public class DistrToCashPanelControllerImpl extends RequestPanelController {
         try {
             requestCommand.getSender();
             Cashier cashier = (Cashier) requestCommand.getSender();
+            logger.info("Sender: {}", cashier.toString());
             Trip tripSentWithCommand = (Trip) requestCommand
                     .getPassedObjects().getFirst();
+            logger.info("Trip sent: {}", tripSentWithCommand);
             List<Seat> tempList = new ArrayList<>();
             tripSentWithCommand.setCashier(cashier);
             tripService.addTrip(tripSentWithCommand);
             this.cashierService.updateCashier(cashier);
+            logger.info("Cashier updated: {}", cashier);
+            logger.info("Tickets creation");
             for(int i= 0; i < 20; i++){
                 Ticket currentTicket = new Ticket();
                 tempList.add(seatCreation(tripSentWithCommand, (i + 1)));
-                Session currentSession = DatabaseSingleton.getInstance().getSessionFactory().getCurrentSession();
-                currentSession.beginTransaction();
-                Trip trip = currentSession.get(Trip.class, tripSentWithCommand.getId());
-                System.out.println("Trip " + trip);
-                currentSession.close();
                 currentTicket.setSeat(tempList.get(i));
                 currentTicket.setDistributor(cashier);
                 currentTicket.setTrip(tripSentWithCommand);
                 ticketService.addTicket(currentTicket);
+                logger.info("Ticket created: {}", currentTicket);
             }
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Alert!");
@@ -66,25 +73,35 @@ public class DistrToCashPanelControllerImpl extends RequestPanelController {
             alert.setTitle("Alert!");
             alert.setHeaderText("Could not assign trip to distributor.");
             alert.setContentText(e.getMessage());
+            logger.error("Error during handleAccept function, with message {}",e.getMessage());
             throw new RuntimeException(e);
         } finally {
             super.getCommands().remove(requestCommand);
             super.removeRequest(requestCommand.getMessage());
+            logger.info("Requests removed");
         }
 
     }
+
     private Seat seatCreation(Trip trip, int seatNumber){
+        logger.info("Session receiving");
         Session session = sessionFactory.getCurrentSession();
+        logger.info("Begin transaction");
         session.beginTransaction();
-        Seat seat = session.merge(new Seat(trip.getBus(), seatNumber));
-        System.out.println("SEAT " + seat);
-        session.getTransaction().commit();
-        session.close();
-        return seat;
+        try{
+            Seat seat = session.merge(new Seat(trip.getBus(), seatNumber));
+            System.out.println("SEAT " + seat);
+            session.getTransaction().commit();
+            return seat;
+        }catch (Exception e){
+            logger.error("Error during transaction with message {}",e.getMessage());
+        }
+        return null;
     }
     @Override
     void handleDecline(Command requestCommand) {
         super.getCommands().remove(requestCommand);
         super.removeRequest(requestCommand.getMessage());
+        logger.info("Requests removed");
     }
 }

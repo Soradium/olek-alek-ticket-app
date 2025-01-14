@@ -5,7 +5,9 @@ import org.hibernate.cfg.Configuration;
 import org.tuvarna.entity.*;
 
 public class DatabaseSingleton {
+
     private static DatabaseSingleton instance;
+
     private final SessionFactory sessionFactory;
 
     private DatabaseSingleton() {

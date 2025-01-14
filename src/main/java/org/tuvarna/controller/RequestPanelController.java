@@ -5,11 +5,11 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.tuvarna.command.Command;
-import org.tuvarna.entity.Trip;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,10 @@ public abstract class RequestPanelController {
 
     @FXML
     private ListView<HBox> requestListView;
+
     private List<Command> commands = new ArrayList<>();
+
+    private final static Logger logger = LogManager.getLogger(RequestPanelController.class);
 
     @FXML
     public void initialize() {
@@ -28,7 +31,7 @@ public abstract class RequestPanelController {
     @FXML
     public void reloadRequests() {
         requestListView.getItems().clear();
-
+        logger.info("RequestListView cleared");
         for (Command command : commands) {
             Label requestLabel = new Label(command.getMessage());
             requestLabel.setStyle("-fx-font-size: 14px;");
@@ -52,23 +55,19 @@ public abstract class RequestPanelController {
                     requestItem.setStyle("-fx-background-color: #f4f4f4; -fx-text-fill: black;");
                 }
             });
+            logger.info("Configured styles for RequestListView");
 
             requestListView.getItems().add(requestItem);
+            logger.info("All requests added");
         }
-    }
-
-    public ListView<HBox> getRequestListView() {
-        return requestListView;
-    }
-
-    public void setRequestListView(ListView<HBox> requestListView) {
-        this.requestListView = requestListView;
     }
 
     public void addCommand(Command command) {
         try {
             commands.add(command);
+            logger.info("Successfully added command: {}", command.getMessage());
         } catch (Exception e) {
+            logger.error("Occurred error in addCommand method, with message: {}", e.getMessage());
             throw new RuntimeException(e);
         }
     }
@@ -82,14 +81,10 @@ public abstract class RequestPanelController {
             Label label = (Label) hbox.getChildren().get(0);
             return label.getText().equals(requestText);
         });
+        logger.info("All requests successfully removed");
     }
 
     public List<Command> getCommands() {
         return commands;
     }
-
-    public void setCommands(List<Command> commands) {
-        this.commands = commands;
-    }
-
 }

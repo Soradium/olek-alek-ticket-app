@@ -2,14 +2,12 @@ package org.tuvarna.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
-import org.hibernate.SessionFactory;
-import org.tuvarna.database.DatabaseSingleton;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.tuvarna.entity.Cashier;
 import org.tuvarna.entity.Company;
 import org.tuvarna.entity.Distributor;
@@ -26,23 +24,31 @@ public class MainController implements Observer {
 
     @FXML
     private Parent administrator;
+
     @FXML
     private Parent distributor;
+
     @FXML
     private Parent company;
+
     @FXML
     private Parent user;
+
     @FXML
     private Parent cashier;
 
     @FXML
     private AdministratorController administratorController;
+
     @FXML
     private DistributorController distributorController;
+
     @FXML
     private CompanyController companyController;
+
     @FXML
     private UserController userController;
+
     @FXML
     private CashierController cashierController;
 
@@ -53,23 +59,23 @@ public class MainController implements Observer {
     private MenuItem selectedMenuItem;
 
     private TripService tripService;
-    private CompanyService companyService;
-    private BusService busService;
-    private DistributorService distributorService;
-    private TicketService ticketService;
-    private CashierService cashierService;
-    private UserService userService;
-    /*
-    TODO: RequestPanelController
-    TODO: Cashier
-    TODO: inject RequestPanelController into Cashier, Company, Distributor
 
-    *  */
+    private CompanyService companyService;
+
+    private BusService busService;
+
+    private DistributorService distributorService;
+
+    private TicketService ticketService;
+
+    private CashierService cashierService;
+
+    private UserService userService;
+
+    private final static Logger logger = LogManager.getLogger(MainController.class);
 
     public void initialize() {
-
-        SessionFactory sessionFactory = DatabaseSingleton.getInstance().getSessionFactory();
-
+        logger.info("Initialize MainController");
         tripService = new TripService();
         companyService = new CompanyService();
         busService = new BusService();
@@ -77,11 +83,13 @@ public class MainController implements Observer {
         ticketService = new TicketService();
         cashierService = new CashierService();
         userService = new UserService();
+        logger.info("All services initialized");
 
         List<Cashier> cashiers = cashierService.getAllCashiers();
         List<User> users = userService.getAllUsers();
         List<Company> companies = companyService.getAllCompanies();
         List<Distributor> distributors = distributorService.getAllDistributors();
+        logger.info("Setting all Cashiers, Users, Companies, and Distributors");
 
         menuStrip = new MenuStripSelector
                 .MenuStripSelectorBuilder()
@@ -90,6 +98,7 @@ public class MainController implements Observer {
                 .withCompanies(companies)
                 .withUsers(users)
                 .build();
+        logger.info("Menu strip configured");
 
         try {
             FXMLLoader administratorLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/administrator.fxml"));
@@ -99,6 +108,7 @@ public class MainController implements Observer {
             administratorController.setDistributorService(distributorService);
             administratorController.setUserService(userService);
             administratorController.registerObserver(menuStrip);
+            logger.info("AdministratorController configured");
 
             FXMLLoader companyLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/company.fxml"));
             company = companyLoader.load();
@@ -107,7 +117,7 @@ public class MainController implements Observer {
             companyController.setBusService(busService);
             companyController.setCompanyService(companyService);
             companyController.registerObserver(menuStrip);
-            company.getStylesheets().add(getClass().getResource("/style/company.css").toExternalForm());
+            logger.info("CompanyController configured");
 
             FXMLLoader distributorLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/distributor.fxml"));
             distributor = distributorLoader.load();
@@ -118,6 +128,7 @@ public class MainController implements Observer {
             distributorController.setDistributorService(distributorService);
             distributorController.registerObserver(menuStrip);
             distributorController.setCompanyController(companyController);
+            logger.info("DistributorController configured");
 
             FXMLLoader cashierLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/cashier.fxml"));
             cashier = cashierLoader.load();
@@ -126,6 +137,7 @@ public class MainController implements Observer {
             cashierController.setDistributorController(distributorController);
             cashierController.registerObserver(menuStrip);
             cashierController.setService(cashierService);
+            logger.info("CashierController configured");
 
             FXMLLoader userLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/user.fxml"));
             user = userLoader.load();
@@ -135,6 +147,7 @@ public class MainController implements Observer {
             userController.setUserService(userService);
             userController.setCashierController(cashierController);
             userController.initializeData();
+            logger.info("UserController configured");
 
 
             root.setTop(menuStrip.getMenuBar());
@@ -142,7 +155,7 @@ public class MainController implements Observer {
 
             menuStrip.registerObserver(this);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Error in initialize function with message: {}",e.getMessage());
         }
     }
 
@@ -150,10 +163,9 @@ public class MainController implements Observer {
     public void update(Object context) {
         MenuStripSelector menuStrip = (MenuStripSelector) context;
         selectedMenu = menuStrip.getCurrentMenu();
+        logger.info("Selected menu: {}", selectedMenu);
         selectedMenuItem = menuStrip.getCurrentItem();
-
-        System.out.println(selectedMenu);
-        System.out.println(selectedMenuItem);
+        logger.info("Selected menu item: {}", selectedMenuItem);
 
         switch (selectedMenu.getText()) {
             case "Distributors": {
@@ -161,6 +173,7 @@ public class MainController implements Observer {
                 distributorController.initializeData(selectedMenuItem.getText());
                 root.setCenter(distributor);
                 root.setRight(distributorController.getCheckRequests());
+                logger.info("Set Request panel for distributorController");
                 break;
             }
             case "Companies": {
@@ -169,6 +182,7 @@ public class MainController implements Observer {
                 companyController.initializeData(selectedMenuItem.getText());
                 root.setCenter(company);
                 root.setRight(companyController.getCheckRequests());
+                logger.info("Set Request panel for companyController");
                 break;
             }
             case "Users": {
@@ -193,6 +207,7 @@ public class MainController implements Observer {
                 cashierController.setCashierName(cashierName);
                 cashierController.setDistributorName(distName);
                 root.setRight(cashierController.getCheckRequests());
+                logger.info("Set Request panel for cashierController");
                 break;
             }
             default: {

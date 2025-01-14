@@ -8,6 +8,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.tuvarna.entity.Cashier;
 import org.tuvarna.entity.Company;
 import org.tuvarna.entity.Distributor;
@@ -19,17 +21,24 @@ import java.util.List;
 import java.util.Objects;
 
 public class MenuStripSelector implements Subject, Observer {
+
     @FXML
     private final MenuBar menuBar;
+
     private MenuItem currentItem;
+
     private Menu currentMenu;
+
     private Observer observer;
+
+    private static final Logger logger = LogManager.getLogger(MenuStripSelector.class);
 
     private MenuStripSelector(MenuBar menuBarPassed) {
         this.currentMenu = null;
         this.currentItem = null;
 
         this.menuBar = menuBarPassed;
+        logger.info("Current menu bar: {}", menuBar);
 
         this.getMenuBar().getMenus().forEach(menu -> {
             menu.setOnAction(new EventHandler<ActionEvent>() {
@@ -53,7 +62,7 @@ public class MenuStripSelector implements Subject, Observer {
 
     @Override
     public void registerObserver(Observer observer) {
-        this.observer = observer; //main controller
+        this.observer = observer;
     }
 
     @Override
@@ -68,7 +77,6 @@ public class MenuStripSelector implements Subject, Observer {
 
     @Override
     public void update(Object context) {
-        // first/last - Name/Type(in case of Admin)
         List<String> sentValues = (List<String>) context;
         menuBar.getMenus().stream().forEach(menu -> {
             if (Objects.equals(menu.getText(), sentValues.getLast())) {
@@ -83,57 +91,19 @@ public class MenuStripSelector implements Subject, Observer {
                 menu.getItems().add(menuItem);
             }
         });
+        logger.info("Updated menu bar {}", menuBar);
     }
 
     public MenuItem getCurrentItem() {
         return currentItem;
     }
 
-    public void setCurrentItem(MenuItem currentItem) {
-        this.currentItem = currentItem;
-    }
-
     public Menu getCurrentMenu() {
         return currentMenu;
     }
 
-    public void setCurrentMenu(Menu currentMenu) {
-        this.currentMenu = currentMenu;
-    }
-
-    public Observer getObserver() {
-        return observer;
-    }
-
-    public void setObserver(Observer observer) {
-        this.observer = observer;
-    }
-
     public MenuBar getMenuBar() {
         return menuBar;
-    }
-
-    public void addCompany(String company) {
-        findMenuByName("Companies").getItems().add(new MenuItem(company));
-    }
-
-    public void addDistributor(String distributor) {
-        findMenuByName("Distributors").getItems().add(new MenuItem(distributor));
-    }
-
-    public void addCashier(String cashier) {
-        findMenuByName("Cashiers").getItems().add(new MenuItem(cashier));
-    }
-
-    public void addUser(String user) {
-        findMenuByName("Users").getItems().add(new MenuItem(user));
-    }
-
-    private Menu findMenuByName(String name) {
-        return menuBar.getMenus().stream()
-                .filter(menu -> menu.getText().equals(name))
-                .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("Menu not found: " + name));
     }
 
     public static class MenuStripSelectorBuilder {
