@@ -1,8 +1,6 @@
 package org.tuvarna.command;
 
-import org.tuvarna.controller.CompanyController;
 import org.tuvarna.controller.DistributorController;
-import org.tuvarna.entity.Distributor;
 
 import java.util.List;
 

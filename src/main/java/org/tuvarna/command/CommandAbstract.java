@@ -3,6 +3,7 @@ package org.tuvarna.command;
 import java.util.List;
 
 public abstract class CommandAbstract implements Command {
+
     private final String message;
 
     private List<Object> passedObjects;
@@ -17,13 +18,12 @@ public abstract class CommandAbstract implements Command {
         this.receiver = receiver;
         this.sender = sender;
     }
+
     @Override
     public List<Object> getPassedObjects() {
         return passedObjects;
     }
-    public void setPassedObjects(List<Object> passedObjects) {
-        this.passedObjects = passedObjects;
-    }
+
     @Override
     public String getMessage() {
         return message;

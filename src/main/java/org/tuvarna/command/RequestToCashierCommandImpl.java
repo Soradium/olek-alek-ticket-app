@@ -1,7 +1,6 @@
 package org.tuvarna.command;
 
 import org.tuvarna.controller.CashierController;
-import org.tuvarna.controller.CompanyController;
 
 import java.util.List;
 

@@ -27,3 +27,99 @@
 2025-01-13 00:29:31 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
 2025-01-13 00:29:32 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
 2025-01-13 00:29:32 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-14 19:04:03 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-14 19:04:05 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-14 19:04:05 INFO  org.tuvarna.controller.DistributorController - Successfully loaded check-requests-distributor.fxml
+2025-01-14 19:04:05 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-14 19:04:05 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-14 19:04:05 INFO  org.tuvarna.controller.CompanyController - Successfully loaded check-requests-cashier.fxml
+2025-01-14 19:04:05 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-14 19:04:05 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-14 19:04:05 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-14 19:04:05 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-14 19:04:05 INFO  org.tuvarna.controller.MainController - Initialize MainController
+2025-01-14 19:04:05 INFO  org.tuvarna.controller.MainController - All services initialized
+2025-01-14 19:04:05 INFO  org.tuvarna.repository.CashierDAOImpl - Session started for findAll
+2025-01-14 19:04:06 INFO  org.tuvarna.repository.CashierDAOImpl - Cashiers fetched successfully: 5
+2025-01-14 19:04:06 INFO  org.tuvarna.repository.CashierDAOImpl - Transaction commited successfully
+2025-01-14 19:04:06 INFO  org.tuvarna.repository.CashierDAOImpl - Session closed successfully
+2025-01-14 19:04:06 INFO  org.tuvarna.controller.MainController - Setting all Cashiers, Users, Companies, and Distributors
+2025-01-14 19:04:06 INFO  org.tuvarna.controller.MenuStripSelector - Current menu bar: MenuBar@1e70b65b[styleClass=menu-bar]
+2025-01-14 19:04:06 INFO  org.tuvarna.controller.MainController - Menu strip configured
+2025-01-14 19:04:06 INFO  org.tuvarna.controller.MainController - AdministratorController configured
+2025-01-14 19:04:06 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-14 19:04:06 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-14 19:04:06 INFO  org.tuvarna.controller.CompanyController - Successfully loaded check-requests-cashier.fxml
+2025-01-14 19:04:06 INFO  org.tuvarna.controller.MainController - CompanyController configured
+2025-01-14 19:04:06 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-14 19:04:06 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-14 19:04:06 INFO  org.tuvarna.controller.DistributorController - Successfully loaded check-requests-distributor.fxml
+2025-01-14 19:04:06 INFO  org.tuvarna.controller.MainController - DistributorController configured
+2025-01-14 19:04:06 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-14 19:04:06 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-14 19:04:06 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-14 19:04:06 INFO  org.tuvarna.controller.MainController - CashierController configured
+2025-01-14 19:04:06 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-14 19:04:06 INFO  org.tuvarna.controller.UserController - Successfully retrieved all trips with distributor and cashier
+2025-01-14 19:04:06 INFO  org.tuvarna.controller.UserController - Filtered tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-14 19:04:06 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-14 19:04:06 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for user: null
+2025-01-14 19:04:06 INFO  org.tuvarna.controller.MainController - UserController configured
+2025-01-14 19:04:09 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-14 19:04:09 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@3356adca[styleClass=[menu-item]]
+2025-01-14 19:04:09 INFO  org.tuvarna.controller.DistributorController - Setting current distributor: Dist2
+2025-01-14 19:04:09 INFO  org.tuvarna.controller.MainController - Set Request panel for distributorController
+2025-01-14 19:04:13 INFO  org.tuvarna.controller.DistributorController - Creating new cashier
+2025-01-14 19:04:14 INFO  org.tuvarna.repository.CashierDAOImpl - Session started for save
+2025-01-14 19:04:14 INFO  org.tuvarna.repository.CashierDAOImpl - Transaction commited successfully
+2025-01-14 19:04:14 INFO  org.tuvarna.controller.DistributorController - Successfully created cashier
+2025-01-14 19:04:14 INFO  org.tuvarna.controller.MenuStripSelector - Updated menu bar MenuBar@1e70b65b[styleClass=menu-bar]
+2025-01-14 19:13:59 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.DistributorController - Successfully loaded check-requests-distributor.fxml
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.CompanyController - Successfully loaded check-requests-cashier.fxml
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.MainController - Initialize MainController
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.MainController - All services initialized
+2025-01-14 19:14:01 INFO  org.tuvarna.repository.CashierDAOImpl - Session started for findAll
+2025-01-14 19:14:01 INFO  org.tuvarna.repository.CashierDAOImpl - Cashiers fetched successfully: 6
+2025-01-14 19:14:01 INFO  org.tuvarna.repository.CashierDAOImpl - Transaction commited successfully
+2025-01-14 19:14:01 INFO  org.tuvarna.repository.CashierDAOImpl - Session closed successfully
+2025-01-14 19:14:01 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-14 19:14:01 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 11
+2025-01-14 19:14:01 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-14 19:14:01 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.MainController - Setting all Cashiers, Users, Companies, and Distributors
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.MenuStripSelector - Current menu bar: MenuBar@190957a1[styleClass=menu-bar]
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.MainController - Menu strip configured
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.MainController - AdministratorController configured
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.CompanyController - Successfully loaded check-requests-cashier.fxml
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.MainController - CompanyController configured
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.DistributorController - Successfully loaded check-requests-distributor.fxml
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.MainController - DistributorController configured
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.MainController - CashierController configured
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.UserController - Successfully retrieved all trips with distributor and cashier
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.UserController - Filtered tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for user: null
+2025-01-14 19:14:01 INFO  org.tuvarna.controller.MainController - UserController configured
+2025-01-14 19:14:06 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for save
+2025-01-14 19:14:06 INFO  org.tuvarna.controller.AdministratorController - Company added: Fifa
+2025-01-14 19:14:06 INFO  org.tuvarna.controller.MenuStripSelector - Updated menu bar MenuBar@190957a1[styleClass=menu-bar]
+2025-01-14 19:14:11 INFO  org.tuvarna.controller.AdministratorController - Distributor added: Dist6
+2025-01-14 19:14:11 INFO  org.tuvarna.controller.MenuStripSelector - Updated menu bar MenuBar@190957a1[styleClass=menu-bar]
+2025-01-14 19:14:16 INFO  org.tuvarna.controller.AdministratorController - User added: Pivo
+2025-01-14 19:14:16 INFO  org.tuvarna.controller.MenuStripSelector - Updated menu bar MenuBar@190957a1[styleClass=menu-bar]

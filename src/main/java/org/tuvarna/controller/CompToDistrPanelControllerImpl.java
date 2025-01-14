@@ -1,26 +1,25 @@
 package org.tuvarna.controller;
 
-import javafx.fxml.FXML;
-import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
-import javafx.scene.layout.VBox;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.tuvarna.command.Command;
 import org.tuvarna.entity.Distributor;
-import org.tuvarna.entity.Ticket;
 import org.tuvarna.entity.Trip;
 import org.tuvarna.service.DistributorService;
-import org.tuvarna.service.TicketService;
 import org.tuvarna.service.TripService;
 
 public class CompToDistrPanelControllerImpl extends RequestPanelController {
+
     private final TripService tripService;
+
     private DistributorService distributorService;
-    private TicketService ticketService;
+
+    public final static Logger logger = LogManager.getLogger(CompToDistrPanelControllerImpl.class.getName());
 
     public CompToDistrPanelControllerImpl() {
         this.distributorService = new DistributorService();
         this.tripService = new TripService();
-        this.ticketService = new TicketService();
     }
 
     @Override
@@ -32,11 +31,14 @@ public class CompToDistrPanelControllerImpl extends RequestPanelController {
         try {
             requestCommand.getSender();
             Distributor distributor = (Distributor) requestCommand.getSender();
+            logger.info("Sender: {}", distributor.toString());
             Trip tripSentWithCommand = (Trip) requestCommand
                     .getPassedObjects().getFirst();
+            logger.info("Trip sent: {}", tripSentWithCommand);
             tripSentWithCommand.setDistributor(distributor);
             tripService.addTrip(tripSentWithCommand);
             this.distributorService.updateDistributor(distributor);
+            logger.info("Distributor updated: {}", distributor);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Alert!");
             alert.setHeaderText("This distributor now manages the trip.");
@@ -48,10 +50,12 @@ public class CompToDistrPanelControllerImpl extends RequestPanelController {
             alert.setTitle("Alert!");
             alert.setHeaderText("Could not assign trip to distributor.");
             alert.setContentText(e.getMessage());
+            logger.error("Error during handleAccept function, with message {}",e.getMessage());
             throw new RuntimeException(e);
         } finally {
             super.getCommands().remove(requestCommand);
             super.removeRequest(requestCommand.getMessage());
+            logger.info("Requests removed");
         }
     }
 
@@ -59,13 +63,6 @@ public class CompToDistrPanelControllerImpl extends RequestPanelController {
     void handleDecline(Command requestCommand) {
         super.getCommands().remove(requestCommand);
         super.removeRequest(requestCommand.getMessage());
-    }
-
-    public DistributorService getDistributorService() {
-        return distributorService;
-    }
-
-    public void setDistributorService(DistributorService distributorService) {
-        this.distributorService = distributorService;
+        logger.info("Requests removed");
     }
 }

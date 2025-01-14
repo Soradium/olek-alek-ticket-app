@@ -33,13 +33,6 @@ public class Seat {
         this.availability = true;
     }
 
-    @Override
-    public String toString() {
-        return "Seat: " +
-                "bus=" + bus +
-                ", seatNumber=" + seatNumber;
-    }
-
     public int getId() {
         return id;
     }
@@ -72,5 +65,10 @@ public class Seat {
         this.availability = availability;
     }
 
-
+    @Override
+    public String toString() {
+        return "Seat: " +
+                "bus=" + bus +
+                ", seatNumber=" + seatNumber;
+    }
 }

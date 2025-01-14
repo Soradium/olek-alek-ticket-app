@@ -178,6 +178,7 @@ public class CompanyController implements Subject {
             logger.error("Error during transaction in function changeAvailabilityOfBus. Error: {}", e.getMessage());
         }
     }
+
     @FXML
     public void addBus(){
         busService.addBus(new Bus(getCurrentCompany()));

@@ -1,11 +1,14 @@
 package org.tuvarna.entity;
+
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Entity
 @Table(name = "company")
 public class Company {
+
     @Id
     @Column(name = "company_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)

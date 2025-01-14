@@ -1,7 +1,8 @@
 package org.tuvarna.service;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.tuvarna.entity.Bus;
-import org.tuvarna.entity.Trip;
 import org.tuvarna.factories.FactoryDAO;
 import org.tuvarna.repository.TableDAO;
 
@@ -13,6 +14,8 @@ public class BusService {
     private final TableDAO<Bus> busDao;
 
     private String currentCompanyName;
+
+    private final static Logger logger = LogManager.getLogger(BusService.class);
 
     public void setCurrentCompany(String currentCompanyName) {
         this.currentCompanyName = currentCompanyName;
@@ -39,6 +42,7 @@ public class BusService {
                 stream().
                 filter(t -> t.getCompany().getName().equals(currentCompanyName) && t.isAvailable()).
                 collect(Collectors.toList());
+        logger.info("All available buses in company: {}", companyBuses);
         return companyBuses;
     }
 }

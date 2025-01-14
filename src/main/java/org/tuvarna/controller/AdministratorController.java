@@ -5,23 +5,24 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.hibernate.Session;
 import org.tuvarna.entity.*;
 import org.tuvarna.observer.Observer;
 import org.tuvarna.observer.Subject;
 import org.tuvarna.service.CompanyService;
 import org.tuvarna.service.DistributorService;
-import org.tuvarna.service.TripService;
 import org.tuvarna.service.UserService;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AdministratorController implements Subject {
+
     @FXML
     public TextField companyName;
+
     @FXML
     public TextField distributorName;
+
     @FXML
     public TextField userName;
 

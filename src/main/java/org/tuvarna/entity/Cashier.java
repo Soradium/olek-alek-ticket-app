@@ -8,6 +8,7 @@ import java.util.List;
 @Entity
 @Table
 public class Cashier {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cashier_id")
@@ -27,6 +28,13 @@ public class Cashier {
     )
     private List<Ticket> tickets = new ArrayList<>();
 
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            mappedBy = "cashier",
+            fetch = FetchType.EAGER
+    )
+    private List<Trip> trips = new ArrayList<>();
+
     public List<Ticket> getTickets() {
         return tickets;
     }
@@ -42,13 +50,6 @@ public class Cashier {
     public void setTrips(List<Trip> trips) {
         this.trips = trips;
     }
-
-    @OneToMany(
-            cascade = CascadeType.ALL,
-            mappedBy = "cashier",
-            fetch = FetchType.EAGER
-    )
-    private List<Trip> trips = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -73,6 +74,4 @@ public class Cashier {
     public void setDistributor(Distributor distributor) {
         this.distributor = distributor;
     }
-
-
 }

@@ -179,6 +179,18 @@ public class CashierController implements Subject {
         this.distributorController = distributorController;
     }
 
+    public void setDistributorName(String distributorName) {
+        this.distributorName.setText(distributorName);
+    }
+
+    public void setCashierName(String cashierName) {
+        this.cashierName.setText(cashierName);
+    }
+
+    public Parent getCheckRequests() {
+        return checkRequests;
+    }
+
     @Override
     public void registerObserver(Observer observer) {
         this.observer = observer;
@@ -195,17 +207,5 @@ public class CashierController implements Subject {
         values.add(cashierName.getText());
         values.add("Cashiers");
         this.observer.update(values);
-    }
-
-    public void setDistributorName(String distributorName) {
-        this.distributorName.setText(distributorName);
-    }
-
-    public void setCashierName(String cashierName) {
-        this.cashierName.setText(cashierName);
-    }
-
-    public Parent getCheckRequests() {
-        return checkRequests;
     }
 }

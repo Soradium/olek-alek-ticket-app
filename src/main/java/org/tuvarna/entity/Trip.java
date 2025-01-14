@@ -45,7 +45,6 @@ public class Trip {
     public Trip() {
     }
 
-
     public Trip(String departure, String destination, LocalDate date, String tripType, Company company, Distributor distributor) {
         this.departure = departure;
         this.destination = destination;
@@ -128,6 +127,14 @@ public class Trip {
         this.bus = bus;
     }
 
+    public Distributor getDistributor() {
+        return distributor;
+    }
+
+    public void setDistributor(Distributor distributor) {
+        this.distributor = distributor;
+    }
+
     @Override
     public String toString() {
         return "Trip: " +
@@ -136,13 +143,5 @@ public class Trip {
                 ", date=" + date +
                 ", tripType=" + tripType +
                 ", company=" + company.getName();
-    }
-
-    public Distributor getDistributor() {
-        return distributor;
-    }
-
-    public void setDistributor(Distributor distributor) {
-        this.distributor = distributor;
     }
 }

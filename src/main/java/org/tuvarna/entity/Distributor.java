@@ -8,10 +8,12 @@ import java.util.List;
 @Entity
 @Table
 public class Distributor {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "distributor_id")
     private int id;
+
     @Column(name = "name")
     private String name;
 
@@ -59,10 +61,6 @@ public class Distributor {
 
     public void setCashiers(List<Cashier> cashiers) {
         this.cashiers = cashiers;
-    }
-
-    public void addCashier(Cashier cashier) {
-        this.cashiers.add(cashier);
     }
 
     public List<Trip> getTrips() {

@@ -5,7 +5,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.tuvarna.command.Command;
 import org.tuvarna.entity.*;
-import org.tuvarna.service.CashierService;
 import org.tuvarna.service.TicketService;
 
 
@@ -53,7 +52,7 @@ public class CashToUsrPanelController extends RequestPanelController{
         } finally {
             super.getCommands().remove(requestCommand);
             super.removeRequest(requestCommand.getMessage());
-            logger.info("Request removing");
+            logger.info("Requests removed");
         }
 
     }
@@ -62,6 +61,6 @@ public class CashToUsrPanelController extends RequestPanelController{
     public void handleDecline(Command requestCommand) {
         super.getCommands().remove(requestCommand);
         super.removeRequest(requestCommand.getMessage());
-        logger.info("Request removing");
+        logger.info("Requests removed");
     }
 }

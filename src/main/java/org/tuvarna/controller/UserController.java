@@ -6,12 +6,12 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import org.controlsfx.control.Rating;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.tuvarna.command.Command;
 import org.tuvarna.command.RequestToCashierCommandImpl;
-import org.tuvarna.command.RequestToDistributorCommandImpl;
 import org.tuvarna.database.DatabaseSingleton;
 import org.tuvarna.entity.CompanyRatings;
 import org.tuvarna.entity.Ticket;
@@ -24,16 +24,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserController {
+
     @FXML
     public ComboBox<Trip> tripComboBox;
+
     @FXML
     public ComboBox<Ticket> seatComboBox;
+
     @FXML
     public ComboBox<Ticket> purchasedTripsComboBox;
+
     @FXML
     public RadioButton rating1, rating2, rating3, rating4, rating5;
+
     @FXML
     public ToggleGroup ratingGroup;
+
     @FXML
     public Label errorLabel;
 
@@ -51,13 +57,7 @@ public class UserController {
 
     private TicketService ticketService;
 
-    public void setTicketService(TicketService ticketService) {
-        this.ticketService = ticketService;
-    }
-
-    public void setTripService(TripService tripService) {
-        this.tripService = tripService;
-    }
+    private final static Logger logger = LogManager.getLogger(UserController.class);
 
     @FXML
     public void initialize() {
@@ -67,12 +67,14 @@ public class UserController {
         rating3.setToggleGroup(ratingGroup);
         rating4.setToggleGroup(ratingGroup);
         rating5.setToggleGroup(ratingGroup);
+        logger.info("Successfully configured rating group");
     }
 
     public void initializeData(){
         List<Trip> trips = tripService.getAllTrips().stream().filter(c->c.getDistributor() != null
                 && c.getCashier() !=null).
                 toList();
+        logger.info("Successfully retrieved all trips with distributor and cashier");
         ObservableList<Trip> obsTrips = FXCollections.observableArrayList(trips);
         tripComboBox.setItems(obsTrips);
         tripComboBox.setValue(obsTrips.get(0));
@@ -84,7 +86,7 @@ public class UserController {
                 seatComboBox.getItems().clear();
             }
         });
-        System.out.println("Current user=" + currentUser);
+        logger.info("Successfully retrieved all tickets for trip: {}", tripComboBox.getSelectionModel().getSelectedItem());
         currentUser.addListener((observable, oldValue, newValue) -> {
             if(newValue != null){
                 showTicketsForCurrentUser();
@@ -92,53 +94,52 @@ public class UserController {
                 purchasedTripsComboBox.getItems().clear();
             }
         });
+        logger.info("Successfully retrieved all tickets for user: {}", currentUser.get());
     }
-
 
     public void submitRating(ActionEvent actionEvent) {
         Trip currentTrip = purchasedTripsComboBox.getSelectionModel().getSelectedItem().getTrip();
         Ticket currentTicket = purchasedTripsComboBox.getSelectionModel().getSelectedItem();
+        logger.info("Current ticket: {}", currentTicket);
         if(ticketService.getTicketById(currentTicket.getId()).isRate()){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Alert!");
             alert.setHeaderText("Rated Trip");
             alert.setContentText("You already rate this trip.");
             alert.showAndWait();
+            logger.info("Rated Trip");
             return;
         }
         RadioButton selectedRadioButton = (RadioButton) ratingGroup.getSelectedToggle();
         String rating = selectedRadioButton.getText();
+        logger.info("Selected rating: {}", rating);
+        logger.info("Retrieving current session");
         Session session = sessionFactory.getCurrentSession();
+        logger.info("Begin transaction");
         session.beginTransaction();
-        if(currentTicket.isRate()){
-            errorLabel.setVisible(true);
-            return;
-        }
         try{
             session.merge(new CompanyRatings(currentTrip.getCompany(), Integer.parseInt(rating)));
             session.createQuery("update Ticket set isRate = true where id = :id").
                     setParameter("id", currentTicket.getId()).
                     executeUpdate();
             session.getTransaction().commit();
+            logger.info("Successfully updated current ticket and company ratings table");
             errorLabel.setVisible(false);
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("Occurred error in submitRating method, with message: {}", e.getMessage());
         }finally {
             session.close();
         }
     }
 
-    public SimpleStringProperty getCurrentUser() {
-        return currentUser;
-    }
-
-    public void setCurrentUser(String currentUser) {
-        this.currentUser.set(currentUser);
-    }
-
     private void showTickets() {
         Trip currentTrip = tripComboBox.getSelectionModel().getSelectedItem();
-        List<Ticket> tickets = ticketService.getAllTickets().stream().filter(c -> c.getTrip().getId() == currentTrip.getId() && !c.isSold() && c.getDistributor() != null).toList();
+        List<Ticket> tickets = ticketService.getAllTickets().
+                stream().
+                filter(c -> c.getTrip().getId() == currentTrip.getId()
+                        && !c.isSold() && c.getDistributor() != null)
+                .toList();
+        logger.info("Filtered tickets for trip: {}", currentTrip);
         ObservableList<Ticket> obsTickets = FXCollections.observableArrayList(tickets);
         System.out.println(obsTickets);
         seatComboBox.setItems(obsTickets);
@@ -146,7 +147,14 @@ public class UserController {
     }
 
     private void showTicketsForCurrentUser() {
-        List<Ticket> tickets = ticketService.getAllTickets().stream().filter(c -> c.getUser() != null &&  c.getUser().getName().equals(currentUser.get())).toList();
+        List<Ticket> tickets = ticketService.getAllTickets().
+                stream().
+                filter(c -> c.getUser() != null
+                        && c.getUser().
+                        getName().
+                        equals(currentUser.get())).
+                toList();
+        logger.info("Filtered tickets for user: {}", currentUser);
         ObservableList<Ticket> obsTickets = FXCollections.observableArrayList(tickets);
         System.out.println(obsTickets);
         purchasedTripsComboBox.setItems(obsTickets);
@@ -155,13 +163,16 @@ public class UserController {
 
     public void ticketOrder() {
         Ticket selectedTicket = seatComboBox.getSelectionModel().getSelectedItem();
+        logger.info("Selected ticket: {}", selectedTicket);
         if (selectedTicket != null) {
+            logger.info("Checking the existence of a user");
             if (selectedTicket.getUser() != null) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Alert!");
                 alert.setHeaderText("Ticket is sold!");
                 alert.setContentText("Ticket already purchased by another user!");
                 alert.showAndWait();
+                logger.info("Ticket is purchased by another user");
                 return;
             }
             String message = "Would you like to accept a ticket request to "
@@ -174,6 +185,7 @@ public class UserController {
                     cashierController,
                     userService.getUserByName(currentUser.get())
             );
+            logger.info("Successfully accepted a ticket request");
             command.execute();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success!");
@@ -189,24 +201,20 @@ public class UserController {
         }
     }
 
-    public CashierController getCashierController() {
-        return cashierController;
+    public void setTicketService(TicketService ticketService) {
+        this.ticketService = ticketService;
+    }
+
+    public void setTripService(TripService tripService) {
+        this.tripService = tripService;
+    }
+
+    public void setCurrentUser(String currentUser) {
+        this.currentUser.set(currentUser);
     }
 
     public void setCashierController(CashierController cashierController) {
         this.cashierController = cashierController;
-    }
-
-    public TicketService getTicketService() {
-        return ticketService;
-    }
-
-    public TripService getTripService() {
-        return tripService;
-    }
-
-    public UserService getUserService() {
-        return userService;
     }
 
     public void setUserService(UserService userService) {
