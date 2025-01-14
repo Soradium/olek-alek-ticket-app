@@ -147,7 +147,6 @@ public class CompanyController implements Subject {
             logger.info("Error message because blank fields");
             return;
         }
-        System.out.println(currentBus.getId());
         tripService.addTrip(new Trip(departureText,
                 destinationText,
                 timeOfDepartureText,

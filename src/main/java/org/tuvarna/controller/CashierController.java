@@ -118,10 +118,6 @@ public class CashierController implements Subject {
         }
     }
 
-    public void setCurrentCashier(Cashier currentCashier) {
-        this.currentCashier = currentCashier;
-    }
-
     public void showInfo() {
         logger.info("Clearing of tripsByDistributorListView");
         tripsByDistributorListView.getItems().clear();
@@ -161,6 +157,10 @@ public class CashierController implements Subject {
             }
         });
         logger.info("Configured customCellFactory for tripsByDistributorLostView");
+    }
+
+    public void setCurrentCashier(Cashier currentCashier) {
+        this.currentCashier = currentCashier;
     }
 
     public CashierService getService() {

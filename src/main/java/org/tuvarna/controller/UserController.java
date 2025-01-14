@@ -141,9 +141,7 @@ public class UserController {
                 .toList();
         logger.info("Filtered tickets for trip: {}", currentTrip);
         ObservableList<Ticket> obsTickets = FXCollections.observableArrayList(tickets);
-        System.out.println(obsTickets);
         seatComboBox.setItems(obsTickets);
-        System.out.println(currentTrip);
     }
 
     private void showTicketsForCurrentUser() {
@@ -156,9 +154,7 @@ public class UserController {
                 toList();
         logger.info("Filtered tickets for user: {}", currentUser);
         ObservableList<Ticket> obsTickets = FXCollections.observableArrayList(tickets);
-        System.out.println(obsTickets);
         purchasedTripsComboBox.setItems(obsTickets);
-        System.out.println(currentUser);
     }
 
     public void ticketOrder() {
