@@ -90,7 +90,6 @@ public class DistrToCashPanelControllerImpl extends RequestPanelController {
         session.beginTransaction();
         try{
             Seat seat = session.merge(new Seat(trip.getBus(), seatNumber));
-            System.out.println("SEAT " + seat);
             session.getTransaction().commit();
             return seat;
         }catch (Exception e){

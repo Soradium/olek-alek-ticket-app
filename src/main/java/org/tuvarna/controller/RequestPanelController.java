@@ -35,7 +35,7 @@ public abstract class RequestPanelController {
         for (Command command : commands) {
             Label requestLabel = new Label(command.getMessage());
             requestLabel.setStyle("-fx-font-size: 14px;");
-            requestLabel.setWrapText(true); // Включаем перенос текста
+            requestLabel.setWrapText(true);
             requestLabel.setMaxWidth(400);
 
             Button acceptButton = new Button("Accept");

@@ -74,7 +74,7 @@ public class AdministratorController implements Subject {
 
     @Override
     public void registerObserver(Observer observer) {
-        this.observer = observer; //main controller
+        this.observer = observer;
     }
 
     @Override
