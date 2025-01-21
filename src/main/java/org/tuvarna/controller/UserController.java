@@ -166,7 +166,7 @@ public class UserController {
                 command = new RequestToCashierCommandImpl(
                         message,
                         selectedTripList,
-                        cashierController.clone(),
+                        cashierController,
                         userService.getUserByName(currentUser.get())
                 );
                 logger.info("Successfully accepted a ticket request");

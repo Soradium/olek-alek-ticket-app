@@ -75,12 +75,11 @@ public class CompToDistrPanelControllerImpl extends RequestPanelController {
         super.getCommands().stream()
                 .filter(c ->
                         (c.getReceiver() instanceof CompanyController) &&
-                                (((CompanyController) c.getReceiver())
-                                        .companyName
-                                        .getText()
+                                (((Trip) c.getPassedObjects().getFirst())
+                                        .getCompany().getName()
                                         .equals(companyName))
                 )
-                .forEach(particularCommands::add);
+                .forEach(c -> particularCommands.add(c));
 
         return particularCommands;
     }

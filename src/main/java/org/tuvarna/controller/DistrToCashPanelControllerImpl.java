@@ -108,15 +108,14 @@ public class DistrToCashPanelControllerImpl extends RequestPanelController {
     }
 
     @Override
-    List<Command> getParticularCommands() {
+    protected List<Command> getParticularCommands() {
         List<Command> particularCommands = new LinkedList<>();
         String distributorName = distributorController.distributorName.getText();
         super.getCommands().stream()
                 .filter(c ->
                         (c.getReceiver() instanceof DistributorController) &&
-                                (((DistributorController) c.getReceiver())
-                                        .distributorName
-                                        .getText()
+                                (((Trip) c.getPassedObjects().getFirst())
+                                        .getDistributor().getName()
                                         .equals(distributorName))
                 )
                 .forEach(c -> particularCommands.add(c));

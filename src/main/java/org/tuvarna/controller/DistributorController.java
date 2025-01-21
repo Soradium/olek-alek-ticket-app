@@ -21,7 +21,7 @@ import org.tuvarna.service.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DistributorController implements Subject, Cloneable {
+public class DistributorController implements Subject {
     private static final Logger logger = LogManager.getLogger(DistributorController.class);
     private final SimpleStringProperty currentDistributorProperty = new SimpleStringProperty();
     private final ObservableList<Trip> tripsPerCompany = FXCollections.observableArrayList();
@@ -153,7 +153,7 @@ public class DistributorController implements Subject, Cloneable {
                 command = new RequestToCompanyCommandImpl(
                         message,
                         selectedTripList,
-                        companyController.clone(),
+                        companyController,
                         distributorService.getDistributorByName(currentDistributor)
                 );
                 logger.info("Successfully accepted a trip request");
@@ -313,12 +313,4 @@ public class DistributorController implements Subject, Cloneable {
         this.observer.update(values);
     }
 
-    @Override
-    protected DistributorController clone() throws CloneNotSupportedException {
-        try {
-            return (DistributorController) super.clone();
-        } catch (CloneNotSupportedException ex) {
-            throw new RuntimeException("superclass messed up", ex);
-        }
-    }
 }

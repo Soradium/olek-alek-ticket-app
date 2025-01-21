@@ -74,9 +74,8 @@ public class CashToUsrPanelController extends RequestPanelController {
         super.getCommands().stream()
                 .filter(c ->
                         (c.getReceiver() instanceof CashierController) &&
-                                (((CashierController) c.getReceiver())
-                                        .getCashierName()
-                                        .getText()
+                                (((Ticket) c.getPassedObjects().getFirst())
+                                        .getTrip().getDistributor().getName()
                                         .equals(cashierName))
                 )
                 .forEach(c -> particularCommands.add(c));

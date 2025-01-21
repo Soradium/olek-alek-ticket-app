@@ -3,49 +3,62 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-
-<VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: GRAY;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tuvarna.controller.CashierController">
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" spacing="20.0" style="-fx-background-color: GRAY;"
+      xmlns="http://javafx.com/javafx/17.0.12" fx:controller="org.tuvarna.controller.CashierController">
     <Label fx:id="cashierName" text="Cashier Name" textFill="WHITE">
-      <font>
-         <Font name="Droid Sans Mono Slashed" size="24.0" />
-      </font></Label>
+        <font>
+            <Font name="Droid Sans Mono Slashed" size="24.0"/>
+        </font>
+    </Label>
     <!--    <fx:include source="check-requests.fxml"/>-->
     <HBox alignment="CENTER">
         <Label text="Distributor: " textFill="WHITE">
-         <font>
-            <Font name="Droid Sans Mono Slashed" size="18.0" />
-         </font></Label>
+            <font>
+                <Font name="Droid Sans Mono Slashed" size="18.0"/>
+            </font>
+        </Label>
         <Label fx:id="distributorName" text="Distributor Name Placeholder" textFill="WHITE">
-         <font>
-            <Font name="Droid Sans Mono Slashed" size="18.0" />
-         </font></Label>
+            <font>
+                <Font name="Droid Sans Mono Slashed" size="18.0"/>
+            </font>
+        </Label>
     </HBox>
 
     <VBox alignment="CENTER" spacing="10">
-        <Label text="Trips Provided by Selected Distributor" textFill="WHITE">
-         <font>
-            <Font name="Droid Sans Mono Slashed" size="16.0" />
-         </font></Label>
-        <ListView fx:id="tripsByDistributorListView" prefHeight="150" prefWidth="300" style="-fx-background-color: #f4f4f4;" />
+        <Label text="Your Trips Managed by Selected Distributor" textFill="WHITE">
+            <font>
+                <Font name="Droid Sans Mono Slashed" size="16.0"/>
+            </font>
+        </Label>
+        <ListView fx:id="tripsByDistributorListView" prefHeight="150" prefWidth="300"
+                  style="-fx-background-color: #f4f4f4;"/>
     </VBox>
 
 
     <HBox alignment="CENTER" spacing="20">
-        <Button onAction="#requestTrip" style="-fx-background-color: #00bf63; -fx-min-height: 40; -fx-min-width: 140; -fx-background-radius: 10;" text="Request Trip" textFill="WHITE">
-         <font>
-            <Font name="Droid Sans Mono Slashed" size="16.0" />
-         </font></Button>
-        <Button onAction="#showInfo" style="-fx-background-color: #5e17eb; -fx-min-width: 140; -fx-min-height: 40; -fx-background-radius: 10;" text="Show Info" textFill="WHITE">
-         <font>
-            <Font name="Droid Sans Mono Slashed" size="16.0" />
-         </font></Button>
+        <Button onAction="#requestTrip"
+                style="-fx-background-color: #00bf63; -fx-min-height: 40; -fx-min-width: 140; -fx-background-radius: 10;"
+                text="Request Trip" textFill="WHITE">
+            <font>
+                <Font name="Droid Sans Mono Slashed" size="16.0"/>
+            </font>
+        </Button>
+        <Button onAction="#showInfo"
+                style="-fx-background-color: #5e17eb; -fx-min-width: 140; -fx-min-height: 40; -fx-background-radius: 10;"
+                text="Show Info" textFill="WHITE">
+            <font>
+                <Font name="Droid Sans Mono Slashed" size="16.0"/>
+            </font>
+        </Button>
     </HBox>
 
     <VBox alignment="CENTER" spacing="10">
         <Label text="Trips Provided by Selected Distributor" textFill="WHITE">
-         <font>
-            <Font name="Droid Sans Mono Slashed" size="16.0" />
-         </font></Label>
-        <ListView fx:id="ticketsProvidedByCashier" prefHeight="150" prefWidth="300" style="-fx-background-color: #f4f4f4;" />
+            <font>
+                <Font name="Droid Sans Mono Slashed" size="16.0"/>
+            </font>
+        </Label>
+        <ListView fx:id="ticketsProvidedByCashier" prefHeight="150" prefWidth="300"
+                  style="-fx-background-color: #f4f4f4;"/>
     </VBox>
 </VBox>

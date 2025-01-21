@@ -24,7 +24,7 @@ import org.tuvarna.service.TripService;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CashierController implements Subject, Cloneable {
+public class CashierController implements Subject {
     private static final Logger logger = LogManager.getLogger(CashierController.class);
     @FXML
     public ListView<Trip> tripsByDistributorListView;
@@ -78,9 +78,9 @@ public class CashierController implements Subject, Cloneable {
                     alert.setTitle("Alert!");
                     alert.setHeaderText("Trip is managed!");
                     alert.setContentText("This trip is already managed by another" +
-                            " cashier.");
+                            " cashier or you.");
                     alert.showAndWait();
-                    logger.info("Trip is managed by another cashier");
+                    logger.info("Trip is managed by another cashier or you");
                     return;
                 }
                 String message = "Would you like to accept a trip request to "
@@ -90,7 +90,7 @@ public class CashierController implements Subject, Cloneable {
                 command = new RequestToDistributorCommandImpl(
                         message,
                         selectedTripList,
-                        distributorController.clone(),
+                        distributorController,
                         service.getCashierByName(currentCashier.getName())
                 );
                 logger.info("Successfully accepted a trip request");
@@ -110,15 +110,6 @@ public class CashierController implements Subject, Cloneable {
         } catch (Exception e) {
             logger.error("Error during initialize of trip request. Error: {}", e.getMessage());
             e.printStackTrace();
-        }
-    }
-
-    @Override
-    protected CashierController clone() throws CloneNotSupportedException {
-        try {
-            return (CashierController) super.clone();
-        } catch (CloneNotSupportedException ex) {
-            throw new RuntimeException("superclass messed up", ex);
         }
     }
 
