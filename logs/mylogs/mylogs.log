@@ -27,6 +27,165 @@
 2025-01-13 00:29:31 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
 2025-01-13 00:29:32 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
 2025-01-13 00:29:32 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-13 15:28:44 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-13 15:28:44 INFO  org.tuvarna.controller.CompanyController - Successfully loaded check-requests-cashier.fxml
+2025-01-13 15:28:44 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-13 15:28:44 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-13 15:28:45 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-13 15:28:45 INFO  org.tuvarna.controller.CompanyController - Successfully loaded check-requests-cashier.fxml
+2025-01-13 15:28:45 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-13 15:28:45 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-13 15:28:52 INFO  org.tuvarna.controller.CompanyController - Initializing data. Current company is: Company:  name=ccf currentRating=0.0
+2025-01-13 15:28:55 INFO  org.tuvarna.controller.CompanyController - tripListView cleaning
+2025-01-13 15:28:55 INFO  org.tuvarna.controller.CompanyController - All trips by company: 0
+2025-01-13 15:28:55 INFO  org.tuvarna.controller.CompanyController - Successfully current rating receiving
+2025-01-13 15:28:55 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for tripListView
+2025-01-13 15:28:55 INFO  org.tuvarna.controller.CompanyController - busListView cleaning
+2025-01-13 15:28:55 INFO  org.tuvarna.controller.CompanyController - All buses by company: 0
+2025-01-13 15:28:55 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for busListView
+2025-01-13 15:28:56 INFO  org.tuvarna.controller.CompanyController - tripListView cleaning
+2025-01-13 15:28:56 INFO  org.tuvarna.controller.CompanyController - All trips by company: 0
+2025-01-13 15:28:56 INFO  org.tuvarna.controller.CompanyController - Successfully current rating receiving
+2025-01-13 15:28:56 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for tripListView
+2025-01-13 15:28:56 INFO  org.tuvarna.controller.CompanyController - busListView cleaning
+2025-01-13 15:28:56 INFO  org.tuvarna.controller.CompanyController - All buses by company: 0
+2025-01-13 15:28:56 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for busListView
+2025-01-13 15:29:10 INFO  org.tuvarna.controller.CashierController - Clearing of tripsByDistributorListView
+2025-01-13 15:29:10 INFO  org.tuvarna.controller.CashierController - All trips: 4
+2025-01-13 15:29:10 INFO  org.tuvarna.controller.CashierController - Filtering of allTrips by distributor id: 1
+2025-01-13 15:29:10 INFO  org.tuvarna.controller.CashierController - Filtered allTrips list: 0
+2025-01-13 15:29:10 INFO  org.tuvarna.controller.CashierController - Trips in list view 0
+2025-01-13 15:29:10 INFO  org.tuvarna.controller.CashierController - Configured customCellFactory for tripsByDistributorLostView
+2025-01-13 15:29:11 INFO  org.tuvarna.controller.CashierController - Clearing of tripsByDistributorListView
+2025-01-13 15:29:11 INFO  org.tuvarna.controller.CashierController - All trips: 4
+2025-01-13 15:29:11 INFO  org.tuvarna.controller.CashierController - Filtering of allTrips by distributor id: 1
+2025-01-13 15:29:11 INFO  org.tuvarna.controller.CashierController - Filtered allTrips list: 0
+2025-01-13 15:29:11 INFO  org.tuvarna.controller.CashierController - Trips in list view 0
+2025-01-13 15:29:11 INFO  org.tuvarna.controller.CashierController - Configured customCellFactory for tripsByDistributorLostView
+2025-01-13 15:29:26 INFO  org.tuvarna.controller.CompanyController - Initializing data. Current company is: Company:  name=ccf currentRating=0.0
+2025-01-13 15:29:29 INFO  org.tuvarna.controller.CompanyController - tripListView cleaning
+2025-01-13 15:29:29 INFO  org.tuvarna.controller.CompanyController - All trips by company: 0
+2025-01-13 15:29:29 INFO  org.tuvarna.controller.CompanyController - Successfully current rating receiving
+2025-01-13 15:29:29 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for tripListView
+2025-01-13 15:29:29 INFO  org.tuvarna.controller.CompanyController - busListView cleaning
+2025-01-13 15:29:29 INFO  org.tuvarna.controller.CompanyController - All buses by company: 0
+2025-01-13 15:29:29 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for busListView
+2025-01-13 15:29:32 INFO  org.tuvarna.controller.CompanyController - Initializing data. Current company is: Company:  name=BusVarna currentRating=3.4
+2025-01-13 15:29:33 INFO  org.tuvarna.controller.CompanyController - tripListView cleaning
+2025-01-13 15:29:33 INFO  org.tuvarna.controller.CompanyController - All trips by company: 0
+2025-01-13 15:29:33 INFO  org.tuvarna.controller.CompanyController - Successfully current rating receiving
+2025-01-13 15:29:33 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for tripListView
+2025-01-13 15:29:33 INFO  org.tuvarna.controller.CompanyController - busListView cleaning
+2025-01-13 15:29:33 INFO  org.tuvarna.controller.CompanyController - All buses by company: 0
+2025-01-13 15:29:33 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for busListView
+2025-01-13 15:29:35 INFO  org.tuvarna.controller.CompanyController - tripListView cleaning
+2025-01-13 15:29:35 INFO  org.tuvarna.controller.CompanyController - All trips by company: 0
+2025-01-13 15:29:35 INFO  org.tuvarna.controller.CompanyController - Successfully current rating receiving
+2025-01-13 15:29:35 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for tripListView
+2025-01-13 15:29:35 INFO  org.tuvarna.controller.CompanyController - busListView cleaning
+2025-01-13 15:29:35 INFO  org.tuvarna.controller.CompanyController - All buses by company: 0
+2025-01-13 15:29:35 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for busListView
+2025-01-13 15:29:37 INFO  org.tuvarna.controller.CompanyController - Initializing data. Current company is: Company:  name=Ardabur currentRating=0.0
+2025-01-13 15:29:38 INFO  org.tuvarna.controller.CompanyController - tripListView cleaning
+2025-01-13 15:29:38 INFO  org.tuvarna.controller.CompanyController - All trips by company: 0
+2025-01-13 15:29:38 INFO  org.tuvarna.controller.CompanyController - Successfully current rating receiving
+2025-01-13 15:29:38 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for tripListView
+2025-01-13 15:29:38 INFO  org.tuvarna.controller.CompanyController - busListView cleaning
+2025-01-13 15:29:38 INFO  org.tuvarna.controller.CompanyController - All buses by company: 0
+2025-01-13 15:29:38 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for busListView
+2025-01-13 15:29:42 INFO  org.tuvarna.controller.CashierController - Clearing of tripsByDistributorListView
+2025-01-13 15:29:42 INFO  org.tuvarna.controller.CashierController - All trips: 4
+2025-01-13 15:29:42 INFO  org.tuvarna.controller.CashierController - Filtering of allTrips by distributor id: 1
+2025-01-13 15:29:42 INFO  org.tuvarna.controller.CashierController - Filtered allTrips list: 0
+2025-01-13 15:29:42 INFO  org.tuvarna.controller.CashierController - Trips in list view 0
+2025-01-13 15:29:42 INFO  org.tuvarna.controller.CashierController - Configured customCellFactory for tripsByDistributorLostView
+2025-01-13 15:29:43 INFO  org.tuvarna.controller.CashierController - Clearing of tripsByDistributorListView
+2025-01-13 15:29:43 INFO  org.tuvarna.controller.CashierController - All trips: 4
+2025-01-13 15:29:43 INFO  org.tuvarna.controller.CashierController - Filtering of allTrips by distributor id: 1
+2025-01-13 15:29:43 INFO  org.tuvarna.controller.CashierController - Filtered allTrips list: 0
+2025-01-13 15:29:43 INFO  org.tuvarna.controller.CashierController - Trips in list view 0
+2025-01-13 15:29:43 INFO  org.tuvarna.controller.CashierController - Configured customCellFactory for tripsByDistributorLostView
+2025-01-13 15:29:43 INFO  org.tuvarna.controller.CashierController - Clearing of tripsByDistributorListView
+2025-01-13 15:29:43 INFO  org.tuvarna.controller.CashierController - All trips: 4
+2025-01-13 15:29:43 INFO  org.tuvarna.controller.CashierController - Filtering of allTrips by distributor id: 1
+2025-01-13 15:29:43 INFO  org.tuvarna.controller.CashierController - Filtered allTrips list: 0
+2025-01-13 15:29:43 INFO  org.tuvarna.controller.CashierController - Trips in list view 0
+2025-01-13 15:29:43 INFO  org.tuvarna.controller.CashierController - Configured customCellFactory for tripsByDistributorLostView
+2025-01-13 15:30:26 INFO  org.tuvarna.controller.CompanyController - Initializing data. Current company is: Company:  name=ggf currentRating=3.0
+2025-01-13 15:30:28 INFO  org.tuvarna.controller.CompanyController - tripListView cleaning
+2025-01-13 15:30:28 INFO  org.tuvarna.controller.CompanyController - All trips by company: 0
+2025-01-13 15:30:28 INFO  org.tuvarna.controller.CompanyController - Successfully current rating receiving
+2025-01-13 15:30:28 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for tripListView
+2025-01-13 15:30:28 INFO  org.tuvarna.controller.CompanyController - busListView cleaning
+2025-01-13 15:30:28 INFO  org.tuvarna.controller.CompanyController - All buses by company: 0
+2025-01-13 15:30:28 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for busListView
+2025-01-13 15:30:29 INFO  org.tuvarna.controller.CompanyController - tripListView cleaning
+2025-01-13 15:30:29 INFO  org.tuvarna.controller.CompanyController - All trips by company: 0
+2025-01-13 15:30:29 INFO  org.tuvarna.controller.CompanyController - Successfully current rating receiving
+2025-01-13 15:30:29 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for tripListView
+2025-01-13 15:30:29 INFO  org.tuvarna.controller.CompanyController - busListView cleaning
+2025-01-13 15:30:29 INFO  org.tuvarna.controller.CompanyController - All buses by company: 0
+2025-01-13 15:30:29 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for busListView
+2025-01-13 15:30:32 INFO  org.tuvarna.controller.CompanyController - Initializing data. Current company is: Company:  name=BusVarna currentRating=3.4
+2025-01-13 15:30:33 INFO  org.tuvarna.controller.CompanyController - tripListView cleaning
+2025-01-13 15:30:33 INFO  org.tuvarna.controller.CompanyController - All trips by company: 0
+2025-01-13 15:30:33 INFO  org.tuvarna.controller.CompanyController - Successfully current rating receiving
+2025-01-13 15:30:33 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for tripListView
+2025-01-13 15:30:33 INFO  org.tuvarna.controller.CompanyController - busListView cleaning
+2025-01-13 15:30:33 INFO  org.tuvarna.controller.CompanyController - All buses by company: 0
+2025-01-13 15:30:33 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for busListView
+2025-01-13 15:30:34 INFO  org.tuvarna.controller.CompanyController - tripListView cleaning
+2025-01-13 15:30:34 INFO  org.tuvarna.controller.CompanyController - All trips by company: 0
+2025-01-13 15:30:34 INFO  org.tuvarna.controller.CompanyController - Successfully current rating receiving
+2025-01-13 15:30:34 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for tripListView
+2025-01-13 15:30:34 INFO  org.tuvarna.controller.CompanyController - busListView cleaning
+2025-01-13 15:30:34 INFO  org.tuvarna.controller.CompanyController - All buses by company: 0
+2025-01-13 15:30:34 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for busListView
+2025-01-13 15:30:37 INFO  org.tuvarna.controller.CompanyController - Initializing data. Current company is: Company:  name=Barabaraba currentRating=0.0
+2025-01-13 15:30:37 INFO  org.tuvarna.controller.CompanyController - tripListView cleaning
+2025-01-13 15:30:37 INFO  org.tuvarna.controller.CompanyController - All trips by company: 0
+2025-01-13 15:30:37 INFO  org.tuvarna.controller.CompanyController - Successfully current rating receiving
+2025-01-13 15:30:37 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for tripListView
+2025-01-13 15:30:37 INFO  org.tuvarna.controller.CompanyController - busListView cleaning
+2025-01-13 15:30:37 INFO  org.tuvarna.controller.CompanyController - All buses by company: 0
+2025-01-13 15:30:37 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for busListView
+2025-01-13 15:30:39 INFO  org.tuvarna.controller.CompanyController - Initializing data. Current company is: Company:  name=ccf currentRating=0.0
+2025-01-13 15:30:40 INFO  org.tuvarna.controller.CompanyController - tripListView cleaning
+2025-01-13 15:30:40 INFO  org.tuvarna.controller.CompanyController - All trips by company: 0
+2025-01-13 15:30:40 INFO  org.tuvarna.controller.CompanyController - Successfully current rating receiving
+2025-01-13 15:30:40 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for tripListView
+2025-01-13 15:30:40 INFO  org.tuvarna.controller.CompanyController - busListView cleaning
+2025-01-13 15:30:40 INFO  org.tuvarna.controller.CompanyController - All buses by company: 0
+2025-01-13 15:30:40 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for busListView
+2025-01-13 15:30:41 INFO  org.tuvarna.controller.CompanyController - Initializing data. Current company is: Company:  name=vff currentRating=0.0
+2025-01-13 15:30:41 INFO  org.tuvarna.controller.CompanyController - tripListView cleaning
+2025-01-13 15:30:42 INFO  org.tuvarna.controller.CompanyController - All trips by company: 0
+2025-01-13 15:30:42 INFO  org.tuvarna.controller.CompanyController - Successfully current rating receiving
+2025-01-13 15:30:42 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for tripListView
+2025-01-13 15:30:42 INFO  org.tuvarna.controller.CompanyController - busListView cleaning
+2025-01-13 15:30:42 INFO  org.tuvarna.controller.CompanyController - All buses by company: 0
+2025-01-13 15:30:42 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for busListView
+2025-01-13 15:30:43 INFO  org.tuvarna.controller.CompanyController - Initializing data. Current company is: Company:  name=hhy currentRating=0.0
+2025-01-13 15:30:44 INFO  org.tuvarna.controller.CompanyController - tripListView cleaning
+2025-01-13 15:30:44 INFO  org.tuvarna.controller.CompanyController - All trips by company: 1
+2025-01-13 15:30:44 INFO  org.tuvarna.controller.CompanyController - Successfully current rating receiving
+2025-01-13 15:30:44 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for tripListView
+2025-01-13 15:30:44 INFO  org.tuvarna.controller.CompanyController - busListView cleaning
+2025-01-13 15:30:44 INFO  org.tuvarna.controller.CompanyController - All buses by company: 0
+2025-01-13 15:30:44 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for busListView
+2025-01-13 15:30:49 INFO  org.tuvarna.controller.CompanyController - tripListView cleaning
+2025-01-13 15:30:49 INFO  org.tuvarna.controller.CompanyController - All trips by company: 1
+2025-01-13 15:30:49 INFO  org.tuvarna.controller.CompanyController - Successfully current rating receiving
+2025-01-13 15:30:49 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for tripListView
+2025-01-13 15:30:49 INFO  org.tuvarna.controller.CompanyController - busListView cleaning
+2025-01-13 15:30:49 INFO  org.tuvarna.controller.CompanyController - All buses by company: 0
+2025-01-13 15:30:49 INFO  org.tuvarna.controller.CompanyController - Configuring cellFactory for busListView
+2025-01-13 15:30:55 INFO  org.tuvarna.controller.CashierController - Clearing of tripsByDistributorListView
+2025-01-13 15:30:55 INFO  org.tuvarna.controller.CashierController - All trips: 4
+2025-01-13 15:30:55 INFO  org.tuvarna.controller.CashierController - Filtering of allTrips by distributor id: 1
+2025-01-13 15:30:55 INFO  org.tuvarna.controller.CashierController - Filtered allTrips list: 0
+2025-01-13 15:30:55 INFO  org.tuvarna.controller.CashierController - Trips in list view 0
+2025-01-13 15:30:55 INFO  org.tuvarna.controller.CashierController - Configured customCellFactory for tripsByDistributorLostView
 2025-01-14 19:04:03 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
 2025-01-14 19:04:05 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
 2025-01-14 19:04:05 INFO  org.tuvarna.controller.DistributorController - Successfully loaded check-requests-distributor.fxml
@@ -190,3 +349,1377 @@
 2025-01-14 19:42:37 INFO  org.tuvarna.controller.CompanyController - Initializing data. Current company is: Company:  name=ccf currentRating=0.0
 2025-01-14 19:42:37 INFO  org.tuvarna.controller.MainController - Set Request panel for companyController
 2025-01-14 19:42:41 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 16:57:15 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 16:57:26 ERROR org.tuvarna.controller.DistributorController - Error during initialize of check-requests-distributor. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-distributor.fxml:7
+
+2025-01-21 16:59:21 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 16:59:24 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 16:59:24 INFO  org.tuvarna.controller.DistributorController - Successfully loaded check-requests-distributor.fxml
+2025-01-21 16:59:24 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 16:59:24 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 16:59:24 INFO  org.tuvarna.controller.CompanyController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 16:59:24 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 16:59:24 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 16:59:24 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 16:59:24 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 16:59:24 INFO  org.tuvarna.controller.MainController - Initialize MainController
+2025-01-21 16:59:24 INFO  org.tuvarna.controller.MainController - All services initialized
+2025-01-21 16:59:24 INFO  org.tuvarna.repository.CashierDAOImpl - Session started for findAll
+2025-01-21 16:59:24 INFO  org.tuvarna.repository.CashierDAOImpl - Cashiers fetched successfully: 6
+2025-01-21 16:59:24 INFO  org.tuvarna.repository.CashierDAOImpl - Transaction commited successfully
+2025-01-21 16:59:24 INFO  org.tuvarna.repository.CashierDAOImpl - Session closed successfully
+2025-01-21 16:59:24 INFO  org.tuvarna.repository.UserDAOImpl - Session started for findAll
+2025-01-21 16:59:25 INFO  org.tuvarna.repository.UserDAOImpl - Users fetched successfully: 3
+2025-01-21 16:59:25 INFO  org.tuvarna.repository.UserDAOImpl - Transaction committed successfully
+2025-01-21 16:59:25 INFO  org.tuvarna.repository.UserDAOImpl - Session closed successfully
+2025-01-21 16:59:25 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 16:59:25 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 16:59:25 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 16:59:25 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 16:59:25 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 16:59:25 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 16:59:25 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 16:59:25 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 16:59:25 INFO  org.tuvarna.controller.MainController - Setting all Cashiers, Users, Companies, and Distributors
+2025-01-21 16:59:25 INFO  org.tuvarna.controller.MenuStripSelector - Current menu bar: MenuBar@3c270d80[styleClass=menu-bar]
+2025-01-21 16:59:25 INFO  org.tuvarna.controller.MainController - Menu strip configured
+2025-01-21 16:59:25 INFO  org.tuvarna.controller.MainController - AdministratorController configured
+2025-01-21 16:59:25 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 16:59:25 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 16:59:25 INFO  org.tuvarna.controller.CompanyController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 16:59:25 INFO  org.tuvarna.controller.MainController - CompanyController configured
+2025-01-21 16:59:25 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 16:59:25 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 16:59:25 INFO  org.tuvarna.controller.DistributorController - Successfully loaded check-requests-distributor.fxml
+2025-01-21 16:59:25 INFO  org.tuvarna.controller.MainController - DistributorController configured
+2025-01-21 16:59:25 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 16:59:25 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 16:59:25 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 16:59:25 INFO  org.tuvarna.controller.MainController - CashierController configured
+2025-01-21 16:59:25 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 16:59:25 INFO  org.tuvarna.repository.TripDAOImpl - Session started for findAll
+2025-01-21 16:59:26 INFO  org.tuvarna.repository.TripDAOImpl - Trips fetched successfully: 4
+2025-01-21 16:59:26 INFO  org.tuvarna.repository.TripDAOImpl - Transaction committed successfully
+2025-01-21 16:59:26 INFO  org.tuvarna.repository.TripDAOImpl - Session closed successfully
+2025-01-21 16:59:26 INFO  org.tuvarna.controller.UserController - Successfully retrieved all trips with distributor and cashier
+2025-01-21 16:59:26 INFO  org.tuvarna.repository.TicketDAOImpl - Session started for findAll
+2025-01-21 16:59:27 INFO  org.tuvarna.repository.TicketDAOImpl - Tickets fetched successfully: 40
+2025-01-21 16:59:27 INFO  org.tuvarna.repository.TicketDAOImpl - Transaction committed successfully
+2025-01-21 16:59:27 INFO  org.tuvarna.repository.TicketDAOImpl - Session closed successfully
+2025-01-21 16:59:27 INFO  org.tuvarna.controller.UserController - Filtered tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 16:59:27 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 16:59:27 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for user: null
+2025-01-21 16:59:27 INFO  org.tuvarna.controller.MainController - UserController configured
+2025-01-21 17:18:20 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 17:18:20 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@2fdba2df[styleClass=[menu-item]]
+2025-01-21 17:18:20 INFO  org.tuvarna.controller.DistributorController - Setting current distributor: Dist2
+2025-01-21 17:18:20 INFO  org.tuvarna.controller.MainController - Set Request panel for distributorController
+2025-01-21 17:18:24 INFO  org.tuvarna.controller.DistributorController - Clearing all fields
+2025-01-21 17:18:24 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 17:18:24 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 17:18:24 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 17:18:24 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 17:18:24 INFO  org.tuvarna.controller.DistributorController - All companies: 12
+2025-01-21 17:18:24 INFO  org.tuvarna.controller.DistributorController - Companies in companiesListView: 0
+2025-01-21 17:18:24 INFO  org.tuvarna.controller.DistributorController - Configuration cellFactory for companies list view
+2025-01-21 17:18:24 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 17:18:24 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 17:18:24 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 17:18:24 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 17:18:24 INFO  org.tuvarna.controller.DistributorController - Available trips: 2
+2025-01-21 17:18:24 INFO  org.tuvarna.controller.DistributorController - Available trips in availableTripsListView: 0
+2025-01-21 17:18:24 INFO  org.tuvarna.controller.DistributorController - Configuration cellFactory for tripsListView
+2025-01-21 17:18:36 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:11:24 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 19:11:28 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:11:28 ERROR org.tuvarna.controller.DistributorController - Error during initialize of check-requests-distributor. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-distributor.fxml
+
+2025-01-21 19:11:28 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 19:11:28 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:11:28 ERROR org.tuvarna.controller.CompanyController - Error during initialize of check-requests-company. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-company.fxml
+
+2025-01-21 19:11:28 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 19:11:28 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 19:11:28 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:11:28 ERROR org.tuvarna.controller.CashierController - Error during initialize of check-requests-cashier. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-cashier.fxml
+
+2025-01-21 19:11:28 INFO  org.tuvarna.controller.MainController - Initialize MainController
+2025-01-21 19:11:28 INFO  org.tuvarna.controller.MainController - All services initialized
+2025-01-21 19:11:28 INFO  org.tuvarna.repository.CashierDAOImpl - Session started for findAll
+2025-01-21 19:11:28 INFO  org.tuvarna.repository.CashierDAOImpl - Cashiers fetched successfully: 6
+2025-01-21 19:11:28 INFO  org.tuvarna.repository.CashierDAOImpl - Transaction commited successfully
+2025-01-21 19:11:28 INFO  org.tuvarna.repository.CashierDAOImpl - Session closed successfully
+2025-01-21 19:11:28 INFO  org.tuvarna.repository.UserDAOImpl - Session started for findAll
+2025-01-21 19:11:29 INFO  org.tuvarna.repository.UserDAOImpl - Users fetched successfully: 3
+2025-01-21 19:11:29 INFO  org.tuvarna.repository.UserDAOImpl - Transaction committed successfully
+2025-01-21 19:11:29 INFO  org.tuvarna.repository.UserDAOImpl - Session closed successfully
+2025-01-21 19:11:29 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:11:29 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:11:29 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:11:29 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:11:29 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:11:29 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:11:29 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:11:29 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:11:29 INFO  org.tuvarna.controller.MainController - Setting all Cashiers, Users, Companies, and Distributors
+2025-01-21 19:11:29 INFO  org.tuvarna.controller.MenuStripSelector - Current menu bar: MenuBar@49b2b726[styleClass=menu-bar]
+2025-01-21 19:11:29 INFO  org.tuvarna.controller.MainController - Menu strip configured
+2025-01-21 19:11:29 INFO  org.tuvarna.controller.MainController - AdministratorController configured
+2025-01-21 19:11:29 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 19:11:29 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:11:29 ERROR org.tuvarna.controller.CompanyController - Error during initialize of check-requests-company. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-company.fxml
+
+2025-01-21 19:11:29 INFO  org.tuvarna.controller.MainController - CompanyController configured
+2025-01-21 19:11:29 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 19:11:29 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:11:29 ERROR org.tuvarna.controller.DistributorController - Error during initialize of check-requests-distributor. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-distributor.fxml
+
+2025-01-21 19:11:29 INFO  org.tuvarna.controller.MainController - DistributorController configured
+2025-01-21 19:11:29 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 19:11:29 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:11:29 ERROR org.tuvarna.controller.CashierController - Error during initialize of check-requests-cashier. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-cashier.fxml
+
+2025-01-21 19:11:29 INFO  org.tuvarna.controller.MainController - CashierController configured
+2025-01-21 19:11:29 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 19:11:29 INFO  org.tuvarna.repository.TripDAOImpl - Session started for findAll
+2025-01-21 19:11:29 INFO  org.tuvarna.repository.TripDAOImpl - Trips fetched successfully: 4
+2025-01-21 19:11:29 INFO  org.tuvarna.repository.TripDAOImpl - Transaction committed successfully
+2025-01-21 19:11:29 INFO  org.tuvarna.repository.TripDAOImpl - Session closed successfully
+2025-01-21 19:11:29 INFO  org.tuvarna.controller.UserController - Successfully retrieved all trips with distributor and cashier
+2025-01-21 19:11:29 INFO  org.tuvarna.repository.TicketDAOImpl - Session started for findAll
+2025-01-21 19:11:30 INFO  org.tuvarna.repository.TicketDAOImpl - Tickets fetched successfully: 40
+2025-01-21 19:11:30 INFO  org.tuvarna.repository.TicketDAOImpl - Transaction committed successfully
+2025-01-21 19:11:30 INFO  org.tuvarna.repository.TicketDAOImpl - Session closed successfully
+2025-01-21 19:11:30 INFO  org.tuvarna.controller.UserController - Filtered tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 19:11:30 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 19:11:30 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for user: null
+2025-01-21 19:11:30 INFO  org.tuvarna.controller.MainController - UserController configured
+2025-01-21 19:11:59 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 19:11:59 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@2f942e28[styleClass=[menu-item]]
+2025-01-21 19:11:59 INFO  org.tuvarna.controller.DistributorController - Setting current distributor: Dist2
+2025-01-21 19:11:59 INFO  org.tuvarna.controller.MainController - Set Request panel for distributorController
+2025-01-21 19:12:02 INFO  org.tuvarna.controller.DistributorController - Clearing all fields
+2025-01-21 19:12:02 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:12:02 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:12:02 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:12:02 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:12:02 INFO  org.tuvarna.controller.DistributorController - All companies: 12
+2025-01-21 19:12:02 INFO  org.tuvarna.controller.DistributorController - Companies in companiesListView: 0
+2025-01-21 19:12:02 INFO  org.tuvarna.controller.DistributorController - Configuration cellFactory for companies list view
+2025-01-21 19:12:02 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:12:02 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:12:02 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:12:02 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:12:02 INFO  org.tuvarna.controller.DistributorController - Available trips: 2
+2025-01-21 19:12:02 INFO  org.tuvarna.controller.DistributorController - Available trips in availableTripsListView: 0
+2025-01-21 19:12:02 INFO  org.tuvarna.controller.DistributorController - Configuration cellFactory for tripsListView
+2025-01-21 19:12:05 INFO  org.tuvarna.controller.DistributorController - Selected company: Company:  name=hhy currentRating=0.0
+2025-01-21 19:12:05 INFO  org.tuvarna.controller.DistributorController - Clearing of companyTripsListView items
+2025-01-21 19:12:05 INFO  org.tuvarna.controller.DistributorController - All trips for company: 1
+2025-01-21 19:12:05 INFO  org.tuvarna.controller.DistributorController - All trips by selected company: 1
+2025-01-21 19:12:05 INFO  org.tuvarna.controller.DistributorController - Trips in companyTripsListView: 1
+2025-01-21 19:12:05 INFO  org.tuvarna.controller.DistributorController - Configured cellFactory for companyTripsListView
+2025-01-21 19:12:20 INFO  org.tuvarna.controller.DistributorController - Selected trip: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy
+2025-01-21 19:12:20 INFO  org.tuvarna.controller.DistributorController - Checking the existence of a cashier
+2025-01-21 19:12:20 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:12:20 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:12:20 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:12:20 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:12:20 INFO  org.tuvarna.controller.DistributorController - Successfully accepted a trip request
+2025-01-21 19:13:32 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 19:13:35 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:13:35 ERROR org.tuvarna.controller.DistributorController - Error during initialize of check-requests-distributor. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-distributor.fxml
+
+2025-01-21 19:13:35 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 19:13:35 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:13:35 ERROR org.tuvarna.controller.CompanyController - Error during initialize of check-requests-company. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-company.fxml
+
+2025-01-21 19:13:35 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 19:13:36 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 19:13:36 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:13:36 ERROR org.tuvarna.controller.CashierController - Error during initialize of check-requests-cashier. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-cashier.fxml
+
+2025-01-21 19:13:36 INFO  org.tuvarna.controller.MainController - Initialize MainController
+2025-01-21 19:13:36 INFO  org.tuvarna.controller.MainController - All services initialized
+2025-01-21 19:13:36 INFO  org.tuvarna.repository.CashierDAOImpl - Session started for findAll
+2025-01-21 19:13:37 INFO  org.tuvarna.repository.CashierDAOImpl - Cashiers fetched successfully: 6
+2025-01-21 19:13:37 INFO  org.tuvarna.repository.CashierDAOImpl - Transaction commited successfully
+2025-01-21 19:13:37 INFO  org.tuvarna.repository.CashierDAOImpl - Session closed successfully
+2025-01-21 19:13:37 INFO  org.tuvarna.repository.UserDAOImpl - Session started for findAll
+2025-01-21 19:13:37 INFO  org.tuvarna.repository.UserDAOImpl - Users fetched successfully: 3
+2025-01-21 19:13:37 INFO  org.tuvarna.repository.UserDAOImpl - Transaction committed successfully
+2025-01-21 19:13:37 INFO  org.tuvarna.repository.UserDAOImpl - Session closed successfully
+2025-01-21 19:13:37 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:13:37 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:13:37 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:13:37 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:13:37 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:13:37 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:13:37 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:13:37 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:13:37 INFO  org.tuvarna.controller.MainController - Setting all Cashiers, Users, Companies, and Distributors
+2025-01-21 19:13:37 INFO  org.tuvarna.controller.MenuStripSelector - Current menu bar: MenuBar@156d1ea0[styleClass=menu-bar]
+2025-01-21 19:13:37 INFO  org.tuvarna.controller.MainController - Menu strip configured
+2025-01-21 19:13:37 INFO  org.tuvarna.controller.MainController - AdministratorController configured
+2025-01-21 19:13:37 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 19:13:37 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:13:37 ERROR org.tuvarna.controller.CompanyController - Error during initialize of check-requests-company. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-company.fxml
+
+2025-01-21 19:13:37 INFO  org.tuvarna.controller.MainController - CompanyController configured
+2025-01-21 19:13:37 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 19:13:37 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:13:37 ERROR org.tuvarna.controller.DistributorController - Error during initialize of check-requests-distributor. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-distributor.fxml
+
+2025-01-21 19:13:37 INFO  org.tuvarna.controller.MainController - DistributorController configured
+2025-01-21 19:13:37 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 19:13:37 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:13:37 ERROR org.tuvarna.controller.CashierController - Error during initialize of check-requests-cashier. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-cashier.fxml
+
+2025-01-21 19:13:37 INFO  org.tuvarna.controller.MainController - CashierController configured
+2025-01-21 19:13:37 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 19:13:59 INFO  org.tuvarna.repository.TripDAOImpl - Session started for findAll
+2025-01-21 19:13:59 INFO  org.tuvarna.repository.TripDAOImpl - Trips fetched successfully: 4
+2025-01-21 19:13:59 INFO  org.tuvarna.repository.TripDAOImpl - Transaction committed successfully
+2025-01-21 19:13:59 INFO  org.tuvarna.repository.TripDAOImpl - Session closed successfully
+2025-01-21 19:13:59 INFO  org.tuvarna.controller.UserController - Successfully retrieved all trips with distributor and cashier
+2025-01-21 19:13:59 INFO  org.tuvarna.repository.TicketDAOImpl - Session started for findAll
+2025-01-21 19:14:00 INFO  org.tuvarna.repository.TicketDAOImpl - Tickets fetched successfully: 40
+2025-01-21 19:14:00 INFO  org.tuvarna.repository.TicketDAOImpl - Transaction committed successfully
+2025-01-21 19:14:00 INFO  org.tuvarna.repository.TicketDAOImpl - Session closed successfully
+2025-01-21 19:14:00 INFO  org.tuvarna.controller.UserController - Filtered tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 19:14:00 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 19:14:00 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for user: null
+2025-01-21 19:14:00 INFO  org.tuvarna.controller.MainController - UserController configured
+2025-01-21 19:14:07 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 19:14:07 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@5dfaaaf0[styleClass=[menu-item]]
+2025-01-21 19:14:07 INFO  org.tuvarna.controller.DistributorController - Setting current distributor: dist3
+2025-01-21 19:14:07 INFO  org.tuvarna.controller.MainController - Set Request panel for distributorController
+2025-01-21 19:14:08 INFO  org.tuvarna.controller.DistributorController - Clearing all fields
+2025-01-21 19:14:08 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:14:08 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:14:08 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:14:08 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:14:08 INFO  org.tuvarna.controller.DistributorController - All companies: 12
+2025-01-21 19:14:08 INFO  org.tuvarna.controller.DistributorController - Companies in companiesListView: 0
+2025-01-21 19:14:08 INFO  org.tuvarna.controller.DistributorController - Configuration cellFactory for companies list view
+2025-01-21 19:14:08 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:14:08 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:14:08 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:14:08 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:14:08 INFO  org.tuvarna.controller.DistributorController - Available trips: 1
+2025-01-21 19:14:08 INFO  org.tuvarna.controller.DistributorController - Available trips in availableTripsListView: 0
+2025-01-21 19:14:08 INFO  org.tuvarna.controller.DistributorController - Configuration cellFactory for tripsListView
+2025-01-21 19:14:10 INFO  org.tuvarna.controller.DistributorController - Selected company: Company:  name=hhy currentRating=0.0
+2025-01-21 19:14:10 INFO  org.tuvarna.controller.DistributorController - Clearing of companyTripsListView items
+2025-01-21 19:14:10 INFO  org.tuvarna.controller.DistributorController - All trips for company: 1
+2025-01-21 19:14:10 INFO  org.tuvarna.controller.DistributorController - All trips by selected company: 1
+2025-01-21 19:14:10 INFO  org.tuvarna.controller.DistributorController - Trips in companyTripsListView: 1
+2025-01-21 19:14:10 INFO  org.tuvarna.controller.DistributorController - Configured cellFactory for companyTripsListView
+2025-01-21 19:14:12 INFO  org.tuvarna.controller.DistributorController - Selected trip: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy
+2025-01-21 19:14:12 INFO  org.tuvarna.controller.DistributorController - Checking the existence of a cashier
+2025-01-21 19:14:12 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:14:12 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:14:12 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:14:12 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:14:12 INFO  org.tuvarna.controller.DistributorController - Successfully accepted a trip request
+2025-01-21 19:14:17 INFO  org.tuvarna.controller.DistributorController - Selected trip: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy
+2025-01-21 19:14:17 INFO  org.tuvarna.controller.DistributorController - Checking the existence of a cashier
+2025-01-21 19:14:17 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:14:17 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:14:17 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:14:17 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:14:17 INFO  org.tuvarna.controller.DistributorController - Successfully accepted a trip request
+2025-01-21 19:14:20 INFO  org.tuvarna.controller.DistributorController - Selected trip: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy
+2025-01-21 19:14:20 INFO  org.tuvarna.controller.DistributorController - Checking the existence of a cashier
+2025-01-21 19:14:20 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:14:20 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:14:20 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:14:20 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:14:20 INFO  org.tuvarna.controller.DistributorController - Successfully accepted a trip request
+2025-01-21 19:14:37 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 19:14:39 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:14:39 ERROR org.tuvarna.controller.DistributorController - Error during initialize of check-requests-distributor. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-distributor.fxml
+
+2025-01-21 19:14:39 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 19:14:39 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:14:39 ERROR org.tuvarna.controller.CompanyController - Error during initialize of check-requests-company. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-company.fxml
+
+2025-01-21 19:14:39 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 19:14:39 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 19:14:39 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:14:39 ERROR org.tuvarna.controller.CashierController - Error during initialize of check-requests-cashier. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-cashier.fxml
+
+2025-01-21 19:14:39 INFO  org.tuvarna.controller.MainController - Initialize MainController
+2025-01-21 19:14:39 INFO  org.tuvarna.controller.MainController - All services initialized
+2025-01-21 19:14:39 INFO  org.tuvarna.repository.CashierDAOImpl - Session started for findAll
+2025-01-21 19:14:40 INFO  org.tuvarna.repository.CashierDAOImpl - Cashiers fetched successfully: 6
+2025-01-21 19:14:40 INFO  org.tuvarna.repository.CashierDAOImpl - Transaction commited successfully
+2025-01-21 19:14:40 INFO  org.tuvarna.repository.CashierDAOImpl - Session closed successfully
+2025-01-21 19:14:40 INFO  org.tuvarna.repository.UserDAOImpl - Session started for findAll
+2025-01-21 19:14:40 INFO  org.tuvarna.repository.UserDAOImpl - Users fetched successfully: 3
+2025-01-21 19:14:40 INFO  org.tuvarna.repository.UserDAOImpl - Transaction committed successfully
+2025-01-21 19:14:40 INFO  org.tuvarna.repository.UserDAOImpl - Session closed successfully
+2025-01-21 19:14:40 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:14:40 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:14:40 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:14:40 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:14:40 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:14:40 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:14:40 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:14:40 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:14:40 INFO  org.tuvarna.controller.MainController - Setting all Cashiers, Users, Companies, and Distributors
+2025-01-21 19:14:40 INFO  org.tuvarna.controller.MenuStripSelector - Current menu bar: MenuBar@50a41ffd[styleClass=menu-bar]
+2025-01-21 19:14:40 INFO  org.tuvarna.controller.MainController - Menu strip configured
+2025-01-21 19:14:40 INFO  org.tuvarna.controller.MainController - AdministratorController configured
+2025-01-21 19:14:40 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 19:14:40 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:14:40 ERROR org.tuvarna.controller.CompanyController - Error during initialize of check-requests-company. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-company.fxml
+
+2025-01-21 19:14:40 INFO  org.tuvarna.controller.MainController - CompanyController configured
+2025-01-21 19:14:40 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 19:14:40 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:14:40 ERROR org.tuvarna.controller.DistributorController - Error during initialize of check-requests-distributor. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-distributor.fxml
+
+2025-01-21 19:14:40 INFO  org.tuvarna.controller.MainController - DistributorController configured
+2025-01-21 19:14:40 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 19:14:40 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:14:40 ERROR org.tuvarna.controller.CashierController - Error during initialize of check-requests-cashier. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-cashier.fxml
+
+2025-01-21 19:14:40 INFO  org.tuvarna.controller.MainController - CashierController configured
+2025-01-21 19:14:40 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 19:14:40 INFO  org.tuvarna.repository.TripDAOImpl - Session started for findAll
+2025-01-21 19:14:40 INFO  org.tuvarna.repository.TripDAOImpl - Trips fetched successfully: 4
+2025-01-21 19:14:40 INFO  org.tuvarna.repository.TripDAOImpl - Transaction committed successfully
+2025-01-21 19:14:40 INFO  org.tuvarna.repository.TripDAOImpl - Session closed successfully
+2025-01-21 19:14:40 INFO  org.tuvarna.controller.UserController - Successfully retrieved all trips with distributor and cashier
+2025-01-21 19:14:40 INFO  org.tuvarna.repository.TicketDAOImpl - Session started for findAll
+2025-01-21 19:14:41 INFO  org.tuvarna.repository.TicketDAOImpl - Tickets fetched successfully: 40
+2025-01-21 19:14:41 INFO  org.tuvarna.repository.TicketDAOImpl - Transaction committed successfully
+2025-01-21 19:14:41 INFO  org.tuvarna.repository.TicketDAOImpl - Session closed successfully
+2025-01-21 19:14:41 INFO  org.tuvarna.controller.UserController - Filtered tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 19:14:41 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 19:14:41 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for user: null
+2025-01-21 19:14:41 INFO  org.tuvarna.controller.MainController - UserController configured
+2025-01-21 19:15:15 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 19:15:15 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@6dd47425[styleClass=[menu-item]]
+2025-01-21 19:15:15 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:15:15 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:15:15 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:15:15 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:15:15 INFO  org.tuvarna.controller.CompanyController - Initializing data. Current company is: Company:  name=vff currentRating=0.0
+2025-01-21 19:15:16 INFO  org.tuvarna.controller.MainController - Set Request panel for companyController
+2025-01-21 19:15:18 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 19:15:18 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@1c86aa04[styleClass=[menu-item]]
+2025-01-21 19:15:18 INFO  org.tuvarna.controller.DistributorController - Setting current distributor: dist3
+2025-01-21 19:15:18 INFO  org.tuvarna.controller.MainController - Set Request panel for distributorController
+2025-01-21 19:15:19 INFO  org.tuvarna.controller.DistributorController - Clearing all fields
+2025-01-21 19:15:19 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:15:19 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:15:19 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:15:19 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:15:19 INFO  org.tuvarna.controller.DistributorController - All companies: 12
+2025-01-21 19:15:19 INFO  org.tuvarna.controller.DistributorController - Companies in companiesListView: 0
+2025-01-21 19:15:19 INFO  org.tuvarna.controller.DistributorController - Configuration cellFactory for companies list view
+2025-01-21 19:15:19 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:15:20 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:15:20 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:15:20 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:15:20 INFO  org.tuvarna.controller.DistributorController - Available trips: 1
+2025-01-21 19:15:20 INFO  org.tuvarna.controller.DistributorController - Available trips in availableTripsListView: 0
+2025-01-21 19:15:20 INFO  org.tuvarna.controller.DistributorController - Configuration cellFactory for tripsListView
+2025-01-21 19:15:20 INFO  org.tuvarna.controller.DistributorController - Selected company: Company:  name=hhy currentRating=0.0
+2025-01-21 19:15:20 INFO  org.tuvarna.controller.DistributorController - Clearing of companyTripsListView items
+2025-01-21 19:15:20 INFO  org.tuvarna.controller.DistributorController - All trips for company: 1
+2025-01-21 19:15:20 INFO  org.tuvarna.controller.DistributorController - All trips by selected company: 1
+2025-01-21 19:15:20 INFO  org.tuvarna.controller.DistributorController - Trips in companyTripsListView: 1
+2025-01-21 19:15:20 INFO  org.tuvarna.controller.DistributorController - Configured cellFactory for companyTripsListView
+2025-01-21 19:15:22 INFO  org.tuvarna.controller.DistributorController - Selected trip: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy
+2025-01-21 19:15:22 INFO  org.tuvarna.controller.DistributorController - Checking the existence of a cashier
+2025-01-21 19:15:22 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:15:22 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:15:22 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:15:22 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:15:22 INFO  org.tuvarna.controller.DistributorController - Successfully accepted a trip request
+2025-01-21 19:17:21 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 19:17:24 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:17:24 ERROR org.tuvarna.controller.DistributorController - Error during initialize of check-requests-distributor. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-distributor.fxml
+
+2025-01-21 19:17:27 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 19:17:43 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:18:23 ERROR org.tuvarna.controller.CompanyController - Error during initialize of check-requests-company. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-company.fxml
+
+2025-01-21 19:18:23 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 19:18:23 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 19:18:23 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:18:23 ERROR org.tuvarna.controller.CashierController - Error during initialize of check-requests-cashier. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-cashier.fxml
+
+2025-01-21 19:18:23 INFO  org.tuvarna.controller.MainController - Initialize MainController
+2025-01-21 19:18:23 INFO  org.tuvarna.controller.MainController - All services initialized
+2025-01-21 19:18:34 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 19:18:36 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:18:36 ERROR org.tuvarna.controller.DistributorController - Error during initialize of check-requests-distributor. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-distributor.fxml
+
+2025-01-21 19:18:43 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 19:18:52 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:18:52 ERROR org.tuvarna.controller.CompanyController - Error during initialize of check-requests-company. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-company.fxml
+
+2025-01-21 19:18:52 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 19:18:52 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 19:18:54 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:18:54 ERROR org.tuvarna.controller.CashierController - Error during initialize of check-requests-cashier. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-cashier.fxml
+
+2025-01-21 19:18:54 INFO  org.tuvarna.controller.MainController - Initialize MainController
+2025-01-21 19:18:54 INFO  org.tuvarna.controller.MainController - All services initialized
+2025-01-21 19:18:54 INFO  org.tuvarna.repository.CashierDAOImpl - Session started for findAll
+2025-01-21 19:18:55 INFO  org.tuvarna.repository.CashierDAOImpl - Cashiers fetched successfully: 6
+2025-01-21 19:18:55 INFO  org.tuvarna.repository.CashierDAOImpl - Transaction commited successfully
+2025-01-21 19:18:55 INFO  org.tuvarna.repository.CashierDAOImpl - Session closed successfully
+2025-01-21 19:18:55 INFO  org.tuvarna.repository.UserDAOImpl - Session started for findAll
+2025-01-21 19:18:55 INFO  org.tuvarna.repository.UserDAOImpl - Users fetched successfully: 3
+2025-01-21 19:18:55 INFO  org.tuvarna.repository.UserDAOImpl - Transaction committed successfully
+2025-01-21 19:18:55 INFO  org.tuvarna.repository.UserDAOImpl - Session closed successfully
+2025-01-21 19:18:55 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:18:55 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:18:55 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:18:55 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:18:55 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:18:56 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:18:56 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:18:56 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:18:56 INFO  org.tuvarna.controller.MainController - Setting all Cashiers, Users, Companies, and Distributors
+2025-01-21 19:18:56 INFO  org.tuvarna.controller.MenuStripSelector - Current menu bar: MenuBar@30946aa1[styleClass=menu-bar]
+2025-01-21 19:18:56 INFO  org.tuvarna.controller.MainController - Menu strip configured
+2025-01-21 19:18:56 INFO  org.tuvarna.controller.MainController - AdministratorController configured
+2025-01-21 19:19:04 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 19:19:04 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:19:04 ERROR org.tuvarna.controller.CompanyController - Error during initialize of check-requests-company. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-company.fxml
+
+2025-01-21 19:19:04 INFO  org.tuvarna.controller.MainController - CompanyController configured
+2025-01-21 19:19:04 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 19:19:04 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:19:04 ERROR org.tuvarna.controller.DistributorController - Error during initialize of check-requests-distributor. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-distributor.fxml
+
+2025-01-21 19:19:04 INFO  org.tuvarna.controller.MainController - DistributorController configured
+2025-01-21 19:19:04 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 19:19:05 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:19:05 ERROR org.tuvarna.controller.CashierController - Error during initialize of check-requests-cashier. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-cashier.fxml
+
+2025-01-21 19:19:05 INFO  org.tuvarna.controller.MainController - CashierController configured
+2025-01-21 19:19:05 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 19:19:05 INFO  org.tuvarna.repository.TripDAOImpl - Session started for findAll
+2025-01-21 19:19:05 INFO  org.tuvarna.repository.TripDAOImpl - Trips fetched successfully: 4
+2025-01-21 19:19:05 INFO  org.tuvarna.repository.TripDAOImpl - Transaction committed successfully
+2025-01-21 19:19:05 INFO  org.tuvarna.repository.TripDAOImpl - Session closed successfully
+2025-01-21 19:19:05 INFO  org.tuvarna.controller.UserController - Successfully retrieved all trips with distributor and cashier
+2025-01-21 19:19:05 INFO  org.tuvarna.repository.TicketDAOImpl - Session started for findAll
+2025-01-21 19:19:05 INFO  org.tuvarna.repository.TicketDAOImpl - Tickets fetched successfully: 40
+2025-01-21 19:19:05 INFO  org.tuvarna.repository.TicketDAOImpl - Transaction committed successfully
+2025-01-21 19:19:05 INFO  org.tuvarna.repository.TicketDAOImpl - Session closed successfully
+2025-01-21 19:19:05 INFO  org.tuvarna.controller.UserController - Filtered tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 19:19:05 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 19:19:05 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for user: null
+2025-01-21 19:19:05 INFO  org.tuvarna.controller.MainController - UserController configured
+2025-01-21 19:19:12 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 19:19:12 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@541e1d0[styleClass=[menu-item]]
+2025-01-21 19:19:12 INFO  org.tuvarna.controller.DistributorController - Setting current distributor: dist3
+2025-01-21 19:19:12 INFO  org.tuvarna.controller.MainController - Set Request panel for distributorController
+2025-01-21 19:19:13 INFO  org.tuvarna.controller.DistributorController - Clearing all fields
+2025-01-21 19:19:13 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:19:13 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:19:13 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:19:13 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:19:13 INFO  org.tuvarna.controller.DistributorController - All companies: 12
+2025-01-21 19:19:13 INFO  org.tuvarna.controller.DistributorController - Companies in companiesListView: 0
+2025-01-21 19:19:13 INFO  org.tuvarna.controller.DistributorController - Configuration cellFactory for companies list view
+2025-01-21 19:19:13 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:19:13 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:19:13 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:19:13 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:19:13 INFO  org.tuvarna.controller.DistributorController - Available trips: 1
+2025-01-21 19:19:13 INFO  org.tuvarna.controller.DistributorController - Available trips in availableTripsListView: 0
+2025-01-21 19:19:13 INFO  org.tuvarna.controller.DistributorController - Configuration cellFactory for tripsListView
+2025-01-21 19:19:15 INFO  org.tuvarna.controller.DistributorController - Selected company: Company:  name=hhy currentRating=0.0
+2025-01-21 19:19:15 INFO  org.tuvarna.controller.DistributorController - Clearing of companyTripsListView items
+2025-01-21 19:19:15 INFO  org.tuvarna.controller.DistributorController - All trips for company: 1
+2025-01-21 19:19:15 INFO  org.tuvarna.controller.DistributorController - All trips by selected company: 1
+2025-01-21 19:19:15 INFO  org.tuvarna.controller.DistributorController - Trips in companyTripsListView: 1
+2025-01-21 19:19:15 INFO  org.tuvarna.controller.DistributorController - Configured cellFactory for companyTripsListView
+2025-01-21 19:19:16 INFO  org.tuvarna.controller.DistributorController - Selected trip: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy
+2025-01-21 19:19:16 INFO  org.tuvarna.controller.DistributorController - Checking the existence of a cashier
+2025-01-21 19:19:16 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:19:17 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:19:17 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:19:17 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:19:17 INFO  org.tuvarna.controller.DistributorController - Successfully accepted a trip request
+2025-01-21 19:47:32 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 19:47:37 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:47:37 ERROR org.tuvarna.controller.DistributorController - Error during initialize of check-requests-distributor. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-distributor.fxml
+
+2025-01-21 19:47:41 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 19:48:26 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:48:26 ERROR org.tuvarna.controller.CompanyController - Error during initialize of check-requests-company. Error: 
+/Users/alexandr/OlekAlekProject/target/classes/org/tuvarna/olekalekproject/check-requests-company.fxml
+
+2025-01-21 19:48:36 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 19:49:00 INFO  org.tuvarna.controller.DistributorController - Successfully loaded check-requests-distributor.fxml
+2025-01-21 19:49:05 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 19:49:06 INFO  org.tuvarna.controller.CompanyController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 19:49:06 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 19:49:06 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 19:49:08 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 19:49:08 INFO  org.tuvarna.controller.MainController - Initialize MainController
+2025-01-21 19:49:08 INFO  org.tuvarna.controller.MainController - All services initialized
+2025-01-21 19:49:08 INFO  org.tuvarna.repository.CashierDAOImpl - Session started for findAll
+2025-01-21 19:49:08 INFO  org.tuvarna.repository.CashierDAOImpl - Cashiers fetched successfully: 6
+2025-01-21 19:49:08 INFO  org.tuvarna.repository.CashierDAOImpl - Transaction commited successfully
+2025-01-21 19:49:08 INFO  org.tuvarna.repository.CashierDAOImpl - Session closed successfully
+2025-01-21 19:49:08 INFO  org.tuvarna.repository.UserDAOImpl - Session started for findAll
+2025-01-21 19:49:09 INFO  org.tuvarna.repository.UserDAOImpl - Users fetched successfully: 3
+2025-01-21 19:49:09 INFO  org.tuvarna.repository.UserDAOImpl - Transaction committed successfully
+2025-01-21 19:49:09 INFO  org.tuvarna.repository.UserDAOImpl - Session closed successfully
+2025-01-21 19:49:09 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:49:09 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:49:09 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:49:09 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:49:09 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:49:09 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:49:09 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:49:09 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:49:09 INFO  org.tuvarna.controller.MainController - Setting all Cashiers, Users, Companies, and Distributors
+2025-01-21 19:49:09 INFO  org.tuvarna.controller.MenuStripSelector - Current menu bar: MenuBar@416ad5c[styleClass=menu-bar]
+2025-01-21 19:49:09 INFO  org.tuvarna.controller.MainController - Menu strip configured
+2025-01-21 19:49:09 INFO  org.tuvarna.controller.MainController - AdministratorController configured
+2025-01-21 19:49:13 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 19:49:13 INFO  org.tuvarna.controller.CompanyController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 19:49:13 INFO  org.tuvarna.controller.MainController - CompanyController configured
+2025-01-21 19:49:13 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 19:49:13 INFO  org.tuvarna.controller.DistributorController - Successfully loaded check-requests-distributor.fxml
+2025-01-21 19:49:13 INFO  org.tuvarna.controller.MainController - DistributorController configured
+2025-01-21 19:49:13 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 19:49:13 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 19:49:13 INFO  org.tuvarna.controller.MainController - CashierController configured
+2025-01-21 19:49:13 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 19:49:13 INFO  org.tuvarna.repository.TripDAOImpl - Session started for findAll
+2025-01-21 19:49:13 INFO  org.tuvarna.repository.TripDAOImpl - Trips fetched successfully: 4
+2025-01-21 19:49:13 INFO  org.tuvarna.repository.TripDAOImpl - Transaction committed successfully
+2025-01-21 19:49:13 INFO  org.tuvarna.repository.TripDAOImpl - Session closed successfully
+2025-01-21 19:49:13 INFO  org.tuvarna.controller.UserController - Successfully retrieved all trips with distributor and cashier
+2025-01-21 19:49:13 INFO  org.tuvarna.repository.TicketDAOImpl - Session started for findAll
+2025-01-21 19:49:13 INFO  org.tuvarna.repository.TicketDAOImpl - Tickets fetched successfully: 40
+2025-01-21 19:49:13 INFO  org.tuvarna.repository.TicketDAOImpl - Transaction committed successfully
+2025-01-21 19:49:13 INFO  org.tuvarna.repository.TicketDAOImpl - Session closed successfully
+2025-01-21 19:49:13 INFO  org.tuvarna.controller.UserController - Filtered tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 19:49:13 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 19:49:13 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for user: null
+2025-01-21 19:49:13 INFO  org.tuvarna.controller.MainController - UserController configured
+2025-01-21 19:49:17 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 19:49:17 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@4965c3b4[styleClass=[menu-item]]
+2025-01-21 19:49:17 INFO  org.tuvarna.controller.DistributorController - Setting current distributor: dist3
+2025-01-21 19:49:17 INFO  org.tuvarna.controller.MainController - Set Request panel for distributorController
+2025-01-21 19:49:27 INFO  org.tuvarna.controller.DistributorController - Clearing all fields
+2025-01-21 19:49:27 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:49:27 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:49:27 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:49:27 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:49:27 INFO  org.tuvarna.controller.DistributorController - All companies: 12
+2025-01-21 19:49:27 INFO  org.tuvarna.controller.DistributorController - Companies in companiesListView: 0
+2025-01-21 19:49:27 INFO  org.tuvarna.controller.DistributorController - Configuration cellFactory for companies list view
+2025-01-21 19:49:27 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:49:27 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:49:27 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:49:27 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:49:27 INFO  org.tuvarna.controller.DistributorController - Available trips: 1
+2025-01-21 19:49:27 INFO  org.tuvarna.controller.DistributorController - Available trips in availableTripsListView: 0
+2025-01-21 19:49:27 INFO  org.tuvarna.controller.DistributorController - Configuration cellFactory for tripsListView
+2025-01-21 19:49:30 INFO  org.tuvarna.controller.DistributorController - Selected company: Company:  name=hhy currentRating=0.0
+2025-01-21 19:49:30 INFO  org.tuvarna.controller.DistributorController - Clearing of companyTripsListView items
+2025-01-21 19:49:30 INFO  org.tuvarna.controller.DistributorController - All trips for company: 1
+2025-01-21 19:49:30 INFO  org.tuvarna.controller.DistributorController - All trips by selected company: 1
+2025-01-21 19:49:30 INFO  org.tuvarna.controller.DistributorController - Trips in companyTripsListView: 1
+2025-01-21 19:49:30 INFO  org.tuvarna.controller.DistributorController - Configured cellFactory for companyTripsListView
+2025-01-21 19:49:32 INFO  org.tuvarna.controller.DistributorController - Selected trip: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy
+2025-01-21 19:49:32 INFO  org.tuvarna.controller.DistributorController - Checking the existence of a cashier
+2025-01-21 19:49:32 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:49:32 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:49:32 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:49:32 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:49:32 INFO  org.tuvarna.controller.DistributorController - Successfully accepted a trip request
+2025-01-21 19:49:32 INFO  org.tuvarna.controller.RequestPanelController - Successfully added command: Would you like to accept a trip request to dist3: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy ?
+2025-01-21 19:49:32 INFO  org.tuvarna.controller.CompanyController - Successfully respond to request
+2025-01-21 19:49:39 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 19:49:39 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@6e46843a[styleClass=[menu-item]]
+2025-01-21 19:49:39 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:49:40 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:49:40 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:49:40 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:49:40 INFO  org.tuvarna.controller.CompanyController - Initializing data. Current company is: Company:  name=vff currentRating=0.0
+2025-01-21 19:49:40 INFO  org.tuvarna.controller.MainController - Set Request panel for companyController
+2025-01-21 19:49:41 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:49:46 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 19:49:46 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@72c5d8fe[styleClass=[menu-item]]
+2025-01-21 19:49:46 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:49:46 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:49:46 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:49:46 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:49:46 INFO  org.tuvarna.controller.CompanyController - Initializing data. Current company is: Company:  name=hhy currentRating=0.0
+2025-01-21 19:49:46 INFO  org.tuvarna.controller.MainController - Set Request panel for companyController
+2025-01-21 19:49:47 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:50:33 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 19:50:35 INFO  org.tuvarna.controller.DistributorController - Successfully loaded check-requests-distributor.fxml
+2025-01-21 19:50:36 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 19:50:36 INFO  org.tuvarna.controller.CompanyController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 19:50:36 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 19:50:36 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 19:50:36 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 19:50:36 INFO  org.tuvarna.controller.MainController - Initialize MainController
+2025-01-21 19:50:36 INFO  org.tuvarna.controller.MainController - All services initialized
+2025-01-21 19:50:36 INFO  org.tuvarna.repository.CashierDAOImpl - Session started for findAll
+2025-01-21 19:50:36 INFO  org.tuvarna.repository.CashierDAOImpl - Cashiers fetched successfully: 6
+2025-01-21 19:50:36 INFO  org.tuvarna.repository.CashierDAOImpl - Transaction commited successfully
+2025-01-21 19:50:36 INFO  org.tuvarna.repository.CashierDAOImpl - Session closed successfully
+2025-01-21 19:50:36 INFO  org.tuvarna.repository.UserDAOImpl - Session started for findAll
+2025-01-21 19:50:36 INFO  org.tuvarna.repository.UserDAOImpl - Users fetched successfully: 3
+2025-01-21 19:50:36 INFO  org.tuvarna.repository.UserDAOImpl - Transaction committed successfully
+2025-01-21 19:50:36 INFO  org.tuvarna.repository.UserDAOImpl - Session closed successfully
+2025-01-21 19:50:36 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:50:36 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:50:36 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:50:36 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:50:36 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:50:37 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:50:37 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:50:37 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:50:37 INFO  org.tuvarna.controller.MainController - Setting all Cashiers, Users, Companies, and Distributors
+2025-01-21 19:50:37 INFO  org.tuvarna.controller.MenuStripSelector - Current menu bar: MenuBar@11121696[styleClass=menu-bar]
+2025-01-21 19:50:37 INFO  org.tuvarna.controller.MainController - Menu strip configured
+2025-01-21 19:50:37 INFO  org.tuvarna.controller.MainController - AdministratorController configured
+2025-01-21 19:50:37 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 19:50:37 INFO  org.tuvarna.controller.CompanyController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 19:50:37 INFO  org.tuvarna.controller.MainController - CompanyController configured
+2025-01-21 19:50:37 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 19:50:37 INFO  org.tuvarna.controller.DistributorController - Successfully loaded check-requests-distributor.fxml
+2025-01-21 19:50:37 INFO  org.tuvarna.controller.MainController - DistributorController configured
+2025-01-21 19:50:37 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 19:50:37 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 19:50:37 INFO  org.tuvarna.controller.MainController - CashierController configured
+2025-01-21 19:50:37 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 19:50:37 INFO  org.tuvarna.repository.TripDAOImpl - Session started for findAll
+2025-01-21 19:50:37 INFO  org.tuvarna.repository.TripDAOImpl - Trips fetched successfully: 4
+2025-01-21 19:50:37 INFO  org.tuvarna.repository.TripDAOImpl - Transaction committed successfully
+2025-01-21 19:50:37 INFO  org.tuvarna.repository.TripDAOImpl - Session closed successfully
+2025-01-21 19:50:37 INFO  org.tuvarna.controller.UserController - Successfully retrieved all trips with distributor and cashier
+2025-01-21 19:50:37 INFO  org.tuvarna.repository.TicketDAOImpl - Session started for findAll
+2025-01-21 19:50:37 INFO  org.tuvarna.repository.TicketDAOImpl - Tickets fetched successfully: 40
+2025-01-21 19:50:37 INFO  org.tuvarna.repository.TicketDAOImpl - Transaction committed successfully
+2025-01-21 19:50:37 INFO  org.tuvarna.repository.TicketDAOImpl - Session closed successfully
+2025-01-21 19:50:37 INFO  org.tuvarna.controller.UserController - Filtered tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 19:50:37 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 19:50:37 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for user: null
+2025-01-21 19:50:37 INFO  org.tuvarna.controller.MainController - UserController configured
+2025-01-21 19:51:47 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 19:51:49 INFO  org.tuvarna.controller.DistributorController - Successfully loaded check-requests-distributor.fxml
+2025-01-21 19:51:49 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 19:51:49 INFO  org.tuvarna.controller.CompanyController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 19:51:49 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 19:51:49 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 19:51:49 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 19:51:49 INFO  org.tuvarna.controller.MainController - Initialize MainController
+2025-01-21 19:51:49 INFO  org.tuvarna.controller.MainController - All services initialized
+2025-01-21 19:51:49 INFO  org.tuvarna.repository.CashierDAOImpl - Session started for findAll
+2025-01-21 19:51:50 INFO  org.tuvarna.repository.CashierDAOImpl - Cashiers fetched successfully: 6
+2025-01-21 19:51:50 INFO  org.tuvarna.repository.CashierDAOImpl - Transaction commited successfully
+2025-01-21 19:51:50 INFO  org.tuvarna.repository.CashierDAOImpl - Session closed successfully
+2025-01-21 19:51:50 INFO  org.tuvarna.repository.UserDAOImpl - Session started for findAll
+2025-01-21 19:51:50 INFO  org.tuvarna.repository.UserDAOImpl - Users fetched successfully: 3
+2025-01-21 19:51:50 INFO  org.tuvarna.repository.UserDAOImpl - Transaction committed successfully
+2025-01-21 19:51:50 INFO  org.tuvarna.repository.UserDAOImpl - Session closed successfully
+2025-01-21 19:51:50 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:51:50 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:51:50 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:51:50 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:51:50 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:51:50 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:51:50 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:51:50 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:51:50 INFO  org.tuvarna.controller.MainController - Setting all Cashiers, Users, Companies, and Distributors
+2025-01-21 19:51:50 INFO  org.tuvarna.controller.MenuStripSelector - Current menu bar: MenuBar@5137c059[styleClass=menu-bar]
+2025-01-21 19:51:50 INFO  org.tuvarna.controller.MainController - Menu strip configured
+2025-01-21 19:51:50 INFO  org.tuvarna.controller.MainController - AdministratorController configured
+2025-01-21 19:51:50 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 19:51:50 INFO  org.tuvarna.controller.CompanyController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 19:51:50 INFO  org.tuvarna.controller.MainController - CompanyController configured
+2025-01-21 19:51:50 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 19:51:50 INFO  org.tuvarna.controller.DistributorController - Successfully loaded check-requests-distributor.fxml
+2025-01-21 19:51:50 INFO  org.tuvarna.controller.MainController - DistributorController configured
+2025-01-21 19:51:50 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 19:51:50 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 19:51:50 INFO  org.tuvarna.controller.MainController - CashierController configured
+2025-01-21 19:51:50 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 19:51:50 INFO  org.tuvarna.repository.TripDAOImpl - Session started for findAll
+2025-01-21 19:51:50 INFO  org.tuvarna.repository.TripDAOImpl - Trips fetched successfully: 4
+2025-01-21 19:51:50 INFO  org.tuvarna.repository.TripDAOImpl - Transaction committed successfully
+2025-01-21 19:51:50 INFO  org.tuvarna.repository.TripDAOImpl - Session closed successfully
+2025-01-21 19:51:50 INFO  org.tuvarna.controller.UserController - Successfully retrieved all trips with distributor and cashier
+2025-01-21 19:51:50 INFO  org.tuvarna.repository.TicketDAOImpl - Session started for findAll
+2025-01-21 19:51:50 INFO  org.tuvarna.repository.TicketDAOImpl - Tickets fetched successfully: 40
+2025-01-21 19:51:50 INFO  org.tuvarna.repository.TicketDAOImpl - Transaction committed successfully
+2025-01-21 19:51:50 INFO  org.tuvarna.repository.TicketDAOImpl - Session closed successfully
+2025-01-21 19:51:50 INFO  org.tuvarna.controller.UserController - Filtered tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 19:51:50 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 19:51:50 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for user: null
+2025-01-21 19:51:50 INFO  org.tuvarna.controller.MainController - UserController configured
+2025-01-21 19:51:58 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 19:51:58 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@71d40061[styleClass=[menu-item]]
+2025-01-21 19:51:58 INFO  org.tuvarna.controller.DistributorController - Setting current distributor: dist3
+2025-01-21 19:51:58 INFO  org.tuvarna.controller.MainController - Set Request panel for distributorController
+2025-01-21 19:51:59 INFO  org.tuvarna.controller.DistributorController - Clearing all fields
+2025-01-21 19:51:59 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:51:59 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:51:59 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:51:59 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:51:59 INFO  org.tuvarna.controller.DistributorController - All companies: 12
+2025-01-21 19:51:59 INFO  org.tuvarna.controller.DistributorController - Companies in companiesListView: 0
+2025-01-21 19:51:59 INFO  org.tuvarna.controller.DistributorController - Configuration cellFactory for companies list view
+2025-01-21 19:51:59 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:51:59 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:51:59 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:51:59 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:51:59 INFO  org.tuvarna.controller.DistributorController - Available trips: 1
+2025-01-21 19:51:59 INFO  org.tuvarna.controller.DistributorController - Available trips in availableTripsListView: 0
+2025-01-21 19:51:59 INFO  org.tuvarna.controller.DistributorController - Configuration cellFactory for tripsListView
+2025-01-21 19:52:01 INFO  org.tuvarna.controller.DistributorController - Selected company: Company:  name=hhy currentRating=0.0
+2025-01-21 19:52:01 INFO  org.tuvarna.controller.DistributorController - Clearing of companyTripsListView items
+2025-01-21 19:52:01 INFO  org.tuvarna.controller.DistributorController - All trips for company: 1
+2025-01-21 19:52:01 INFO  org.tuvarna.controller.DistributorController - All trips by selected company: 1
+2025-01-21 19:52:01 INFO  org.tuvarna.controller.DistributorController - Trips in companyTripsListView: 1
+2025-01-21 19:52:01 INFO  org.tuvarna.controller.DistributorController - Configured cellFactory for companyTripsListView
+2025-01-21 19:52:02 INFO  org.tuvarna.controller.DistributorController - Selected trip: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy
+2025-01-21 19:52:02 INFO  org.tuvarna.controller.DistributorController - Checking the existence of a cashier
+2025-01-21 19:52:02 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:52:02 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:52:02 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:52:02 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:52:02 INFO  org.tuvarna.controller.DistributorController - Successfully accepted a trip request
+2025-01-21 19:52:02 INFO  org.tuvarna.controller.RequestPanelController - Successfully added command: Would you like to accept a trip request to dist3: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy ?
+2025-01-21 19:52:02 INFO  org.tuvarna.controller.CompanyController - Successfully respond to request
+2025-01-21 19:52:09 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 19:52:09 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@341c90fc[styleClass=[menu-item]]
+2025-01-21 19:52:09 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:52:10 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:52:10 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:52:10 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:52:10 INFO  org.tuvarna.controller.CompanyController - Initializing data. Current company is: Company:  name=vff currentRating=0.0
+2025-01-21 19:52:10 INFO  org.tuvarna.controller.MainController - Set Request panel for companyController
+2025-01-21 19:52:11 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:52:11 INFO  org.tuvarna.controller.RequestPanelController - Configured styles for RequestListView
+2025-01-21 19:52:11 INFO  org.tuvarna.controller.RequestPanelController - All requests added
+2025-01-21 19:52:13 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:52:13 INFO  org.tuvarna.controller.RequestPanelController - Configured styles for RequestListView
+2025-01-21 19:52:13 INFO  org.tuvarna.controller.RequestPanelController - All requests added
+2025-01-21 19:52:18 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 19:52:18 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@74692a5e[styleClass=[menu-item]]
+2025-01-21 19:52:18 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:52:19 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:52:19 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:52:19 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:52:19 INFO  org.tuvarna.controller.CompanyController - Initializing data. Current company is: Company:  name=hhy currentRating=0.0
+2025-01-21 19:52:19 INFO  org.tuvarna.controller.MainController - Set Request panel for companyController
+2025-01-21 19:52:19 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:52:19 INFO  org.tuvarna.controller.RequestPanelController - Configured styles for RequestListView
+2025-01-21 19:52:19 INFO  org.tuvarna.controller.RequestPanelController - All requests added
+2025-01-21 19:52:33 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 19:52:33 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@341c90fc[styleClass=[menu-item]]
+2025-01-21 19:52:33 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:52:33 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:52:33 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:52:33 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:52:33 INFO  org.tuvarna.controller.CompanyController - Initializing data. Current company is: Company:  name=vff currentRating=0.0
+2025-01-21 19:52:33 INFO  org.tuvarna.controller.MainController - Set Request panel for companyController
+2025-01-21 19:52:35 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:52:35 INFO  org.tuvarna.controller.RequestPanelController - Configured styles for RequestListView
+2025-01-21 19:52:35 INFO  org.tuvarna.controller.RequestPanelController - All requests added
+2025-01-21 19:52:48 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:52:48 INFO  org.tuvarna.controller.RequestPanelController - Configured styles for RequestListView
+2025-01-21 19:52:48 INFO  org.tuvarna.controller.RequestPanelController - All requests added
+2025-01-21 19:52:49 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:52:49 INFO  org.tuvarna.controller.RequestPanelController - Configured styles for RequestListView
+2025-01-21 19:52:49 INFO  org.tuvarna.controller.RequestPanelController - All requests added
+2025-01-21 19:53:05 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 19:53:05 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@8bb114c[styleClass=[menu-item]]
+2025-01-21 19:53:05 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:53:05 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:53:05 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:53:05 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:53:05 INFO  org.tuvarna.controller.CompanyController - Initializing data. Current company is: Company:  name=ccf currentRating=0.0
+2025-01-21 19:53:05 INFO  org.tuvarna.controller.MainController - Set Request panel for companyController
+2025-01-21 19:53:06 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:53:06 INFO  org.tuvarna.controller.RequestPanelController - Configured styles for RequestListView
+2025-01-21 19:53:06 INFO  org.tuvarna.controller.RequestPanelController - All requests added
+2025-01-21 19:53:07 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 19:53:07 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@652451bd[styleClass=[menu-item]]
+2025-01-21 19:53:07 INFO  org.tuvarna.controller.DistributorController - Setting current distributor: Dist2
+2025-01-21 19:53:07 INFO  org.tuvarna.controller.MainController - Set Request panel for distributorController
+2025-01-21 19:53:11 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 19:53:11 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@341c90fc[styleClass=[menu-item]]
+2025-01-21 19:53:11 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:53:11 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:53:11 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:53:11 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:53:11 INFO  org.tuvarna.controller.CompanyController - Initializing data. Current company is: Company:  name=vff currentRating=0.0
+2025-01-21 19:53:11 INFO  org.tuvarna.controller.MainController - Set Request panel for companyController
+2025-01-21 19:53:15 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 19:53:15 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@8bb114c[styleClass=[menu-item]]
+2025-01-21 19:53:15 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:53:15 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:53:15 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:53:15 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:53:15 INFO  org.tuvarna.controller.CompanyController - Initializing data. Current company is: Company:  name=ccf currentRating=0.0
+2025-01-21 19:53:15 INFO  org.tuvarna.controller.MainController - Set Request panel for companyController
+2025-01-21 19:53:16 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:53:16 INFO  org.tuvarna.controller.RequestPanelController - Configured styles for RequestListView
+2025-01-21 19:53:16 INFO  org.tuvarna.controller.RequestPanelController - All requests added
+2025-01-21 19:53:18 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 19:53:18 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@71d40061[styleClass=[menu-item]]
+2025-01-21 19:53:18 INFO  org.tuvarna.controller.DistributorController - Setting current distributor: dist3
+2025-01-21 19:53:18 INFO  org.tuvarna.controller.MainController - Set Request panel for distributorController
+2025-01-21 19:53:19 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:53:21 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 19:53:21 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@8bb114c[styleClass=[menu-item]]
+2025-01-21 19:53:21 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:53:21 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:53:21 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:53:21 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:53:21 INFO  org.tuvarna.controller.CompanyController - Initializing data. Current company is: Company:  name=ccf currentRating=0.0
+2025-01-21 19:53:21 INFO  org.tuvarna.controller.MainController - Set Request panel for companyController
+2025-01-21 19:53:24 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:53:24 INFO  org.tuvarna.controller.RequestPanelController - Configured styles for RequestListView
+2025-01-21 19:53:24 INFO  org.tuvarna.controller.RequestPanelController - All requests added
+2025-01-21 19:53:26 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:53:26 INFO  org.tuvarna.controller.RequestPanelController - Configured styles for RequestListView
+2025-01-21 19:53:26 INFO  org.tuvarna.controller.RequestPanelController - All requests added
+2025-01-21 19:53:27 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:53:27 INFO  org.tuvarna.controller.RequestPanelController - Configured styles for RequestListView
+2025-01-21 19:53:27 INFO  org.tuvarna.controller.RequestPanelController - All requests added
+2025-01-21 19:53:27 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:53:27 INFO  org.tuvarna.controller.RequestPanelController - Configured styles for RequestListView
+2025-01-21 19:53:27 INFO  org.tuvarna.controller.RequestPanelController - All requests added
+2025-01-21 19:54:24 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 19:54:26 INFO  org.tuvarna.controller.DistributorController - Successfully loaded check-requests-distributor.fxml
+2025-01-21 19:54:26 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 19:54:26 INFO  org.tuvarna.controller.CompanyController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 19:54:26 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 19:54:26 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 19:54:26 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 19:54:26 INFO  org.tuvarna.controller.MainController - Initialize MainController
+2025-01-21 19:54:26 INFO  org.tuvarna.controller.MainController - All services initialized
+2025-01-21 19:54:26 INFO  org.tuvarna.repository.CashierDAOImpl - Session started for findAll
+2025-01-21 19:54:27 INFO  org.tuvarna.repository.CashierDAOImpl - Cashiers fetched successfully: 6
+2025-01-21 19:54:27 INFO  org.tuvarna.repository.CashierDAOImpl - Transaction commited successfully
+2025-01-21 19:54:27 INFO  org.tuvarna.repository.CashierDAOImpl - Session closed successfully
+2025-01-21 19:54:27 INFO  org.tuvarna.repository.UserDAOImpl - Session started for findAll
+2025-01-21 19:54:27 INFO  org.tuvarna.repository.UserDAOImpl - Users fetched successfully: 3
+2025-01-21 19:54:27 INFO  org.tuvarna.repository.UserDAOImpl - Transaction committed successfully
+2025-01-21 19:54:27 INFO  org.tuvarna.repository.UserDAOImpl - Session closed successfully
+2025-01-21 19:54:27 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:54:27 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:54:27 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:54:27 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:54:27 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:54:27 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:54:27 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:54:27 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:54:27 INFO  org.tuvarna.controller.MainController - Setting all Cashiers, Users, Companies, and Distributors
+2025-01-21 19:54:27 INFO  org.tuvarna.controller.MenuStripSelector - Current menu bar: MenuBar@7faa8612[styleClass=menu-bar]
+2025-01-21 19:54:27 INFO  org.tuvarna.controller.MainController - Menu strip configured
+2025-01-21 19:54:27 INFO  org.tuvarna.controller.MainController - AdministratorController configured
+2025-01-21 19:54:27 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 19:54:27 INFO  org.tuvarna.controller.CompanyController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 19:54:27 INFO  org.tuvarna.controller.MainController - CompanyController configured
+2025-01-21 19:54:27 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 19:54:27 INFO  org.tuvarna.controller.DistributorController - Successfully loaded check-requests-distributor.fxml
+2025-01-21 19:54:27 INFO  org.tuvarna.controller.MainController - DistributorController configured
+2025-01-21 19:54:27 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 19:54:27 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 19:54:27 INFO  org.tuvarna.controller.MainController - CashierController configured
+2025-01-21 19:54:27 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 19:54:27 INFO  org.tuvarna.repository.TripDAOImpl - Session started for findAll
+2025-01-21 19:54:27 INFO  org.tuvarna.repository.TripDAOImpl - Trips fetched successfully: 4
+2025-01-21 19:54:27 INFO  org.tuvarna.repository.TripDAOImpl - Transaction committed successfully
+2025-01-21 19:54:27 INFO  org.tuvarna.repository.TripDAOImpl - Session closed successfully
+2025-01-21 19:54:27 INFO  org.tuvarna.controller.UserController - Successfully retrieved all trips with distributor and cashier
+2025-01-21 19:54:27 INFO  org.tuvarna.repository.TicketDAOImpl - Session started for findAll
+2025-01-21 19:54:28 INFO  org.tuvarna.repository.TicketDAOImpl - Tickets fetched successfully: 40
+2025-01-21 19:54:28 INFO  org.tuvarna.repository.TicketDAOImpl - Transaction committed successfully
+2025-01-21 19:54:28 INFO  org.tuvarna.repository.TicketDAOImpl - Session closed successfully
+2025-01-21 19:54:28 INFO  org.tuvarna.controller.UserController - Filtered tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 19:54:28 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 19:54:28 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for user: null
+2025-01-21 19:54:28 INFO  org.tuvarna.controller.MainController - UserController configured
+2025-01-21 19:54:50 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 19:54:52 INFO  org.tuvarna.controller.DistributorController - Successfully loaded check-requests-distributor.fxml
+2025-01-21 19:54:52 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 19:54:52 INFO  org.tuvarna.controller.CompanyController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 19:54:52 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 19:54:52 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 19:54:52 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 19:54:52 INFO  org.tuvarna.controller.MainController - Initialize MainController
+2025-01-21 19:54:52 INFO  org.tuvarna.controller.MainController - All services initialized
+2025-01-21 19:54:52 INFO  org.tuvarna.repository.CashierDAOImpl - Session started for findAll
+2025-01-21 19:54:53 INFO  org.tuvarna.repository.CashierDAOImpl - Cashiers fetched successfully: 6
+2025-01-21 19:54:53 INFO  org.tuvarna.repository.CashierDAOImpl - Transaction commited successfully
+2025-01-21 19:54:53 INFO  org.tuvarna.repository.CashierDAOImpl - Session closed successfully
+2025-01-21 19:54:53 INFO  org.tuvarna.repository.UserDAOImpl - Session started for findAll
+2025-01-21 19:54:53 INFO  org.tuvarna.repository.UserDAOImpl - Users fetched successfully: 3
+2025-01-21 19:54:53 INFO  org.tuvarna.repository.UserDAOImpl - Transaction committed successfully
+2025-01-21 19:54:53 INFO  org.tuvarna.repository.UserDAOImpl - Session closed successfully
+2025-01-21 19:54:53 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:54:53 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:54:53 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:54:53 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:54:53 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:54:53 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:54:53 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:54:53 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:54:53 INFO  org.tuvarna.controller.MainController - Setting all Cashiers, Users, Companies, and Distributors
+2025-01-21 19:54:53 INFO  org.tuvarna.controller.MenuStripSelector - Current menu bar: MenuBar@1fae8987[styleClass=menu-bar]
+2025-01-21 19:54:53 INFO  org.tuvarna.controller.MainController - Menu strip configured
+2025-01-21 19:54:53 INFO  org.tuvarna.controller.MainController - AdministratorController configured
+2025-01-21 19:54:53 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 19:54:53 INFO  org.tuvarna.controller.CompanyController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 19:54:53 INFO  org.tuvarna.controller.MainController - CompanyController configured
+2025-01-21 19:54:53 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 19:54:53 INFO  org.tuvarna.controller.DistributorController - Successfully loaded check-requests-distributor.fxml
+2025-01-21 19:54:53 INFO  org.tuvarna.controller.MainController - DistributorController configured
+2025-01-21 19:54:53 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 19:54:53 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 19:54:53 INFO  org.tuvarna.controller.MainController - CashierController configured
+2025-01-21 19:54:53 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 19:54:53 INFO  org.tuvarna.repository.TripDAOImpl - Session started for findAll
+2025-01-21 19:54:53 INFO  org.tuvarna.repository.TripDAOImpl - Trips fetched successfully: 4
+2025-01-21 19:54:53 INFO  org.tuvarna.repository.TripDAOImpl - Transaction committed successfully
+2025-01-21 19:54:53 INFO  org.tuvarna.repository.TripDAOImpl - Session closed successfully
+2025-01-21 19:54:53 INFO  org.tuvarna.controller.UserController - Successfully retrieved all trips with distributor and cashier
+2025-01-21 19:54:53 INFO  org.tuvarna.repository.TicketDAOImpl - Session started for findAll
+2025-01-21 19:54:54 INFO  org.tuvarna.repository.TicketDAOImpl - Tickets fetched successfully: 40
+2025-01-21 19:54:54 INFO  org.tuvarna.repository.TicketDAOImpl - Transaction committed successfully
+2025-01-21 19:54:54 INFO  org.tuvarna.repository.TicketDAOImpl - Session closed successfully
+2025-01-21 19:54:54 INFO  org.tuvarna.controller.UserController - Filtered tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 19:54:54 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 19:54:54 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for user: null
+2025-01-21 19:54:54 INFO  org.tuvarna.controller.MainController - UserController configured
+2025-01-21 19:54:56 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 19:54:56 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@62eb21f1[styleClass=[menu-item]]
+2025-01-21 19:54:56 INFO  org.tuvarna.controller.DistributorController - Setting current distributor: dist3
+2025-01-21 19:54:56 INFO  org.tuvarna.controller.MainController - Set Request panel for distributorController
+2025-01-21 19:55:01 INFO  org.tuvarna.controller.DistributorController - Clearing all fields
+2025-01-21 19:55:01 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:55:02 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:55:02 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:55:02 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:55:02 INFO  org.tuvarna.controller.DistributorController - All companies: 12
+2025-01-21 19:55:02 INFO  org.tuvarna.controller.DistributorController - Companies in companiesListView: 0
+2025-01-21 19:55:02 INFO  org.tuvarna.controller.DistributorController - Configuration cellFactory for companies list view
+2025-01-21 19:55:02 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:55:02 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:55:02 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:55:02 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:55:02 INFO  org.tuvarna.controller.DistributorController - Available trips: 1
+2025-01-21 19:55:02 INFO  org.tuvarna.controller.DistributorController - Available trips in availableTripsListView: 0
+2025-01-21 19:55:02 INFO  org.tuvarna.controller.DistributorController - Configuration cellFactory for tripsListView
+2025-01-21 19:55:03 INFO  org.tuvarna.controller.DistributorController - Selected company: Company:  name=hhy currentRating=0.0
+2025-01-21 19:55:03 INFO  org.tuvarna.controller.DistributorController - Clearing of companyTripsListView items
+2025-01-21 19:55:03 INFO  org.tuvarna.controller.DistributorController - All trips for company: 1
+2025-01-21 19:55:03 INFO  org.tuvarna.controller.DistributorController - All trips by selected company: 1
+2025-01-21 19:55:03 INFO  org.tuvarna.controller.DistributorController - Trips in companyTripsListView: 1
+2025-01-21 19:55:03 INFO  org.tuvarna.controller.DistributorController - Configured cellFactory for companyTripsListView
+2025-01-21 19:55:05 INFO  org.tuvarna.controller.DistributorController - Selected trip: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy
+2025-01-21 19:55:05 INFO  org.tuvarna.controller.DistributorController - Checking the existence of a cashier
+2025-01-21 19:55:05 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 19:55:05 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 19:55:05 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 19:55:05 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 19:55:05 INFO  org.tuvarna.controller.DistributorController - Successfully accepted a trip request
+2025-01-21 19:55:05 INFO  org.tuvarna.controller.RequestPanelController - Successfully added command: Would you like to accept a trip request to dist3: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy ?
+2025-01-21 19:55:05 INFO  org.tuvarna.controller.CompanyController - Successfully respond to request
+2025-01-21 19:55:09 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 19:55:09 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@785e7c66[styleClass=[menu-item]]
+2025-01-21 19:55:09 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 19:55:09 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 19:55:09 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 19:55:09 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 19:55:09 INFO  org.tuvarna.controller.CompanyController - Initializing data. Current company is: Company:  name=ccf currentRating=0.0
+2025-01-21 19:55:09 INFO  org.tuvarna.controller.MainController - Set Request panel for companyController
+2025-01-21 19:55:11 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 19:55:11 INFO  org.tuvarna.controller.RequestPanelController - Configured styles for RequestListView
+2025-01-21 19:55:11 INFO  org.tuvarna.controller.RequestPanelController - All requests added
+2025-01-21 19:55:44 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 20:02:35 INFO  org.tuvarna.controller.RequestPanelController - Configured styles for RequestListView
+2025-01-21 20:02:35 INFO  org.tuvarna.controller.RequestPanelController - All requests added
+2025-01-21 20:12:31 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 20:12:34 INFO  org.tuvarna.controller.DistributorController - Successfully loaded check-requests-distributor.fxml
+2025-01-21 20:12:34 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 20:12:34 INFO  org.tuvarna.controller.CompanyController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 20:12:34 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 20:12:34 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 20:12:34 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 20:12:34 INFO  org.tuvarna.controller.MainController - Initialize MainController
+2025-01-21 20:12:34 INFO  org.tuvarna.controller.MainController - All services initialized
+2025-01-21 20:12:34 INFO  org.tuvarna.repository.CashierDAOImpl - Session started for findAll
+2025-01-21 20:12:34 INFO  org.tuvarna.repository.CashierDAOImpl - Cashiers fetched successfully: 6
+2025-01-21 20:12:34 INFO  org.tuvarna.repository.CashierDAOImpl - Transaction commited successfully
+2025-01-21 20:12:34 INFO  org.tuvarna.repository.CashierDAOImpl - Session closed successfully
+2025-01-21 20:12:34 INFO  org.tuvarna.repository.UserDAOImpl - Session started for findAll
+2025-01-21 20:12:34 INFO  org.tuvarna.repository.UserDAOImpl - Users fetched successfully: 3
+2025-01-21 20:12:34 INFO  org.tuvarna.repository.UserDAOImpl - Transaction committed successfully
+2025-01-21 20:12:34 INFO  org.tuvarna.repository.UserDAOImpl - Session closed successfully
+2025-01-21 20:12:34 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 20:12:34 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 20:12:34 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 20:12:34 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 20:12:34 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 20:12:35 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 20:12:35 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 20:12:35 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 20:12:35 INFO  org.tuvarna.controller.MainController - Setting all Cashiers, Users, Companies, and Distributors
+2025-01-21 20:12:35 INFO  org.tuvarna.controller.MenuStripSelector - Current menu bar: MenuBar@60f20b88[styleClass=menu-bar]
+2025-01-21 20:12:35 INFO  org.tuvarna.controller.MainController - Menu strip configured
+2025-01-21 20:12:35 INFO  org.tuvarna.controller.MainController - AdministratorController configured
+2025-01-21 20:12:35 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 20:12:35 INFO  org.tuvarna.controller.CompanyController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 20:12:35 INFO  org.tuvarna.controller.MainController - CompanyController configured
+2025-01-21 20:12:35 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 20:12:35 INFO  org.tuvarna.controller.DistributorController - Successfully loaded check-requests-distributor.fxml
+2025-01-21 20:12:35 INFO  org.tuvarna.controller.MainController - DistributorController configured
+2025-01-21 20:12:35 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 20:12:35 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 20:12:35 INFO  org.tuvarna.controller.MainController - CashierController configured
+2025-01-21 20:12:35 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 20:12:35 INFO  org.tuvarna.repository.TripDAOImpl - Session started for findAll
+2025-01-21 20:12:35 INFO  org.tuvarna.repository.TripDAOImpl - Trips fetched successfully: 4
+2025-01-21 20:12:35 INFO  org.tuvarna.repository.TripDAOImpl - Transaction committed successfully
+2025-01-21 20:12:35 INFO  org.tuvarna.repository.TripDAOImpl - Session closed successfully
+2025-01-21 20:12:35 INFO  org.tuvarna.controller.UserController - Successfully retrieved all trips with distributor and cashier
+2025-01-21 20:12:35 INFO  org.tuvarna.repository.TicketDAOImpl - Session started for findAll
+2025-01-21 20:12:35 INFO  org.tuvarna.repository.TicketDAOImpl - Tickets fetched successfully: 40
+2025-01-21 20:12:35 INFO  org.tuvarna.repository.TicketDAOImpl - Transaction committed successfully
+2025-01-21 20:12:35 INFO  org.tuvarna.repository.TicketDAOImpl - Session closed successfully
+2025-01-21 20:12:35 INFO  org.tuvarna.controller.UserController - Filtered tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 20:12:35 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 20:12:35 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for user: null
+2025-01-21 20:12:35 INFO  org.tuvarna.controller.MainController - UserController configured
+2025-01-21 20:12:41 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 20:12:41 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@3e1b733[styleClass=[menu-item]]
+2025-01-21 20:12:41 INFO  org.tuvarna.controller.DistributorController - Setting current distributor: dist3
+2025-01-21 20:12:41 INFO  org.tuvarna.controller.MainController - Set Request panel for distributorController
+2025-01-21 20:12:42 INFO  org.tuvarna.controller.DistributorController - Clearing all fields
+2025-01-21 20:12:42 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 20:12:42 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 20:12:42 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 20:12:42 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 20:12:42 INFO  org.tuvarna.controller.DistributorController - All companies: 12
+2025-01-21 20:12:42 INFO  org.tuvarna.controller.DistributorController - Companies in companiesListView: 0
+2025-01-21 20:12:42 INFO  org.tuvarna.controller.DistributorController - Configuration cellFactory for companies list view
+2025-01-21 20:12:42 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 20:12:42 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 20:12:42 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 20:12:42 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 20:12:42 INFO  org.tuvarna.controller.DistributorController - Available trips: 1
+2025-01-21 20:12:42 INFO  org.tuvarna.controller.DistributorController - Available trips in availableTripsListView: 0
+2025-01-21 20:12:42 INFO  org.tuvarna.controller.DistributorController - Configuration cellFactory for tripsListView
+2025-01-21 20:12:44 INFO  org.tuvarna.controller.DistributorController - Selected company: Company:  name=hhy currentRating=0.0
+2025-01-21 20:12:44 INFO  org.tuvarna.controller.DistributorController - Clearing of companyTripsListView items
+2025-01-21 20:12:44 INFO  org.tuvarna.controller.DistributorController - All trips for company: 1
+2025-01-21 20:12:44 INFO  org.tuvarna.controller.DistributorController - All trips by selected company: 1
+2025-01-21 20:12:44 INFO  org.tuvarna.controller.DistributorController - Trips in companyTripsListView: 1
+2025-01-21 20:12:44 INFO  org.tuvarna.controller.DistributorController - Configured cellFactory for companyTripsListView
+2025-01-21 20:12:48 INFO  org.tuvarna.controller.DistributorController - Selected trip: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy
+2025-01-21 20:12:48 INFO  org.tuvarna.controller.DistributorController - Checking the existence of a cashier
+2025-01-21 20:12:48 ERROR org.tuvarna.controller.DistributorController - Error during initialize of trip request. Error: superclass messed up
+2025-01-21 20:12:52 INFO  org.tuvarna.controller.DistributorController - Selected trip: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy
+2025-01-21 20:12:52 INFO  org.tuvarna.controller.DistributorController - Checking the existence of a cashier
+2025-01-21 20:12:52 ERROR org.tuvarna.controller.DistributorController - Error during initialize of trip request. Error: superclass messed up
+2025-01-21 20:12:53 INFO  org.tuvarna.controller.DistributorController - Selected trip: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy
+2025-01-21 20:12:53 INFO  org.tuvarna.controller.DistributorController - Checking the existence of a cashier
+2025-01-21 20:12:53 ERROR org.tuvarna.controller.DistributorController - Error during initialize of trip request. Error: superclass messed up
+2025-01-21 20:12:55 INFO  org.tuvarna.controller.DistributorController - Selected company: Company:  name=hhy currentRating=0.0
+2025-01-21 20:12:55 INFO  org.tuvarna.controller.DistributorController - Clearing of companyTripsListView items
+2025-01-21 20:12:55 INFO  org.tuvarna.controller.DistributorController - All trips for company: 1
+2025-01-21 20:12:55 INFO  org.tuvarna.controller.DistributorController - All trips by selected company: 1
+2025-01-21 20:12:55 INFO  org.tuvarna.controller.DistributorController - Trips in companyTripsListView: 1
+2025-01-21 20:12:55 INFO  org.tuvarna.controller.DistributorController - Configured cellFactory for companyTripsListView
+2025-01-21 20:12:57 INFO  org.tuvarna.controller.DistributorController - Selected trip: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy
+2025-01-21 20:12:57 INFO  org.tuvarna.controller.DistributorController - Checking the existence of a cashier
+2025-01-21 20:12:57 ERROR org.tuvarna.controller.DistributorController - Error during initialize of trip request. Error: superclass messed up
+2025-01-21 20:12:58 INFO  org.tuvarna.controller.DistributorController - Selected trip: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy
+2025-01-21 20:12:58 INFO  org.tuvarna.controller.DistributorController - Checking the existence of a cashier
+2025-01-21 20:12:58 ERROR org.tuvarna.controller.DistributorController - Error during initialize of trip request. Error: superclass messed up
+2025-01-21 20:12:59 INFO  org.tuvarna.controller.DistributorController - Selected trip: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy
+2025-01-21 20:12:59 INFO  org.tuvarna.controller.DistributorController - Checking the existence of a cashier
+2025-01-21 20:12:59 ERROR org.tuvarna.controller.DistributorController - Error during initialize of trip request. Error: superclass messed up
+2025-01-21 20:12:59 INFO  org.tuvarna.controller.DistributorController - Selected trip: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy
+2025-01-21 20:12:59 INFO  org.tuvarna.controller.DistributorController - Checking the existence of a cashier
+2025-01-21 20:12:59 ERROR org.tuvarna.controller.DistributorController - Error during initialize of trip request. Error: superclass messed up
+2025-01-21 20:12:59 INFO  org.tuvarna.controller.DistributorController - Selected trip: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy
+2025-01-21 20:12:59 INFO  org.tuvarna.controller.DistributorController - Checking the existence of a cashier
+2025-01-21 20:12:59 ERROR org.tuvarna.controller.DistributorController - Error during initialize of trip request. Error: superclass messed up
+2025-01-21 20:12:59 INFO  org.tuvarna.controller.DistributorController - Selected trip: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy
+2025-01-21 20:12:59 INFO  org.tuvarna.controller.DistributorController - Checking the existence of a cashier
+2025-01-21 20:12:59 ERROR org.tuvarna.controller.DistributorController - Error during initialize of trip request. Error: superclass messed up
+2025-01-21 20:12:59 INFO  org.tuvarna.controller.DistributorController - Selected trip: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy
+2025-01-21 20:12:59 INFO  org.tuvarna.controller.DistributorController - Checking the existence of a cashier
+2025-01-21 20:12:59 ERROR org.tuvarna.controller.DistributorController - Error during initialize of trip request. Error: superclass messed up
+2025-01-21 20:13:00 INFO  org.tuvarna.controller.DistributorController - Selected trip: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy
+2025-01-21 20:13:00 INFO  org.tuvarna.controller.DistributorController - Checking the existence of a cashier
+2025-01-21 20:13:00 ERROR org.tuvarna.controller.DistributorController - Error during initialize of trip request. Error: superclass messed up
+2025-01-21 20:13:01 INFO  org.tuvarna.controller.DistributorController - Clearing all fields
+2025-01-21 20:13:01 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 20:13:01 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 20:13:01 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 20:13:01 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 20:13:01 INFO  org.tuvarna.controller.DistributorController - All companies: 12
+2025-01-21 20:13:01 INFO  org.tuvarna.controller.DistributorController - Companies in companiesListView: 0
+2025-01-21 20:13:01 INFO  org.tuvarna.controller.DistributorController - Configuration cellFactory for companies list view
+2025-01-21 20:13:01 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 20:13:01 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 20:13:01 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 20:13:01 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 20:13:01 INFO  org.tuvarna.controller.DistributorController - Available trips: 1
+2025-01-21 20:13:01 INFO  org.tuvarna.controller.DistributorController - Available trips in availableTripsListView: 0
+2025-01-21 20:13:01 INFO  org.tuvarna.controller.DistributorController - Configuration cellFactory for tripsListView
+2025-01-21 20:13:03 INFO  org.tuvarna.controller.DistributorController - Selected company: Company:  name=ggf currentRating=3.0
+2025-01-21 20:13:03 INFO  org.tuvarna.controller.DistributorController - Clearing of companyTripsListView items
+2025-01-21 20:13:03 INFO  org.tuvarna.controller.DistributorController - All trips for company: 0
+2025-01-21 20:13:03 INFO  org.tuvarna.controller.DistributorController - All trips by selected company: 0
+2025-01-21 20:13:03 INFO  org.tuvarna.controller.DistributorController - Trips in companyTripsListView: 0
+2025-01-21 20:13:03 INFO  org.tuvarna.controller.DistributorController - Configured cellFactory for companyTripsListView
+2025-01-21 20:13:04 INFO  org.tuvarna.controller.DistributorController - Selected company: Company:  name=vff currentRating=0.0
+2025-01-21 20:13:04 INFO  org.tuvarna.controller.DistributorController - Clearing of companyTripsListView items
+2025-01-21 20:13:04 INFO  org.tuvarna.controller.DistributorController - All trips for company: 0
+2025-01-21 20:13:04 INFO  org.tuvarna.controller.DistributorController - All trips by selected company: 0
+2025-01-21 20:13:04 INFO  org.tuvarna.controller.DistributorController - Trips in companyTripsListView: 0
+2025-01-21 20:13:04 INFO  org.tuvarna.controller.DistributorController - Configured cellFactory for companyTripsListView
+2025-01-21 20:13:04 INFO  org.tuvarna.controller.DistributorController - Selected company: Company:  name=hhy currentRating=0.0
+2025-01-21 20:13:04 INFO  org.tuvarna.controller.DistributorController - Clearing of companyTripsListView items
+2025-01-21 20:13:04 INFO  org.tuvarna.controller.DistributorController - All trips for company: 1
+2025-01-21 20:13:04 INFO  org.tuvarna.controller.DistributorController - All trips by selected company: 1
+2025-01-21 20:13:05 INFO  org.tuvarna.controller.DistributorController - Trips in companyTripsListView: 1
+2025-01-21 20:13:05 INFO  org.tuvarna.controller.DistributorController - Configured cellFactory for companyTripsListView
+2025-01-21 20:13:06 INFO  org.tuvarna.controller.DistributorController - Selected trip: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy
+2025-01-21 20:13:06 INFO  org.tuvarna.controller.DistributorController - Checking the existence of a cashier
+2025-01-21 20:13:06 ERROR org.tuvarna.controller.DistributorController - Error during initialize of trip request. Error: superclass messed up
+2025-01-21 20:14:40 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 20:14:42 INFO  org.tuvarna.controller.DistributorController - Successfully loaded check-requests-distributor.fxml
+2025-01-21 20:14:42 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 20:14:42 INFO  org.tuvarna.controller.CompanyController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 20:14:42 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 20:14:42 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 20:14:42 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 20:14:42 INFO  org.tuvarna.controller.MainController - Initialize MainController
+2025-01-21 20:14:42 INFO  org.tuvarna.controller.MainController - All services initialized
+2025-01-21 20:14:42 INFO  org.tuvarna.repository.CashierDAOImpl - Session started for findAll
+2025-01-21 20:14:43 INFO  org.tuvarna.repository.CashierDAOImpl - Cashiers fetched successfully: 6
+2025-01-21 20:14:43 INFO  org.tuvarna.repository.CashierDAOImpl - Transaction commited successfully
+2025-01-21 20:14:43 INFO  org.tuvarna.repository.CashierDAOImpl - Session closed successfully
+2025-01-21 20:14:43 INFO  org.tuvarna.repository.UserDAOImpl - Session started for findAll
+2025-01-21 20:14:43 INFO  org.tuvarna.repository.UserDAOImpl - Users fetched successfully: 3
+2025-01-21 20:14:43 INFO  org.tuvarna.repository.UserDAOImpl - Transaction committed successfully
+2025-01-21 20:14:43 INFO  org.tuvarna.repository.UserDAOImpl - Session closed successfully
+2025-01-21 20:14:43 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 20:14:43 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 20:14:43 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 20:14:43 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 20:14:43 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 20:14:43 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 20:14:43 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 20:14:43 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 20:14:43 INFO  org.tuvarna.controller.MainController - Setting all Cashiers, Users, Companies, and Distributors
+2025-01-21 20:14:43 INFO  org.tuvarna.controller.MenuStripSelector - Current menu bar: MenuBar@3c270d80[styleClass=menu-bar]
+2025-01-21 20:14:43 INFO  org.tuvarna.controller.MainController - Menu strip configured
+2025-01-21 20:14:43 INFO  org.tuvarna.controller.MainController - AdministratorController configured
+2025-01-21 20:14:43 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 20:14:43 INFO  org.tuvarna.controller.CompanyController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 20:14:43 INFO  org.tuvarna.controller.MainController - CompanyController configured
+2025-01-21 20:14:43 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 20:14:43 INFO  org.tuvarna.controller.DistributorController - Successfully loaded check-requests-distributor.fxml
+2025-01-21 20:14:43 INFO  org.tuvarna.controller.MainController - DistributorController configured
+2025-01-21 20:14:43 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 20:14:43 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 20:14:43 INFO  org.tuvarna.controller.MainController - CashierController configured
+2025-01-21 20:14:43 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 20:14:43 INFO  org.tuvarna.repository.TripDAOImpl - Session started for findAll
+2025-01-21 20:14:43 INFO  org.tuvarna.repository.TripDAOImpl - Trips fetched successfully: 4
+2025-01-21 20:14:43 INFO  org.tuvarna.repository.TripDAOImpl - Transaction committed successfully
+2025-01-21 20:14:43 INFO  org.tuvarna.repository.TripDAOImpl - Session closed successfully
+2025-01-21 20:14:43 INFO  org.tuvarna.controller.UserController - Successfully retrieved all trips with distributor and cashier
+2025-01-21 20:14:43 INFO  org.tuvarna.repository.TicketDAOImpl - Session started for findAll
+2025-01-21 20:14:44 INFO  org.tuvarna.repository.TicketDAOImpl - Tickets fetched successfully: 40
+2025-01-21 20:14:44 INFO  org.tuvarna.repository.TicketDAOImpl - Transaction committed successfully
+2025-01-21 20:14:44 INFO  org.tuvarna.repository.TicketDAOImpl - Session closed successfully
+2025-01-21 20:14:44 INFO  org.tuvarna.controller.UserController - Filtered tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 20:14:44 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 20:14:44 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for user: null
+2025-01-21 20:14:44 INFO  org.tuvarna.controller.MainController - UserController configured
+2025-01-21 20:14:52 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 20:14:52 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@34f010ee[styleClass=[menu-item]]
+2025-01-21 20:14:52 INFO  org.tuvarna.controller.DistributorController - Setting current distributor: dist3
+2025-01-21 20:14:52 INFO  org.tuvarna.controller.MainController - Set Request panel for distributorController
+2025-01-21 20:14:53 INFO  org.tuvarna.controller.DistributorController - Clearing all fields
+2025-01-21 20:14:53 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 20:14:53 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 20:14:53 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 20:14:53 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 20:14:53 INFO  org.tuvarna.controller.DistributorController - All companies: 12
+2025-01-21 20:14:53 INFO  org.tuvarna.controller.DistributorController - Companies in companiesListView: 0
+2025-01-21 20:14:53 INFO  org.tuvarna.controller.DistributorController - Configuration cellFactory for companies list view
+2025-01-21 20:14:53 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 20:14:53 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 20:14:53 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 20:14:53 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 20:14:53 INFO  org.tuvarna.controller.DistributorController - Available trips: 1
+2025-01-21 20:14:53 INFO  org.tuvarna.controller.DistributorController - Available trips in availableTripsListView: 0
+2025-01-21 20:14:53 INFO  org.tuvarna.controller.DistributorController - Configuration cellFactory for tripsListView
+2025-01-21 20:14:55 INFO  org.tuvarna.controller.DistributorController - Selected company: Company:  name=vff currentRating=0.0
+2025-01-21 20:14:55 INFO  org.tuvarna.controller.DistributorController - Clearing of companyTripsListView items
+2025-01-21 20:14:55 INFO  org.tuvarna.controller.DistributorController - All trips for company: 0
+2025-01-21 20:14:55 INFO  org.tuvarna.controller.DistributorController - All trips by selected company: 0
+2025-01-21 20:14:55 INFO  org.tuvarna.controller.DistributorController - Trips in companyTripsListView: 0
+2025-01-21 20:14:55 INFO  org.tuvarna.controller.DistributorController - Configured cellFactory for companyTripsListView
+2025-01-21 20:14:56 INFO  org.tuvarna.controller.DistributorController - Selected company: Company:  name=hhy currentRating=0.0
+2025-01-21 20:14:56 INFO  org.tuvarna.controller.DistributorController - Clearing of companyTripsListView items
+2025-01-21 20:14:56 INFO  org.tuvarna.controller.DistributorController - All trips for company: 1
+2025-01-21 20:14:56 INFO  org.tuvarna.controller.DistributorController - All trips by selected company: 1
+2025-01-21 20:14:56 INFO  org.tuvarna.controller.DistributorController - Trips in companyTripsListView: 1
+2025-01-21 20:14:56 INFO  org.tuvarna.controller.DistributorController - Configured cellFactory for companyTripsListView
+2025-01-21 20:14:57 INFO  org.tuvarna.controller.DistributorController - Selected trip: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy
+2025-01-21 20:14:57 INFO  org.tuvarna.controller.DistributorController - Checking the existence of a cashier
+2025-01-21 20:14:57 ERROR org.tuvarna.controller.DistributorController - Error during initialize of trip request. Error: superclass messed up
+2025-01-21 20:17:16 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 20:17:18 INFO  org.tuvarna.controller.DistributorController - Successfully loaded check-requests-distributor.fxml
+2025-01-21 20:17:18 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 20:17:18 INFO  org.tuvarna.controller.CompanyController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 20:17:18 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 20:17:18 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 20:17:18 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 20:17:18 INFO  org.tuvarna.controller.MainController - Initialize MainController
+2025-01-21 20:17:18 INFO  org.tuvarna.controller.MainController - All services initialized
+2025-01-21 20:17:18 INFO  org.tuvarna.repository.CashierDAOImpl - Session started for findAll
+2025-01-21 20:17:19 INFO  org.tuvarna.repository.CashierDAOImpl - Cashiers fetched successfully: 6
+2025-01-21 20:17:19 INFO  org.tuvarna.repository.CashierDAOImpl - Transaction commited successfully
+2025-01-21 20:17:19 INFO  org.tuvarna.repository.CashierDAOImpl - Session closed successfully
+2025-01-21 20:17:19 INFO  org.tuvarna.repository.UserDAOImpl - Session started for findAll
+2025-01-21 20:17:19 INFO  org.tuvarna.repository.UserDAOImpl - Users fetched successfully: 3
+2025-01-21 20:17:19 INFO  org.tuvarna.repository.UserDAOImpl - Transaction committed successfully
+2025-01-21 20:17:19 INFO  org.tuvarna.repository.UserDAOImpl - Session closed successfully
+2025-01-21 20:17:19 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 20:17:19 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 20:17:19 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 20:17:19 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 20:17:19 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 20:17:19 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 20:17:19 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 20:17:19 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 20:17:19 INFO  org.tuvarna.controller.MainController - Setting all Cashiers, Users, Companies, and Distributors
+2025-01-21 20:17:19 INFO  org.tuvarna.controller.MenuStripSelector - Current menu bar: MenuBar@a676d5e[styleClass=menu-bar]
+2025-01-21 20:17:19 INFO  org.tuvarna.controller.MainController - Menu strip configured
+2025-01-21 20:17:19 INFO  org.tuvarna.controller.MainController - AdministratorController configured
+2025-01-21 20:17:19 INFO  org.tuvarna.controller.CompanyController - Try to add requestPanel for CompanyController
+2025-01-21 20:17:19 INFO  org.tuvarna.controller.CompanyController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 20:17:19 INFO  org.tuvarna.controller.MainController - CompanyController configured
+2025-01-21 20:17:19 INFO  org.tuvarna.controller.DistributorController - Try to add requestPanel for CashierController
+2025-01-21 20:17:19 INFO  org.tuvarna.controller.DistributorController - Successfully loaded check-requests-distributor.fxml
+2025-01-21 20:17:19 INFO  org.tuvarna.controller.MainController - DistributorController configured
+2025-01-21 20:17:19 INFO  org.tuvarna.controller.CashierController - Try to add requestPanel for CashierController
+2025-01-21 20:17:19 INFO  org.tuvarna.controller.CashierController - Successfully loaded check-requests-cashier.fxml
+2025-01-21 20:17:19 INFO  org.tuvarna.controller.MainController - CashierController configured
+2025-01-21 20:17:19 INFO  org.tuvarna.controller.UserController - Successfully configured rating group
+2025-01-21 20:17:19 INFO  org.tuvarna.repository.TripDAOImpl - Session started for findAll
+2025-01-21 20:17:19 INFO  org.tuvarna.repository.TripDAOImpl - Trips fetched successfully: 4
+2025-01-21 20:17:19 INFO  org.tuvarna.repository.TripDAOImpl - Transaction committed successfully
+2025-01-21 20:17:19 INFO  org.tuvarna.repository.TripDAOImpl - Session closed successfully
+2025-01-21 20:17:19 INFO  org.tuvarna.controller.UserController - Successfully retrieved all trips with distributor and cashier
+2025-01-21 20:17:19 INFO  org.tuvarna.repository.TicketDAOImpl - Session started for findAll
+2025-01-21 20:17:19 INFO  org.tuvarna.repository.TicketDAOImpl - Tickets fetched successfully: 40
+2025-01-21 20:17:19 INFO  org.tuvarna.repository.TicketDAOImpl - Transaction committed successfully
+2025-01-21 20:17:19 INFO  org.tuvarna.repository.TicketDAOImpl - Session closed successfully
+2025-01-21 20:17:19 INFO  org.tuvarna.controller.UserController - Filtered tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 20:17:19 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for trip: Trip: departure=Varna, destination=Sofia, date=2024-12-22, tripType=Bus, company=abcd
+2025-01-21 20:17:19 INFO  org.tuvarna.controller.UserController - Successfully retrieved all tickets for user: null
+2025-01-21 20:17:19 INFO  org.tuvarna.controller.MainController - UserController configured
+2025-01-21 20:17:23 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 20:17:23 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@300caaee[styleClass=[menu-item]]
+2025-01-21 20:17:23 INFO  org.tuvarna.controller.DistributorController - Setting current distributor: dist3
+2025-01-21 20:17:23 INFO  org.tuvarna.controller.MainController - Set Request panel for distributorController
+2025-01-21 20:17:24 INFO  org.tuvarna.controller.DistributorController - Clearing all fields
+2025-01-21 20:17:24 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 20:17:25 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 20:17:25 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 20:17:25 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 20:17:25 INFO  org.tuvarna.controller.DistributorController - All companies: 12
+2025-01-21 20:17:25 INFO  org.tuvarna.controller.DistributorController - Companies in companiesListView: 0
+2025-01-21 20:17:25 INFO  org.tuvarna.controller.DistributorController - Configuration cellFactory for companies list view
+2025-01-21 20:17:25 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 20:17:25 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 20:17:25 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 20:17:25 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 20:17:25 INFO  org.tuvarna.controller.DistributorController - Available trips: 1
+2025-01-21 20:17:25 INFO  org.tuvarna.controller.DistributorController - Available trips in availableTripsListView: 0
+2025-01-21 20:17:25 INFO  org.tuvarna.controller.DistributorController - Configuration cellFactory for tripsListView
+2025-01-21 20:17:26 INFO  org.tuvarna.controller.DistributorController - Selected company: Company:  name=hhy currentRating=0.0
+2025-01-21 20:17:26 INFO  org.tuvarna.controller.DistributorController - Clearing of companyTripsListView items
+2025-01-21 20:17:26 INFO  org.tuvarna.controller.DistributorController - All trips for company: 1
+2025-01-21 20:17:26 INFO  org.tuvarna.controller.DistributorController - All trips by selected company: 1
+2025-01-21 20:17:26 INFO  org.tuvarna.controller.DistributorController - Trips in companyTripsListView: 1
+2025-01-21 20:17:26 INFO  org.tuvarna.controller.DistributorController - Configured cellFactory for companyTripsListView
+2025-01-21 20:17:28 INFO  org.tuvarna.controller.DistributorController - Selected trip: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy
+2025-01-21 20:17:28 INFO  org.tuvarna.controller.DistributorController - Checking the existence of a cashier
+2025-01-21 20:17:28 INFO  org.tuvarna.repository.DistributorDAOImpl - Session started for findAll
+2025-01-21 20:17:28 INFO  org.tuvarna.repository.DistributorDAOImpl - Distributors fetched successfully: 10
+2025-01-21 20:17:28 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction committed successfully
+2025-01-21 20:17:28 INFO  org.tuvarna.repository.DistributorDAOImpl - Transaction closed successfully
+2025-01-21 20:17:28 INFO  org.tuvarna.controller.DistributorController - Successfully accepted a trip request
+2025-01-21 20:17:28 INFO  org.tuvarna.controller.RequestPanelController - Successfully added command: Would you like to accept a trip request to dist3: Trip: departure=New York, destination=Varna, date=2025-12-22, tripType=oneway, company=hhy ?
+2025-01-21 20:17:28 INFO  org.tuvarna.controller.CompanyController - Successfully respond to request
+2025-01-21 20:17:54 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
+2025-01-21 20:17:54 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@2d49573[styleClass=[menu-item]]
+2025-01-21 20:17:54 INFO  org.tuvarna.repository.CompanyDAOImpl - Session started for findAll
+2025-01-21 20:17:54 INFO  org.tuvarna.repository.CompanyDAOImpl - Companies fetched successfully: 12
+2025-01-21 20:17:54 INFO  org.tuvarna.repository.CompanyDAOImpl - Transaction committed successfully
+2025-01-21 20:17:54 INFO  org.tuvarna.repository.CompanyDAOImpl - Session closed successfully
+2025-01-21 20:17:54 INFO  org.tuvarna.controller.CompanyController - Initializing data. Current company is: Company:  name=ccf currentRating=0.0
+2025-01-21 20:17:54 INFO  org.tuvarna.controller.MainController - Set Request panel for companyController
+2025-01-21 20:17:56 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 20:17:56 INFO  org.tuvarna.controller.RequestPanelController - Configured styles for RequestListView
+2025-01-21 20:17:56 INFO  org.tuvarna.controller.RequestPanelController - All requests added
+2025-01-21 20:18:26 INFO  org.tuvarna.controller.RequestPanelController - All requests successfully removed
+2025-01-21 20:18:26 INFO  org.tuvarna.controller.CompToDistrPanelControllerImpl - Requests removed
+2025-01-21 20:18:27 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared
+2025-01-21 20:18:28 INFO  org.tuvarna.controller.RequestPanelController - RequestListView cleared

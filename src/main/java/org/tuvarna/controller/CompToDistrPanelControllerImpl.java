@@ -9,13 +9,14 @@ import org.tuvarna.entity.Trip;
 import org.tuvarna.service.DistributorService;
 import org.tuvarna.service.TripService;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class CompToDistrPanelControllerImpl extends RequestPanelController {
-
-    private final TripService tripService;
-
-    private DistributorService distributorService;
-
     public final static Logger logger = LogManager.getLogger(CompToDistrPanelControllerImpl.class.getName());
+    private final TripService tripService;
+    private final DistributorService distributorService;
+    private CompanyController companyController;
 
     public CompToDistrPanelControllerImpl() {
         this.distributorService = new DistributorService();
@@ -24,10 +25,11 @@ public class CompToDistrPanelControllerImpl extends RequestPanelController {
 
     @Override
     public void initialize() {
-        super.initialize();}
+        super.initialize();
+    }
 
     @Override
-    void handleAccept(Command requestCommand) {
+    protected void handleAccept(Command requestCommand) {
         try {
             requestCommand.getSender();
             Distributor distributor = (Distributor) requestCommand.getSender();
@@ -50,7 +52,7 @@ public class CompToDistrPanelControllerImpl extends RequestPanelController {
             alert.setTitle("Alert!");
             alert.setHeaderText("Could not assign trip to distributor.");
             alert.setContentText(e.getMessage());
-            logger.error("Error during handleAccept function, with message {}",e.getMessage());
+            logger.error("Error during handleAccept function, with message {}", e.getMessage());
             throw new RuntimeException(e);
         } finally {
             super.getCommands().remove(requestCommand);
@@ -60,9 +62,34 @@ public class CompToDistrPanelControllerImpl extends RequestPanelController {
     }
 
     @Override
-    void handleDecline(Command requestCommand) {
+    protected void handleDecline(Command requestCommand) {
         super.getCommands().remove(requestCommand);
         super.removeRequest(requestCommand.getMessage());
         logger.info("Requests removed");
+    }
+
+    @Override
+    protected List<Command> getParticularCommands() {
+        List<Command> particularCommands = new LinkedList<>();
+        String companyName = companyController.companyName.getText();
+        super.getCommands().stream()
+                .filter(c ->
+                        (c.getReceiver() instanceof CompanyController) &&
+                                (((CompanyController) c.getReceiver())
+                                        .companyName
+                                        .getText()
+                                        .equals(companyName))
+                )
+                .forEach(particularCommands::add);
+
+        return particularCommands;
+    }
+
+    public CompanyController getCompanyController() {
+        return companyController;
+    }
+
+    public void setCompanyController(CompanyController companyController) {
+        this.companyController = companyController;
     }
 }
