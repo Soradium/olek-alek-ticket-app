@@ -22,54 +22,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DistributorController implements Subject {
+    private static final Logger logger = LogManager.getLogger(DistributorController.class);
+    private final SimpleStringProperty currentDistributorProperty = new SimpleStringProperty();
+    private final ObservableList<Trip> tripsPerCompany = FXCollections.observableArrayList();
     @FXML
     public Label distributorName;
-
     @FXML
     private Parent checkRequests;
-
     @FXML
     private RequestPanelController requestPanelController;
-
     @FXML
     private ListView<Company> companiesListView;
-
     @FXML
     private ListView<Trip> companyTripsListView;
-
     @FXML
     private ListView<Trip> availableTripsListView;
-
     @FXML
     private TextField cashierName;
-
-    private SimpleStringProperty currentDistributorProperty  = new SimpleStringProperty();
-
     private String currentDistributor;
-
     private CompanyController companyController;
-
     private CompanyService companyService;
-
     private TripService tripService;
-
     private CashierService cashierService;
-
     private DistributorService distributorService;
-
     private TicketService ticketService;
-
     private ObservableList<Company> companies = FXCollections.observableArrayList();
-
-    private ObservableList<Trip> tripsPerCompany = FXCollections.observableArrayList();
-
     private ObservableList<Trip> availableTrips = FXCollections.observableArrayList();
-
     private Observer observer;
-
     private Command command;
-
-    private static final Logger logger = LogManager.getLogger(DistributorController.class);
 
     @FXML
     public void showInfo() {
@@ -98,9 +78,9 @@ public class DistributorController implements Subject {
                     label.setStyle("-fx-font-size: 14px;");
 
                     label.setMaxWidth(companiesListView.getWidth());
-                    if(isSelected()){
+                    if (isSelected()) {
                         label.setStyle("-fx-background-color:  #cbcbcb;-fx-font-size: 14px; -fx-text-fill: black;");
-                    }else{
+                    } else {
                         label.setStyle("-fx-background-color: #f4f4f4; -fx-font-size: 14px;");
 
                     }
@@ -130,9 +110,9 @@ public class DistributorController implements Subject {
                     label.setStyle("-fx-font-size: 14px;");
 
                     label.setMaxWidth(availableTripsListView.getWidth());
-                    if(isSelected()){
+                    if (isSelected()) {
                         label.setStyle("-fx-background-color:  #cbcbcb;-fx-font-size: 14px; -fx-text-fill: black;");
-                    }else{
+                    } else {
                         label.setStyle("-fx-background-color: #f4f4f4; -fx-font-size: 14px;");
 
                     }
@@ -151,43 +131,48 @@ public class DistributorController implements Subject {
 
     @FXML
     public void requestTrip() {
-        Trip selectedTrip = companyTripsListView.getSelectionModel().getSelectedItem();
-        logger.info("Selected trip: {}", selectedTrip);
-        if (selectedTrip != null) {
-            logger.info("Checking the existence of a cashier");
-            if (selectedTrip.getDistributor() != null) {
+        try {
+            Trip selectedTrip = companyTripsListView.getSelectionModel().getSelectedItem();
+            logger.info("Selected trip: {}", selectedTrip);
+            if (selectedTrip != null) {
+                logger.info("Checking the existence of a cashier");
+                if (selectedTrip.getDistributor() != null) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Alert!");
+                    alert.setHeaderText("Trip is managed!");
+                    alert.setContentText("This trip is already managed by another" +
+                            " distributor.");
+                    alert.showAndWait();
+                    logger.info("Trip is managed by another cashier");
+                    return;
+                }
+                String message = "Would you like to accept a trip request to "
+                        + currentDistributor + ": " + selectedTrip + " ?";
+                List<Object> selectedTripList = new ArrayList<>();
+                selectedTripList.add(selectedTrip);
+                command = new RequestToCompanyCommandImpl(
+                        message,
+                        selectedTripList,
+                        companyController,
+                        distributorService.getDistributorByName(currentDistributor)
+                );
+                logger.info("Successfully accepted a trip request");
+                command.execute();
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Success!");
+                alert.setHeaderText("Trip was requested.");
+                alert.setContentText("Request was sent to corresponding company.");
+                alert.showAndWait();
+            } else {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Alert!");
-                alert.setHeaderText("Trip is managed!");
-                alert.setContentText("This trip is already managed by another" +
-                        " distributor.");
+                alert.setHeaderText("Trip was not chosen!");
+                alert.setContentText("Request was not sent.");
                 alert.showAndWait();
-                logger.info("Trip is managed by another cashier");
-                return;
             }
-            String message = "Would you like to accept a trip request to "
-                    + currentDistributor + ": " + selectedTrip + " ?";
-            List<Object> selectedTripList = new ArrayList<>();
-            selectedTripList.add(selectedTrip);
-            command = new RequestToCompanyCommandImpl(
-                    message,
-                    selectedTripList,
-                    companyController,
-                    distributorService.getDistributorByName(currentDistributor)
-            );
-            logger.info("Successfully accepted a trip request");
-            command.execute();
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Success!");
-            alert.setHeaderText("Trip was requested.");
-            alert.setContentText("Request was sent to corresponding company.");
-            alert.showAndWait();
-        } else {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Alert!");
-            alert.setHeaderText("Trip was not chosen!");
-            alert.setContentText("Request was not sent.");
-            alert.showAndWait();
+        } catch (Exception e) {
+            logger.error("Error during initialize of trip request. Error: {}", e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -224,9 +209,9 @@ public class DistributorController implements Subject {
                         label.setWrapText(true);
 
                         label.setMaxWidth(companyTripsListView.getWidth());
-                        if(isSelected()){
+                        if (isSelected()) {
                             label.setStyle("-fx-background-color:  #cbcbcb;-fx-font-size: 14px; -fx-text-fill: black;");
-                        }else{
+                        } else {
                             label.setStyle("-fx-background-color: #f4f4f4; -fx-font-size: 14px;");
 
                         }
@@ -244,14 +229,15 @@ public class DistributorController implements Subject {
             logger.info("Try to add requestPanel for {}", CashierController.class.getSimpleName());
             FXMLLoader requestPanelLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/check-requests-distributor.fxml"));
             checkRequests = requestPanelLoader.load();
+            requestPanelLoader.<DistrToCashPanelControllerImpl>getController().setDistributorController(this);
             requestPanelController = requestPanelLoader.<DistrToCashPanelControllerImpl>getController();
             logger.info("Successfully loaded check-requests-distributor.fxml");
         } catch (Exception e) {
             logger.error("Error during initialize of check-requests-distributor. Error: {}", e.getMessage());
         }
-     }
+    }
 
-    public void initializeData(String currentDistributorText){
+    public void initializeData(String currentDistributorText) {
         setCurrentDistributorProperty(currentDistributorText);
         distributorName.setText(currentDistributorText);
         logger.info("Setting current distributor: {}", currentDistributorText);
@@ -326,4 +312,5 @@ public class DistributorController implements Subject {
         values.add("Cashiers");
         this.observer.update(values);
     }
+
 }
