@@ -80,5 +80,10 @@
         <HBox alignment="CENTER" spacing="10">
             <Label fx:id="errorLabel" text="This trip already rated" visible="false" />
         </HBox>
+        <Button onAction="#updateInfo" style="-fx-background-color: #5e17eb; -fx-min-height: 40; -fx-min-width: 140; -fx-background-radius: 10;" text="Update info" textFill="WHITE">
+            <font>
+                <Font name="Droid Sans Mono Slashed" size="16.0" />
+            </font>
+        </Button>
     </VBox>
 </AnchorPane>
