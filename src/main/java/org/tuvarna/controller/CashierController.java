@@ -25,36 +25,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CashierController implements Subject {
+    private static final Logger logger = LogManager.getLogger(CashierController.class);
     @FXML
     public ListView<Trip> tripsByDistributorListView;
-
     @FXML
     public ListView<Ticket> ticketsProvidedByCashier;
-
     @FXML
     private Label cashierName;
-
     @FXML
     private Label distributorName;
-
     @FXML
     private RequestPanelController requestPanelController;
-
     @FXML
     private Parent checkRequests;
-
     private TripService tripService;
-
     private Command command;
-
     private DistributorController distributorController;
-
     private CashierService service;
     private Cashier currentCashier;
-
     private Observer observer;
-
-    private static final Logger logger = LogManager.getLogger(CashierController.class);
 
     @FXML
     public void initialize() {
@@ -62,6 +51,7 @@ public class CashierController implements Subject {
             logger.info("Try to add requestPanel for {}", CashierController.class.getSimpleName());
             FXMLLoader requestPanelLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/check-requests-cashier.fxml"));
             checkRequests = requestPanelLoader.load();
+            requestPanelLoader.<CashToUsrPanelController>getController().setCashierController(this);
             requestPanelController = requestPanelLoader.<CashToUsrPanelController>getController();
             logger.info("Successfully loaded check-requests-cashier.fxml");
 
@@ -78,43 +68,48 @@ public class CashierController implements Subject {
 
     @FXML
     public void requestTrip() {
-        Trip selectedTrip = tripsByDistributorListView.getSelectionModel().getSelectedItem();
-        logger.info("Selected trip: {}", selectedTrip);
-        if (selectedTrip != null) {
-            logger.info("Checking the existence of a cashier");
-            if (selectedTrip.getCashier() != null) {
+        try {
+            Trip selectedTrip = tripsByDistributorListView.getSelectionModel().getSelectedItem();
+            logger.info("Selected trip: {}", selectedTrip);
+            if (selectedTrip != null) {
+                logger.info("Checking the existence of a cashier");
+                if (selectedTrip.getCashier() != null) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Alert!");
+                    alert.setHeaderText("Trip is managed!");
+                    alert.setContentText("This trip is already managed by another" +
+                            " cashier or you.");
+                    alert.showAndWait();
+                    logger.info("Trip is managed by another cashier or you");
+                    return;
+                }
+                String message = "Would you like to accept a trip request to "
+                        + currentCashier.getName() + ": " + selectedTrip + " ?";
+                List<Object> selectedTripList = new ArrayList<>();
+                selectedTripList.add(selectedTrip);
+                command = new RequestToDistributorCommandImpl(
+                        message,
+                        selectedTripList,
+                        distributorController,
+                        service.getCashierByName(currentCashier.getName())
+                );
+                logger.info("Successfully accepted a trip request");
+                command.execute();
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Success!");
+                alert.setHeaderText("Trip was requested.");
+                alert.setContentText("Request was sent to corresponding distributor.");
+                alert.showAndWait();
+            } else {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Alert!");
-                alert.setHeaderText("Trip is managed!");
-                alert.setContentText("This trip is already managed by another" +
-                        " cashier.");
+                alert.setHeaderText("Trip was not chosen!");
+                alert.setContentText("Request was not sent.");
                 alert.showAndWait();
-                logger.info("Trip is managed by another cashier");
-                return;
             }
-            String message = "Would you like to accept a trip request to "
-                    + currentCashier.getName() + ": " + selectedTrip + " ?";
-            List<Object> selectedTripList = new ArrayList<>();
-            selectedTripList.add(selectedTrip);
-            command = new RequestToDistributorCommandImpl(
-                    message,
-                    selectedTripList,
-                    distributorController,
-                    service.getCashierByName(currentCashier.getName())
-            );
-            logger.info("Successfully accepted a trip request");
-            command.execute();
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Success!");
-            alert.setHeaderText("Trip was requested.");
-            alert.setContentText("Request was sent to corresponding distributor.");
-            alert.showAndWait();
-        } else {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Alert!");
-            alert.setHeaderText("Trip was not chosen!");
-            alert.setContentText("Request was not sent.");
-            alert.showAndWait();
+        } catch (Exception e) {
+            logger.error("Error during initialize of trip request. Error: {}", e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -146,9 +141,9 @@ public class CashierController implements Subject {
                     label.setStyle("-fx-font-size: 14px;");
 
                     label.setMaxWidth(tripsByDistributorListView.getWidth());
-                    if(isSelected()){
+                    if (isSelected()) {
                         label.setStyle("-fx-background-color:  #cbcbcb;-fx-font-size: 14px; -fx-text-fill: black;");
-                    }else{
+                    } else {
                         label.setStyle("-fx-background-color: #f4f4f4; -fx-font-size: 14px;");
 
                     }
@@ -183,10 +178,6 @@ public class CashierController implements Subject {
         this.distributorName.setText(distributorName);
     }
 
-    public void setCashierName(String cashierName) {
-        this.cashierName.setText(cashierName);
-    }
-
     public Parent getCheckRequests() {
         return checkRequests;
     }
@@ -207,5 +198,17 @@ public class CashierController implements Subject {
         values.add(cashierName.getText());
         values.add("Cashiers");
         this.observer.update(values);
+    }
+
+    public Label getCashierName() {
+        return cashierName;
+    }
+
+    public void setCashierName(String cashierName) {
+        this.cashierName.setText(cashierName);
+    }
+
+    public void setCashierName(Label cashierName) {
+        this.cashierName = cashierName;
     }
 }

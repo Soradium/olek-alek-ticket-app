@@ -16,23 +16,23 @@ import java.util.List;
 
 public abstract class RequestPanelController {
 
+    private final static Logger logger = LogManager.getLogger(RequestPanelController.class);
+    private final List<Command> commands = new ArrayList<>();
     @FXML
     private ListView<HBox> requestListView;
 
-    private List<Command> commands = new ArrayList<>();
-
-    private final static Logger logger = LogManager.getLogger(RequestPanelController.class);
-
     @FXML
     public void initialize() {
-        reloadRequests();
+
     }
 
     @FXML
     public void reloadRequests() {
         requestListView.getItems().clear();
         logger.info("RequestListView cleared");
-        for (Command command : commands) {
+
+        for (Command command : this.getParticularCommands()) {
+
             Label requestLabel = new Label(command.getMessage());
             requestLabel.setStyle("-fx-font-size: 14px;");
             requestLabel.setWrapText(true);
@@ -76,6 +76,8 @@ public abstract class RequestPanelController {
 
     abstract void handleDecline(Command requestCommand);
 
+    abstract List<Command> getParticularCommands();
+
     protected void removeRequest(String requestText) {
         requestListView.getItems().removeIf(hbox -> {
             Label label = (Label) hbox.getChildren().get(0);
@@ -87,4 +89,6 @@ public abstract class RequestPanelController {
     public List<Command> getCommands() {
         return commands;
     }
+
+
 }

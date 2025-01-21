@@ -91,6 +91,19 @@
 	Minimum pool size: 1
 	Maximum pool size: 20
 2025-01-13 00:29:31 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7c697a19] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-01-13 15:28:42 [JavaFX Application Thread] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
+2025-01-13 15:28:42 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-13 15:28:42 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-01-13 15:28:43 [JavaFX Application Thread] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-13 15:28:43 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://10.1.103.29:5438/OlekAlekProject]
+	Database driver: org.postgresql.Driver
+	Database version: 17.0
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-01-13 15:28:44 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4818f995] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
 2025-01-14 19:04:04 [JavaFX Application Thread] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
 2025-01-14 19:04:04 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
 2025-01-14 19:04:04 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
@@ -130,11 +143,193 @@
 	Minimum pool size: 1
 	Maximum pool size: 20
 2025-01-14 19:42:33 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5e46998f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2025-01-21 22:36:01 [JavaFX Application Thread] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
-2025-01-21 22:36:01 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-01-21 22:36:01 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
-2025-01-21 22:36:01 [JavaFX Application Thread] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-01-21 22:36:01 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+2025-01-21 16:57:15 [JavaFX Application Thread] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
+2025-01-21 16:57:15 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-21 16:57:16 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-01-21 16:57:26 [JavaFX Application Thread] WARN  org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata
+java.lang.IllegalStateException: Cannot get a connection as the driver manager is not properly initialized
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.getConnection(DriverManagerConnectionProviderImpl.java:255) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:467) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:320) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.ServiceRegistry.requireService(ServiceRegistry.java:68) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:52) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:136) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:247) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.convertSqlException(BasicConnectionCreator.java:133) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:43) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:61) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.addConnections(DriverManagerConnectionProviderImpl.java:507) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init>(DriverManagerConnectionProviderImpl.java:380) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections$Builder.build(DriverManagerConnectionProviderImpl.java:558) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildPool(DriverManagerConnectionProviderImpl.java:107) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure(DriverManagerConnectionProviderImpl.java:87) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:136) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:247) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.ServiceRegistry.requireService(ServiceRegistry.java:68) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.buildJdbcConnectionAccess(JdbcEnvironmentInitiator.java:434) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:305) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:129) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:449) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:101) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:949) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:999) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.tuvarna/org.tuvarna.database.DatabaseSingleton.<init>(DatabaseSingleton.java:25) ~[classes/:?]
+	at org.tuvarna/org.tuvarna.database.DatabaseSingleton.getInstance(DatabaseSingleton.java:30) ~[classes/:?]
+	at org.tuvarna/org.tuvarna.controller.DistrToCashPanelControllerImpl.<init>(DistrToCashPanelControllerImpl.java:26) ~[classes/:?]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader$ValueElement.processAttribute(FXMLLoader.java:941) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader$InstanceDeclarationElement.processAttribute(FXMLLoader.java:983) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader$Element.processStartElement(FXMLLoader.java:230) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:757) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2853) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2649) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531) ~[javafx-fxml-21-mac.jar:?]
+	at org.tuvarna/org.tuvarna.controller.DistributorController.initialize(DistributorController.java:246) ~[classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:72) ~[javafx-base-21-mac.jar:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:270) ~[javafx-base-21-mac.jar:?]
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2688) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader$IncludeElement.constructValue(FXMLLoader.java:1155) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:759) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2853) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2649) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531) ~[javafx-fxml-21-mac.jar:?]
+	at org.tuvarna/org.tuvarna.olekalekproject.MainApplication.start(MainApplication.java:26) ~[classes/:?]
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839) ~[javafx-graphics-21-mac.jar:?]
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483) ~[javafx-graphics-21-mac.jar:?]
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456) ~[javafx-graphics-21-mac.jar:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) ~[?:?]
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455) ~[javafx-graphics-21-mac.jar:?]
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95) [javafx-graphics-21-mac.jar:?]
+2025-01-21 16:57:26 [JavaFX Application Thread] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-21 16:57:26 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://10.1.103.29:5438/OlekAlekProject]
+	Database driver: org.postgresql.Driver
+	Database version: 12.0
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-01-21 16:57:26 [JavaFX Application Thread] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08001
+2025-01-21 16:57:26 [JavaFX Application Thread] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - The connection attempt failed.
+2025-01-21 16:57:26 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-21 16:57:26 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-01-21 16:57:36 [JavaFX Application Thread] WARN  org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata
+java.lang.IllegalStateException: Cannot get a connection as the driver manager is not properly initialized
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.getConnection(DriverManagerConnectionProviderImpl.java:255) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:467) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:320) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.ServiceRegistry.requireService(ServiceRegistry.java:68) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:52) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:136) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:247) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.convertSqlException(BasicConnectionCreator.java:133) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:43) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:61) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.addConnections(DriverManagerConnectionProviderImpl.java:507) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init>(DriverManagerConnectionProviderImpl.java:380) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections$Builder.build(DriverManagerConnectionProviderImpl.java:558) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildPool(DriverManagerConnectionProviderImpl.java:107) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure(DriverManagerConnectionProviderImpl.java:87) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:136) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:247) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.ServiceRegistry.requireService(ServiceRegistry.java:68) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.buildJdbcConnectionAccess(JdbcEnvironmentInitiator.java:434) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:305) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:129) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:449) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:101) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:949) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:999) ~[hibernate-core-6.6.1.Final.jar:?]
+	at org.tuvarna/org.tuvarna.database.DatabaseSingleton.<init>(DatabaseSingleton.java:25) ~[classes/:?]
+	at org.tuvarna/org.tuvarna.database.DatabaseSingleton.getInstance(DatabaseSingleton.java:30) ~[classes/:?]
+	at org.tuvarna/org.tuvarna.controller.CompanyController.<init>(CompanyController.java:63) ~[classes/:?]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader$ValueElement.processAttribute(FXMLLoader.java:941) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader$InstanceDeclarationElement.processAttribute(FXMLLoader.java:983) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader$Element.processStartElement(FXMLLoader.java:230) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:757) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2853) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2649) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader$IncludeElement.constructValue(FXMLLoader.java:1155) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:759) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2853) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2649) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563) ~[javafx-fxml-21-mac.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531) ~[javafx-fxml-21-mac.jar:?]
+	at org.tuvarna/org.tuvarna.olekalekproject.MainApplication.start(MainApplication.java:26) ~[classes/:?]
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839) ~[javafx-graphics-21-mac.jar:?]
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483) ~[javafx-graphics-21-mac.jar:?]
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456) ~[javafx-graphics-21-mac.jar:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) ~[?:?]
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455) ~[javafx-graphics-21-mac.jar:?]
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95) [javafx-graphics-21-mac.jar:?]
+2025-01-21 16:57:36 [JavaFX Application Thread] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-21 16:57:36 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://10.1.103.29:5438/OlekAlekProject]
+	Database driver: org.postgresql.Driver
+	Database version: 12.0
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-01-21 16:57:36 [JavaFX Application Thread] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08001
+2025-01-21 16:57:36 [JavaFX Application Thread] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - The connection attempt failed.
+2025-01-21 16:59:21 [JavaFX Application Thread] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
+2025-01-21 16:59:21 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-21 16:59:21 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-01-21 16:59:22 [JavaFX Application Thread] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-21 16:59:22 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [jdbc:postgresql://10.1.103.29:5438/OlekAlekProject]
 	Database driver: org.postgresql.Driver
 	Database version: 17.0
@@ -142,12 +337,12 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: 1
 	Maximum pool size: 20
-2025-01-21 22:36:02 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@72974258] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2025-01-21 22:37:05 [JavaFX Application Thread] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
-2025-01-21 22:37:05 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-01-21 22:37:05 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
-2025-01-21 22:37:05 [JavaFX Application Thread] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-01-21 22:37:05 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+2025-01-21 16:59:23 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7678756c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-01-21 19:11:24 [JavaFX Application Thread] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
+2025-01-21 19:11:25 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-21 19:11:25 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-01-21 19:11:25 [JavaFX Application Thread] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-21 19:11:25 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [jdbc:postgresql://10.1.103.29:5438/OlekAlekProject]
 	Database driver: org.postgresql.Driver
 	Database version: 17.0
@@ -155,12 +350,12 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: 1
 	Maximum pool size: 20
-2025-01-21 22:37:06 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@437019fb] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2025-01-21 22:37:54 [JavaFX Application Thread] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
-2025-01-21 22:37:54 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-01-21 22:37:54 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
-2025-01-21 22:37:54 [JavaFX Application Thread] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-01-21 22:37:54 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+2025-01-21 19:11:27 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5cbed01d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-01-21 19:13:32 [JavaFX Application Thread] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
+2025-01-21 19:13:33 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-21 19:13:33 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-01-21 19:13:33 [JavaFX Application Thread] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-21 19:13:33 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [jdbc:postgresql://10.1.103.29:5438/OlekAlekProject]
 	Database driver: org.postgresql.Driver
 	Database version: 17.0
@@ -168,4 +363,199 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: 1
 	Maximum pool size: 20
-2025-01-21 22:37:55 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5c64f09e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-01-21 19:13:35 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5d0f770e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-01-21 19:14:37 [JavaFX Application Thread] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
+2025-01-21 19:14:37 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-21 19:14:37 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-01-21 19:14:37 [JavaFX Application Thread] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-21 19:14:37 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://10.1.103.29:5438/OlekAlekProject]
+	Database driver: org.postgresql.Driver
+	Database version: 17.0
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-01-21 19:14:39 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@78add143] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-01-21 19:17:21 [JavaFX Application Thread] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
+2025-01-21 19:17:21 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-21 19:17:21 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-01-21 19:17:22 [JavaFX Application Thread] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-21 19:17:22 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://10.1.103.29:5438/OlekAlekProject]
+	Database driver: org.postgresql.Driver
+	Database version: 17.0
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-01-21 19:17:23 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@369f4250] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-01-21 19:18:34 [JavaFX Application Thread] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
+2025-01-21 19:18:34 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-21 19:18:34 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-01-21 19:18:35 [JavaFX Application Thread] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-21 19:18:35 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://10.1.103.29:5438/OlekAlekProject]
+	Database driver: org.postgresql.Driver
+	Database version: 17.0
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-01-21 19:18:36 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@17cadd67] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-01-21 19:47:32 [JavaFX Application Thread] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
+2025-01-21 19:47:33 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-21 19:47:33 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-01-21 19:47:34 [JavaFX Application Thread] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-21 19:47:34 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://10.1.103.29:5438/OlekAlekProject]
+	Database driver: org.postgresql.Driver
+	Database version: 17.0
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-01-21 19:47:36 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@75493f8d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-01-21 19:48:36 [JavaFX Application Thread] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
+2025-01-21 19:48:37 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-21 19:48:37 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-01-21 19:48:38 [JavaFX Application Thread] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-21 19:48:38 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://10.1.103.29:5438/OlekAlekProject]
+	Database driver: org.postgresql.Driver
+	Database version: 17.0
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-01-21 19:48:41 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@53ed68f8] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-01-21 19:50:33 [JavaFX Application Thread] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
+2025-01-21 19:50:33 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-21 19:50:33 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-01-21 19:50:34 [JavaFX Application Thread] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-21 19:50:34 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://10.1.103.29:5438/OlekAlekProject]
+	Database driver: org.postgresql.Driver
+	Database version: 17.0
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-01-21 19:50:35 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1834b625] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-01-21 19:51:47 [JavaFX Application Thread] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
+2025-01-21 19:51:47 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-21 19:51:47 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-01-21 19:51:47 [JavaFX Application Thread] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-21 19:51:47 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://10.1.103.29:5438/OlekAlekProject]
+	Database driver: org.postgresql.Driver
+	Database version: 17.0
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-01-21 19:51:49 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7453bba] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-01-21 19:54:24 [JavaFX Application Thread] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
+2025-01-21 19:54:24 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-21 19:54:24 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-01-21 19:54:24 [JavaFX Application Thread] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-21 19:54:24 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://10.1.103.29:5438/OlekAlekProject]
+	Database driver: org.postgresql.Driver
+	Database version: 17.0
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-01-21 19:54:26 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@53ed68f8] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-01-21 19:54:50 [JavaFX Application Thread] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
+2025-01-21 19:54:50 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-21 19:54:50 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-01-21 19:54:51 [JavaFX Application Thread] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-21 19:54:51 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://10.1.103.29:5438/OlekAlekProject]
+	Database driver: org.postgresql.Driver
+	Database version: 17.0
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-01-21 19:54:52 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@17020dc2] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-01-21 20:12:31 [JavaFX Application Thread] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
+2025-01-21 20:12:32 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-21 20:12:32 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-01-21 20:12:32 [JavaFX Application Thread] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-21 20:12:32 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://10.1.103.29:5438/OlekAlekProject]
+	Database driver: org.postgresql.Driver
+	Database version: 17.0
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-01-21 20:12:33 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4bb780ef] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-01-21 20:14:40 [JavaFX Application Thread] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
+2025-01-21 20:14:40 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-21 20:14:41 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-01-21 20:14:41 [JavaFX Application Thread] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-21 20:14:41 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://10.1.103.29:5438/OlekAlekProject]
+	Database driver: org.postgresql.Driver
+	Database version: 17.0
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-01-21 20:14:42 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7678756c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-01-21 20:17:16 [JavaFX Application Thread] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
+2025-01-21 20:17:16 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-21 20:17:16 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-01-21 20:17:17 [JavaFX Application Thread] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-21 20:17:17 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://10.1.103.29:5438/OlekAlekProject]
+	Database driver: org.postgresql.Driver
+	Database version: 17.0
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-01-21 20:17:18 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3489faba] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-01-21 20:46:17 [JavaFX Application Thread] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
+2025-01-21 20:46:17 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-21 20:46:17 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-01-21 20:46:17 [JavaFX Application Thread] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-21 20:46:17 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://10.1.103.29:5438/OlekAlekProject]
+	Database driver: org.postgresql.Driver
+	Database version: 17.0
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-01-21 20:46:19 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@30c1bbe7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-01-21 20:50:30 [JavaFX Application Thread] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
+2025-01-21 20:50:31 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-21 20:50:31 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-01-21 20:50:31 [JavaFX Application Thread] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-21 20:50:31 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://10.1.103.29:5438/OlekAlekProject]
+	Database driver: org.postgresql.Driver
+	Database version: 17.0
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-01-21 20:50:32 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7678756c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-01-21 20:51:25 [JavaFX Application Thread] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
+2025-01-21 20:51:25 [JavaFX Application Thread] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-21 20:51:25 [JavaFX Application Thread] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-01-21 20:51:25 [JavaFX Application Thread] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-21 20:51:25 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://10.1.103.29:5438/OlekAlekProject]
+	Database driver: org.postgresql.Driver
+	Database version: 17.0
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-01-21 20:51:27 [JavaFX Application Thread] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@78c6b759] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.

@@ -25,39 +25,26 @@ import java.util.List;
 
 public class UserController {
 
+    private final static Logger logger = LogManager.getLogger(UserController.class);
+    private final SessionFactory sessionFactory = DatabaseSingleton.getInstance().getSessionFactory();
+    private final SimpleStringProperty currentUser = new SimpleStringProperty();
     @FXML
     public ComboBox<Trip> tripComboBox;
-
     @FXML
     public ComboBox<Ticket> seatComboBox;
-
     @FXML
     public ComboBox<Ticket> purchasedTripsComboBox;
-
     @FXML
     public RadioButton rating1, rating2, rating3, rating4, rating5;
-
     @FXML
     public ToggleGroup ratingGroup;
-
     @FXML
     public Label errorLabel;
-
     private Command command;
-
     private CashierController cashierController;
-
     private UserService userService;
-
-    private final SessionFactory sessionFactory = DatabaseSingleton.getInstance().getSessionFactory();
-
-    private final SimpleStringProperty currentUser = new SimpleStringProperty();
-
     private TripService tripService;
-
     private TicketService ticketService;
-
-    private final static Logger logger = LogManager.getLogger(UserController.class);
 
     @FXML
     public void initialize() {
@@ -70,9 +57,9 @@ public class UserController {
         logger.info("Successfully configured rating group");
     }
 
-    public void initializeData(){
-        List<Trip> trips = tripService.getAllTrips().stream().filter(c->c.getDistributor() != null
-                && c.getCashier() !=null).
+    public void initializeData() {
+        List<Trip> trips = tripService.getAllTrips().stream().filter(c -> c.getDistributor() != null
+                        && c.getCashier() != null).
                 toList();
         logger.info("Successfully retrieved all trips with distributor and cashier");
         ObservableList<Trip> obsTrips = FXCollections.observableArrayList(trips);
@@ -80,17 +67,17 @@ public class UserController {
         tripComboBox.setValue(obsTrips.get(0));
         showTickets();
         tripComboBox.valueProperty().addListener((observable, oldValue, newValue) -> {
-            if(newValue != null){
+            if (newValue != null) {
                 showTickets();
-            }else{
+            } else {
                 seatComboBox.getItems().clear();
             }
         });
         logger.info("Successfully retrieved all tickets for trip: {}", tripComboBox.getSelectionModel().getSelectedItem());
         currentUser.addListener((observable, oldValue, newValue) -> {
-            if(newValue != null){
+            if (newValue != null) {
                 showTicketsForCurrentUser();
-            }else{
+            } else {
                 purchasedTripsComboBox.getItems().clear();
             }
         });
@@ -101,7 +88,7 @@ public class UserController {
         Trip currentTrip = purchasedTripsComboBox.getSelectionModel().getSelectedItem().getTrip();
         Ticket currentTicket = purchasedTripsComboBox.getSelectionModel().getSelectedItem();
         logger.info("Current ticket: {}", currentTicket);
-        if(ticketService.getTicketById(currentTicket.getId()).isRate()){
+        if (ticketService.getTicketById(currentTicket.getId()).isRate()) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Alert!");
             alert.setHeaderText("Rated Trip");
@@ -117,7 +104,7 @@ public class UserController {
         Session session = sessionFactory.getCurrentSession();
         logger.info("Begin transaction");
         session.beginTransaction();
-        try{
+        try {
             session.merge(new CompanyRatings(currentTrip.getCompany(), Integer.parseInt(rating)));
             session.createQuery("update Ticket set isRate = true where id = :id").
                     setParameter("id", currentTicket.getId()).
@@ -125,9 +112,9 @@ public class UserController {
             session.getTransaction().commit();
             logger.info("Successfully updated current ticket and company ratings table");
             errorLabel.setVisible(false);
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error("Occurred error in submitRating method, with message: {}", e.getMessage());
-        }finally {
+        } finally {
             session.close();
         }
     }
@@ -158,42 +145,47 @@ public class UserController {
     }
 
     public void ticketOrder() {
-        Ticket selectedTicket = seatComboBox.getSelectionModel().getSelectedItem();
-        logger.info("Selected ticket: {}", selectedTicket);
-        if (selectedTicket != null) {
-            logger.info("Checking the existence of a user");
-            if (selectedTicket.getUser() != null) {
+        try {
+            Ticket selectedTicket = seatComboBox.getSelectionModel().getSelectedItem();
+            logger.info("Selected ticket: {}", selectedTicket);
+            if (selectedTicket != null) {
+                logger.info("Checking the existence of a user");
+                if (selectedTicket.getUser() != null) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Alert!");
+                    alert.setHeaderText("Ticket is sold!");
+                    alert.setContentText("Ticket already purchased by another user!");
+                    alert.showAndWait();
+                    logger.info("Ticket is purchased by another user");
+                    return;
+                }
+                String message = "Would you like to accept a ticket request to "
+                        + currentUser.get() + ": " + selectedTicket + " ?";
+                List<Object> selectedTripList = new ArrayList<>();
+                selectedTripList.add(selectedTicket);
+                command = new RequestToCashierCommandImpl(
+                        message,
+                        selectedTripList,
+                        cashierController,
+                        userService.getUserByName(currentUser.get())
+                );
+                logger.info("Successfully accepted a ticket request");
+                command.execute();
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Success!");
+                alert.setHeaderText("Ticket was requested.");
+                alert.setContentText("Request was sent to corresponding cashier.");
+                alert.showAndWait();
+            } else {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Alert!");
-                alert.setHeaderText("Ticket is sold!");
-                alert.setContentText("Ticket already purchased by another user!");
+                alert.setHeaderText("Ticket was not chosen!");
+                alert.setContentText("Request was not sent.");
                 alert.showAndWait();
-                logger.info("Ticket is purchased by another user");
-                return;
             }
-            String message = "Would you like to accept a ticket request to "
-                    + currentUser.get() + ": " + selectedTicket + " ?";
-            List<Object> selectedTripList = new ArrayList<>();
-            selectedTripList.add(selectedTicket);
-            command = new RequestToCashierCommandImpl(
-                    message,
-                    selectedTripList,
-                    cashierController,
-                    userService.getUserByName(currentUser.get())
-            );
-            logger.info("Successfully accepted a ticket request");
-            command.execute();
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Success!");
-            alert.setHeaderText("Ticket was requested.");
-            alert.setContentText("Request was sent to corresponding cashier.");
-            alert.showAndWait();
-        } else {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Alert!");
-            alert.setHeaderText("Ticket was not chosen!");
-            alert.setContentText("Request was not sent.");
-            alert.showAndWait();
+        } catch (Exception e) {
+            logger.error("Error during initialize of ticket request. Error: {}", e.getMessage());
+            e.printStackTrace();
         }
     }
 
