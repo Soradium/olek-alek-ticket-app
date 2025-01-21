@@ -11,6 +11,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.tuvarna.command.Command;
 import org.tuvarna.command.RequestToCompanyCommandImpl;
+import org.tuvarna.controller.report_panel.DistributorReport;
+import org.tuvarna.controller.report_panel.ReportController;
+import org.tuvarna.controller.request_panel.DistrToCashPanelControllerImpl;
+import org.tuvarna.controller.request_panel.RequestPanelController;
 import org.tuvarna.entity.Cashier;
 import org.tuvarna.entity.Company;
 import org.tuvarna.entity.Trip;
@@ -39,6 +43,10 @@ public class DistributorController implements Subject {
     private ListView<Trip> availableTripsListView;
     @FXML
     private TextField cashierName;
+    @FXML
+    private Parent reportsPanel;
+    @FXML
+    private ReportController reportController;
     private String currentDistributor;
     private CompanyController companyController;
     private CompanyService companyService;
@@ -228,9 +236,13 @@ public class DistributorController implements Subject {
         try {
             logger.info("Try to add requestPanel for {}", CashierController.class.getSimpleName());
             FXMLLoader requestPanelLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/check-requests-distributor.fxml"));
+            FXMLLoader reportPanelLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/reports-distributor.fxml"));
             checkRequests = requestPanelLoader.load();
             requestPanelLoader.<DistrToCashPanelControllerImpl>getController().setDistributorController(this);
             requestPanelController = requestPanelLoader.<DistrToCashPanelControllerImpl>getController();
+            reportsPanel = reportPanelLoader.load();
+            reportPanelLoader.<DistributorReport>getController().setDistributorController(this);
+            reportController = reportPanelLoader.getController();
             logger.info("Successfully loaded check-requests-distributor.fxml");
         } catch (Exception e) {
             logger.error("Error during initialize of check-requests-distributor. Error: {}", e.getMessage());
@@ -313,4 +325,11 @@ public class DistributorController implements Subject {
         this.observer.update(values);
     }
 
+    public Parent getReportsPanel() {
+        return reportsPanel;
+    }
+
+    public void setReportsPanel(Parent reportsPanel) {
+        this.reportsPanel = reportsPanel;
+    }
 }

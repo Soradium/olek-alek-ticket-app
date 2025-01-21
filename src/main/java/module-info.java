@@ -15,4 +15,8 @@ module org.tuvarna {
     exports org.tuvarna.olekalekproject;
     exports org.tuvarna.controller;
     opens org.tuvarna.controller to javafx.fxml;
+    opens org.tuvarna.controller.request_panel to javafx.fxml;
+    exports org.tuvarna.controller.request_panel;
+    exports org.tuvarna.controller.report_panel;
+    opens org.tuvarna.controller.report_panel to javafx.fxml;
 }

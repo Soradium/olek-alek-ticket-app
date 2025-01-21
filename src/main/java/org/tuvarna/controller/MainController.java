@@ -19,60 +19,39 @@ import java.util.List;
 
 public class MainController implements Observer {
 
+    private final static Logger logger = LogManager.getLogger(MainController.class);
     @FXML
     private BorderPane root;
-
     @FXML
     private Parent administrator;
-
     @FXML
     private Parent distributor;
-
     @FXML
     private Parent company;
-
     @FXML
     private Parent user;
-
     @FXML
     private Parent cashier;
-
     @FXML
     private AdministratorController administratorController;
-
     @FXML
     private DistributorController distributorController;
-
     @FXML
     private CompanyController companyController;
-
     @FXML
     private UserController userController;
-
     @FXML
     private CashierController cashierController;
-
     private MenuStripSelector menuStrip;
-
     private Menu selectedMenu;
-
     private MenuItem selectedMenuItem;
-
     private TripService tripService;
-
     private CompanyService companyService;
-
     private BusService busService;
-
     private DistributorService distributorService;
-
     private TicketService ticketService;
-
     private CashierService cashierService;
-
     private UserService userService;
-
-    private final static Logger logger = LogManager.getLogger(MainController.class);
 
     public void initialize() {
         logger.info("Initialize MainController");
@@ -155,7 +134,7 @@ public class MainController implements Observer {
 
             menuStrip.registerObserver(this);
         } catch (Exception e) {
-            logger.error("Error in initialize function with message: {}",e.getMessage());
+            logger.error("Error in initialize function with message: {}", e.getMessage());
         }
     }
 
@@ -173,6 +152,7 @@ public class MainController implements Observer {
                 distributorController.initializeData(selectedMenuItem.getText());
                 root.setCenter(distributor);
                 root.setRight(distributorController.getCheckRequests());
+                root.setBottom(distributorController.getReportsPanel());
                 logger.info("Set Request panel for distributorController");
                 break;
             }
@@ -182,6 +162,7 @@ public class MainController implements Observer {
                 companyController.initializeData(selectedMenuItem.getText());
                 root.setCenter(company);
                 root.setRight(companyController.getCheckRequests());
+                root.setBottom(companyController.getReportsPanel());
                 logger.info("Set Request panel for companyController");
                 break;
             }
@@ -189,6 +170,7 @@ public class MainController implements Observer {
                 root.setCenter(user);
                 userController.setCurrentUser(selectedMenuItem.getText());
                 root.setRight(null);
+                root.setBottom(null);
                 break;
             }
             case "Cashiers": {
@@ -207,12 +189,14 @@ public class MainController implements Observer {
                 cashierController.setCashierName(cashierName);
                 cashierController.setDistributorName(distName);
                 root.setRight(cashierController.getCheckRequests());
+                root.setBottom(cashierController.getReportsPanel());
                 logger.info("Set Request panel for cashierController");
                 break;
             }
             default: {
                 root.setCenter(administrator);
                 root.setRight(null);
+                root.setBottom(null);
                 break;
             }
         }

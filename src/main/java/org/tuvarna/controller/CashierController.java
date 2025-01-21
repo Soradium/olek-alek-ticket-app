@@ -13,6 +13,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.tuvarna.command.Command;
 import org.tuvarna.command.RequestToDistributorCommandImpl;
+import org.tuvarna.controller.report_panel.CashierReport;
+import org.tuvarna.controller.report_panel.ReportController;
+import org.tuvarna.controller.request_panel.CashToUsrPanelController;
+import org.tuvarna.controller.request_panel.RequestPanelController;
 import org.tuvarna.entity.Cashier;
 import org.tuvarna.entity.Ticket;
 import org.tuvarna.entity.Trip;
@@ -31,6 +35,8 @@ public class CashierController implements Subject {
     @FXML
     public ListView<Ticket> ticketsProvidedByCashier;
     @FXML
+    private Parent reportsPanel;
+    @FXML
     private Label cashierName;
     @FXML
     private Label distributorName;
@@ -38,6 +44,8 @@ public class CashierController implements Subject {
     private RequestPanelController requestPanelController;
     @FXML
     private Parent checkRequests;
+    @FXML
+    private ReportController reportController;
     private TripService tripService;
     private Command command;
     private DistributorController distributorController;
@@ -50,9 +58,13 @@ public class CashierController implements Subject {
         try {
             logger.info("Try to add requestPanel for {}", CashierController.class.getSimpleName());
             FXMLLoader requestPanelLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/check-requests-cashier.fxml"));
+            FXMLLoader reportPanelLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/reports-cashier.fxml"));
             checkRequests = requestPanelLoader.load();
             requestPanelLoader.<CashToUsrPanelController>getController().setCashierController(this);
             requestPanelController = requestPanelLoader.<CashToUsrPanelController>getController();
+            reportsPanel = reportPanelLoader.load();
+            reportPanelLoader.<CashierReport>getController().setCashierController(this);
+            reportController = reportPanelLoader.getController();
             logger.info("Successfully loaded check-requests-cashier.fxml");
 
         } catch (Exception e) {
@@ -174,10 +186,6 @@ public class CashierController implements Subject {
         this.distributorController = distributorController;
     }
 
-    public void setDistributorName(String distributorName) {
-        this.distributorName.setText(distributorName);
-    }
-
     public Parent getCheckRequests() {
         return checkRequests;
     }
@@ -210,5 +218,21 @@ public class CashierController implements Subject {
 
     public void setCashierName(Label cashierName) {
         this.cashierName = cashierName;
+    }
+
+    public Parent getReportsPanel() {
+        return reportsPanel;
+    }
+
+    public void setReportsPanel(Parent reportsPanel) {
+        this.reportsPanel = reportsPanel;
+    }
+
+    public Label getDistributorName() {
+        return distributorName;
+    }
+
+    public void setDistributorName(String distributorName) {
+        this.distributorName.setText(distributorName);
     }
 }
