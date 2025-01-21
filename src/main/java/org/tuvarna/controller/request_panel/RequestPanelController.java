@@ -1,4 +1,4 @@
-package org.tuvarna.controller;
+package org.tuvarna.controller.request_panel;
 
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;

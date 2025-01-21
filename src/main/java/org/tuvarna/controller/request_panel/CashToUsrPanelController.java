@@ -1,9 +1,10 @@
-package org.tuvarna.controller;
+package org.tuvarna.controller.request_panel;
 
 import javafx.scene.control.Alert;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.tuvarna.command.Command;
+import org.tuvarna.controller.CashierController;
 import org.tuvarna.entity.Ticket;
 import org.tuvarna.entity.User;
 import org.tuvarna.service.TicketService;
@@ -75,7 +76,7 @@ public class CashToUsrPanelController extends RequestPanelController {
                 .filter(c ->
                         (c.getReceiver() instanceof CashierController) &&
                                 (((Ticket) c.getPassedObjects().getFirst())
-                                        .getTrip().getDistributor().getName()
+                                        .getTrip().getCashier().getName()
                                         .equals(cashierName))
                 )
                 .forEach(c -> particularCommands.add(c));

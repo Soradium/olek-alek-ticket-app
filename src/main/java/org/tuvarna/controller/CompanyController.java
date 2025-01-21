@@ -12,6 +12,10 @@ import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.tuvarna.command.Command;
+import org.tuvarna.controller.report_panel.CompanyReport;
+import org.tuvarna.controller.report_panel.ReportController;
+import org.tuvarna.controller.request_panel.CompToDistrPanelControllerImpl;
+import org.tuvarna.controller.request_panel.RequestPanelController;
 import org.tuvarna.database.DatabaseSingleton;
 import org.tuvarna.entity.Bus;
 import org.tuvarna.entity.Company;
@@ -37,6 +41,8 @@ public class CompanyController implements Subject, Cloneable {
     @FXML
     private Parent checkRequests;
     @FXML
+    private Parent reportsPanel;
+    @FXML
     private Label ratingLabel;
     @FXML
     private ListView<Trip> tripListView;
@@ -50,6 +56,8 @@ public class CompanyController implements Subject, Cloneable {
     private TextField tripType;
     @FXML
     private RequestPanelController requestPanelController;
+    @FXML
+    private ReportController reportController;
     private TripService tripService;
     private CompanyService companyService;
     private BusService busService;
@@ -60,9 +68,13 @@ public class CompanyController implements Subject, Cloneable {
         try {
             logger.info("Try to add requestPanel for {}", CompanyController.class.getSimpleName());
             FXMLLoader requestPanelLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/check-requests-company.fxml"));
+            FXMLLoader reportPanelLoader = new FXMLLoader(getClass().getResource("/org/tuvarna/olekalekproject/reports-company.fxml"));
             checkRequests = requestPanelLoader.load();
             requestPanelLoader.<CompToDistrPanelControllerImpl>getController().setCompanyController(this);
             requestPanelController = requestPanelLoader.<CompToDistrPanelControllerImpl>getController();
+            reportsPanel = reportPanelLoader.load();
+            reportPanelLoader.<CompanyReport>getController().setCompanyController(this);
+            reportController = reportPanelLoader.getController();
             logger.info("Successfully loaded check-requests-cashier.fxml");
         } catch (Exception e) {
             logger.error("Error during initialize of check-requests-company. Error: {}", e.getMessage());
@@ -131,6 +143,15 @@ public class CompanyController implements Subject, Cloneable {
             alert.setContentText(sb.toString());
             alert.showAndWait();
             logger.info("Error message because blank fields");
+            return;
+        }
+        if (timeOfDepartureText.isBefore(LocalDate.now())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error!");
+            alert.setHeaderText("Error");
+            alert.setContentText("Invalid time of departure");
+            alert.showAndWait();
+            logger.info("Error message because of incorrect data entered");
             return;
         }
         tripService.addTrip(new Trip(departureText,
@@ -276,5 +297,13 @@ public class CompanyController implements Subject, Cloneable {
 
     private Company getCurrentCompany() {
         return companyService.getCompanyByName(tripService.getCurrentCompanyName());
+    }
+
+    public Parent getReportsPanel() {
+        return reportsPanel;
+    }
+
+    public void setReportsPanel(Parent reportsPanel) {
+        this.reportsPanel = reportsPanel;
     }
 }

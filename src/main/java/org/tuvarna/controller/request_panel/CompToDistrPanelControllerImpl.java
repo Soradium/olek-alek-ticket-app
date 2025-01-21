@@ -1,9 +1,10 @@
-package org.tuvarna.controller;
+package org.tuvarna.controller.request_panel;
 
 import javafx.scene.control.Alert;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.tuvarna.command.Command;
+import org.tuvarna.controller.CompanyController;
 import org.tuvarna.entity.Distributor;
 import org.tuvarna.entity.Trip;
 import org.tuvarna.service.DistributorService;

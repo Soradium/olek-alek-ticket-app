@@ -1,4 +1,4 @@
-package org.tuvarna.controller;
+package org.tuvarna.controller.request_panel;
 
 import javafx.scene.control.Alert;
 import org.apache.logging.log4j.LogManager;
@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.tuvarna.command.Command;
+import org.tuvarna.controller.DistributorController;
 import org.tuvarna.database.DatabaseSingleton;
 import org.tuvarna.entity.Cashier;
 import org.tuvarna.entity.Seat;
