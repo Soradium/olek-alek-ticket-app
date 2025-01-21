@@ -197,6 +197,10 @@ public class UserController {
         }
     }
 
+    public void updateInfo(ActionEvent actionEvent) {
+        initializeData();
+    }
+
     public void setTicketService(TicketService ticketService) {
         this.ticketService = ticketService;
     }
