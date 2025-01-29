@@ -18,6 +18,7 @@ import org.tuvarna.controller.request_panel.CompToDistrPanelControllerImpl;
 import org.tuvarna.controller.request_panel.RequestPanelController;
 import org.tuvarna.database.DatabaseSingleton;
 import org.tuvarna.entity.Bus;
+import org.tuvarna.entity.Cashier;
 import org.tuvarna.entity.Company;
 import org.tuvarna.entity.Trip;
 import org.tuvarna.observer.Observer;
@@ -295,7 +296,7 @@ public class CompanyController implements Subject, Cloneable {
         return checkRequests;
     }
 
-    private Company getCurrentCompany() {
+    public Company getCurrentCompany() {
         return companyService.getCompanyByName(tripService.getCurrentCompanyName());
     }
 
@@ -306,4 +307,30 @@ public class CompanyController implements Subject, Cloneable {
     public void setReportsPanel(Parent reportsPanel) {
         this.reportsPanel = reportsPanel;
     }
+
+    public TripService getTripService() {
+        return tripService;
+    }
+
+    public void setDeparture(TextField departure) {
+        this.departure = departure;
+    }
+
+    public void setDestination(TextField destination) {
+        this.destination = destination;
+    }
+
+    public void setTimeOfDeparture(TextField timeOfDeparture) {
+        this.timeOfDeparture = timeOfDeparture;
+    }
+
+    public void setTripType(TextField tripType) {
+        this.tripType = tripType;
+    }
+
+    public void setBusListView(ListView<Bus> busListView) {
+        this.busListView = busListView;
+    }
+
+
 }

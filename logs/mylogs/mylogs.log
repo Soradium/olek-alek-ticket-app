@@ -8373,3 +8373,30 @@ Ticket Trip: Trip: departure=Litva, destination=Germania, date=2026-01-01, tripT
 2025-01-22 01:23:16 INFO  org.tuvarna.controller.request_panel.RequestPanelController - RequestListView cleared
 2025-01-22 01:23:25 INFO  org.tuvarna.controller.MainController - Selected menu: Menu[id=null, styleClass=[menu-item, menu]]
 2025-01-22 01:23:25 INFO  org.tuvarna.controller.MainController - Selected menu item: MenuItem@172d7acb[styleClass=[menu-item]]
+2025-01-26 23:51:33 INFO  org.tuvarna.controller.CompanyController - Parsing data from text fields
+2025-01-26 23:51:33 INFO  org.tuvarna.controller.CompanyController - Checking of correct information
+2025-01-26 23:51:33 INFO  org.tuvarna.controller.CompanyController - Successfully added trip
+2025-01-26 23:51:33 INFO  org.tuvarna.controller.CompanyController - Session receiving
+2025-01-26 23:51:33 INFO  org.tuvarna.controller.CompanyController - Start of transaction
+2025-01-26 23:51:33 INFO  org.tuvarna.controller.CompanyController - End of transaction. Successfully updated bus
+2025-01-26 23:51:33 INFO  org.tuvarna.controller.CompanyController - Fields clean up
+2025-01-26 23:52:05 INFO  org.tuvarna.controller.CompanyController - Parsing data from text fields
+2025-01-26 23:52:05 INFO  org.tuvarna.controller.CompanyController - Checking of correct information
+2025-01-26 23:52:06 INFO  org.tuvarna.controller.CompanyController - Successfully added trip
+2025-01-26 23:52:06 INFO  org.tuvarna.controller.CompanyController - Session receiving
+2025-01-26 23:52:06 INFO  org.tuvarna.controller.CompanyController - Start of transaction
+2025-01-26 23:52:06 INFO  org.tuvarna.controller.CompanyController - End of transaction. Successfully updated bus
+2025-01-26 23:52:06 INFO  org.tuvarna.controller.CompanyController - Fields clean up
+2025-01-27 00:02:19 INFO  org.tuvarna.controller.CompanyController - Parsing data from text fields
+2025-01-27 00:02:19 INFO  org.tuvarna.controller.CompanyController - Checking of correct information
+2025-01-27 00:04:34 INFO  org.tuvarna.repository.TripDAOImpl - Session started for save
+2025-01-27 00:04:34 INFO  org.tuvarna.repository.TripDAOImpl - Trip [!!!org.tuvarna.entity.Trip@60d6fdd4=>java.lang.NullPointerException:Cannot invoke "org.tuvarna.entity.Company.getName()" because "this.company" is null!!!] saved successfully
+2025-01-27 00:04:34 INFO  org.tuvarna.repository.TripDAOImpl - Transaction committed successfully
+2025-01-27 00:04:34 INFO  org.tuvarna.repository.TripDAOImpl - Session closed successfully
+2025-01-27 00:22:12 INFO  org.tuvarna.controller.CompanyController - Parsing data from text fields
+2025-01-27 00:22:12 INFO  org.tuvarna.controller.CompanyController - Checking of correct information
+2025-01-27 00:22:12 INFO  org.tuvarna.controller.CompanyController - Successfully added trip
+2025-01-27 00:22:12 INFO  org.tuvarna.controller.CompanyController - Session receiving
+2025-01-27 00:22:12 INFO  org.tuvarna.controller.CompanyController - Start of transaction
+2025-01-27 00:22:12 INFO  org.tuvarna.controller.CompanyController - End of transaction. Successfully updated bus
+2025-01-27 00:22:12 INFO  org.tuvarna.controller.CompanyController - Fields clean up
